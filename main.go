@@ -41,7 +41,9 @@ func main() {
 
 	// HTTP server on configurable port
 	mux := http.NewServeMux()
-	mux.HandleFunc("/ws", hub.HandleWS(tracker.GameStateMessage))
+	wsHandler := hub.HandleWS(tracker.GameStateMessage)
+	mux.HandleFunc("/ws", wsHandler)
+	mux.HandleFunc("/almanac/ws", wsHandler)
 	mux.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte("ok"))
