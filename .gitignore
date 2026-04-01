@@ -1,0 +1,4 @@
+shots_*.json
+*.tmp
+/espn-shots
+/espn-poller
