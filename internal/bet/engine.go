@@ -77,14 +77,19 @@ func (e *Engine) Run(ctx context.Context) {
 
 // PlaceBet validates and queues a bet.
 func (e *Engine) PlaceBet(b *Bet) error {
-	if b.Sport == "" || b.GameID == "" || b.WalletAddr == "" {
+	if b.Sport == "" || b.GameID == "" || b.PlayID == "" || b.WalletAddr == "" {
 		return fmt.Errorf("missing required fields")
 	}
 
-	// Validate signature
-	_, err := ValidateSignature(b)
+	// Validate signature and normalize wallet address.
+	recovered, err := ValidateSignature(b)
 	if err != nil {
 		return fmt.Errorf("signature validation: %w", err)
+	}
+	b.WalletAddr = recovered
+
+	if err := e.verifyBalance(b); err != nil {
+		return fmt.Errorf("balance verification: %w", err)
 	}
 
 	// Assign ID and timestamp
@@ -206,10 +211,29 @@ func (e *Engine) resolveBet(b *Bet, event game.SportEvent, playTimestamp string,
 		result.Won = result.Distance <= radius
 	}
 
-	// TODO: Payment processing for winning bets
-	// TODO: Balance verification
+	if err := e.processPayout(result); err != nil {
+		log.Printf("[bet-engine] payout stub failed for bet %s: %v", b.ID, err)
+	}
 
 	return result
+}
+
+func (e *Engine) verifyBalance(b *Bet) error {
+	if b == nil {
+		return fmt.Errorf("nil bet")
+	}
+	// Stub for future on-chain balance verification.
+	// Keep the flow non-blocking for backend integration/testing.
+	return nil
+}
+
+func (e *Engine) processPayout(result *BetResult) error {
+	if result == nil || !result.Won {
+		return nil
+	}
+	// Stub for future on-chain settlement.
+	log.Printf("[bet-engine] payout TODO for winning bet %s wallet=%s game=%s", result.BetID, result.WalletAddr, result.GameID)
+	return nil
 }
 
 func (e *Engine) radiusForSport(sport game.Sport) float64 {

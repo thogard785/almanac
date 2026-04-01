@@ -11,7 +11,7 @@ const (
 type Bet struct {
 	ID         string  `json:"id"`
 	Nonce      uint64  `json:"nonce"`
-	Sport      string  `json:"sport"`       // "nba", "mlb", "pga"
+	Sport      string  `json:"sport"` // "nba", "mlb", "pga"
 	GameID     string  `json:"game_id"`
 	PlayID     string  `json:"play_id"`
 	LocationX  float64 `json:"location_x"`

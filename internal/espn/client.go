@@ -21,7 +21,7 @@ type Client struct {
 // NewClient creates an ESPN API client with the given minimum gap between requests.
 func NewClient(minGap time.Duration) *Client {
 	return &Client{
-		http: &http.Client{Timeout: 15 * time.Second},
+		http:   &http.Client{Timeout: 15 * time.Second},
 		minGap: minGap,
 	}
 }

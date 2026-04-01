@@ -4,11 +4,11 @@ import (
 	"crypto/ecdsa"
 	"encoding/hex"
 	"fmt"
-	"log"
 	"math/big"
 	"strings"
 
-	"golang.org/x/crypto/sha3"
+	"github.com/ethereum/go-ethereum/common"
+	ethcrypto "github.com/ethereum/go-ethereum/crypto"
 )
 
 // ValidateSignature verifies the EIP-712 signature on a bet.
@@ -23,6 +23,9 @@ func ValidateSignature(b *Bet) (string, error) {
 	if b.Signature == "" || b.WalletAddr == "" {
 		return "", fmt.Errorf("missing signature or wallet address")
 	}
+	if !common.IsHexAddress(b.WalletAddr) {
+		return "", fmt.Errorf("invalid wallet address: %s", b.WalletAddr)
+	}
 
 	sigBytes, err := hexDecode(b.Signature)
 	if err != nil {
@@ -32,22 +35,26 @@ func ValidateSignature(b *Bet) (string, error) {
 		return "", fmt.Errorf("signature must be 65 bytes, got %d", len(sigBytes))
 	}
 
-	// Build EIP-712 typed data hash
+	// Normalize recovery ID for go-ethereum: 0/1 instead of 27/28.
+	sigBytes = append([]byte(nil), sigBytes...)
+	if sigBytes[64] >= 27 {
+		sigBytes[64] -= 27
+	}
+	if sigBytes[64] > 1 {
+		return "", fmt.Errorf("invalid recovery id %d", sigBytes[64])
+	}
+
+	// Build EIP-712 typed data hash.
 	domainSeparator := hashDomainSeparator()
 	structHash := hashBetStruct(b)
 	digest := eip712Digest(domainSeparator, structHash)
 
-	// Recover public key
-	recovered, err := ecRecover(digest, sigBytes)
+	pub, err := ecRecover(digest, sigBytes)
 	if err != nil {
-		// TODO: Full EIP-712 verification is complex without ethcrypto.
-		// For now, log warning and accept. Replace with proper verification
-		// when a lightweight secp256k1 recovery lib is available.
-		log.Printf("[validator] WARNING: signature verification not fully implemented, accepting bet from %s", b.WalletAddr)
-		return strings.ToLower(b.WalletAddr), nil
+		return "", fmt.Errorf("recover signer: %w", err)
 	}
 
-	addr := pubkeyToAddress(recovered)
+	addr := ethcrypto.PubkeyToAddress(*pub).Hex()
 	if !strings.EqualFold(addr, b.WalletAddr) {
 		return "", fmt.Errorf("recovered address %s does not match wallet %s", addr, b.WalletAddr)
 	}
@@ -60,9 +67,7 @@ func hexDecode(s string) ([]byte, error) {
 }
 
 func keccak256(data []byte) []byte {
-	h := sha3.NewLegacyKeccak256()
-	h.Write(data)
-	return h.Sum(nil)
+	return ethcrypto.Keccak256(data)
 }
 
 func hashDomainSeparator() []byte {
@@ -89,13 +94,12 @@ func hashBetStruct(b *Bet) []byte {
 	gameIDHash := keccak256([]byte(b.GameID))
 	playIDHash := keccak256([]byte(b.PlayID))
 
-	// Scale coordinates by 1e6 for int256
+	// Scale coordinates by 1e6 for int256.
 	locX := new(big.Int).SetInt64(int64(b.LocationX * 1e6))
 	locY := new(big.Int).SetInt64(int64(b.LocationY * 1e6))
 	nonce := new(big.Int).SetUint64(b.Nonce)
 
-	// Parse wallet address
-	addrBytes, _ := hexDecode(b.WalletAddr)
+	addr := common.HexToAddress(b.WalletAddr)
 
 	data := make([]byte, 0, 256)
 	data = append(data, padLeft(typeHash, 32)...)
@@ -105,7 +109,7 @@ func hashBetStruct(b *Bet) []byte {
 	data = append(data, int256Bytes(locX)...)
 	data = append(data, int256Bytes(locY)...)
 	data = append(data, padLeft(nonce.Bytes(), 32)...)
-	data = append(data, padLeft(addrBytes, 32)...)
+	data = append(data, padLeft(addr.Bytes(), 32)...)
 	return keccak256(data)
 }
 
@@ -131,29 +135,11 @@ func int256Bytes(n *big.Int) []byte {
 	if n.Sign() >= 0 {
 		return padLeft(n.Bytes(), 32)
 	}
-	// Two's complement for negative
+	// Two's complement for negative.
 	complement := new(big.Int).Add(n, new(big.Int).Lsh(big.NewInt(1), 256))
 	return padLeft(complement.Bytes(), 32)
 }
 
-// ecRecover attempts to recover the public key from signature.
-// This is a stub — proper secp256k1 recovery requires a C library or
-// pure-Go implementation. Returns error to trigger the fallback path.
 func ecRecover(digest, sig []byte) (*ecdsa.PublicKey, error) {
-	// TODO: Implement proper secp256k1 ECDSA recovery.
-	// Options: use a pure-Go secp256k1 library or CGO binding.
-	// For now, return error to use the accept-all fallback.
-	return nil, fmt.Errorf("secp256k1 recovery not implemented")
-}
-
-func pubkeyToAddress(pub *ecdsa.PublicKey) string {
-	if pub == nil {
-		return ""
-	}
-	// Encode uncompressed public key (65 bytes: 04 + X + Y)
-	xBytes := padLeft(pub.X.Bytes(), 32)
-	yBytes := padLeft(pub.Y.Bytes(), 32)
-	pubBytes := append(xBytes, yBytes...)
-	hash := keccak256(pubBytes)
-	return "0x" + hex.EncodeToString(hash[12:])
+	return ethcrypto.SigToPub(digest, sig)
 }

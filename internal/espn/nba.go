@@ -25,18 +25,18 @@ type ScoreboardResponse struct {
 }
 
 type ScoreboardEvent struct {
-	ID           string                 `json:"id"`
-	Date         string                 `json:"date"`
-	Name         string                 `json:"name"`
-	ShortName    string                 `json:"shortName"`
+	ID           string                  `json:"id"`
+	Date         string                  `json:"date"`
+	Name         string                  `json:"name"`
+	ShortName    string                  `json:"shortName"`
 	Competitions []ScoreboardCompetition `json:"competitions"`
-	Status       ScoreboardStatus       `json:"status"`
+	Status       ScoreboardStatus        `json:"status"`
 }
 
 type ScoreboardCompetition struct {
-	ID          string                  `json:"id"`
-	Competitors []ScoreboardCompetitor  `json:"competitors"`
-	Status      ScoreboardStatus        `json:"status"`
+	ID          string                 `json:"id"`
+	Competitors []ScoreboardCompetitor `json:"competitors"`
+	Status      ScoreboardStatus       `json:"status"`
 }
 
 type ScoreboardCompetitor struct {

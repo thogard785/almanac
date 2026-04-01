@@ -103,10 +103,10 @@ func (p *GolfParser) FetchGameInfo(ctx context.Context, eventID string) (*GameIn
 	for _, ev := range events {
 		if ev.ID == eventID {
 			info := &GameInfo{
-				GameID: eventID,
-				Status: ev.Status.Type.Name,
-				State:  ev.Status.Type.State,
-				Detail: ev.Status.Type.Detail,
+				GameID:    eventID,
+				Status:    ev.Status.Type.Name,
+				State:     ev.Status.Type.State,
+				Detail:    ev.Status.Type.Detail,
 				Completed: ev.Status.Type.Completed,
 			}
 			if len(ev.Competitions) > 0 {

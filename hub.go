@@ -26,6 +26,12 @@ type Hub struct {
 	clients map[*websocket.Conn]*sync.Mutex // conn → write mutex
 }
 
+type WSHooks struct {
+	OnConnect    func(*websocket.Conn)
+	OnDisconnect func(*websocket.Conn)
+	OnMessage    func(*websocket.Conn, []byte)
+}
+
 func NewHub() *Hub {
 	return &Hub{
 		clients: make(map[*websocket.Conn]*sync.Mutex),
@@ -111,7 +117,7 @@ func (h *Hub) SendTo(conn *websocket.Conn, msg interface{}) error {
 }
 
 // HandleWS upgrades an HTTP connection to WebSocket and manages its lifecycle.
-func (h *Hub) HandleWS(gameState func() interface{}) http.HandlerFunc {
+func (h *Hub) HandleWS(hooks WSHooks) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		conn, err := upgrader.Upgrade(w, r, nil)
 		if err != nil {
@@ -120,11 +126,8 @@ func (h *Hub) HandleWS(gameState func() interface{}) http.HandlerFunc {
 		}
 		h.Register(conn)
 
-		// Send game_state on connect
-		if gs := gameState(); gs != nil {
-			if err := h.SendTo(conn, gs); err != nil {
-				log.Printf("[ws] failed to send game_state: %v", err)
-			}
+		if hooks.OnConnect != nil {
+			hooks.OnConnect(conn)
 		}
 
 		// Configure pong handler
@@ -161,15 +164,22 @@ func (h *Hub) HandleWS(gameState func() interface{}) http.HandlerFunc {
 			}
 		}()
 
-		// Read loop (just drain; we don't expect client messages)
+		// Read loop for v2 client messages.
 		go func() {
 			defer func() {
 				close(pingDone)
+				if hooks.OnDisconnect != nil {
+					hooks.OnDisconnect(conn)
+				}
 				h.Unregister(conn)
 			}()
 			for {
-				if _, _, err := conn.ReadMessage(); err != nil {
+				msgType, payload, err := conn.ReadMessage()
+				if err != nil {
 					return
+				}
+				if msgType == websocket.TextMessage && hooks.OnMessage != nil {
+					hooks.OnMessage(conn, payload)
 				}
 			}
 		}()

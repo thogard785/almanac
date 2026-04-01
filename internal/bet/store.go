@@ -13,11 +13,11 @@ import (
 
 // Store handles persistence for bets and results.
 type Store struct {
-	dir        string
-	mu         sync.RWMutex
-	bets       []*Bet
-	results    []*BetResult
-	persistCh  chan func()
+	dir       string
+	mu        sync.RWMutex
+	bets      []*Bet
+	results   []*BetResult
+	persistCh chan func()
 }
 
 // NewStore creates a bet store in the given directory.
@@ -113,6 +113,19 @@ func (s *Store) ResultsByGame(gameID string) []*BetResult {
 	var result []*BetResult
 	for _, r := range s.results {
 		if r.GameID == gameID {
+			result = append(result, r)
+		}
+	}
+	return result
+}
+
+// ResultsByWallet returns all results for a wallet address.
+func (s *Store) ResultsByWallet(wallet string) []*BetResult {
+	s.mu.RLock()
+	defer s.mu.RUnlock()
+	var result []*BetResult
+	for _, r := range s.results {
+		if r.WalletAddr == wallet {
 			result = append(result, r)
 		}
 	}
