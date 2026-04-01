@@ -33,6 +33,37 @@ func main() {
 		log.Fatalf("init tracker: %v", err)
 	}
 
+	// Start WebSocket hub + HTTP server
+	hub := NewHub()
+	updates := make(chan interface{}, 64)
+	go hub.RunBroadcastLoop(ctx, updates)
+	tracker.broadcastCh = updates
+
+	// HTTP server on configurable port
+	mux := http.NewServeMux()
+	wsHandler := hub.HandleWS(tracker.GameStateMessage)
+	mux.HandleFunc("/ws", wsHandler)
+	mux.HandleFunc("/almanac/ws", wsHandler)
+	mux.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte("ok"))
+	})
+
+	wsPort := os.Getenv("WS_PORT")
+	if wsPort == "" {
+		wsPort = "8090"
+	}
+	srv := &http.Server{
+		Addr:    ":" + wsPort,
+		Handler: mux,
+	}
+	go func() {
+		log.Printf("[ws] starting WebSocket server on :%s", wsPort)
+		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+			log.Printf("[ws] server error: %v", err)
+		}
+	}()
+
 	log.Printf("tracking game=%s poll=%s output=%s", cfg.GameID, cfg.PollInterval, cfg.OutputPath)
 	if err := tracker.Run(ctx); err != nil && !errors.Is(err, context.Canceled) {
 		log.Fatalf("run tracker: %v", err)
@@ -40,6 +71,12 @@ func main() {
 	if err := tracker.Flush(); err != nil {
 		log.Fatalf("flush on shutdown: %v", err)
 	}
+
+	// Graceful shutdown of HTTP server
+	shutdownCtx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+	srv.Shutdown(shutdownCtx)
+
 	log.Printf("shutdown complete")
 }
 
@@ -66,13 +103,28 @@ func loadConfig() Config {
 }
 
 type Tracker struct {
-	cfg        Config
-	client     *http.Client
-	mu         sync.Mutex
-	store      ShotStore
-	seen       map[string]struct{}
-	nextNonce  int64
-	lastStatus string
+	cfg         Config
+	client      *http.Client
+	mu          sync.Mutex
+	store       ShotStore
+	seen        map[string]struct{}
+	nextNonce   int64
+	lastStatus  string
+	broadcastCh chan<- interface{}
+	// cached game state for WS clients on connect
+	gameStateMu sync.RWMutex
+	gameState   *GameState
+}
+
+type GameState struct {
+	GameID     string `json:"game_id"`
+	Status     string `json:"status"`
+	Quarter    int    `json:"quarter"`
+	Clock      string `json:"clock"`
+	HomeTeam   string `json:"home_team"`
+	AwayTeam   string `json:"away_team"`
+	HomeScore  string `json:"home_score"`
+	AwayScore  string `json:"away_score"`
 }
 
 func NewTracker(cfg Config) (*Tracker, error) {
@@ -81,13 +133,26 @@ func NewTracker(cfg Config) (*Tracker, error) {
 		return nil, err
 	}
 	return &Tracker{
-		cfg:        cfg,
-		client:     &http.Client{Timeout: 10 * time.Second},
-		store:      store,
-		seen:       seen,
-		nextNonce:  nextNonce,
-		lastStatus: "",
+		cfg:       cfg,
+		client:    &http.Client{Timeout: 10 * time.Second},
+		store:     store,
+		seen:      seen,
+		nextNonce: nextNonce,
 	}, nil
+}
+
+// GameStateMessage returns the current game state as a WS message, or nil.
+func (t *Tracker) GameStateMessage() interface{} {
+	t.gameStateMu.RLock()
+	gs := t.gameState
+	t.gameStateMu.RUnlock()
+	if gs == nil {
+		return nil
+	}
+	return map[string]interface{}{
+		"type": "game_state",
+		"data": gs,
+	}
 }
 
 func (t *Tracker) Run(ctx context.Context) error {
@@ -135,6 +200,31 @@ func (t *Tracker) poll(ctx context.Context) error {
 			t.lastStatus = status
 		}
 		t.mu.Unlock()
+
+		// Update game state for WS clients
+		gs := &GameState{
+			GameID:  t.cfg.GameID,
+			Status:  status,
+		}
+		if competition.Status.Type.Name != "" {
+			gs.Status = competition.Status.Type.Name
+		}
+		for _, comp := range competition.Competitors {
+			if comp.HomeAway == "home" {
+				gs.HomeTeam = comp.Team.Abbreviation
+				gs.HomeScore = comp.Score
+			} else {
+				gs.AwayTeam = comp.Team.Abbreviation
+				gs.AwayScore = comp.Score
+			}
+		}
+		// Quarter and clock from status detail
+		if competition.Status.Type.Detail != "" {
+			gs.Clock = competition.Status.Type.Detail
+		}
+		t.gameStateMu.Lock()
+		t.gameState = gs
+		t.gameStateMu.Unlock()
 	}
 
 	playerMap := buildPlayerMap(&summary)
@@ -176,12 +266,14 @@ func (t *Tracker) convertPlay(play playItem, playerMap, playerNameToID, teamMap,
 	shotType := inferShotType(play)
 	team := teamAbbreviation(play, teamMap, playerTeamMap, playerID)
 	locationX, locationY := 0.0, 0.0
-	if play.Coordinate != nil && !isInvalidCoordinate(play.Coordinate.X, play.Coordinate.Y) {
+	if play.Coordinate != nil {
 		locationX = play.Coordinate.X
 		locationY = play.Coordinate.Y
 	}
 	zone := inferLocationZone(locationX, locationY, shotType)
-	if play.Coordinate == nil || isInvalidCoordinate(play.Coordinate.X, play.Coordinate.Y) {
+	if play.Coordinate == nil {
+		zone = "missing"
+	} else if isInvalidCoordinate(play.Coordinate.X, play.Coordinate.Y) {
 		if shotType == "free_throw" {
 			zone = "free_throw"
 		} else {
@@ -224,16 +316,49 @@ func (t *Tracker) addShot(shot ShotEvent) error {
 	if err := saveStore(t.cfg.OutputPath, t.store); err != nil {
 		return fmt.Errorf("save store after event %s: %w", shot.EventID, err)
 	}
-	fmt.Printf("[Q%d %s] %s %s %s @ (%.1f, %.1f) | shots: %d\n",
+	fmt.Printf("[Q%d %s] %s (%s) %s %s @ (%.1f, %.1f) — shots stored: %d\n",
 		shot.Quarter,
 		shot.GameClock,
 		coalesce(shot.PlayerName, "Unknown Player"),
-		boolWord(shot.Made, "MADE", "MISS"),
+		coalesce(shot.Team, "?"),
+		boolWord(shot.Made, "MADE", "MISSED"),
 		shot.ShotTypeLabel(),
 		shot.LocationX,
 		shot.LocationY,
 		len(t.store.Shots),
 	)
+
+	// Broadcast new shot to WS clients
+	if t.broadcastCh != nil {
+		msg := map[string]interface{}{
+			"type": "shot",
+			"data": map[string]interface{}{
+				"nonce":          shot.Nonce,
+				"event_id":       shot.EventID,
+				"game_id":        shot.GameID,
+				"timestamp_ns":   shot.TimestampNS,
+				"espn_timestamp": shot.ESPNTimestamp,
+				"quarter":        shot.Quarter,
+				"game_clock":     shot.GameClock,
+				"game_clock_secs": shot.GameClockSecs,
+				"player_id":      shot.PlayerID,
+				"player_name":    shot.PlayerName,
+				"team":           shot.Team,
+				"made":           shot.Made,
+				"shot_type":      shot.ShotType,
+				"location_x":     shot.LocationX,
+				"location_y":     shot.LocationY,
+				"location_zone":  shot.LocationZone,
+				"description":    shot.Description,
+			},
+		}
+		select {
+		case t.broadcastCh <- msg:
+		default:
+			log.Printf("[ws] broadcast channel full, dropping shot %s", shot.EventID)
+		}
+	}
+
 	return nil
 }
 

@@ -191,9 +191,16 @@ func athleteIDFromRef(ref string) string {
 }
 
 func extractPlayerNameFromText(text string) string {
-	for _, marker := range []string{" makes ", " misses ", " blocks "} {
-		if idx := strings.Index(text, marker); idx > 0 {
-			return strings.TrimSpace(text[:idx])
+	if idx := strings.Index(text, " makes "); idx > 0 {
+		return strings.TrimSpace(text[:idx])
+	}
+	if idx := strings.Index(text, " misses "); idx > 0 {
+		return strings.TrimSpace(text[:idx])
+	}
+	if idx := strings.Index(text, " blocks "); idx > 0 {
+		rest := text[idx+len(" blocks "):]
+		if end := strings.Index(rest, "'s "); end > 0 {
+			return strings.TrimSpace(rest[:end])
 		}
 	}
 	return ""
