@@ -63,7 +63,26 @@ type summaryCompetition struct {
 }
 
 type summaryStatus struct {
-	Type summaryStatusType `json:"type"`
+	Type   summaryStatusType `json:"type"`
+	Period int               `json:"period"`
+}
+
+// GameState holds the current game state broadcast to WebSocket clients.
+type GameState struct {
+	GameID    string `json:"game_id"`
+	Status    string `json:"status"`
+	Quarter   int    `json:"quarter"`
+	Clock     string `json:"clock"`
+	HomeTeam  string `json:"home_team"`
+	AwayTeam  string `json:"away_team"`
+	HomeScore string `json:"home_score"`
+	AwayScore string `json:"away_score"`
+}
+
+// WSMessage is the typed envelope sent over WebSocket connections.
+type WSMessage struct {
+	Type string      `json:"type"`
+	Data interface{} `json:"data"`
 }
 
 type summaryStatusType struct {
