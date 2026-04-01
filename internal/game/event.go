@@ -36,6 +36,9 @@ type GameState struct {
 	GameID     string `json:"game_id"`
 	Sport      string `json:"sport"`
 	Status     string `json:"status"`
+	State      string `json:"state,omitempty"`
+	Detail     string `json:"detail,omitempty"`
+	StartTime  string `json:"start_time,omitempty"`
 	Home       string `json:"home"`
 	Away       string `json:"away"`
 	HomeScore  int    `json:"home_score"`
@@ -43,6 +46,8 @@ type GameState struct {
 	Period     string `json:"period"`
 	Clock      string `json:"clock"`
 	Possession string `json:"possession,omitempty"`
+	Completed  bool   `json:"completed"`
+	Tracked    bool   `json:"tracked"`
 }
 
 func ParseESPNTime(value string) time.Time {

@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"math"
+	"sort"
 	"sync"
 	"time"
 
@@ -15,12 +16,14 @@ import (
 type Engine struct {
 	store *Store
 
-	mu          sync.Mutex
-	pending     map[string][]*Bet
-	processed   map[string]game.PlayEvent
-	seenNonce   map[[20]byte]map[uint64]struct{}
-	resultChan  chan WalletResult
-	balanceChan chan BalanceUpdate
+	mu                 sync.Mutex
+	pending            map[string][]*Bet
+	processed          map[string]game.PlayEvent
+	seenNonce          map[[20]byte]map[uint64]struct{}
+	knownRounds        map[string]game.PlayEvent
+	currentRoundByGame map[string]string
+	resultChan         chan WalletResult
+	balanceChan        chan BalanceUpdate
 }
 
 type WalletResult struct {
@@ -28,33 +31,73 @@ type WalletResult struct {
 	Result *BetResult
 }
 
+type BalanceUpdate struct {
+	Type    string  `json:"type"`
+	Wallet  string  `json:"wallet"`
+	Balance float64 `json:"balance"`
+}
+
 func NewEngine(store *Store) *Engine {
-	return &Engine{
-		store:       store,
-		pending:     make(map[string][]*Bet),
-		processed:   make(map[string]game.PlayEvent),
-		seenNonce:   make(map[[20]byte]map[uint64]struct{}),
-		resultChan:  make(chan WalletResult, 512),
-		balanceChan: make(chan BalanceUpdate, 512),
+	e := &Engine{
+		store:              store,
+		pending:            make(map[string][]*Bet),
+		processed:          make(map[string]game.PlayEvent),
+		seenNonce:          make(map[[20]byte]map[uint64]struct{}),
+		knownRounds:        make(map[string]game.PlayEvent),
+		currentRoundByGame: make(map[string]string),
+		resultChan:         make(chan WalletResult, 512),
+		balanceChan:        make(chan BalanceUpdate, 512),
 	}
+	for _, b := range store.AllBets() {
+		if b == nil {
+			continue
+		}
+		if e.seenNonce[b.Wallet] == nil {
+			e.seenNonce[b.Wallet] = make(map[uint64]struct{})
+		}
+		e.seenNonce[b.Wallet][b.Nonce] = struct{}{}
+	}
+	return e
 }
 
 func (e *Engine) Run(ctx context.Context) {
 	<-ctx.Done()
 }
 
-func (e *Engine) PlaceBet(b *Bet) error {
+func (e *Engine) HasSeenNonce(wallet [20]byte, nonce uint64) bool {
+	e.mu.Lock()
+	defer e.mu.Unlock()
+	_, ok := e.seenNonce[wallet][nonce]
+	return ok
+}
+
+func (e *Engine) CurrentRound(gameID string) string {
+	e.mu.Lock()
+	defer e.mu.Unlock()
+	return e.currentRoundByGame[gameID]
+}
+
+func (e *Engine) PlaceBet(b *Bet) (*BetAck, error) {
 	if b == nil {
-		return fmt.Errorf("missing bet")
+		return nil, fmt.Errorf("missing bet")
 	}
-	if b.GameID == "" || b.PlayID == "" {
-		return fmt.Errorf("missing game_id or play_id")
+	if b.GameID == "" || b.RoundID == "" {
+		return e.rejectBet(b, "missing gameId or roundId"), nil
 	}
-	if b.Amount <= 0 {
-		return fmt.Errorf("amount must be greater than zero")
+	if b.Amount < MinimumBetAmount {
+		return e.rejectBet(b, "amount below minimum bet amount"), nil
 	}
 	if err := VerifySignature(b); err != nil {
-		return err
+		return e.rejectBet(b, err.Error()), nil
+	}
+	if math.Abs(float64(time.Now().Unix()-b.Timestamp)) > float64(BetExpiryWindow) {
+		return e.rejectBet(b, "stale bet timestamp"), nil
+	}
+	if b.Simulation {
+		return e.rejectBet(b, "simulation mode unsupported"), nil
+	}
+	if b.MinimumMultiplier > ActualMultiplier {
+		return e.rejectBet(b, "minimum multiplier too high"), nil
 	}
 
 	e.mu.Lock()
@@ -63,25 +106,72 @@ func (e *Engine) PlaceBet(b *Bet) error {
 		e.seenNonce[b.Wallet] = make(map[uint64]struct{})
 	}
 	if _, exists := e.seenNonce[b.Wallet][b.Nonce]; exists {
-		return fmt.Errorf("duplicate nonce")
+		return e.rejectBetLocked(b, "duplicate nonce"), nil
 	}
-	e.seenNonce[b.Wallet][b.Nonce] = struct{}{}
+	currentRound := e.currentRoundByGame[b.GameID]
+	if currentRound == "" || currentRound != b.RoundID {
+		return e.rejectBetLocked(b, "unknown or resolved roundId"), nil
+	}
+	if _, ok := e.knownRounds[b.RoundID]; !ok {
+		return e.rejectBetLocked(b, "unknown or resolved roundId"), nil
+	}
+	if getUserBalance(b.Wallet) < b.Amount {
+		return e.rejectBetLocked(b, "insufficient balance"), nil
+	}
 
+	e.seenNonce[b.Wallet][b.Nonce] = struct{}{}
 	b.BetID = uuid.NewString()
 	b.ReceivedAt = time.Now().UTC()
-	b.Status = "pending"
-	e.pending[b.PlayID] = append(e.pending[b.PlayID], b)
+	b.Status = "live"
+	b.ActualMultiplier = ActualMultiplier
+	b.Payout = 0
+	e.pending[b.RoundID] = append(e.pending[b.RoundID], b)
 	e.store.SaveBet(b)
-
-	if event, ok := e.processed[b.PlayID]; ok {
+	balance := addUserBalance(b.Wallet, -b.Amount)
+	ack := &BetAck{Type: "bet_ack", Status: "accepted", GameID: b.GameID, Nonce: b.Nonce, Timestamp: time.Now().Unix(), Balance: balance, ActualMultiplier: ActualMultiplier}
+	select {
+	case e.balanceChan <- BalanceUpdate{Type: "balance_update", Wallet: WalletHex(b.Wallet), Balance: balance}:
+	default:
+	}
+	if event, ok := e.processed[b.RoundID]; ok {
 		go e.resolveForEvent(event)
 	}
-	return nil
+	return ack, nil
+}
+
+func (e *Engine) rejectBet(b *Bet, reason string) *BetAck {
+	e.mu.Lock()
+	defer e.mu.Unlock()
+	return e.rejectBetLocked(b, reason)
+}
+
+func (e *Engine) rejectBetLocked(b *Bet, reason string) *BetAck {
+	if b == nil {
+		return &BetAck{Type: "bet_ack", Status: "rejected", Timestamp: time.Now().Unix(), RejectionReason: reason, ActualMultiplier: ActualMultiplier}
+	}
+	b.BetID = uuid.NewString()
+	b.ReceivedAt = time.Now().UTC()
+	b.Status = "invalid"
+	b.ActualMultiplier = ActualMultiplier
+	b.RejectionReason = reason
+	e.store.SaveBet(b)
+	return &BetAck{
+		Type:             "bet_ack",
+		Status:           "rejected",
+		GameID:           b.GameID,
+		Nonce:            b.Nonce,
+		Timestamp:        time.Now().Unix(),
+		Balance:          getUserBalance(b.Wallet),
+		ActualMultiplier: ActualMultiplier,
+		RejectionReason:  reason,
+	}
 }
 
 func (e *Engine) OnPlayEvent(event game.PlayEvent) {
 	e.mu.Lock()
 	e.processed[event.PlayID] = event
+	e.knownRounds[event.PlayID] = event
+	e.currentRoundByGame[event.GameID] = event.PlayID
 	e.mu.Unlock()
 	go e.resolveForEvent(event)
 }
@@ -97,10 +187,12 @@ func (e *Engine) resolveForEvent(event game.PlayEvent) {
 		return
 	}
 	delete(e.pending, event.PlayID)
+	delete(e.knownRounds, event.PlayID)
 	e.mu.Unlock()
 
 	for _, b := range bets {
 		result := e.resolveBet(b, event)
+		e.store.SaveBet(b)
 		e.store.SaveResult(result)
 		select {
 		case e.resultChan <- WalletResult{Wallet: b.Wallet, Result: result}:
@@ -108,7 +200,7 @@ func (e *Engine) resolveForEvent(event game.PlayEvent) {
 			log.Printf("[bet-engine] result channel full for bet %s", b.BetID)
 		}
 		select {
-		case e.balanceChan <- BalanceUpdate{Type: "balance_update", Wallet: WalletHex(b.Wallet), Balance: getUserBalance(b.Wallet)}:
+		case e.balanceChan <- BalanceUpdate{Type: "balance_update", Wallet: WalletHex(b.Wallet), Balance: result.Balance}:
 		default:
 			log.Printf("[bet-engine] balance channel full for bet %s", b.BetID)
 		}
@@ -117,49 +209,111 @@ func (e *Engine) resolveForEvent(event game.PlayEvent) {
 
 func (e *Engine) resolveBet(b *Bet, event game.PlayEvent) *BetResult {
 	result := &BetResult{
-		Type:       "bet_result",
-		BetID:      b.BetID,
-		PlayID:     b.PlayID,
-		GameID:     b.GameID,
-		Coordinate: b.Coordinate,
-		Payout:     0,
-		Result:     "lost",
+		Type:             "bet_result",
+		Outcome:          "loss",
+		Wallet:           WalletHex(b.Wallet),
+		Nonce:            b.Nonce,
+		GameID:           b.GameID,
+		RoundID:          b.RoundID,
+		BetCoordinates:   b.Coordinate,
+		BetRadius:        b.BetRadius,
+		BackendTimestamp: time.Now().Unix(),
+		EventTimestamp:   event.Timestamp.Unix(),
+		AmountBet:        b.Amount,
+		AmountWon:        0,
+		Simulation:       b.Simulation,
+		Balance:          getUserBalance(b.Wallet),
+		IsHistorical:     false,
 	}
 
 	if event.Timestamp.IsZero() {
-		b.Status = "invalid"
-		b.InvalidReason = "play timestamp unavailable"
-		result.Result = "invalid"
-		result.Reason = b.InvalidReason
+		b.Status = "nullified"
+		b.NullificationReason = "play timestamp unavailable"
+		result.Outcome = "nullified"
+		result.NullificationReason = b.NullificationReason
+		result.Balance = addUserBalance(b.Wallet, b.Amount)
 		return result
 	}
 
 	if !b.ReceivedAt.Before(event.Timestamp.Add(-1 * time.Second)) {
-		b.Status = "invalid"
-		b.InvalidReason = "received too late"
-		result.Result = "invalid"
-		result.Reason = b.InvalidReason
+		b.Status = "nullified"
+		b.NullificationReason = "received too late"
+		result.Outcome = "nullified"
+		result.NullificationReason = b.NullificationReason
+		result.Balance = addUserBalance(b.Wallet, b.Amount)
 		return result
 	}
 
 	if event.Location == nil {
-		b.Status = "lost"
-		result.Result = "lost"
-		result.Reason = "play has no location data"
+		b.Status = "nullified"
+		b.NullificationReason = "play has no location data"
+		result.Outcome = "nullified"
+		result.NullificationReason = b.NullificationReason
+		result.Balance = addUserBalance(b.Wallet, b.Amount)
 		return result
 	}
 
-	result.PlayLocation = &game.Coord{X: event.Location.X, Y: event.Location.Y}
 	dx := b.Coordinate.X - event.Location.X
 	dy := b.Coordinate.Y - event.Location.Y
-	result.Distance = math.Sqrt(dx*dx + dy*dy)
-	if result.Distance <= WinRadius {
-		b.Status = "won"
-		result.Result = "won"
-		result.Payout = math.Trunc((b.Amount*2)*100) / 100
+	distance := math.Sqrt(dx*dx + dy*dy)
+	if distance <= b.BetRadius {
+		b.Status = "win"
+		b.Payout = math.Round((b.Amount*2)*100) / 100
+		result.Outcome = "win"
+		result.AmountWon = b.Payout
+		result.Balance = addUserBalance(b.Wallet, b.Payout)
 		return result
 	}
 
-	b.Status = "lost"
+	b.Status = "loss"
+	result.Outcome = "loss"
+	result.Balance = getUserBalance(b.Wallet)
 	return result
+}
+
+func (e *Engine) NextNonce(wallet [20]byte) uint64 {
+	used := make(map[uint64]struct{})
+	for _, b := range e.store.BetsByWallet(wallet) {
+		if b != nil {
+			used[b.Nonce] = struct{}{}
+		}
+	}
+	for nonce := uint64(1); ; nonce++ {
+		if _, ok := used[nonce]; !ok {
+			return nonce
+		}
+	}
+}
+
+func (e *Engine) BetHistory(wallet [20]byte, since time.Time) []SignInAckBetHistory {
+	bets := e.store.BetsByWallet(wallet)
+	sort.SliceStable(bets, func(i, j int) bool {
+		return bets[i].ReceivedAt.After(bets[j].ReceivedAt)
+	})
+	out := make([]SignInAckBetHistory, 0, len(bets))
+	for _, b := range bets {
+		if b == nil || b.ReceivedAt.Before(since) {
+			continue
+		}
+		out = append(out, SignInAckBetHistory{
+			BetID:               b.BetID,
+			GameID:              b.GameID,
+			RoundID:             b.RoundID,
+			Nonce:               b.Nonce,
+			Amount:              b.Amount,
+			X:                   b.Coordinate.X,
+			Y:                   b.Coordinate.Y,
+			BetRadius:           b.BetRadius,
+			MinimumMultiplier:   b.MinimumMultiplier,
+			ActualMultiplier:    b.ActualMultiplier,
+			Status:              b.Status,
+			PlacedAt:            b.ReceivedAt.UTC().Format(time.RFC3339),
+			Simulation:          b.Simulation,
+			Payout:              b.Payout,
+			NullificationReason: b.NullificationReason,
+			RejectionReason:     b.RejectionReason,
+			IsHistorical:        true,
+		})
+	}
+	return out
 }

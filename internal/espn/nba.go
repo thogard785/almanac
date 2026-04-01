@@ -186,12 +186,16 @@ func PollNBAGame(ctx context.Context, client *Client, gameID string, seen map[st
 }
 
 func normalizeNBAGameState(gameID string, summary nbaSummaryResponse) game.GameState {
-	state := game.GameState{GameID: gameID, Sport: string(game.SportNBA), Status: "live"}
+	state := game.GameState{GameID: gameID, Sport: string(game.SportNBA), Status: "in_progress", State: "in", Tracked: true}
 	if len(summary.Header.Competitions) == 0 {
 		return state
 	}
 	comp := summary.Header.Competitions[0]
 	state.Status = normalizeStatus(comp.Status.Type.State, comp.Status.Type.Completed)
+	state.State = comp.Status.Type.State
+	state.Detail = comp.Status.Type.Detail
+	state.StartTime = comp.Date
+	state.Completed = comp.Status.Type.Completed
 	state.Period = formatNBAPeriod(comp.Status.Period)
 	state.Clock = extractClock(comp.Status.Type.Detail)
 	if comp.Situation != nil {
@@ -350,9 +354,12 @@ func normalizeStatus(state string, completed bool) string {
 		return "final"
 	}
 	if state == "pre" {
-		return "pre"
+		return "scheduled"
 	}
-	return "live"
+	if state == "in" {
+		return "in_progress"
+	}
+	return state
 }
 
 func round2(v float64) float64 {

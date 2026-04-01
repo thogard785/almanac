@@ -13,7 +13,7 @@ import (
 
 var (
 	eip712DomainTypeHash = crypto.Keccak256Hash([]byte("EIP712Domain(string name,string version,uint256 chainId)"))
-	betTypeHash          = crypto.Keccak256Hash([]byte("Bet(address wallet,string game_id,string play_id,int256 x,int256 y,uint256 amount,uint256 nonce)"))
+	betTypeHash          = crypto.Keccak256Hash([]byte("Bet(address wallet,string gameId,string roundId,uint256 nonce,uint256 timestamp,uint256 amount,int256 x,int256 y,uint256 betRadius,bool simulation,uint256 minimumMultiplier)"))
 )
 
 func ParseWallet(value string) ([20]byte, error) {
@@ -51,6 +51,7 @@ func ParseSignature(value string) ([]byte, error) {
 	return sig, nil
 }
 
+// Frontend sends EIP-712 signed messages only. Backend handles all on-chain processing (TODO).
 func VerifySignature(b *Bet) error {
 	if b == nil {
 		return fmt.Errorf("missing bet")
@@ -68,6 +69,20 @@ func VerifySignature(b *Bet) error {
 	return nil
 }
 
+func VerifySignInSignature(wallet [20]byte, timestamp int64, simulation bool, signature []byte) error {
+	digest := eip712Digest(domainSeparator(), signInStructHash(wallet, timestamp, simulation))
+	pubKey, err := crypto.SigToPub(digest.Bytes(), signature)
+	if err != nil {
+		return fmt.Errorf("invalid signature")
+	}
+	recovered := crypto.PubkeyToAddress(*pubKey)
+	expected := common.BytesToAddress(wallet[:])
+	if recovered != expected {
+		return fmt.Errorf("invalid signature")
+	}
+	return nil
+}
+
 func domainSeparator() common.Hash {
 	return crypto.Keccak256Hash(
 		eip712DomainTypeHash.Bytes(),
@@ -77,16 +92,29 @@ func domainSeparator() common.Hash {
 	)
 }
 
+func signInStructHash(wallet [20]byte, timestamp int64, simulation bool) common.Hash {
+	return crypto.Keccak256Hash(
+		SignInTypeHash.Bytes(),
+		common.LeftPadBytes(wallet[:], 32),
+		uint256BigBytes(big.NewInt(timestamp)),
+		boolBytes(simulation),
+	)
+}
+
 func betStructHash(b *Bet) common.Hash {
 	return crypto.Keccak256Hash(
 		betTypeHash.Bytes(),
 		common.LeftPadBytes(b.Wallet[:], 32),
 		crypto.Keccak256([]byte(b.GameID)),
-		crypto.Keccak256([]byte(b.PlayID)),
+		crypto.Keccak256([]byte(b.RoundID)),
+		uint256Bytes(b.Nonce),
+		uint256BigBytes(big.NewInt(b.Timestamp)),
+		uint256BigBytes(big.NewInt(int64(math.Round(b.Amount*100)))),
 		int256Bytes(truncateScaled(b.Coordinate.X, 1000)),
 		int256Bytes(truncateScaled(b.Coordinate.Y, 1000)),
-		uint256Bytes(uint64(math.Trunc(b.Amount*100))),
-		uint256Bytes(b.Nonce),
+		uint256BigBytes(big.NewInt(int64(math.Round(b.BetRadius*1000)))),
+		boolBytes(b.Simulation),
+		uint256Bytes(b.MinimumMultiplier),
 	)
 }
 
@@ -95,11 +123,18 @@ func eip712Digest(domainHash, structHash common.Hash) common.Hash {
 }
 
 func truncateScaled(v float64, scale float64) *big.Int {
-	return big.NewInt(int64(math.Trunc(v * scale)))
+	return big.NewInt(int64(math.Round(v * scale)))
 }
 
 func uint256Bytes(v uint64) []byte {
 	return common.BigToHash(new(big.Int).SetUint64(v)).Bytes()
+}
+
+func uint256BigBytes(v *big.Int) []byte {
+	if v == nil {
+		return common.BigToHash(big.NewInt(0)).Bytes()
+	}
+	return common.BigToHash(v).Bytes()
 }
 
 func int256Bytes(v *big.Int) []byte {
@@ -108,4 +143,11 @@ func int256Bytes(v *big.Int) []byte {
 	}
 	mod := new(big.Int).Lsh(big.NewInt(1), 256)
 	return common.BigToHash(new(big.Int).Add(v, mod)).Bytes()
+}
+
+func boolBytes(v bool) []byte {
+	if v {
+		return common.BigToHash(big.NewInt(1)).Bytes()
+	}
+	return common.BigToHash(big.NewInt(0)).Bytes()
 }

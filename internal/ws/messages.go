@@ -2,20 +2,44 @@ package ws
 
 import "github.com/almanac/espn-shots/internal/game"
 
-type IdentifyMessage struct {
-	Type   string `json:"type"`
-	Wallet string `json:"wallet"`
+type SubscribeWalletMessage struct {
+	Type       string `json:"type"`
+	WalletAddr string `json:"wallet_addr"`
+	Wallet     string `json:"wallet"`
+}
+
+type SignInMessage struct {
+	Type       string `json:"type"`
+	Wallet     string `json:"wallet"`
+	Signature  string `json:"signature"`
+	Timestamp  int64  `json:"timestamp"`
+	Simulation bool   `json:"simulation"`
 }
 
 type PlaceBetMessage struct {
-	Type       string     `json:"type"`
-	GameID     string     `json:"game_id"`
-	PlayID     string     `json:"play_id"`
-	Coordinate game.Coord `json:"coordinate"`
-	Amount     float64    `json:"amount"`
-	Wallet     string     `json:"wallet"`
-	Signature  string     `json:"signature"`
-	Nonce      uint64     `json:"nonce"`
+	Type              string  `json:"type"`
+	GameID            string  `json:"gameId"`
+	RoundID           string  `json:"roundId"`
+	Amount            float64 `json:"amount"`
+	Wallet            string  `json:"wallet"`
+	Signature         string  `json:"signature"`
+	Nonce             uint64  `json:"nonce"`
+	Timestamp         int64   `json:"timestamp"`
+	X                 float64 `json:"x"`
+	Y                 float64 `json:"y"`
+	BetRadius         float64 `json:"betRadius"`
+	Simulation        bool    `json:"simulation"`
+	MinimumMultiplier uint64  `json:"minimumMultiplier"`
+}
+
+type PingMessage struct {
+	Type      string `json:"type"`
+	Timestamp int64  `json:"timestamp"`
+}
+
+type PongMessage struct {
+	Type      string `json:"type"`
+	Timestamp int64  `json:"timestamp"`
 }
 
 type GameStateMessage struct {
@@ -33,7 +57,7 @@ type PlayEventMessage struct {
 	Event     any         `json:"event"`
 }
 
-type BetErrorMessage struct {
-	Type   string `json:"type"`
-	Reason string `json:"reason"`
+type ErrorMessage struct {
+	Type    string `json:"type"`
+	Message string `json:"message"`
 }
