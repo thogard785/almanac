@@ -2,206 +2,177 @@ package espn
 
 import (
 	"context"
-	"encoding/json"
 	"fmt"
-	"math"
+
+	"github.com/almanac/espn-shots/internal/game"
 )
 
-// Golf API URLs
 const (
 	GolfScoreboardURL = "https://site.api.espn.com/apis/site/v2/sports/golf/pga/scoreboard"
-	GolfSummaryURLFmt = "https://site.api.espn.com/apis/site/v2/sports/golf/pga/summary?event=%s"
 	GolfPlaysURLFmt   = "https://sports.core.api.espn.com/v2/sports/golf/leagues/pga/events/%s/competitions/%s/plays?limit=1000"
 )
 
-// GolfPlaysResponse is the response from the golf plays endpoint.
-type GolfPlaysResponse struct {
-	Items []GolfPlayItem `json:"items"`
-	Count int            `json:"count"`
+type golfPlaysResponse struct {
+	Items []golfPlay `json:"items"`
 }
 
-// GolfPlayItem represents a single play from the golf API.
-// Note: ESPN golf play-by-play may not have coordinate data.
-// The API returns empty items for tournaments not yet started.
-// For active tournaments, plays contain hole/shot info but location
-// data availability is uncertain — we handle both cases.
-type GolfPlayItem struct {
+type golfPlay struct {
 	ID             string `json:"id"`
 	SequenceNumber string `json:"sequenceNumber"`
 	Text           string `json:"text"`
 	Wallclock      string `json:"wallclock"`
-	ScoringPlay    bool   `json:"scoringPlay"`
 	Period         struct {
-		Number       int    `json:"number"` // hole number
-		DisplayValue string `json:"displayValue"`
+		Number int `json:"number"`
 	} `json:"period"`
-	Type struct {
-		ID   string `json:"id"`
-		Text string `json:"text"`
-	} `json:"type"`
 	Coordinate *struct {
 		X float64 `json:"x"`
 		Y float64 `json:"y"`
 	} `json:"coordinate"`
 	Participants []struct {
-		Type    string `json:"type"`
 		Athlete struct {
 			ID          string `json:"id"`
 			DisplayName string `json:"displayName"`
-			Ref         string `json:"$ref"`
 		} `json:"athlete"`
 	} `json:"participants"`
-	// Golf-specific fields that may be present
 	Shot *struct {
-		Number int `json:"number"`
+		ID     string `json:"id"`
+		Number int    `json:"number"`
 	} `json:"shot"`
+	Round *struct {
+		Number int `json:"number"`
+	} `json:"round"`
 }
 
-// GolfShotEvent represents a golf shot/play event.
-type GolfShotEvent struct {
-	EventID       string  `json:"event_id"`
-	GameID        string  `json:"game_id"` // tournament ID
-	TimestampNS   int64   `json:"timestamp_ns"`
-	ESPNTimestamp string  `json:"espn_timestamp"`
-	Hole          int     `json:"hole"`
-	ShotNumber    int     `json:"shot_number"`
-	PlayerID      string  `json:"player_id"`
-	PlayerName    string  `json:"player_name"`
-	LocationX     float64 `json:"location_x"`
-	LocationY     float64 `json:"location_y"`
-	HasCoords     bool    `json:"has_coords"`
-	Zone          string  `json:"zone"` // hole-based zone if no coords
-	Description   string  `json:"description"`
-	RawPayload    string  `json:"raw_payload"`
-}
-
-// GolfParser handles PGA golf ESPN data.
-type GolfParser struct {
-	client *Client
-}
-
-func NewGolfParser(client *Client) *GolfParser {
-	return &GolfParser{client: client}
-}
-
-// FetchScoreboard returns current golf events/tournaments.
-func (p *GolfParser) FetchScoreboard(ctx context.Context) ([]ScoreboardEvent, error) {
-	resp, err := FetchJSON[ScoreboardResponse](ctx, p.client, GolfScoreboardURL)
+func FetchGolfScoreboard(ctx context.Context, client *Client) ([]string, error) {
+	resp, err := FetchJSON[scoreboardResponse](ctx, client, GolfScoreboardURL)
 	if err != nil {
 		return nil, err
 	}
-	return resp.Events, nil
-}
-
-// FetchGameInfo returns tournament info.
-func (p *GolfParser) FetchGameInfo(ctx context.Context, eventID string) (*GameInfo, error) {
-	// Golf uses the scoreboard since summary may 502
-	events, err := p.FetchScoreboard(ctx)
-	if err != nil {
-		return nil, err
-	}
-	for _, ev := range events {
-		if ev.ID == eventID {
-			info := &GameInfo{
-				GameID:    eventID,
-				Status:    ev.Status.Type.Name,
-				State:     ev.Status.Type.State,
-				Detail:    ev.Status.Type.Detail,
-				Completed: ev.Status.Type.Completed,
-			}
-			if len(ev.Competitions) > 0 {
-				info.StartTime = ev.Date
-			}
-			return info, nil
+	var ids []string
+	for _, ev := range resp.Events {
+		state := ev.Status.Type.State
+		if state == "in" || state == "post" {
+			ids = append(ids, ev.ID)
 		}
 	}
-	return nil, fmt.Errorf("golf event %s not found", eventID)
+	return ids, nil
 }
 
-// FetchShots returns new golf shot events for a tournament.
-func (p *GolfParser) FetchShots(ctx context.Context, eventID string, seen map[string]struct{}) ([]GolfShotEvent, *GameInfo, error) {
-	info, err := p.FetchGameInfo(ctx, eventID)
+func PollGolfGame(ctx context.Context, client *Client, gameID string, seen map[string]struct{}) (game.GameState, []game.PlayEvent, error) {
+	board, err := FetchJSON[scoreboardResponse](ctx, client, GolfScoreboardURL)
 	if err != nil {
-		return nil, nil, err
+		return game.GameState{}, nil, err
 	}
-
-	plays, err := FetchJSON[GolfPlaysResponse](ctx, p.client, fmt.Sprintf(GolfPlaysURLFmt, eventID, eventID))
+	state := normalizeGolfGameState(gameID, board)
+	plays, err := FetchJSON[golfPlaysResponse](ctx, client, fmt.Sprintf(GolfPlaysURLFmt, gameID, gameID))
 	if err != nil {
-		// Golf plays endpoint may return errors for some tournaments
-		return nil, info, nil
+		return state, nil, nil
 	}
-
-	var shots []GolfShotEvent
+	var events []game.PlayEvent
 	for _, play := range plays.Items {
-		if play.ID == "" {
+		playID := golfPlayID(play)
+		if playID == "" {
 			continue
 		}
-		if _, exists := seen[play.ID]; exists {
+		if _, ok := seen[playID]; ok {
 			continue
 		}
-		shot := convertGolfPlay(eventID, play)
-		shots = append(shots, shot)
+		seen[playID] = struct{}{}
+		events = append(events, normalizeGolfPlay(gameID, playID, play))
 	}
-	return shots, info, nil
+	return state, events, nil
 }
 
-func convertGolfPlay(eventID string, play GolfPlayItem) GolfShotEvent {
-	ev := GolfShotEvent{
-		EventID:       play.ID,
-		GameID:        eventID,
-		ESPNTimestamp: play.Wallclock,
-		Hole:          play.Period.Number,
-		Description:   play.Text,
-		RawPayload:    marshalGolfPlay(play),
+func normalizeGolfGameState(gameID string, board scoreboardResponse) game.GameState {
+	state := game.GameState{GameID: gameID, Sport: string(game.SportGolf), Status: "live"}
+	for _, ev := range board.Events {
+		if ev.ID != gameID {
+			continue
+		}
+		state.Status = normalizeStatus(ev.Status.Type.State, ev.Status.Type.Completed)
+		state.Home = ev.ShortName
+		state.Period = stringsTrimSpaceOr(ev.Status.Type.Description, ev.Status.Type.Detail)
+		state.Clock = ""
+		return state
 	}
+	return state
+}
 
+func normalizeGolfPlay(gameID, playID string, play golfPlay) game.PlayEvent {
+	playerName := ""
+	playerID := ""
+	if len(play.Participants) > 0 {
+		playerID = play.Participants[0].Athlete.ID
+		playerName = play.Participants[0].Athlete.DisplayName
+	}
+	data := map[string]any{
+		"player_id":   playerID,
+		"player_name": playerName,
+		"hole":        play.Period.Number,
+		"round":       golfRound(play),
+		"shot_number": golfShotNumber(play),
+		"description": play.Text,
+	}
+	return game.PlayEvent{
+		GameID:    gameID,
+		PlayID:    playID,
+		Sport:     string(game.SportGolf),
+		Timestamp: game.ParseESPNTime(play.Wallclock),
+		Location:  normalizeGolfCoordFromPtr(play.Coordinate),
+		EventData: data,
+	}
+}
+
+func normalizeGolfCoordFromPtr(coord *struct {
+	X float64 `json:"x"`
+	Y float64 `json:"y"`
+}) *game.Coord {
+	if coord == nil {
+		return nil
+	}
+	x, y := coord.X, coord.Y
+	switch {
+	case x >= 0 && x <= 100 && y >= 0 && y <= 100:
+		x *= 5
+		y *= 7
+	case x >= 0 && x <= 500 && y >= 0 && y <= 700:
+		// already normalized
+	default:
+		x = clamp(x, 0, 500)
+		y = clamp(y, 0, 700)
+	}
+	return &game.Coord{X: round2(x), Y: round2(y)}
+}
+
+func golfPlayID(play golfPlay) string {
+	if play.Shot != nil && play.Shot.ID != "" {
+		return play.Shot.ID
+	}
+	if play.ID != "" {
+		return play.ID
+	}
+	return fmt.Sprintf("r%d-h%d-s%d", golfRound(play), play.Period.Number, golfShotNumber(play))
+}
+
+func golfRound(play golfPlay) int {
+	if play.Round != nil {
+		return play.Round.Number
+	}
+	return 0
+}
+
+func golfShotNumber(play golfPlay) int {
 	if play.Shot != nil {
-		ev.ShotNumber = play.Shot.Number
+		return play.Shot.Number
 	}
+	return 0
+}
 
-	if play.Coordinate != nil {
-		ev.LocationX = play.Coordinate.X
-		ev.LocationY = play.Coordinate.Y
-		ev.HasCoords = true
-	}
-
-	// Zone defaults to hole number if no coords
-	if !ev.HasCoords {
-		ev.Zone = fmt.Sprintf("hole_%d", ev.Hole)
-	}
-
-	for _, p := range play.Participants {
-		id := p.Athlete.ID
-		if id == "" {
-			id = athleteIDFromRef(p.Athlete.Ref)
+func stringsTrimSpaceOr(values ...string) string {
+	for _, v := range values {
+		if v != "" {
+			return v
 		}
-		ev.PlayerID = id
-		ev.PlayerName = p.Athlete.DisplayName
-		break
 	}
-
-	return ev
-}
-
-// GolfWinCheck checks if a golf bet wins.
-// If coordinates available: within radius. Otherwise: zone match.
-func GolfWinCheck(predictedX, predictedY float64, predictedZone string, actual GolfShotEvent, radius float64) (won bool, dist float64) {
-	if actual.HasCoords && predictedX != 0 && predictedY != 0 {
-		dx := predictedX - actual.LocationX
-		dy := predictedY - actual.LocationY
-		dist = math.Sqrt(dx*dx + dy*dy)
-		return dist <= radius, dist
-	}
-	if predictedZone != "" && actual.Zone != "" {
-		return predictedZone == actual.Zone, 0
-	}
-	return false, 0
-}
-
-func marshalGolfPlay(play GolfPlayItem) string {
-	payload, err := json.Marshal(play)
-	if err != nil {
-		return "{}"
-	}
-	return string(payload)
+	return ""
 }

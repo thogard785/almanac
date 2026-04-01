@@ -5,614 +5,364 @@ import (
 	"encoding/json"
 	"fmt"
 	"math"
-	"regexp"
 	"sort"
 	"strconv"
 	"strings"
+
+	"github.com/almanac/espn-shots/internal/game"
 )
 
-// NBA API URLs
 const (
 	NBAScoreboardURL = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard"
 	NBASummaryURLFmt = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=%s"
-	NBAPlaysURLFmt   = "https://sports.core.api.espn.com/v2/sports/basketball/nba/events/%s/competitions/%s/plays?limit=1000"
+	NBAPlaysURLFmt   = "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/%s/competitions/%s/plays?limit=1000"
 )
 
-// --- Scoreboard types ---
-
-type ScoreboardResponse struct {
-	Events []ScoreboardEvent `json:"events"`
+type scoreboardResponse struct {
+	Events []scoreboardEvent `json:"events"`
 }
 
-type ScoreboardEvent struct {
+type scoreboardEvent struct {
 	ID           string                  `json:"id"`
 	Date         string                  `json:"date"`
 	Name         string                  `json:"name"`
 	ShortName    string                  `json:"shortName"`
-	Competitions []ScoreboardCompetition `json:"competitions"`
-	Status       ScoreboardStatus        `json:"status"`
+	Competitions []scoreboardCompetition `json:"competitions"`
+	Status       scoreboardStatus        `json:"status"`
 }
 
-type ScoreboardCompetition struct {
-	ID          string                 `json:"id"`
-	Competitors []ScoreboardCompetitor `json:"competitors"`
-	Status      ScoreboardStatus       `json:"status"`
+type scoreboardCompetition struct {
+	Competitors []scoreboardCompetitor `json:"competitors"`
+	Status      scoreboardStatus       `json:"status"`
 }
 
-type ScoreboardCompetitor struct {
-	ID       string `json:"id"`
+type scoreboardCompetitor struct {
 	HomeAway string `json:"homeAway"`
 	Score    string `json:"score"`
 	Team     struct {
-		ID           string `json:"id"`
 		Abbreviation string `json:"abbreviation"`
-		DisplayName  string `json:"displayName"`
 	} `json:"team"`
 }
 
-type ScoreboardStatus struct {
-	Type ScoreboardStatusType `json:"type"`
+type scoreboardStatus struct {
+	Type scoreboardStatusType `json:"type"`
 }
 
-type ScoreboardStatusType struct {
+type scoreboardStatusType struct {
 	Name        string `json:"name"`
 	State       string `json:"state"`
-	Description string `json:"description"`
 	Detail      string `json:"detail"`
+	Description string `json:"description"`
 	Completed   bool   `json:"completed"`
 }
 
-// --- Summary types ---
-
-type SummaryResponse struct {
-	Header   SummaryHeader   `json:"header"`
-	Boxscore SummaryBoxscore `json:"boxscore"`
+type nbaSummaryResponse struct {
+	Header struct {
+		Competitions []struct {
+			Date   string `json:"date"`
+			Status struct {
+				Type struct {
+					Name        string `json:"name"`
+					State       string `json:"state"`
+					Detail      string `json:"detail"`
+					Description string `json:"description"`
+					Completed   bool   `json:"completed"`
+				} `json:"type"`
+				Period int `json:"period"`
+			} `json:"status"`
+			Competitors []struct {
+				HomeAway string `json:"homeAway"`
+				Score    string `json:"score"`
+				Team     struct {
+					ID           string `json:"id"`
+					Abbreviation string `json:"abbreviation"`
+				} `json:"team"`
+			} `json:"competitors"`
+			Situation *struct {
+				Possession string `json:"possession"`
+			} `json:"situation"`
+		} `json:"competitions"`
+	} `json:"header"`
+	Boxscore struct {
+		Players []struct {
+			Team struct {
+				Abbreviation string `json:"abbreviation"`
+			} `json:"team"`
+			Statistics []struct {
+				Athletes []struct {
+					Athlete struct {
+						ID          string `json:"id"`
+						DisplayName string `json:"displayName"`
+					} `json:"athlete"`
+				} `json:"athletes"`
+			} `json:"statistics"`
+		} `json:"players"`
+	} `json:"boxscore"`
 }
 
-type SummaryHeader struct {
-	Competitions []SummaryCompetition `json:"competitions"`
+type nbaPlaysResponse struct {
+	Items []nbaPlay `json:"items"`
 }
 
-type SummaryCompetition struct {
-	Date        string              `json:"date"`
-	Status      SummaryStatus       `json:"status"`
-	Competitors []SummaryCompetitor `json:"competitors"`
-}
-
-type SummaryStatus struct {
-	Type SummaryStatusType `json:"type"`
-}
-
-type SummaryStatusType struct {
-	Name        string `json:"name"`
-	State       string `json:"state"`
-	Description string `json:"description"`
-	Detail      string `json:"detail"`
-	Completed   bool   `json:"completed"`
-}
-
-type SummaryCompetitor struct {
-	ID       string `json:"id"`
-	HomeAway string `json:"homeAway"`
-	Score    string `json:"score"`
-	Team     struct {
-		ID           string `json:"id"`
-		Abbreviation string `json:"abbreviation"`
-		DisplayName  string `json:"displayName"`
-	} `json:"team"`
-}
-
-type SummaryBoxscore struct {
-	Players []SummaryPlayersTeam `json:"players"`
-}
-
-type SummaryPlayersTeam struct {
-	Team struct {
-		ID           string `json:"id"`
-		Abbreviation string `json:"abbreviation"`
-	} `json:"team"`
-	Statistics []SummaryStatCategory `json:"statistics"`
-}
-
-type SummaryStatCategory struct {
-	Athletes []SummaryStatAthlete `json:"athletes"`
-}
-
-type SummaryStatAthlete struct {
-	Athlete struct {
-		ID          string `json:"id"`
-		DisplayName string `json:"displayName"`
-	} `json:"athlete"`
-}
-
-// --- Plays types ---
-
-type PlaysResponse struct {
-	Items []PlayItem `json:"items"`
-	Count int        `json:"count"`
-}
-
-type PlayItem struct {
+type nbaPlay struct {
 	ID              string `json:"id"`
 	SequenceNumber  string `json:"sequenceNumber"`
 	Text            string `json:"text"`
-	ShortText       string `json:"shortText"`
 	Wallclock       string `json:"wallclock"`
 	ShootingPlay    bool   `json:"shootingPlay"`
 	ScoringPlay     bool   `json:"scoringPlay"`
 	PointsAttempted int    `json:"pointsAttempted"`
 	Clock           struct {
-		Value        float64 `json:"value"`
-		DisplayValue string  `json:"displayValue"`
+		DisplayValue string `json:"displayValue"`
 	} `json:"clock"`
 	Period struct {
-		Number       int    `json:"number"`
-		DisplayValue string `json:"displayValue"`
+		Number int `json:"number"`
 	} `json:"period"`
 	Type struct {
-		ID   string `json:"id"`
 		Text string `json:"text"`
 	} `json:"type"`
 	Coordinate *struct {
 		X float64 `json:"x"`
 		Y float64 `json:"y"`
 	} `json:"coordinate"`
-	Participants []PlayParticipant `json:"participants"`
-	Team         *struct {
+	Participants []struct {
+		Type    string `json:"type"`
+		Athlete struct {
+			ID          string `json:"id"`
+			DisplayName string `json:"displayName"`
+			Ref         string `json:"$ref"`
+		} `json:"athlete"`
+	} `json:"participants"`
+	Team *struct {
 		ID           string `json:"id"`
 		Abbreviation string `json:"abbreviation"`
 	} `json:"team"`
 }
 
-type PlayParticipant struct {
-	Type    string `json:"type"`
-	Order   int    `json:"order"`
-	Athlete struct {
-		ID          string `json:"id"`
-		DisplayName string `json:"displayName"`
-		Ref         string `json:"$ref"`
-	} `json:"athlete"`
-}
-
-// --- ShotEvent preserves V1 format ---
-
-type ShotEvent struct {
-	Nonce         int64   `json:"nonce"`
-	EventID       string  `json:"event_id"`
-	GameID        string  `json:"game_id"`
-	TimestampNS   int64   `json:"timestamp_ns"`
-	ESPNTimestamp string  `json:"espn_timestamp"`
-	Quarter       int     `json:"quarter"`
-	GameClock     string  `json:"game_clock"`
-	GameClockSecs int     `json:"game_clock_secs"`
-	PlayerID      string  `json:"player_id"`
-	PlayerName    string  `json:"player_name"`
-	Team          string  `json:"team"`
-	Made          bool    `json:"made"`
-	ShotType      string  `json:"shot_type"`
-	LocationX     float64 `json:"location_x"`
-	LocationY     float64 `json:"location_y"`
-	LocationZone  string  `json:"location_zone"`
-	Description   string  `json:"description"`
-	RawPayload    string  `json:"raw_payload"`
-}
-
-// ShotTypeLabel returns human-readable shot type.
-func (s ShotEvent) ShotTypeLabel() string {
-	switch s.ShotType {
-	case "3pt":
-		return "3PT"
-	case "2pt":
-		return "2PT"
-	case "free_throw":
-		return "FT"
-	default:
-		return s.ShotType
-	}
-}
-
-// --- NBA Parser ---
-
-type NBAParser struct {
-	client *Client
-}
-
-func NewNBAParser(client *Client) *NBAParser {
-	return &NBAParser{client: client}
-}
-
-// FetchScoreboard returns all games on today's NBA scoreboard.
-func (p *NBAParser) FetchScoreboard(ctx context.Context) ([]ScoreboardEvent, error) {
-	resp, err := FetchJSON[ScoreboardResponse](ctx, p.client, NBAScoreboardURL)
+func FetchNBAScoreboard(ctx context.Context, client *Client) ([]string, error) {
+	resp, err := FetchJSON[scoreboardResponse](ctx, client, NBAScoreboardURL)
 	if err != nil {
 		return nil, err
 	}
-	return resp.Events, nil
-}
-
-// GameInfo holds metadata from the summary endpoint.
-type GameInfo struct {
-	GameID    string
-	StartTime string
-	Status    string
-	State     string
-	Detail    string
-	Completed bool
-	HomeTeam  string
-	AwayTeam  string
-	HomeScore string
-	AwayScore string
-}
-
-// FetchGameInfo returns metadata for a game.
-func (p *NBAParser) FetchGameInfo(ctx context.Context, gameID string) (*GameInfo, error) {
-	summary, err := FetchJSON[SummaryResponse](ctx, p.client, fmt.Sprintf(NBASummaryURLFmt, gameID))
-	if err != nil {
-		return nil, err
-	}
-	if len(summary.Header.Competitions) == 0 {
-		return nil, fmt.Errorf("no competitions in summary for %s", gameID)
-	}
-	comp := summary.Header.Competitions[0]
-	info := &GameInfo{
-		GameID:    gameID,
-		StartTime: comp.Date,
-		Status:    comp.Status.Type.Name,
-		State:     comp.Status.Type.State,
-		Detail:    comp.Status.Type.Detail,
-		Completed: comp.Status.Type.Completed,
-	}
-	for _, c := range comp.Competitors {
-		if c.HomeAway == "home" {
-			info.HomeTeam = c.Team.Abbreviation
-			info.HomeScore = c.Score
-		} else {
-			info.AwayTeam = c.Team.Abbreviation
-			info.AwayScore = c.Score
+	var ids []string
+	for _, ev := range resp.Events {
+		state := ev.Status.Type.State
+		if state == "in" || state == "post" {
+			ids = append(ids, ev.ID)
 		}
 	}
-	return info, nil
+	return ids, nil
 }
 
-// FetchShots returns new shot events for a game. The seen map tracks already-processed play IDs.
-func (p *NBAParser) FetchShots(ctx context.Context, gameID string, seen map[string]struct{}) ([]ShotEvent, *GameInfo, error) {
-	summary, err := FetchJSON[SummaryResponse](ctx, p.client, fmt.Sprintf(NBASummaryURLFmt, gameID))
+func PollNBAGame(ctx context.Context, client *Client, gameID string, seen map[string]struct{}) (game.GameState, []game.PlayEvent, error) {
+	summary, err := FetchJSON[nbaSummaryResponse](ctx, client, fmt.Sprintf(NBASummaryURLFmt, gameID))
 	if err != nil {
-		return nil, nil, fmt.Errorf("fetch summary: %w", err)
+		return game.GameState{}, nil, err
 	}
-	plays, err := FetchJSON[PlaysResponse](ctx, p.client, fmt.Sprintf(NBAPlaysURLFmt, gameID, gameID))
+	plays, err := FetchJSON[nbaPlaysResponse](ctx, client, fmt.Sprintf(NBAPlaysURLFmt, gameID, gameID))
 	if err != nil {
-		return nil, nil, fmt.Errorf("fetch plays: %w", err)
+		return game.GameState{}, nil, err
 	}
+	state := normalizeNBAGameState(gameID, summary)
+	playerMap, playerTeamMap := nbaPlayerMaps(summary)
 
-	playerMap := buildPlayerMap(&summary)
-	playerNameToID := buildPlayerNameToIDMap(&summary)
-	teamMap := buildTeamMap(&summary)
-	playerTeamMap := buildPlayerTeamMap(&summary)
-
-	// Sort by sequence
-	ordered := make([]PlayItem, len(plays.Items))
-	copy(ordered, plays.Items)
+	ordered := append([]nbaPlay(nil), plays.Items...)
 	sort.SliceStable(ordered, func(i, j int) bool {
-		return playSortKey(ordered[i]) < playSortKey(ordered[j])
+		return sequenceKey(ordered[i].SequenceNumber, ordered[i].ID) < sequenceKey(ordered[j].SequenceNumber, ordered[j].ID)
 	})
 
-	var info *GameInfo
-	if len(summary.Header.Competitions) > 0 {
-		comp := summary.Header.Competitions[0]
-		info = &GameInfo{
-			GameID:    gameID,
-			StartTime: comp.Date,
-			Status:    comp.Status.Type.Name,
-			State:     comp.Status.Type.State,
-			Detail:    comp.Status.Type.Detail,
-			Completed: comp.Status.Type.Completed,
-		}
-		for _, c := range comp.Competitors {
-			if c.HomeAway == "home" {
-				info.HomeTeam = c.Team.Abbreviation
-				info.HomeScore = c.Score
-			} else {
-				info.AwayTeam = c.Team.Abbreviation
-				info.AwayScore = c.Score
-			}
-		}
-	}
-
-	var shots []ShotEvent
+	var events []game.PlayEvent
 	for _, play := range ordered {
 		if !play.ShootingPlay || play.ID == "" {
 			continue
 		}
-		if _, exists := seen[play.ID]; exists {
+		if _, ok := seen[play.ID]; ok {
 			continue
 		}
-		shot := convertNBAPlay(gameID, play, playerMap, playerNameToID, teamMap, playerTeamMap)
-		shots = append(shots, shot)
+		seen[play.ID] = struct{}{}
+		events = append(events, normalizeNBAPlay(gameID, play, playerMap, playerTeamMap))
 	}
-	return shots, info, nil
+	return state, events, nil
 }
 
-func convertNBAPlay(gameID string, play PlayItem, playerMap, playerNameToID, teamMap, playerTeamMap map[string]string) ShotEvent {
-	playerID, playerName := extractShooter(play, playerMap, playerNameToID)
-	shotType := inferShotType(play)
-	team := teamAbbreviation(play, teamMap, playerTeamMap, playerID)
-	locationX, locationY := 0.0, 0.0
-	if play.Coordinate != nil {
-		locationX = play.Coordinate.X
-		locationY = play.Coordinate.Y
-	}
-	zone := inferLocationZone(locationX, locationY, shotType)
-	if play.Coordinate == nil {
-		zone = "missing"
-	} else if isInvalidCoordinate(play.Coordinate.X, play.Coordinate.Y) {
-		if shotType == "free_throw" {
-			// ESPN uses sentinel coordinates for free throws; normalize them back to the
-			// documented 0,0 placeholder so downstream renderers do not fling markers off-court.
-			locationX = 0
-			locationY = 0
-			zone = "free_throw"
-		} else {
-			zone = "invalid"
-		}
-	}
-
-	return ShotEvent{
-		EventID:       play.ID,
-		GameID:        gameID,
-		ESPNTimestamp: play.Wallclock,
-		Quarter:       play.Period.Number,
-		GameClock:     play.Clock.DisplayValue,
-		GameClockSecs: parseGameClockSeconds(play.Clock.DisplayValue),
-		PlayerID:      playerID,
-		PlayerName:    playerName,
-		Team:          team,
-		Made:          play.ScoringPlay,
-		ShotType:      shotType,
-		LocationX:     locationX,
-		LocationY:     locationY,
-		LocationZone:  zone,
-		Description:   play.Text,
-		RawPayload:    marshalRawPlay(play),
-	}
-}
-
-// --- Helper functions (ported from V1 parser.go) ---
-
-var athleteRefIDPattern = regexp.MustCompile(`/athletes/(\d+)`)
-
-func buildPlayerMap(summary *SummaryResponse) map[string]string {
-	players := make(map[string]string)
-	for _, team := range summary.Boxscore.Players {
-		for _, category := range team.Statistics {
-			for _, athlete := range category.Athletes {
-				if athlete.Athlete.ID != "" && athlete.Athlete.DisplayName != "" {
-					players[athlete.Athlete.ID] = athlete.Athlete.DisplayName
-				}
-			}
-		}
-	}
-	return players
-}
-
-func buildPlayerNameToIDMap(summary *SummaryResponse) map[string]string {
-	nameToID := make(map[string]string)
-	for _, team := range summary.Boxscore.Players {
-		for _, category := range team.Statistics {
-			for _, athlete := range category.Athletes {
-				if athlete.Athlete.ID != "" && athlete.Athlete.DisplayName != "" {
-					nameToID[normalizeName(athlete.Athlete.DisplayName)] = athlete.Athlete.ID
-				}
-			}
-		}
-	}
-	return nameToID
-}
-
-func buildTeamMap(summary *SummaryResponse) map[string]string {
-	teams := make(map[string]string)
+func normalizeNBAGameState(gameID string, summary nbaSummaryResponse) game.GameState {
+	state := game.GameState{GameID: gameID, Sport: string(game.SportNBA), Status: "live"}
 	if len(summary.Header.Competitions) == 0 {
-		return teams
+		return state
 	}
-	for _, competitor := range summary.Header.Competitions[0].Competitors {
-		id := competitor.Team.ID
-		if id == "" {
-			id = competitor.ID
-		}
-		abbr := competitor.Team.Abbreviation
-		if id != "" && abbr != "" {
-			teams[id] = abbr
+	comp := summary.Header.Competitions[0]
+	state.Status = normalizeStatus(comp.Status.Type.State, comp.Status.Type.Completed)
+	state.Period = formatNBAPeriod(comp.Status.Period)
+	state.Clock = extractClock(comp.Status.Type.Detail)
+	if comp.Situation != nil {
+		state.Possession = comp.Situation.Possession
+	}
+	for _, competitor := range comp.Competitors {
+		if competitor.HomeAway == "home" {
+			state.Home = competitor.Team.Abbreviation
+			state.HomeScore = game.ParseScoreInt(competitor.Score)
+		} else {
+			state.Away = competitor.Team.Abbreviation
+			state.AwayScore = game.ParseScoreInt(competitor.Score)
 		}
 	}
-	return teams
+	return state
 }
 
-func buildPlayerTeamMap(summary *SummaryResponse) map[string]string {
-	playerTeams := make(map[string]string)
+func normalizeNBAPlay(gameID string, play nbaPlay, playerMap, playerTeamMap map[string]string) game.PlayEvent {
+	playerID, playerName := nbaExtractShooter(play, playerMap)
+	location := normalizeNBACoordFromPtr(play.Coordinate)
+	data := map[string]any{
+		"player_id":   playerID,
+		"player_name": playerName,
+		"team":        nbaTeamAbbreviation(play, playerTeamMap, playerID),
+		"made":        play.ScoringPlay,
+		"shot_type":   nbaShotType(play),
+		"description": play.Text,
+		"period":      formatNBAPeriod(play.Period.Number),
+		"clock":       play.Clock.DisplayValue,
+	}
+	return game.PlayEvent{
+		GameID:    gameID,
+		PlayID:    play.ID,
+		Sport:     string(game.SportNBA),
+		Timestamp: game.ParseESPNTime(play.Wallclock),
+		Location:  location,
+		EventData: data,
+	}
+}
+
+func normalizeNBACoordFromPtr(coord *struct {
+	X float64 `json:"x"`
+	Y float64 `json:"y"`
+}) *game.Coord {
+	if coord == nil {
+		return nil
+	}
+	if coord.X <= -1000000 || coord.Y <= -1000000 || math.Abs(coord.X) > 1000000 || math.Abs(coord.Y) > 1000000 {
+		return nil
+	}
+	return &game.Coord{X: round2(coord.X * 10), Y: round2(coord.Y * (470.0 / 30.0))}
+}
+
+func nbaPlayerMaps(summary nbaSummaryResponse) (map[string]string, map[string]string) {
+	players := make(map[string]string)
+	teams := make(map[string]string)
 	for _, team := range summary.Boxscore.Players {
 		abbr := team.Team.Abbreviation
-		for _, category := range team.Statistics {
-			for _, athlete := range category.Athletes {
-				if athlete.Athlete.ID != "" && abbr != "" {
-					playerTeams[athlete.Athlete.ID] = abbr
+		for _, stat := range team.Statistics {
+			for _, athlete := range stat.Athletes {
+				id := athlete.Athlete.ID
+				if id == "" {
+					continue
 				}
+				players[id] = athlete.Athlete.DisplayName
+				teams[id] = abbr
 			}
 		}
 	}
-	return playerTeams
+	return players, teams
 }
 
-func parseGameClockSeconds(display string) int {
-	display = strings.TrimSpace(display)
-	if display == "" {
-		return 0
+func nbaExtractShooter(play nbaPlay, playerMap map[string]string) (string, string) {
+	for _, participant := range play.Participants {
+		if participant.Type != "shooter" && participant.Type != "athlete" {
+			continue
+		}
+		id := participant.Athlete.ID
+		name := participant.Athlete.DisplayName
+		if name == "" {
+			name = playerMap[id]
+		}
+		return id, name
 	}
-	if strings.Contains(display, ":") {
-		parts := strings.SplitN(display, ":", 2)
-		mins, _ := strconv.Atoi(parts[0])
-		secs, _ := strconv.Atoi(parts[1])
-		return mins*60 + secs
+	text := play.Text
+	if idx := strings.Index(text, " makes "); idx > 0 {
+		return "", strings.TrimSpace(text[:idx])
 	}
-	value, _ := strconv.ParseFloat(display, 64)
-	return int(value)
+	if idx := strings.Index(text, " misses "); idx > 0 {
+		return "", strings.TrimSpace(text[:idx])
+	}
+	return "", ""
 }
 
-func inferShotType(play PlayItem) string {
+func nbaShotType(play nbaPlay) string {
 	text := strings.ToLower(play.Text + " " + play.Type.Text)
 	switch {
 	case strings.Contains(text, "free throw"):
 		return "free_throw"
 	case play.PointsAttempted == 3:
-		return "3pt"
-	case strings.Contains(text, "three point"), strings.Contains(text, "three-pointer"),
-		strings.Contains(text, "3-point"), strings.Contains(text, "3pt"):
-		return "3pt"
+		return "3pt jump shot"
+	case strings.Contains(text, "3-point") || strings.Contains(text, "three point"):
+		return "3pt jump shot"
 	default:
-		return "2pt"
+		return "2pt shot"
 	}
 }
 
-func inferLocationZone(x, y float64, shotType string) string {
-	if shotType == "free_throw" {
-		return "free_throw"
-	}
-	if isInvalidCoordinate(x, y) {
-		return "invalid"
-	}
-	dx := x - 25.0
-	dy := y - 1.5
-	dist := math.Sqrt(dx*dx + dy*dy)
-	if y <= 4 && math.Abs(dx) <= 4 {
-		return "restricted_area"
-	}
-	if y <= 10 && math.Abs(dx) <= 8 {
-		return "paint"
-	}
-	if shotType == "3pt" {
-		side := "center"
-		if dx <= -8 {
-			side = "left"
-		} else if dx >= 8 {
-			side = "right"
-		}
-		if y <= 6 {
-			return side + "_corner_3"
-		}
-		return side + "_arc_3"
-	}
-	if dist >= 18 {
-		return "deep_mid_range"
-	}
-	if dx <= -8 {
-		return "left_mid_range"
-	}
-	if dx >= 8 {
-		return "right_mid_range"
-	}
-	return "center_mid_range"
-}
-
-func isInvalidCoordinate(x, y float64) bool {
-	return x <= -1000000 || y <= -1000000 || math.Abs(x) > 1000000 || math.Abs(y) > 1000000
-}
-
-func extractShooter(play PlayItem, playerMap, playerNameToID map[string]string) (string, string) {
-	if name := extractPlayerNameFromText(play.Text); name != "" {
-		if id := playerNameToID[normalizeName(name)]; id != "" {
-			return id, name
-		}
-		return "", name
-	}
-	for _, participant := range play.Participants {
-		if participant.Type == "shooter" {
-			id := participant.Athlete.ID
-			if id == "" {
-				id = athleteIDFromRef(participant.Athlete.Ref)
-			}
-			name := participant.Athlete.DisplayName
-			if name == "" && id != "" {
-				name = playerMap[id]
-			}
-			return id, name
-		}
-	}
-	for _, participant := range play.Participants {
-		id := participant.Athlete.ID
-		if id == "" {
-			id = athleteIDFromRef(participant.Athlete.Ref)
-		}
-		name := participant.Athlete.DisplayName
-		if name == "" && id != "" {
-			name = playerMap[id]
-		}
-		if id != "" || name != "" {
-			return id, name
-		}
-	}
-	return "", ""
-}
-
-func athleteIDFromRef(ref string) string {
-	matches := athleteRefIDPattern.FindStringSubmatch(ref)
-	if len(matches) == 2 {
-		return matches[1]
-	}
-	return ""
-}
-
-func extractPlayerNameFromText(text string) string {
-	if idx := strings.Index(text, " makes "); idx > 0 {
-		return strings.TrimSpace(text[:idx])
-	}
-	if idx := strings.Index(text, " misses "); idx > 0 {
-		return strings.TrimSpace(text[:idx])
-	}
-	if idx := strings.Index(text, " blocks "); idx > 0 {
-		rest := text[idx+len(" blocks "):]
-		if end := strings.Index(rest, "'s "); end > 0 {
-			return strings.TrimSpace(rest[:end])
-		}
-	}
-	return ""
-}
-
-func normalizeName(name string) string {
-	return strings.ToLower(strings.TrimSpace(name))
-}
-
-func teamAbbreviation(play PlayItem, teamMap, playerTeamMap map[string]string, playerID string) string {
+func nbaTeamAbbreviation(play nbaPlay, playerTeamMap map[string]string, playerID string) string {
 	if play.Team != nil && play.Team.Abbreviation != "" {
 		return play.Team.Abbreviation
 	}
-	if play.Team != nil && play.Team.ID != "" {
-		if abbr := teamMap[play.Team.ID]; abbr != "" {
-			return abbr
-		}
+	return playerTeamMap[playerID]
+}
+
+func formatNBAPeriod(period int) string {
+	if period <= 4 {
+		return fmt.Sprintf("Q%d", period)
 	}
-	if playerID != "" {
-		if abbr := playerTeamMap[playerID]; abbr != "" {
-			return abbr
+	if period == 5 {
+		return "OT"
+	}
+	if period > 5 {
+		return fmt.Sprintf("%dOT", period-4)
+	}
+	return ""
+}
+
+func extractClock(detail string) string {
+	if idx := strings.LastIndex(detail, " "); idx >= 0 && strings.Contains(detail[:idx], "Q") {
+		return strings.TrimSpace(detail[idx+1:])
+	}
+	parts := strings.Fields(detail)
+	for _, part := range parts {
+		if strings.Contains(part, ":") {
+			return part
 		}
 	}
 	return ""
 }
 
-func marshalRawPlay(play PlayItem) string {
-	payload, err := json.Marshal(play)
-	if err != nil {
-		return "{}"
-	}
-	return string(payload)
-}
-
-func playSortKey(play PlayItem) int {
-	if play.SequenceNumber != "" {
-		if n, err := strconv.Atoi(play.SequenceNumber); err == nil {
+func sequenceKey(seq, fallback string) int {
+	if seq != "" {
+		if n, err := strconv.Atoi(seq); err == nil {
 			return n
 		}
 	}
-	if n, err := strconv.Atoi(play.ID); err == nil {
+	if n, err := strconv.Atoi(fallback); err == nil {
 		return n
 	}
 	return 0
+}
+
+func normalizeStatus(state string, completed bool) string {
+	if completed || state == "post" {
+		return "final"
+	}
+	if state == "pre" {
+		return "pre"
+	}
+	return "live"
+}
+
+func round2(v float64) float64 {
+	return math.Round(v*100) / 100
+}
+
+func marshalRaw(value any) string {
+	data, err := json.Marshal(value)
+	if err != nil {
+		return "{}"
+	}
+	return string(data)
 }

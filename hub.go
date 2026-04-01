@@ -1,7 +1,6 @@
 package main
 
 import (
-	"context"
 	"encoding/json"
 	"log"
 	"net/http"
@@ -18,8 +17,6 @@ var upgrader = websocket.Upgrader{
 		if origin == "" {
 			return true
 		}
-		// Tighten the WS origin policy to the actual deployed frontend and local dev
-		// instead of accepting arbitrary browser origins.
 		return strings.HasPrefix(origin, "https://zeroday.trade") ||
 			strings.HasPrefix(origin, "http://localhost") ||
 			strings.HasPrefix(origin, "http://127.0.0.1")
@@ -34,101 +31,67 @@ const (
 
 type Hub struct {
 	mu      sync.RWMutex
-	clients map[*websocket.Conn]*sync.Mutex // conn → write mutex
-}
-
-type WSHooks struct {
-	OnConnect    func(*websocket.Conn)
-	OnDisconnect func(*websocket.Conn)
-	OnMessage    func(*websocket.Conn, []byte)
+	clients map[*websocket.Conn]*sync.Mutex
 }
 
 func NewHub() *Hub {
-	return &Hub{
-		clients: make(map[*websocket.Conn]*sync.Mutex),
-	}
+	return &Hub{clients: make(map[*websocket.Conn]*sync.Mutex)}
 }
 
 func (h *Hub) Register(conn *websocket.Conn) {
 	h.mu.Lock()
 	h.clients[conn] = &sync.Mutex{}
 	h.mu.Unlock()
-	log.Printf("[ws] client connected, total: %d", h.Count())
 }
 
 func (h *Hub) Unregister(conn *websocket.Conn) {
 	h.mu.Lock()
 	delete(h.clients, conn)
 	h.mu.Unlock()
-	conn.Close()
-	log.Printf("[ws] client disconnected, total: %d", h.Count())
+	_ = conn.Close()
 }
 
-func (h *Hub) Count() int {
-	h.mu.RLock()
-	defer h.mu.RUnlock()
-	return len(h.clients)
-}
-
-// Broadcast sends a JSON message to all connected clients.
-func (h *Hub) Broadcast(msg interface{}) {
+func (h *Hub) Broadcast(msg any) {
 	data, err := json.Marshal(msg)
 	if err != nil {
-		log.Printf("[ws] broadcast marshal error: %v", err)
+		log.Printf("[ws] marshal error: %v", err)
 		return
 	}
 	h.mu.RLock()
 	snapshot := make(map[*websocket.Conn]*sync.Mutex, len(h.clients))
-	for c, wm := range h.clients {
-		snapshot[c] = wm
+	for conn, mu := range h.clients {
+		snapshot[conn] = mu
 	}
 	h.mu.RUnlock()
-
-	for conn, wm := range snapshot {
-		wm.Lock()
+	for conn, mu := range snapshot {
+		mu.Lock()
+		conn.SetWriteDeadline(time.Now().Add(writeWait))
 		err := conn.WriteMessage(websocket.TextMessage, data)
-		wm.Unlock()
+		mu.Unlock()
 		if err != nil {
 			h.Unregister(conn)
 		}
 	}
 }
 
-// RunBroadcastLoop reads from the updates channel and broadcasts to all WS clients.
-func (h *Hub) RunBroadcastLoop(ctx context.Context, updates <-chan interface{}) {
-	for {
-		select {
-		case <-ctx.Done():
-			return
-		case msg, ok := <-updates:
-			if !ok {
-				return
-			}
-			h.Broadcast(msg)
-		}
-	}
-}
-
-// SendTo sends a JSON message to a single client.
-func (h *Hub) SendTo(conn *websocket.Conn, msg interface{}) error {
+func (h *Hub) SendTo(conn *websocket.Conn, msg any) error {
 	data, err := json.Marshal(msg)
 	if err != nil {
 		return err
 	}
 	h.mu.RLock()
-	wm, ok := h.clients[conn]
+	mu, ok := h.clients[conn]
 	h.mu.RUnlock()
 	if !ok {
 		return nil
 	}
-	wm.Lock()
-	err = conn.WriteMessage(websocket.TextMessage, data)
-	wm.Unlock()
-	return err
+	mu.Lock()
+	defer mu.Unlock()
+	conn.SetWriteDeadline(time.Now().Add(writeWait))
+	return conn.WriteMessage(websocket.TextMessage, data)
 }
 
-// HandleWS upgrades an HTTP connection to WebSocket and manages its lifecycle.
-func (h *Hub) HandleWS(hooks WSHooks) http.HandlerFunc {
+func (h *Hub) HandleWS(onConnect func(*websocket.Conn), onDisconnect func(*websocket.Conn), onMessage func(*websocket.Conn, []byte)) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		conn, err := upgrader.Upgrade(w, r, nil)
 		if err != nil {
@@ -136,51 +99,44 @@ func (h *Hub) HandleWS(hooks WSHooks) http.HandlerFunc {
 			return
 		}
 		h.Register(conn)
-
-		if hooks.OnConnect != nil {
-			hooks.OnConnect(conn)
+		if onConnect != nil {
+			onConnect(conn)
 		}
-
-		// Configure pong handler
 		conn.SetReadDeadline(time.Now().Add(pongWait))
 		conn.SetPongHandler(func(string) error {
 			conn.SetReadDeadline(time.Now().Add(pongWait))
 			return nil
 		})
-
-		// Ping ticker goroutine
 		pingDone := make(chan struct{})
 		go func() {
 			ticker := time.NewTicker(pingInterval)
 			defer ticker.Stop()
 			for {
 				select {
+				case <-pingDone:
+					return
 				case <-ticker.C:
 					h.mu.RLock()
-					wm, ok := h.clients[conn]
+					mu, ok := h.clients[conn]
 					h.mu.RUnlock()
 					if !ok {
 						return
 					}
-					wm.Lock()
+					mu.Lock()
 					conn.SetWriteDeadline(time.Now().Add(writeWait))
 					err := conn.WriteMessage(websocket.PingMessage, nil)
-					wm.Unlock()
+					mu.Unlock()
 					if err != nil {
 						return
 					}
-				case <-pingDone:
-					return
 				}
 			}
 		}()
-
-		// Read loop for v2 client messages.
 		go func() {
 			defer func() {
 				close(pingDone)
-				if hooks.OnDisconnect != nil {
-					hooks.OnDisconnect(conn)
+				if onDisconnect != nil {
+					onDisconnect(conn)
 				}
 				h.Unregister(conn)
 			}()
@@ -189,8 +145,8 @@ func (h *Hub) HandleWS(hooks WSHooks) http.HandlerFunc {
 				if err != nil {
 					return
 				}
-				if msgType == websocket.TextMessage && hooks.OnMessage != nil {
-					hooks.OnMessage(conn, payload)
+				if msgType == websocket.TextMessage && onMessage != nil {
+					onMessage(conn, payload)
 				}
 			}
 		}()

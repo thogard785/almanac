@@ -3,17 +3,13 @@ package main
 import (
 	"context"
 	"encoding/json"
-	"errors"
 	"flag"
 	"fmt"
-	"io"
 	"log"
 	"net/http"
 	"os"
 	"os/signal"
 	"sort"
-	"strconv"
-	"strings"
 	"sync"
 	"syscall"
 	"time"
@@ -25,14 +21,6 @@ import (
 	"github.com/gorilla/websocket"
 )
 
-// ErrGameFinal is returned by Tracker.Run when the game reaches final status.
-var ErrGameFinal = errors.New("game final")
-
-const (
-	summaryURLFmt = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=%s"
-	playsURLFmt   = "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/%s/competitions/%s/plays?limit=1000"
-)
-
 func main() {
 	cfg := loadConfig()
 	ctx, stop := signal.NotifyContext(context.Background(), syscall.SIGINT, syscall.SIGTERM)
@@ -40,16 +28,12 @@ func main() {
 
 	app, err := NewApp(cfg)
 	if err != nil {
-		log.Fatalf("init v2 app: %v", err)
+		log.Fatalf("init app: %v", err)
 	}
 	app.Start(ctx)
 
 	mux := http.NewServeMux()
-	wsHandler := app.hub.HandleWS(WSHooks{
-		OnConnect:    app.handleConnect,
-		OnDisconnect: app.handleDisconnect,
-		OnMessage:    app.handleWSMessage,
-	})
+	wsHandler := app.hub.HandleWS(app.handleConnect, app.handleDisconnect, app.handleMessage)
 	mux.HandleFunc("/ws", wsHandler)
 	mux.HandleFunc("/almanac/ws", wsHandler)
 	mux.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
@@ -57,65 +41,43 @@ func main() {
 		_, _ = w.Write([]byte("ok"))
 	})
 
-	wsPort := os.Getenv("WS_PORT")
-	if wsPort == "" {
-		wsPort = "8090"
+	port := os.Getenv("WS_PORT")
+	if port == "" {
+		port = "8090"
 	}
-	srv := &http.Server{
-		Addr:    ":" + wsPort,
-		Handler: mux,
-	}
+	srv := &http.Server{Addr: ":" + port, Handler: mux}
 	go func() {
-		log.Printf("[ws] starting Almanac v2 WebSocket server on :%s", wsPort)
+		log.Printf("[almanac] listening on :%s", port)
 		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
-			log.Printf("[ws] server error: %v", err)
+			log.Printf("[almanac] server error: %v", err)
 		}
 	}()
 
-	log.Printf("[v2] running multi-sport manager poll=%s configured_game=%q", cfg.PollInterval, cfg.GameID)
 	<-ctx.Done()
-
 	app.Stop()
 	shutdownCtx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 	_ = srv.Shutdown(shutdownCtx)
-	log.Printf("shutdown complete")
 }
 
 func loadConfig() Config {
 	var cfg Config
-	flag.StringVar(&cfg.GameID, "game-id", os.Getenv("GAME_ID"), "optional ESPN game ID for preferred initial state")
-	flag.DurationVar(&cfg.PollInterval, "poll-interval", 0, "poll interval, e.g. 3s")
-	flag.StringVar(&cfg.OutputPath, "output", "", "legacy v1 output JSON path (default shots_{gameId}.json)")
+	flag.DurationVar(&cfg.PollInterval, "poll-interval", 3*time.Second, "poll interval")
 	flag.Parse()
-
-	if cfg.GameID == "" && flag.NArg() > 0 {
-		cfg.GameID = flag.Arg(0)
-	}
-	if cfg.PollInterval == 0 {
-		cfg.PollInterval = 3 * time.Second
-	}
-	if cfg.OutputPath == "" {
-		if cfg.GameID != "" {
-			cfg.OutputPath = fmt.Sprintf("shots_%s.json", cfg.GameID)
-		} else {
-			cfg.OutputPath = "shots.json"
-		}
-	}
 	return cfg
 }
 
 type App struct {
-	cfg         Config
-	hub         *Hub
-	betStore    *bet.Store
-	betEngine   *bet.Engine
-	manager     *game.Manager
+	hub      *Hub
+	manager  *espn.Manager
+	betStore *bet.Store
+	bets     *bet.Engine
+
 	persistDone chan struct{}
 
-	subMu      sync.RWMutex
-	gameSubs   map[*websocket.Conn]map[string]struct{}
-	walletSubs map[*websocket.Conn]map[string]struct{}
+	mu          sync.RWMutex
+	connWallets map[*websocket.Conn][20]byte
+	walletConns map[[20]byte]map[*websocket.Conn]struct{}
 }
 
 func NewApp(cfg Config) (*App, error) {
@@ -123,123 +85,151 @@ func NewApp(cfg Config) (*App, error) {
 	if err != nil {
 		return nil, err
 	}
-
+	client := espn.NewClient(350 * time.Millisecond)
 	app := &App{
-		cfg:         cfg,
 		hub:         NewHub(),
 		betStore:    store,
-		betEngine:   bet.NewEngine(store, bet.WinRadii{NBA: 3.0, MLB: 0.75, PGA: 8.0}, 5000),
+		bets:        bet.NewEngine(store),
 		persistDone: make(chan struct{}),
-		gameSubs:    make(map[*websocket.Conn]map[string]struct{}),
-		walletSubs:  make(map[*websocket.Conn]map[string]struct{}),
+		connWallets: make(map[*websocket.Conn][20]byte),
+		walletConns: make(map[[20]byte]map[*websocket.Conn]struct{}),
 	}
-
-	client := espn.NewClient(350 * time.Millisecond)
-	app.manager = game.NewManager(client, cfg.PollInterval, []game.Sport{game.SportNBA, game.SportMLB, game.SportPGA}, app.handleSportEvent)
+	app.manager = espn.NewManager(client, cfg.PollInterval, app.handlePlayEvent)
 	return app, nil
 }
 
 func (a *App) Start(ctx context.Context) {
 	go a.betStore.RunPersistLoop(a.persistDone)
-	go a.betEngine.Run(ctx)
-	go a.manager.Run(ctx)
+	go a.bets.Run(ctx)
+	a.manager.Run(ctx)
 	go a.forwardBetResults(ctx)
-	go a.broadcastGameSnapshots(ctx)
+	go a.forwardBalanceUpdates(ctx)
+	go a.broadcastGameStates(ctx)
 }
 
 func (a *App) Stop() {
 	select {
 	case <-a.persistDone:
-		return
 	default:
 		close(a.persistDone)
 	}
 }
 
 func (a *App) handleConnect(conn *websocket.Conn) {
-	a.subMu.Lock()
-	a.gameSubs[conn] = make(map[string]struct{})
-	a.walletSubs[conn] = make(map[string]struct{})
-	a.subMu.Unlock()
-
-	if msg := a.currentGameStateMessage(); msg != nil {
-		if err := a.hub.SendTo(conn, msg); err != nil {
-			log.Printf("[ws] failed to send initial game_state: %v", err)
-		}
-	}
+	a.sendGameState(conn)
 }
 
 func (a *App) handleDisconnect(conn *websocket.Conn) {
-	a.subMu.Lock()
-	delete(a.gameSubs, conn)
-	delete(a.walletSubs, conn)
-	a.subMu.Unlock()
+	a.mu.Lock()
+	if wallet, ok := a.connWallets[conn]; ok {
+		delete(a.connWallets, conn)
+		if conns := a.walletConns[wallet]; conns != nil {
+			delete(conns, conn)
+			if len(conns) == 0 {
+				delete(a.walletConns, wallet)
+			}
+		}
+	}
+	a.mu.Unlock()
 }
 
-func (a *App) handleWSMessage(conn *websocket.Conn, payload []byte) {
-	var msg ws.IncomingMessage
-	if err := json.Unmarshal(payload, &msg); err != nil {
-		a.sendError(conn, fmt.Sprintf("invalid message: %v", err))
+func (a *App) handleMessage(conn *websocket.Conn, payload []byte) {
+	var envelope struct {
+		Type string `json:"type"`
+	}
+	if err := json.Unmarshal(payload, &envelope); err != nil {
+		a.sendBetError(conn, "invalid message")
 		return
 	}
-
-	switch msg.Type {
-	case ws.MsgTypePlaceBet:
-		if msg.Bet == nil {
-			a.sendError(conn, "missing bet payload")
+	switch envelope.Type {
+	case "identify":
+		var msg ws.IdentifyMessage
+		if err := json.Unmarshal(payload, &msg); err != nil || msg.Wallet == "" {
+			a.sendBetError(conn, "missing wallet")
 			return
 		}
-		if err := a.betEngine.PlaceBet(msg.Bet); err != nil {
-			a.sendError(conn, err.Error())
+		wallet, err := bet.ParseWallet(msg.Wallet)
+		if err != nil {
+			a.sendBetError(conn, "invalid wallet")
 			return
 		}
-		a.subscribeWallet(conn, msg.Bet.WalletAddr)
-		if err := a.hub.SendTo(conn, ws.NewBetReceived(msg.Bet)); err != nil {
-			log.Printf("[ws] send bet_received failed: %v", err)
-		}
-	case ws.MsgTypeSubscribeGame:
-		if msg.GameID == "" {
-			a.sendError(conn, "missing game_id")
+		a.identifyConnection(conn, wallet)
+		_ = a.hub.SendTo(conn, bet.BalanceUpdate{Type: "balance_update", Wallet: bet.WalletHex(wallet), Balance: 0.0})
+	case "place_bet":
+		var msg ws.PlaceBetMessage
+		if err := json.Unmarshal(payload, &msg); err != nil {
+			a.sendBetError(conn, "invalid place_bet payload")
 			return
 		}
-		a.subscribeGame(conn, msg.GameID)
-		if g := a.manager.Game(msg.GameID); g != nil {
-			_ = a.hub.SendTo(conn, ws.NewGameState(g.State()))
-			return
-		}
-		_ = a.hub.SendTo(conn, ws.NewGameState(map[string]interface{}{"game_id": msg.GameID, "tracked": false}))
-	case ws.MsgTypeSubscribeWallet:
-		if msg.WalletAddr == "" {
-			a.sendError(conn, "missing wallet_addr")
-			return
-		}
-		wallet := strings.ToLower(msg.WalletAddr)
-		a.subscribeWallet(conn, wallet)
-		for _, b := range a.betStore.BetsByWallet(wallet) {
-			_ = a.hub.SendTo(conn, ws.NewBetReceived(b))
-		}
-		for _, r := range a.betStore.ResultsByWallet(wallet) {
-			_ = a.hub.SendTo(conn, ws.NewBetResult(r))
-		}
+		a.placeBet(conn, msg)
 	default:
-		a.sendError(conn, fmt.Sprintf("unsupported message type %q", msg.Type))
+		a.sendBetError(conn, fmt.Sprintf("unsupported message type %q", envelope.Type))
 	}
 }
 
-func (a *App) handleSportEvent(event game.SportEvent) {
-	a.betEngine.OnPlayEvent(event)
-
-	payload := map[string]interface{}{
-		"sport":   event.GetSport(),
-		"game_id": event.GetGameID(),
-		"play_id": event.GetEventID(),
-		"event":   event,
+func (a *App) placeBet(conn *websocket.Conn, msg ws.PlaceBetMessage) {
+	wallet, err := bet.ParseWallet(msg.Wallet)
+	if err != nil {
+		a.sendBetError(conn, "invalid wallet")
+		return
 	}
-	a.broadcastToInterestedGameClients(event.GetGameID(), ws.NewPlayEvent(payload))
-
-	if g := a.manager.Game(event.GetGameID()); g != nil {
-		a.broadcastToInterestedGameClients(event.GetGameID(), ws.NewGameState(g.State()))
+	signature, err := bet.ParseSignature(msg.Signature)
+	if err != nil {
+		a.sendBetError(conn, err.Error())
+		return
 	}
+	a.mu.RLock()
+	identified, hasIdentity := a.connWallets[conn]
+	a.mu.RUnlock()
+	if hasIdentity && identified != wallet {
+		a.sendBetError(conn, "wallet does not match identified connection")
+		return
+	}
+	b := &bet.Bet{
+		Wallet:     wallet,
+		GameID:     msg.GameID,
+		PlayID:     msg.PlayID,
+		Coordinate: msg.Coordinate,
+		Amount:     msg.Amount,
+		Nonce:      msg.Nonce,
+		Signature:  signature,
+	}
+	if err := a.bets.PlaceBet(b); err != nil {
+		a.sendBetError(conn, err.Error())
+		return
+	}
+	a.identifyConnection(conn, wallet)
+}
+
+func (a *App) identifyConnection(conn *websocket.Conn, wallet [20]byte) {
+	a.mu.Lock()
+	defer a.mu.Unlock()
+	if prev, ok := a.connWallets[conn]; ok && prev != wallet {
+		if conns := a.walletConns[prev]; conns != nil {
+			delete(conns, conn)
+			if len(conns) == 0 {
+				delete(a.walletConns, prev)
+			}
+		}
+	}
+	a.connWallets[conn] = wallet
+	if a.walletConns[wallet] == nil {
+		a.walletConns[wallet] = make(map[*websocket.Conn]struct{})
+	}
+	a.walletConns[wallet][conn] = struct{}{}
+}
+
+func (a *App) handlePlayEvent(event game.PlayEvent) {
+	a.bets.OnPlayEvent(event)
+	a.hub.Broadcast(ws.PlayEventMessage{
+		Type:      "play_event",
+		GameID:    event.GameID,
+		PlayID:    event.PlayID,
+		Sport:     event.Sport,
+		Timestamp: event.Timestamp.UTC().Format(time.RFC3339),
+		Location:  event.Location,
+		Event:     event.EventData,
+	})
 }
 
 func (a *App) forwardBetResults(ctx context.Context) {
@@ -247,18 +237,31 @@ func (a *App) forwardBetResults(ctx context.Context) {
 		select {
 		case <-ctx.Done():
 			return
-		case result, ok := <-a.betEngine.ResultChan():
-			if !ok {
-				return
-			}
-			a.broadcastToInterestedWalletClients(result.WalletAddr, ws.NewBetResult(result))
+		case item := <-a.bets.ResultChan():
+			a.sendToWallet(item.Wallet, item.Result)
 		}
 	}
 }
 
-func (a *App) broadcastGameSnapshots(ctx context.Context) {
-	ticker := time.NewTicker(15 * time.Second)
+func (a *App) forwardBalanceUpdates(ctx context.Context) {
+	for {
+		select {
+		case <-ctx.Done():
+			return
+		case update := <-a.bets.BalanceChan():
+			wallet, err := bet.ParseWallet(update.Wallet)
+			if err != nil {
+				continue
+			}
+			a.sendToWallet(wallet, update)
+		}
+	}
+}
+
+func (a *App) broadcastGameStates(ctx context.Context) {
+	ticker := time.NewTicker(5 * time.Second)
 	defer ticker.Stop()
+	a.hub.Broadcast(a.currentGameStateMessage())
 	for {
 		select {
 		case <-ctx.Done():
@@ -269,455 +272,34 @@ func (a *App) broadcastGameSnapshots(ctx context.Context) {
 	}
 }
 
-func (a *App) currentGameStateMessage() interface{} {
-	if a.cfg.GameID != "" {
-		if g := a.manager.Game(a.cfg.GameID); g != nil {
-			return ws.NewGameState(g.State())
+func (a *App) currentGameStateMessage() ws.GameStateMessage {
+	games := a.manager.Games()
+	sort.SliceStable(games, func(i, j int) bool {
+		if games[i].Sport == games[j].Sport {
+			return games[i].GameID < games[j].GameID
 		}
-	}
-	return ws.NewGameState(map[string]interface{}{"games": a.manager.Games()})
-}
-
-func (a *App) sendError(conn *websocket.Conn, msg string) {
-	if err := a.hub.SendTo(conn, ws.NewError(msg)); err != nil {
-		log.Printf("[ws] failed to send error: %v", err)
-	}
-}
-
-func (a *App) subscribeGame(conn *websocket.Conn, gameID string) {
-	a.subMu.Lock()
-	defer a.subMu.Unlock()
-	if a.gameSubs[conn] == nil {
-		a.gameSubs[conn] = make(map[string]struct{})
-	}
-	a.gameSubs[conn][gameID] = struct{}{}
-}
-
-func (a *App) subscribeWallet(conn *websocket.Conn, wallet string) {
-	a.subMu.Lock()
-	defer a.subMu.Unlock()
-	if a.walletSubs[conn] == nil {
-		a.walletSubs[conn] = make(map[string]struct{})
-	}
-	a.walletSubs[conn][strings.ToLower(wallet)] = struct{}{}
-}
-
-func (a *App) broadcastToInterestedGameClients(gameID string, msg interface{}) {
-	a.subMu.RLock()
-	defer a.subMu.RUnlock()
-	for conn, subs := range a.gameSubs {
-		if len(subs) == 0 {
-			_ = a.hub.SendTo(conn, msg)
-			continue
-		}
-		if _, ok := subs[gameID]; ok {
-			_ = a.hub.SendTo(conn, msg)
-		}
-	}
-}
-
-func (a *App) broadcastToInterestedWalletClients(wallet string, msg interface{}) {
-	wallet = strings.ToLower(wallet)
-	a.subMu.RLock()
-	defer a.subMu.RUnlock()
-	for conn, subs := range a.walletSubs {
-		if len(subs) == 0 {
-			continue
-		}
-		if _, ok := subs[wallet]; ok {
-			_ = a.hub.SendTo(conn, msg)
-		}
-	}
-}
-
-type Tracker struct {
-	cfg         Config
-	client      *http.Client
-	mu          sync.Mutex
-	store       ShotStore
-	seen        map[string]struct{}
-	nextNonce   int64
-	lastStatus  string
-	broadcastCh chan<- interface{}
-	// cached game state for WS clients on connect
-	gameStateMu sync.RWMutex
-	gameState   *GameState
-}
-
-func NewTracker(cfg Config) (*Tracker, error) {
-	store, nextNonce, seen, err := loadStore(cfg.OutputPath, cfg.GameID)
-	if err != nil {
-		return nil, err
-	}
-	return &Tracker{
-		cfg:       cfg,
-		client:    &http.Client{Timeout: 10 * time.Second},
-		store:     store,
-		seen:      seen,
-		nextNonce: nextNonce,
-	}, nil
-}
-
-// GameStateMessage returns the current game state as a WS message, or nil.
-func (t *Tracker) GameStateMessage() interface{} {
-	t.gameStateMu.RLock()
-	gs := t.gameState
-	t.gameStateMu.RUnlock()
-	if gs == nil {
-		return nil
-	}
-	return WSMessage{Type: "game_state", Data: gs}
-}
-
-func (t *Tracker) Run(ctx context.Context) error {
-	ticker := time.NewTicker(t.cfg.PollInterval)
-	defer ticker.Stop()
-
-	if done, err := t.poll(ctx); err != nil {
-		log.Printf("initial poll failed: %v", err)
-	} else if done {
-		return ErrGameFinal
-	}
-
-	for {
-		select {
-		case <-ctx.Done():
-			return ctx.Err()
-		case <-ticker.C:
-			done, err := t.poll(ctx)
-			if err != nil {
-				log.Printf("poll error: %v", err)
-				continue
-			}
-			if done {
-				return ErrGameFinal
-			}
-		}
-	}
-}
-
-// poll fetches the latest data from ESPN and processes new shots.
-// It returns (true, nil) when the game is final and the poller should stop.
-func (t *Tracker) poll(ctx context.Context) (bool, error) {
-	summary, err := fetchJSON[summaryResponse](ctx, t.client, fmt.Sprintf(summaryURLFmt, t.cfg.GameID))
-	if err != nil {
-		return false, fmt.Errorf("fetch summary: %w", err)
-	}
-	plays, err := fetchJSON[playsResponse](ctx, t.client, fmt.Sprintf(playsURLFmt, t.cfg.GameID, t.cfg.GameID))
-	if err != nil {
-		return false, fmt.Errorf("fetch plays: %w", err)
-	}
-
-	var gameFinal bool
-	competition, ok := currentCompetition(summary)
-	if ok {
-		t.mu.Lock()
-		if t.store.GameStartTime == "" {
-			t.store.GameStartTime = competition.Date
-		}
-		status := competition.Status.Type.Description
-		if status == "" {
-			status = competition.Status.Type.Detail
-		}
-		if status != "" && status != t.lastStatus {
-			log.Printf("game status: %s", status)
-			t.lastStatus = status
-		}
-		t.mu.Unlock()
-
-		// Update game state for WS clients
-		gs := &GameState{
-			GameID: t.cfg.GameID,
-			Status: status,
-		}
-		if competition.Status.Type.Name != "" {
-			gs.Status = competition.Status.Type.Name
-		}
-		for _, comp := range competition.Competitors {
-			if comp.HomeAway == "home" {
-				gs.HomeTeam = comp.Team.Abbreviation
-				gs.HomeScore = comp.Score
-			} else {
-				gs.AwayTeam = comp.Team.Abbreviation
-				gs.AwayScore = comp.Score
-			}
-		}
-
-		// Quarter: prefer competition.Status.Period from the summary response;
-		// fall back to the last play's period.number if the status field is zero.
-		gs.Quarter = competition.Status.Period
-		if gs.Quarter == 0 && len(plays.Items) > 0 {
-			gs.Quarter = plays.Items[len(plays.Items)-1].Period.Number
-		}
-
-		// Clock from status detail
-		if competition.Status.Type.Detail != "" {
-			gs.Clock = competition.Status.Type.Detail
-		}
-		t.gameStateMu.Lock()
-		t.gameState = gs
-		t.gameStateMu.Unlock()
-
-		// Broadcast updated game state
-		if t.broadcastCh != nil {
-			select {
-			case t.broadcastCh <- WSMessage{Type: "game_state", Data: gs}:
-			default:
-			}
-		}
-
-		// Detect game completion via status.type.completed from the ESPN summary response.
-		gameFinal = competition.Status.Type.Completed
-	}
-
-	playerMap := buildPlayerMap(&summary)
-	playerNameToID := buildPlayerNameToIDMap(&summary)
-	teamMap := buildTeamMap(&summary)
-	playerTeamMap := buildPlayerTeamMap(&summary)
-
-	ordered := make([]playItem, len(plays.Items))
-	copy(ordered, plays.Items)
-	sort.SliceStable(ordered, func(i, j int) bool {
-		return sortKey(ordered[i]) < sortKey(ordered[j])
+		return games[i].Sport < games[j].Sport
 	})
-
-	for _, play := range ordered {
-		shot, ok := t.convertPlay(play, playerMap, playerNameToID, teamMap, playerTeamMap)
-		if !ok {
-			continue
-		}
-		if err := t.addShot(shot); err != nil {
-			return false, err
-		}
-	}
-
-	if gameFinal {
-		log.Printf("[game] Game %s is final — stopping poller", t.cfg.GameID)
-		if err := t.Flush(); err != nil {
-			return true, fmt.Errorf("final flush: %w", err)
-		}
-		return true, nil
-	}
-	return false, nil
+	return ws.GameStateMessage{Type: "game_state", Games: games}
 }
 
-func (t *Tracker) convertPlay(play playItem, playerMap, playerNameToID, teamMap, playerTeamMap map[string]string) (ShotEvent, bool) {
-	if !play.ShootingPlay || play.ID == "" {
-		return ShotEvent{}, false
-	}
-
-	t.mu.Lock()
-	_, exists := t.seen[play.ID]
-	t.mu.Unlock()
-	if exists {
-		return ShotEvent{}, false
-	}
-
-	playerID, playerName := extractShooter(play, playerMap, playerNameToID)
-	shotType := inferShotType(play)
-	team := teamAbbreviation(play, teamMap, playerTeamMap, playerID)
-	locationX, locationY := 0.0, 0.0
-	if play.Coordinate != nil {
-		locationX = play.Coordinate.X
-		locationY = play.Coordinate.Y
-	}
-	zone := inferLocationZone(locationX, locationY, shotType)
-	if play.Coordinate == nil {
-		zone = "missing"
-	} else if isInvalidCoordinate(play.Coordinate.X, play.Coordinate.Y) {
-		if shotType == "free_throw" {
-			// Keep legacy tracker output aligned with the documented contract used by the frontend.
-			locationX = 0
-			locationY = 0
-			zone = "free_throw"
-		} else {
-			zone = "invalid"
-		}
-	}
-
-	return ShotEvent{
-		EventID:       play.ID,
-		GameID:        t.cfg.GameID,
-		TimestampNS:   time.Now().UnixNano(),
-		ESPNTimestamp: play.Wallclock,
-		Quarter:       play.Period.Number,
-		GameClock:     play.Clock.DisplayValue,
-		GameClockSecs: parseGameClockSeconds(play.Clock.DisplayValue),
-		PlayerID:      playerID,
-		PlayerName:    playerName,
-		Team:          team,
-		Made:          play.ScoringPlay,
-		ShotType:      shotType,
-		LocationX:     locationX,
-		LocationY:     locationY,
-		LocationZone:  zone,
-		Description:   play.Text,
-		RawPayload:    marshalRawPlay(play),
-	}, true
+func (a *App) sendGameState(conn *websocket.Conn) {
+	_ = a.hub.SendTo(conn, a.currentGameStateMessage())
 }
 
-func (t *Tracker) addShot(shot ShotEvent) error {
-	t.mu.Lock()
-	defer t.mu.Unlock()
-	if _, exists := t.seen[shot.EventID]; exists {
-		return nil
-	}
-	shot.Nonce = t.nextNonce
-	t.nextNonce++
-	t.store.Shots = append(t.store.Shots, shot)
-	t.seen[shot.EventID] = struct{}{}
-	t.store.LastUpdated = time.Now().UTC().Format(time.RFC3339Nano)
-	if err := saveStore(t.cfg.OutputPath, t.store); err != nil {
-		return fmt.Errorf("save store after event %s: %w", shot.EventID, err)
-	}
-	fmt.Printf("[Q%d %s] %s (%s) %s %s @ (%.1f, %.1f) — shots stored: %d\n",
-		shot.Quarter,
-		shot.GameClock,
-		coalesce(shot.PlayerName, "Unknown Player"),
-		coalesce(shot.Team, "?"),
-		boolWord(shot.Made, "MADE", "MISSED"),
-		shot.ShotTypeLabel(),
-		shot.LocationX,
-		shot.LocationY,
-		len(t.store.Shots),
-	)
-
-	// Broadcast new shot to WS clients
-	if t.broadcastCh != nil {
-		select {
-		case t.broadcastCh <- WSMessage{Type: "shot", Data: shot}:
-		default:
-			log.Printf("[ws] broadcast channel full, dropping shot %s", shot.EventID)
-		}
-	}
-
-	return nil
+func (a *App) sendBetError(conn *websocket.Conn, reason string) {
+	_ = a.hub.SendTo(conn, ws.BetErrorMessage{Type: "bet_error", Reason: reason})
 }
 
-func (t *Tracker) Flush() error {
-	t.mu.Lock()
-	defer t.mu.Unlock()
-	t.store.LastUpdated = time.Now().UTC().Format(time.RFC3339Nano)
-	return saveStore(t.cfg.OutputPath, t.store)
-}
-
-func (s ShotEvent) ShotTypeLabel() string {
-	switch s.ShotType {
-	case "3pt":
-		return "3PT"
-	case "2pt":
-		return "2PT"
-	case "free_throw":
-		return "FT"
-	default:
-		return s.ShotType
+func (a *App) sendToWallet(wallet [20]byte, msg any) {
+	a.mu.RLock()
+	conns := a.walletConns[wallet]
+	snapshot := make([]*websocket.Conn, 0, len(conns))
+	for conn := range conns {
+		snapshot = append(snapshot, conn)
 	}
-}
-
-func currentCompetition(summary summaryResponse) (summaryCompetition, bool) {
-	if len(summary.Header.Competitions) == 0 {
-		return summaryCompetition{}, false
+	a.mu.RUnlock()
+	for _, conn := range snapshot {
+		_ = a.hub.SendTo(conn, msg)
 	}
-	return summary.Header.Competitions[0], true
-}
-
-func fetchJSON[T any](ctx context.Context, client *http.Client, url string) (T, error) {
-	var zero T
-	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
-	if err != nil {
-		return zero, err
-	}
-	resp, err := client.Do(req)
-	if err != nil {
-		return zero, err
-	}
-	defer resp.Body.Close()
-	if resp.StatusCode != http.StatusOK {
-		body, _ := io.ReadAll(io.LimitReader(resp.Body, 2048))
-		return zero, fmt.Errorf("http %d from %s: %s", resp.StatusCode, url, string(body))
-	}
-	decoder := json.NewDecoder(resp.Body)
-	var out T
-	if err := decoder.Decode(&out); err != nil {
-		return zero, err
-	}
-	return out, nil
-}
-
-func loadStore(path, gameID string) (ShotStore, int64, map[string]struct{}, error) {
-	store := ShotStore{
-		GameID: gameID,
-		LocationSchema: LocationSchema{
-			Description: "ESPN play-by-play API v2",
-			XRange:      [2]float64{0, 50},
-			YRange:      [2]float64{0, 30},
-			Origin:      "bottom-left corner of half-court (baseline)",
-			Units:       "normalized (not feet — appears to be a 50x30ish grid for half-court)",
-			Notes:       "X=0 is left sideline, X=49 is right sideline, Y=0 is baseline (under basket), Y~30 is halfcourt line. Free throws have sentinel coords (-214748340) — stored with location_x/y = 0 and location_zone = 'free_throw'. Coordinate 25,0 is roughly center of basket.",
-		},
-		Shots: []ShotEvent{},
-	}
-	seen := make(map[string]struct{})
-	nextNonce := int64(1)
-
-	data, err := os.ReadFile(path)
-	if err != nil {
-		if errors.Is(err, os.ErrNotExist) {
-			return store, nextNonce, seen, nil
-		}
-		return ShotStore{}, 0, nil, err
-	}
-	if err := json.Unmarshal(data, &store); err != nil {
-		return ShotStore{}, 0, nil, err
-	}
-	if store.GameID == "" {
-		store.GameID = gameID
-	}
-	for _, shot := range store.Shots {
-		seen[shot.EventID] = struct{}{}
-		if shot.Nonce >= nextNonce {
-			nextNonce = shot.Nonce + 1
-		}
-	}
-	return store, nextNonce, seen, nil
-}
-
-func saveStore(path string, store ShotStore) error {
-	data, err := json.MarshalIndent(store, "", "  ")
-	if err != nil {
-		return err
-	}
-	tmp := path + ".tmp"
-	if err := os.WriteFile(tmp, data, 0o644); err != nil {
-		return err
-	}
-	return os.Rename(tmp, path)
-}
-
-func boolWord(v bool, yes, no string) string {
-	if v {
-		return yes
-	}
-	return no
-}
-
-func sortKey(play playItem) int {
-	if play.SequenceNumber != "" {
-		if n, err := strconv.Atoi(play.SequenceNumber); err == nil {
-			return n
-		}
-	}
-	if n, err := strconv.Atoi(play.ID); err == nil {
-		return n
-	}
-	return 0
-}
-
-func coalesce(values ...string) string {
-	for _, value := range values {
-		if value != "" {
-			return value
-		}
-	}
-	return ""
 }

@@ -1,145 +1,111 @@
 package bet
 
 import (
-	"crypto/ecdsa"
 	"encoding/hex"
 	"fmt"
+	"math"
 	"math/big"
 	"strings"
 
 	"github.com/ethereum/go-ethereum/common"
-	ethcrypto "github.com/ethereum/go-ethereum/crypto"
+	"github.com/ethereum/go-ethereum/crypto"
 )
 
-// ValidateSignature verifies the EIP-712 signature on a bet.
-// Returns the recovered address (lowercase, 0x-prefixed) or error.
-//
-// EIP-712 domain: { name: "Almanac", version: "1", chainId: 10143 }
-// Types: Bet: [sport(string), gameId(string), playId(string),
-//
-//	locationX(int256 scaled 1e6), locationY(int256 scaled 1e6),
-//	nonce(uint256), walletAddr(address)]
-func ValidateSignature(b *Bet) (string, error) {
-	if b.Signature == "" || b.WalletAddr == "" {
-		return "", fmt.Errorf("missing signature or wallet address")
-	}
-	if !common.IsHexAddress(b.WalletAddr) {
-		return "", fmt.Errorf("invalid wallet address: %s", b.WalletAddr)
-	}
+var (
+	eip712DomainTypeHash = crypto.Keccak256Hash([]byte("EIP712Domain(string name,string version,uint256 chainId)"))
+	betTypeHash          = crypto.Keccak256Hash([]byte("Bet(address wallet,string game_id,string play_id,int256 x,int256 y,uint256 amount,uint256 nonce)"))
+)
 
-	sigBytes, err := hexDecode(b.Signature)
+func ParseWallet(value string) ([20]byte, error) {
+	var out [20]byte
+	if !common.IsHexAddress(value) {
+		return out, fmt.Errorf("invalid wallet address")
+	}
+	copy(out[:], common.HexToAddress(value).Bytes())
+	return out, nil
+}
+
+func WalletHex(wallet [20]byte) string {
+	return common.BytesToAddress(wallet[:]).Hex()
+}
+
+func ParseSignature(value string) ([]byte, error) {
+	value = strings.TrimPrefix(strings.TrimSpace(value), "0x")
+	if value == "" {
+		return nil, fmt.Errorf("missing signature")
+	}
+	sig, err := hex.DecodeString(value)
 	if err != nil {
-		return "", fmt.Errorf("decode signature: %w", err)
+		return nil, fmt.Errorf("invalid signature encoding")
 	}
-	if len(sigBytes) != 65 {
-		return "", fmt.Errorf("signature must be 65 bytes, got %d", len(sigBytes))
+	if len(sig) != 65 {
+		return nil, fmt.Errorf("signature must be 65 bytes")
 	}
+	sig = append([]byte(nil), sig...)
+	if sig[64] >= 27 {
+		sig[64] -= 27
+	}
+	if sig[64] > 1 {
+		return nil, fmt.Errorf("invalid signature recovery id")
+	}
+	return sig, nil
+}
 
-	// Normalize recovery ID for go-ethereum: 0/1 instead of 27/28.
-	sigBytes = append([]byte(nil), sigBytes...)
-	if sigBytes[64] >= 27 {
-		sigBytes[64] -= 27
+func VerifySignature(b *Bet) error {
+	if b == nil {
+		return fmt.Errorf("missing bet")
 	}
-	if sigBytes[64] > 1 {
-		return "", fmt.Errorf("invalid recovery id %d", sigBytes[64])
-	}
-
-	// Build EIP-712 typed data hash.
-	domainSeparator := hashDomainSeparator()
-	structHash := hashBetStruct(b)
-	digest := eip712Digest(domainSeparator, structHash)
-
-	pub, err := ecRecover(digest, sigBytes)
+	digest := eip712Digest(domainSeparator(), betStructHash(b))
+	pubKey, err := crypto.SigToPub(digest.Bytes(), b.Signature)
 	if err != nil {
-		return "", fmt.Errorf("recover signer: %w", err)
+		return fmt.Errorf("invalid signature")
 	}
-
-	addr := ethcrypto.PubkeyToAddress(*pub).Hex()
-	if !strings.EqualFold(addr, b.WalletAddr) {
-		return "", fmt.Errorf("recovered address %s does not match wallet %s", addr, b.WalletAddr)
+	recovered := crypto.PubkeyToAddress(*pubKey)
+	expected := common.BytesToAddress(b.Wallet[:])
+	if recovered != expected {
+		return fmt.Errorf("invalid signature")
 	}
-	return strings.ToLower(addr), nil
+	return nil
 }
 
-func hexDecode(s string) ([]byte, error) {
-	s = strings.TrimPrefix(s, "0x")
-	return hex.DecodeString(s)
+func domainSeparator() common.Hash {
+	return crypto.Keccak256Hash(
+		eip712DomainTypeHash.Bytes(),
+		crypto.Keccak256([]byte(DomainName)),
+		crypto.Keccak256([]byte(DomainVersion)),
+		common.BigToHash(new(big.Int).SetUint64(DomainChainID)).Bytes(),
+	)
 }
 
-func keccak256(data []byte) []byte {
-	return ethcrypto.Keccak256(data)
+func betStructHash(b *Bet) common.Hash {
+	return crypto.Keccak256Hash(
+		betTypeHash.Bytes(),
+		common.LeftPadBytes(b.Wallet[:], 32),
+		crypto.Keccak256([]byte(b.GameID)),
+		crypto.Keccak256([]byte(b.PlayID)),
+		int256Bytes(truncateScaled(b.Coordinate.X, 1000)),
+		int256Bytes(truncateScaled(b.Coordinate.Y, 1000)),
+		uint256Bytes(uint64(math.Trunc(b.Amount*100))),
+		uint256Bytes(b.Nonce),
+	)
 }
 
-func hashDomainSeparator() []byte {
-	// EIP712Domain(string name,string version,uint256 chainId)
-	typeHash := keccak256([]byte("EIP712Domain(string name,string version,uint256 chainId)"))
-	nameHash := keccak256([]byte(EIP712Domain))
-	versionHash := keccak256([]byte(EIP712Version))
-	chainID := big.NewInt(EIP712ChainID)
-
-	// ABI encode: typeHash + nameHash + versionHash + chainId
-	data := make([]byte, 0, 128)
-	data = append(data, padLeft(typeHash, 32)...)
-	data = append(data, padLeft(nameHash, 32)...)
-	data = append(data, padLeft(versionHash, 32)...)
-	data = append(data, padLeft(chainID.Bytes(), 32)...)
-	return keccak256(data)
+func eip712Digest(domainHash, structHash common.Hash) common.Hash {
+	return crypto.Keccak256Hash([]byte{0x19, 0x01}, domainHash.Bytes(), structHash.Bytes())
 }
 
-func hashBetStruct(b *Bet) []byte {
-	// Bet(string sport,string gameId,string playId,int256 locationX,int256 locationY,uint256 nonce,address walletAddr)
-	typeHash := keccak256([]byte("Bet(string sport,string gameId,string playId,int256 locationX,int256 locationY,uint256 nonce,address walletAddr)"))
-
-	sportHash := keccak256([]byte(b.Sport))
-	gameIDHash := keccak256([]byte(b.GameID))
-	playIDHash := keccak256([]byte(b.PlayID))
-
-	// Scale coordinates by 1e6 for int256.
-	locX := new(big.Int).SetInt64(int64(b.LocationX * 1e6))
-	locY := new(big.Int).SetInt64(int64(b.LocationY * 1e6))
-	nonce := new(big.Int).SetUint64(b.Nonce)
-
-	addr := common.HexToAddress(b.WalletAddr)
-
-	data := make([]byte, 0, 256)
-	data = append(data, padLeft(typeHash, 32)...)
-	data = append(data, padLeft(sportHash, 32)...)
-	data = append(data, padLeft(gameIDHash, 32)...)
-	data = append(data, padLeft(playIDHash, 32)...)
-	data = append(data, int256Bytes(locX)...)
-	data = append(data, int256Bytes(locY)...)
-	data = append(data, padLeft(nonce.Bytes(), 32)...)
-	data = append(data, padLeft(addr.Bytes(), 32)...)
-	return keccak256(data)
+func truncateScaled(v float64, scale float64) *big.Int {
+	return big.NewInt(int64(math.Trunc(v * scale)))
 }
 
-func eip712Digest(domainSeparator, structHash []byte) []byte {
-	// "\x19\x01" + domainSeparator + structHash
-	data := make([]byte, 0, 66)
-	data = append(data, 0x19, 0x01)
-	data = append(data, domainSeparator...)
-	data = append(data, structHash...)
-	return keccak256(data)
+func uint256Bytes(v uint64) []byte {
+	return common.BigToHash(new(big.Int).SetUint64(v)).Bytes()
 }
 
-func padLeft(b []byte, size int) []byte {
-	if len(b) >= size {
-		return b[:size]
+func int256Bytes(v *big.Int) []byte {
+	if v.Sign() >= 0 {
+		return common.BigToHash(v).Bytes()
 	}
-	padded := make([]byte, size)
-	copy(padded[size-len(b):], b)
-	return padded
-}
-
-func int256Bytes(n *big.Int) []byte {
-	if n.Sign() >= 0 {
-		return padLeft(n.Bytes(), 32)
-	}
-	// Two's complement for negative.
-	complement := new(big.Int).Add(n, new(big.Int).Lsh(big.NewInt(1), 256))
-	return padLeft(complement.Bytes(), 32)
-}
-
-func ecRecover(digest, sig []byte) (*ecdsa.PublicKey, error) {
-	return ethcrypto.SigToPub(digest, sig)
+	mod := new(big.Int).Lsh(big.NewInt(1), 256)
+	return common.BigToHash(new(big.Int).Add(v, mod)).Bytes()
 }

@@ -2,44 +2,61 @@ package espn
 
 import (
 	"context"
-	"encoding/json"
 	"fmt"
-	"math"
 	"sort"
-	"strconv"
 	"strings"
+
+	"github.com/almanac/espn-shots/internal/game"
 )
 
-// MLB API URLs
 const (
 	MLBScoreboardURL = "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard"
 	MLBSummaryURLFmt = "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/summary?event=%s"
 	MLBPlaysURLFmt   = "https://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/events/%s/competitions/%s/plays?limit=1000"
 )
 
-// --- MLB Play types ---
-
-type MLBPlaysResponse struct {
-	Items []MLBPlayItem `json:"items"`
-	Count int           `json:"count"`
+type mlbSummaryResponse struct {
+	Header struct {
+		Competitions []struct {
+			Date   string `json:"date"`
+			Status struct {
+				Type struct {
+					State     string `json:"state"`
+					Completed bool   `json:"completed"`
+					Detail    string `json:"detail"`
+				} `json:"type"`
+				Period int `json:"period"`
+			} `json:"status"`
+			Competitors []struct {
+				HomeAway string `json:"homeAway"`
+				Score    string `json:"score"`
+				Team     struct {
+					Abbreviation string `json:"abbreviation"`
+				} `json:"team"`
+			} `json:"competitors"`
+		} `json:"competitions"`
+	} `json:"header"`
 }
 
-type MLBPlayItem struct {
-	ID             string `json:"id"`
-	SequenceNumber string `json:"sequenceNumber"`
-	Text           string `json:"text"`
-	Wallclock      string `json:"wallclock"`
-	ScoringPlay    bool   `json:"scoringPlay"`
-	AtBatId        string `json:"atBatId"`
-	Period         struct {
-		Type         string `json:"type"` // "Top" or "Bottom"
-		Number       int    `json:"number"`
-		DisplayValue string `json:"displayValue"`
+type mlbPlaysResponse struct {
+	Items []mlbPlay `json:"items"`
+}
+
+type mlbPlay struct {
+	ID               string  `json:"id"`
+	SequenceNumber   string  `json:"sequenceNumber"`
+	Text             string  `json:"text"`
+	Wallclock        string  `json:"wallclock"`
+	AtBatID          string  `json:"atBatId"`
+	AtBatPitchNumber int     `json:"atBatPitchNumber"`
+	PitchVelocity    float64 `json:"pitchVelocity"`
+	Period           struct {
+		Type   string `json:"type"`
+		Number int    `json:"number"`
 	} `json:"period"`
 	Type struct {
-		ID           string `json:"id"`
-		Text         string `json:"text"`
 		Type         string `json:"type"`
+		Text         string `json:"text"`
 		Abbreviation string `json:"abbreviation"`
 	} `json:"type"`
 	PitchCoordinate *struct {
@@ -51,13 +68,10 @@ type MLBPlayItem struct {
 		Y float64 `json:"y"`
 	} `json:"hitCoordinate"`
 	PitchType *struct {
-		ID           string `json:"id"`
 		Text         string `json:"text"`
 		Abbreviation string `json:"abbreviation"`
 	} `json:"pitchType"`
-	PitchVelocity    float64 `json:"pitchVelocity"`
-	AtBatPitchNumber int     `json:"atBatPitchNumber"`
-	PitchCount       *struct {
+	PitchCount *struct {
 		Balls   int `json:"balls"`
 		Strikes int `json:"strikes"`
 	} `json:"pitchCount"`
@@ -65,269 +79,198 @@ type MLBPlayItem struct {
 		Balls   int `json:"balls"`
 		Strikes int `json:"strikes"`
 	} `json:"resultCount"`
-	Outs         int  `json:"outs"`
-	Valid        bool `json:"valid"`
+	Outs         int `json:"outs"`
 	Participants []struct {
 		Type    string `json:"type"`
 		Athlete struct {
 			ID          string `json:"id"`
 			DisplayName string `json:"displayName"`
-			Ref         string `json:"$ref"`
 		} `json:"athlete"`
 	} `json:"participants"`
 }
 
-// PitchEvent represents a single pitch in an MLB game.
-type PitchEvent struct {
-	EventID        string  `json:"event_id"`
-	GameID         string  `json:"game_id"`
-	TimestampNS    int64   `json:"timestamp_ns"`
-	ESPNTimestamp  string  `json:"espn_timestamp"`
-	Inning         int     `json:"inning"`
-	InningHalf     string  `json:"inning_half"` // "Top" or "Bottom"
-	PitcherID      string  `json:"pitcher_id"`
-	PitcherName    string  `json:"pitcher_name"`
-	BatterID       string  `json:"batter_id"`
-	BatterName     string  `json:"batter_name"`
-	PitchType      string  `json:"pitch_type"`
-	PitchVelocity  float64 `json:"pitch_velocity"`
-	PitchNumber    int     `json:"pitch_number"`
-	ResultType     string  `json:"result_type"` // e.g. "strike-looking", "ball", "foul", "hit-into-play"
-	PitchX         float64 `json:"pitch_x"`
-	PitchY         float64 `json:"pitch_y"`
-	HitX           float64 `json:"hit_x"`
-	HitY           float64 `json:"hit_y"`
-	HasPitchCoords bool    `json:"has_pitch_coords"`
-	HasHitCoords   bool    `json:"has_hit_coords"`
-	Description    string  `json:"description"`
-	RawPayload     string  `json:"raw_payload"`
-	// Zone is derived from pitch coordinates for the 1-9 strike zone grid
-	Zone string `json:"zone"`
-}
-
-// MLBParser handles MLB-specific ESPN data.
-type MLBParser struct {
-	client *Client
-}
-
-func NewMLBParser(client *Client) *MLBParser {
-	return &MLBParser{client: client}
-}
-
-// FetchScoreboard returns all games on today's MLB scoreboard.
-func (p *MLBParser) FetchScoreboard(ctx context.Context) ([]ScoreboardEvent, error) {
-	resp, err := FetchJSON[ScoreboardResponse](ctx, p.client, MLBScoreboardURL)
+func FetchMLBScoreboard(ctx context.Context, client *Client) ([]string, error) {
+	resp, err := FetchJSON[scoreboardResponse](ctx, client, MLBScoreboardURL)
 	if err != nil {
 		return nil, err
 	}
-	return resp.Events, nil
+	var ids []string
+	for _, ev := range resp.Events {
+		state := ev.Status.Type.State
+		if state == "in" || state == "post" {
+			ids = append(ids, ev.ID)
+		}
+	}
+	return ids, nil
 }
 
-// FetchGameInfo returns metadata for an MLB game.
-func (p *MLBParser) FetchGameInfo(ctx context.Context, gameID string) (*GameInfo, error) {
-	summary, err := FetchJSON[SummaryResponse](ctx, p.client, fmt.Sprintf(MLBSummaryURLFmt, gameID))
+func PollMLBGame(ctx context.Context, client *Client, gameID string, seen map[string]struct{}) (game.GameState, []game.PlayEvent, error) {
+	summary, err := FetchJSON[mlbSummaryResponse](ctx, client, fmt.Sprintf(MLBSummaryURLFmt, gameID))
 	if err != nil {
-		return nil, err
+		return game.GameState{}, nil, err
 	}
+	plays, err := FetchJSON[mlbPlaysResponse](ctx, client, fmt.Sprintf(MLBPlaysURLFmt, gameID, gameID))
+	if err != nil {
+		return normalizeMLBGameState(gameID, summary), nil, err
+	}
+	state := normalizeMLBGameState(gameID, summary)
+	ordered := append([]mlbPlay(nil), plays.Items...)
+	sort.SliceStable(ordered, func(i, j int) bool {
+		return sequenceKey(ordered[i].SequenceNumber, ordered[i].ID) < sequenceKey(ordered[j].SequenceNumber, ordered[j].ID)
+	})
+	var events []game.PlayEvent
+	for _, play := range ordered {
+		id := play.ID
+		if id == "" {
+			id = play.SequenceNumber
+		}
+		if id == "" {
+			continue
+		}
+		if _, ok := seen[id]; ok {
+			continue
+		}
+		if play.PitchCoordinate == nil && play.HitCoordinate == nil {
+			continue
+		}
+		seen[id] = struct{}{}
+		events = append(events, normalizeMLBPlay(gameID, id, play))
+	}
+	return state, events, nil
+}
+
+func normalizeMLBGameState(gameID string, summary mlbSummaryResponse) game.GameState {
+	state := game.GameState{GameID: gameID, Sport: string(game.SportMLB), Status: "live"}
 	if len(summary.Header.Competitions) == 0 {
-		return nil, fmt.Errorf("no competitions in summary for %s", gameID)
+		return state
 	}
 	comp := summary.Header.Competitions[0]
-	info := &GameInfo{
-		GameID:    gameID,
-		StartTime: comp.Date,
-		Status:    comp.Status.Type.Name,
-		State:     comp.Status.Type.State,
-		Detail:    comp.Status.Type.Detail,
-		Completed: comp.Status.Type.Completed,
-	}
-	for _, c := range comp.Competitors {
-		if c.HomeAway == "home" {
-			info.HomeTeam = c.Team.Abbreviation
-			info.HomeScore = c.Score
+	state.Status = normalizeStatus(comp.Status.Type.State, comp.Status.Type.Completed)
+	state.Period = formatMLBPeriod(comp.Status.Period, comp.Status.Type.Detail)
+	for _, competitor := range comp.Competitors {
+		if competitor.HomeAway == "home" {
+			state.Home = competitor.Team.Abbreviation
+			state.HomeScore = game.ParseScoreInt(competitor.Score)
 		} else {
-			info.AwayTeam = c.Team.Abbreviation
-			info.AwayScore = c.Score
+			state.Away = competitor.Team.Abbreviation
+			state.AwayScore = game.ParseScoreInt(competitor.Score)
 		}
 	}
-	return info, nil
+	return state
 }
 
-// FetchPitches returns new pitch events for a game.
-func (p *MLBParser) FetchPitches(ctx context.Context, gameID string, seen map[string]struct{}) ([]PitchEvent, *GameInfo, error) {
-	info, err := p.FetchGameInfo(ctx, gameID)
-	if err != nil {
-		return nil, nil, err
-	}
-
-	plays, err := FetchJSON[MLBPlaysResponse](ctx, p.client, fmt.Sprintf(MLBPlaysURLFmt, gameID, gameID))
-	if err != nil {
-		return nil, info, fmt.Errorf("fetch plays: %w", err)
-	}
-
-	// Sort by sequence
-	ordered := make([]MLBPlayItem, len(plays.Items))
-	copy(ordered, plays.Items)
-	sort.SliceStable(ordered, func(i, j int) bool {
-		return mlbSortKey(ordered[i]) < mlbSortKey(ordered[j])
-	})
-
-	var pitches []PitchEvent
-	for _, play := range ordered {
-		if play.ID == "" {
-			continue
-		}
-		// Only include plays that have pitch data (pitch coordinate or pitch type)
-		if play.PitchCoordinate == nil && play.PitchType == nil {
-			continue
-		}
-		if _, exists := seen[play.ID]; exists {
-			continue
-		}
-		pitch := convertMLBPlay(gameID, play)
-		pitches = append(pitches, pitch)
-	}
-	return pitches, info, nil
-}
-
-func convertMLBPlay(gameID string, play MLBPlayItem) PitchEvent {
-	ev := PitchEvent{
-		EventID:       play.ID,
-		GameID:        gameID,
-		ESPNTimestamp: play.Wallclock,
-		Inning:        play.Period.Number,
-		InningHalf:    play.Period.Type,
-		PitchNumber:   play.AtBatPitchNumber,
-		ResultType:    play.Type.Type,
-		Description:   play.Text,
-		RawPayload:    marshalMLBPlay(play),
-	}
-
-	if play.PitchType != nil {
-		ev.PitchType = play.PitchType.Text
-	}
-	ev.PitchVelocity = play.PitchVelocity
-
-	if play.PitchCoordinate != nil {
-		ev.PitchX = play.PitchCoordinate.X
-		ev.PitchY = play.PitchCoordinate.Y
-		ev.HasPitchCoords = true
-		ev.Zone = inferPitchZone(play.PitchCoordinate.X, play.PitchCoordinate.Y)
-	}
-	if play.HitCoordinate != nil {
-		ev.HitX = play.HitCoordinate.X
-		ev.HitY = play.HitCoordinate.Y
-		ev.HasHitCoords = true
-	}
-
-	// Extract pitcher and batter from participants
-	for _, p := range play.Participants {
-		id := p.Athlete.ID
-		if id == "" {
-			id = athleteIDFromRef(p.Athlete.Ref)
-		}
-		name := p.Athlete.DisplayName
-		switch p.Type {
+func normalizeMLBPlay(gameID, playID string, play mlbPlay) game.PlayEvent {
+	location, eventType := normalizeMLBLocation(play)
+	pitcher, batter := "", ""
+	for _, participant := range play.Participants {
+		switch participant.Type {
 		case "pitcher":
-			ev.PitcherID = id
-			ev.PitcherName = name
+			pitcher = participant.Athlete.DisplayName
 		case "batter":
-			ev.BatterID = id
-			ev.BatterName = name
+			batter = participant.Athlete.DisplayName
 		}
 	}
-
-	return ev
+	data := map[string]any{
+		"event_type":     eventType,
+		"description":    play.Text,
+		"inning":         play.Period.Number,
+		"inning_half":    play.Period.Type,
+		"pitch_type":     pickPitchType(play),
+		"pitch_velocity": play.PitchVelocity,
+		"pitch_number":   play.AtBatPitchNumber,
+		"pitcher_name":   pitcher,
+		"batter_name":    batter,
+		"outs":           play.Outs,
+		"pitch_location": normalizeMLBPitchCoordFromPtr(play.PitchCoordinate),
+		"hit_location":   normalizeMLBHitCoordFromPtr(play.HitCoordinate),
+	}
+	return game.PlayEvent{
+		GameID:    gameID,
+		PlayID:    playID,
+		Sport:     string(game.SportMLB),
+		Timestamp: game.ParseESPNTime(play.Wallclock),
+		Location:  location,
+		EventData: data,
+	}
 }
 
-// inferPitchZone maps pitch coordinates to a 1-9 zone grid.
-// ESPN pitch coordinates observed: x roughly 70-160, y roughly 130-210.
-// The strike zone is roughly centered around x=115, y=170.
-// Zone grid (batter's perspective):
-//
-//	1 | 2 | 3
-//	---------
-//	4 | 5 | 6
-//	---------
-//	7 | 8 | 9
-func inferPitchZone(x, y float64) string {
-	// Approximate strike zone bounds from observed data
+func normalizeMLBLocation(play mlbPlay) (*game.Coord, string) {
+	if play.HitCoordinate != nil {
+		return normalizeMLBHitCoordFromPtr(play.HitCoordinate), "hit_ball"
+	}
+	if play.PitchCoordinate != nil {
+		return normalizeMLBPitchCoordFromPtr(play.PitchCoordinate), "pitch"
+	}
+	return nil, "pitch"
+}
+
+func normalizeMLBPitchCoordFromPtr(coord *struct {
+	X float64 `json:"x"`
+	Y float64 `json:"y"`
+}) *game.Coord {
+	if coord == nil {
+		return nil
+	}
 	const (
-		xMin = 85.0
-		xMax = 145.0
-		yMin = 145.0
-		yMax = 205.0
+		rawXMin = 85.0
+		rawXMax = 145.0
+		rawYMin = 145.0
+		rawYMax = 205.0
 	)
-
-	// Outside the zone
-	if x < xMin || x > xMax || y < yMin || y > yMax {
-		return "outside"
-	}
-
-	xThird := (xMax - xMin) / 3.0
-	yThird := (yMax - yMin) / 3.0
-
-	col := int(math.Floor((x - xMin) / xThird))
-	row := int(math.Floor((y - yMin) / yThird))
-	if col > 2 {
-		col = 2
-	}
-	if row > 2 {
-		row = 2
-	}
-
-	zone := row*3 + col + 1
-	return strconv.Itoa(zone)
+	x := 150 + ((coord.X-rawXMin)/(rawXMax-rawXMin))*200
+	y := 100 + ((coord.Y-rawYMin)/(rawYMax-rawYMin))*300
+	return &game.Coord{X: round2(clamp(x, 150, 350)), Y: round2(clamp(y, 100, 400))}
 }
 
-// MLBWinCheck checks if a bet wins against an actual pitch event.
-// For zone bets: exact zone match. For coordinate bets: within radius.
-func MLBWinCheck(predictedX, predictedY float64, predictedZone string, actual PitchEvent, radius float64) (won bool, dist float64) {
-	// Zone-based matching
-	if predictedZone != "" && actual.Zone != "" {
-		return predictedZone == actual.Zone, 0
+func normalizeMLBHitCoordFromPtr(coord *struct {
+	X float64 `json:"x"`
+	Y float64 `json:"y"`
+}) *game.Coord {
+	if coord == nil {
+		return nil
 	}
-	// Coordinate-based matching
-	if actual.HasPitchCoords {
-		dx := predictedX - actual.PitchX
-		dy := predictedY - actual.PitchY
-		dist = math.Sqrt(dx*dx + dy*dy)
-		return dist <= radius, dist
+	x, y := coord.X, coord.Y
+	switch {
+	case x >= 0 && x <= 100 && y >= 0 && y <= 100:
+		x *= 5
+		y *= 5
+	case x >= -250 && x <= 250 && y >= -250 && y <= 250:
+		x = x + 250
+		y = 250 - y
 	}
-	return false, 0
+	return &game.Coord{X: round2(clamp(x, 0, 500)), Y: round2(clamp(y, 0, 500))}
 }
 
-func mlbSortKey(play MLBPlayItem) int {
-	if play.SequenceNumber != "" {
-		if n, err := strconv.Atoi(play.SequenceNumber); err == nil {
-			return n
+func pickPitchType(play mlbPlay) string {
+	if play.PitchType != nil && play.PitchType.Text != "" {
+		return play.PitchType.Text
+	}
+	if play.Type.Text != "" {
+		return play.Type.Text
+	}
+	return play.Type.Type
+}
+
+func formatMLBPeriod(period int, detail string) string {
+	if period > 0 {
+		upper := strings.ToUpper(detail)
+		switch {
+		case strings.Contains(upper, "TOP"):
+			return fmt.Sprintf("Top %d", period)
+		case strings.Contains(upper, "BOT") || strings.Contains(upper, "BOTTOM"):
+			return fmt.Sprintf("Bottom %d", period)
 		}
+		return fmt.Sprintf("Inning %d", period)
 	}
-	if n, err := strconv.Atoi(play.ID); err == nil {
-		return n
-	}
-	return 0
+	return ""
 }
 
-func marshalMLBPlay(play MLBPlayItem) string {
-	payload, err := json.Marshal(play)
-	if err != nil {
-		return "{}"
+func clamp(v, min, max float64) float64 {
+	if v < min {
+		return min
 	}
-	return string(payload)
-}
-
-// isPitchPlay returns true if the play type is a pitch-related event.
-func isPitchPlay(playType string) bool {
-	pitchTypes := []string{
-		"strike-looking", "strike-swinging", "foul", "ball",
-		"hit-into-play", "foul-tip", "hit-by-pitch",
+	if v > max {
+		return max
 	}
-	t := strings.ToLower(playType)
-	for _, pt := range pitchTypes {
-		if t == pt {
-			return true
-		}
-	}
-	return false
+	return v
 }

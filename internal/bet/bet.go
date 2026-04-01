@@ -1,46 +1,56 @@
 package bet
 
-// EIP-712 domain constants
-const (
-	EIP712Domain  = "Almanac"
-	EIP712Version = "1"
-	EIP712ChainID = 10143 // Monad testnet
+import (
+	"time"
+
+	"github.com/almanac/espn-shots/internal/game"
 )
 
-// Bet represents a user's bet on a play location.
+const (
+	DomainName    = "Almanac"
+	DomainVersion = "1"
+	DomainChainID = uint64(1)
+	WinRadius     = 35.0
+)
+
+// Bet is the validated backend record for a user's wager.
 type Bet struct {
-	ID         string  `json:"id"`
-	Nonce      uint64  `json:"nonce"`
-	Sport      string  `json:"sport"` // "nba", "mlb", "pga"
-	GameID     string  `json:"game_id"`
-	PlayID     string  `json:"play_id"`
-	LocationX  float64 `json:"location_x"`
-	LocationY  float64 `json:"location_y"`
-	Zone       string  `json:"zone"`
-	WalletAddr string  `json:"wallet_addr"` // 0x... EVM address
-	Signature  string  `json:"signature"`   // hex-encoded 65-byte sig
-	ReceivedAt int64   `json:"received_at"` // server Unix nanoseconds
+	BetID         string     `json:"bet_id"`
+	Wallet        [20]byte   `json:"wallet"`
+	GameID        string     `json:"game_id"`
+	PlayID        string     `json:"play_id"`
+	Coordinate    game.Coord `json:"coordinate"`
+	Amount        float64    `json:"amount"`
+	Nonce         uint64     `json:"nonce"`
+	ReceivedAt    time.Time  `json:"received_at"`
+	Signature     []byte     `json:"signature"`
+	Status        string     `json:"status"`
+	InvalidReason string     `json:"invalid_reason,omitempty"`
 }
 
-// BetResult contains the outcome of a resolved bet.
+// BetResult is routed only to the wallet's identified connections.
 type BetResult struct {
-	BetID         string  `json:"bet_id"`
-	PlayID        string  `json:"play_id"`
-	Sport         string  `json:"sport"`
-	GameID        string  `json:"game_id"`
-	WalletAddr    string  `json:"wallet_addr"`
-	Won           bool    `json:"won"`
-	ActualX       float64 `json:"actual_x"`
-	ActualY       float64 `json:"actual_y"`
-	ActualZone    string  `json:"actual_zone"`
-	PredictedX    float64 `json:"predicted_x"`
-	PredictedY    float64 `json:"predicted_y"`
-	PredictedZone string  `json:"predicted_zone"`
-	Distance      float64 `json:"distance"`
-	WinRadius     float64 `json:"win_radius"`
-	BetReceivedAt int64   `json:"bet_received_at_ns"`
-	PlayTimestamp string  `json:"play_timestamp"`
-	ValidBet      bool    `json:"valid_bet"`
-	TimeDeltaMs   int64   `json:"time_delta_ms"`
-	ProcessedAt   int64   `json:"processed_at_ns"`
+	Type         string      `json:"type"`
+	BetID        string      `json:"bet_id"`
+	PlayID       string      `json:"play_id"`
+	GameID       string      `json:"game_id"`
+	Result       string      `json:"result"`
+	Payout       float64     `json:"payout"`
+	Coordinate   game.Coord  `json:"coordinate"`
+	PlayLocation *game.Coord `json:"play_location"`
+	Distance     float64     `json:"distance"`
+	Reason       string      `json:"reason"`
+}
+
+// BalanceUpdate is currently a TODO stub but part of the public WS protocol.
+type BalanceUpdate struct {
+	Type    string  `json:"type"`
+	Wallet  string  `json:"wallet"`
+	Balance float64 `json:"balance"`
+}
+
+func getUserBalance(wallet [20]byte) float64 {
+	// TODO: implement real balance tracking
+	_ = wallet
+	return 0.0
 }
