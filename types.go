@@ -77,6 +77,7 @@ type summaryStatusType struct {
 type summaryCompetitor struct {
 	ID       string `json:"id"`
 	HomeAway string `json:"homeAway"`
+	Score    string `json:"score"`
 	Team     struct {
 		ID           string `json:"id"`
 		Abbreviation string `json:"abbreviation"`
