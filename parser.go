@@ -24,6 +24,20 @@ func buildPlayerMap(summary *summaryResponse) map[string]string {
 	return players
 }
 
+func buildPlayerNameToIDMap(summary *summaryResponse) map[string]string {
+	nameToID := make(map[string]string)
+	for _, team := range summary.Boxscore.Players {
+		for _, category := range team.Statistics {
+			for _, athlete := range category.Athletes {
+				if athlete.Athlete.ID != "" && athlete.Athlete.DisplayName != "" {
+					nameToID[normalizeName(athlete.Athlete.DisplayName)] = athlete.Athlete.ID
+				}
+			}
+		}
+	}
+	return nameToID
+}
+
 func buildTeamMap(summary *summaryResponse) map[string]string {
 	teams := make(map[string]string)
 	if len(summary.Header.Competitions) == 0 {
@@ -40,6 +54,21 @@ func buildTeamMap(summary *summaryResponse) map[string]string {
 		}
 	}
 	return teams
+}
+
+func buildPlayerTeamMap(summary *summaryResponse) map[string]string {
+	playerTeams := make(map[string]string)
+	for _, team := range summary.Boxscore.Players {
+		abbr := team.Team.Abbreviation
+		for _, category := range team.Statistics {
+			for _, athlete := range category.Athletes {
+				if athlete.Athlete.ID != "" && abbr != "" {
+					playerTeams[athlete.Athlete.ID] = abbr
+				}
+			}
+		}
+	}
+	return playerTeams
 }
 
 func parseGameClockSeconds(display string) int {
@@ -117,9 +146,15 @@ func isInvalidCoordinate(x, y float64) bool {
 	return x <= -1000000 || y <= -1000000 || math.Abs(x) > 1000000 || math.Abs(y) > 1000000
 }
 
-func extractShooter(play playItem, playerMap map[string]string) (string, string) {
+func extractShooter(play playItem, playerMap, playerNameToID map[string]string) (string, string) {
+	if name := extractPlayerNameFromText(play.Text); name != "" {
+		if id := playerNameToID[normalizeName(name)]; id != "" {
+			return id, name
+		}
+		return "", name
+	}
 	for _, participant := range play.Participants {
-		if participant.Type == "shooter" || participant.Order == 1 {
+		if participant.Type == "shooter" {
 			id := participant.Athlete.ID
 			if id == "" {
 				id = athleteIDFromRef(participant.Athlete.Ref)
@@ -128,13 +163,23 @@ func extractShooter(play playItem, playerMap map[string]string) (string, string)
 			if name == "" && id != "" {
 				name = playerMap[id]
 			}
-			if name == "" {
-				name = extractPlayerNameFromText(play.Text)
-			}
 			return id, name
 		}
 	}
-	return "", extractPlayerNameFromText(play.Text)
+	for _, participant := range play.Participants {
+		id := participant.Athlete.ID
+		if id == "" {
+			id = athleteIDFromRef(participant.Athlete.Ref)
+		}
+		name := participant.Athlete.DisplayName
+		if name == "" && id != "" {
+			name = playerMap[id]
+		}
+		if id != "" || name != "" {
+			return id, name
+		}
+	}
+	return "", ""
 }
 
 func athleteIDFromRef(ref string) string {
@@ -154,12 +199,21 @@ func extractPlayerNameFromText(text string) string {
 	return ""
 }
 
-func teamAbbreviation(play playItem, teamMap map[string]string) string {
+func normalizeName(name string) string {
+	return strings.ToLower(strings.TrimSpace(name))
+}
+
+func teamAbbreviation(play playItem, teamMap map[string]string, playerTeamMap map[string]string, playerID string) string {
 	if play.Team != nil && play.Team.Abbreviation != "" {
 		return play.Team.Abbreviation
 	}
 	if play.Team != nil && play.Team.ID != "" {
 		if abbr := teamMap[play.Team.ID]; abbr != "" {
+			return abbr
+		}
+	}
+	if playerID != "" {
+		if abbr := playerTeamMap[playerID]; abbr != "" {
 			return abbr
 		}
 	}

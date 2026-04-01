@@ -114,6 +114,7 @@ type playsResponse struct {
 
 type playItem struct {
 	ID              string `json:"id"`
+	SequenceNumber  string `json:"sequenceNumber"`
 	Text            string `json:"text"`
 	ShortText       string `json:"shortText"`
 	Wallclock       string `json:"wallclock"`

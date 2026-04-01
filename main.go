@@ -12,6 +12,7 @@ import (
 	"os"
 	"os/signal"
 	"sort"
+	"strconv"
 	"sync"
 	"syscall"
 	"time"
@@ -137,16 +138,18 @@ func (t *Tracker) poll(ctx context.Context) error {
 	}
 
 	playerMap := buildPlayerMap(&summary)
+	playerNameToID := buildPlayerNameToIDMap(&summary)
 	teamMap := buildTeamMap(&summary)
+	playerTeamMap := buildPlayerTeamMap(&summary)
 
 	ordered := make([]playItem, len(plays.Items))
 	copy(ordered, plays.Items)
 	sort.SliceStable(ordered, func(i, j int) bool {
-		return ordered[i].ID < ordered[j].ID
+		return sortKey(ordered[i]) < sortKey(ordered[j])
 	})
 
 	for _, play := range ordered {
-		shot, ok := t.convertPlay(play, playerMap, teamMap)
+		shot, ok := t.convertPlay(play, playerMap, playerNameToID, teamMap, playerTeamMap)
 		if !ok {
 			continue
 		}
@@ -157,7 +160,7 @@ func (t *Tracker) poll(ctx context.Context) error {
 	return nil
 }
 
-func (t *Tracker) convertPlay(play playItem, playerMap, teamMap map[string]string) (ShotEvent, bool) {
+func (t *Tracker) convertPlay(play playItem, playerMap, playerNameToID, teamMap, playerTeamMap map[string]string) (ShotEvent, bool) {
 	if !play.ShootingPlay || play.ID == "" {
 		return ShotEvent{}, false
 	}
@@ -169,17 +172,21 @@ func (t *Tracker) convertPlay(play playItem, playerMap, teamMap map[string]strin
 		return ShotEvent{}, false
 	}
 
-	playerID, playerName := extractShooter(play, playerMap)
+	playerID, playerName := extractShooter(play, playerMap, playerNameToID)
 	shotType := inferShotType(play)
-	team := teamAbbreviation(play, teamMap)
+	team := teamAbbreviation(play, teamMap, playerTeamMap, playerID)
 	locationX, locationY := 0.0, 0.0
-	if play.Coordinate != nil {
+	if play.Coordinate != nil && !isInvalidCoordinate(play.Coordinate.X, play.Coordinate.Y) {
 		locationX = play.Coordinate.X
 		locationY = play.Coordinate.Y
 	}
 	zone := inferLocationZone(locationX, locationY, shotType)
-	if play.Coordinate == nil {
-		zone = "missing"
+	if play.Coordinate == nil || isInvalidCoordinate(play.Coordinate.X, play.Coordinate.Y) {
+		if shotType == "free_throw" {
+			zone = "free_throw"
+		} else {
+			zone = "invalid"
+		}
 	}
 
 	return ShotEvent{
@@ -335,6 +342,18 @@ func boolWord(v bool, yes, no string) string {
 		return yes
 	}
 	return no
+}
+
+func sortKey(play playItem) int {
+	if play.SequenceNumber != "" {
+		if n, err := strconv.Atoi(play.SequenceNumber); err == nil {
+			return n
+		}
+	}
+	if n, err := strconv.Atoi(play.ID); err == nil {
+		return n
+	}
+	return 0
 }
 
 func coalesce(values ...string) string {
