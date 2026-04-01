@@ -344,17 +344,6 @@ type Tracker struct {
 	gameState   *GameState
 }
 
-type GameState struct {
-	GameID    string `json:"game_id"`
-	Status    string `json:"status"`
-	Quarter   int    `json:"quarter"`
-	Clock     string `json:"clock"`
-	HomeTeam  string `json:"home_team"`
-	AwayTeam  string `json:"away_team"`
-	HomeScore string `json:"home_score"`
-	AwayScore string `json:"away_score"`
-}
-
 func NewTracker(cfg Config) (*Tracker, error) {
 	store, nextNonce, seen, err := loadStore(cfg.OutputPath, cfg.GameID)
 	if err != nil {
