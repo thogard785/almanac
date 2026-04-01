@@ -18,6 +18,9 @@ import (
 	"time"
 )
 
+// ErrGameFinal is returned by Tracker.Run when the game reaches final status.
+var ErrGameFinal = errors.New("game final")
+
 const (
 	summaryURLFmt = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=%s"
 	playsURLFmt   = "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/%s/competitions/%s/plays?limit=1000"
@@ -65,11 +68,20 @@ func main() {
 	}()
 
 	log.Printf("tracking game=%s poll=%s output=%s", cfg.GameID, cfg.PollInterval, cfg.OutputPath)
-	if err := tracker.Run(ctx); err != nil && !errors.Is(err, context.Canceled) {
-		log.Fatalf("run tracker: %v", err)
-	}
-	if err := tracker.Flush(); err != nil {
-		log.Fatalf("flush on shutdown: %v", err)
+	runErr := tracker.Run(ctx)
+	switch {
+	case errors.Is(runErr, ErrGameFinal):
+		// Poller already flushed on game-final; keep WS server alive for
+		// connected clients until an external signal arrives.
+		log.Printf("[main] game final — poller stopped, WS server remains active")
+		<-ctx.Done()
+	case runErr != nil && !errors.Is(runErr, context.Canceled):
+		log.Fatalf("run tracker: %v", runErr)
+	default:
+		// Context cancelled (signal) — flush before shutting down.
+		if err := tracker.Flush(); err != nil {
+			log.Fatalf("flush on shutdown: %v", err)
+		}
 	}
 
 	// Graceful shutdown of HTTP server
@@ -116,17 +128,6 @@ type Tracker struct {
 	gameState   *GameState
 }
 
-type GameState struct {
-	GameID     string `json:"game_id"`
-	Status     string `json:"status"`
-	Quarter    int    `json:"quarter"`
-	Clock      string `json:"clock"`
-	HomeTeam   string `json:"home_team"`
-	AwayTeam   string `json:"away_team"`
-	HomeScore  string `json:"home_score"`
-	AwayScore  string `json:"away_score"`
-}
-
 func NewTracker(cfg Config) (*Tracker, error) {
 	store, nextNonce, seen, err := loadStore(cfg.OutputPath, cfg.GameID)
 	if err != nil {
@@ -149,18 +150,17 @@ func (t *Tracker) GameStateMessage() interface{} {
 	if gs == nil {
 		return nil
 	}
-	return map[string]interface{}{
-		"type": "game_state",
-		"data": gs,
-	}
+	return WSMessage{Type: "game_state", Data: gs}
 }
 
 func (t *Tracker) Run(ctx context.Context) error {
 	ticker := time.NewTicker(t.cfg.PollInterval)
 	defer ticker.Stop()
 
-	if err := t.poll(ctx); err != nil {
+	if done, err := t.poll(ctx); err != nil {
 		log.Printf("initial poll failed: %v", err)
+	} else if done {
+		return ErrGameFinal
 	}
 
 	for {
@@ -168,23 +168,31 @@ func (t *Tracker) Run(ctx context.Context) error {
 		case <-ctx.Done():
 			return ctx.Err()
 		case <-ticker.C:
-			if err := t.poll(ctx); err != nil {
+			done, err := t.poll(ctx)
+			if err != nil {
 				log.Printf("poll error: %v", err)
+				continue
+			}
+			if done {
+				return ErrGameFinal
 			}
 		}
 	}
 }
 
-func (t *Tracker) poll(ctx context.Context) error {
+// poll fetches the latest data from ESPN and processes new shots.
+// It returns (true, nil) when the game is final and the poller should stop.
+func (t *Tracker) poll(ctx context.Context) (bool, error) {
 	summary, err := fetchJSON[summaryResponse](ctx, t.client, fmt.Sprintf(summaryURLFmt, t.cfg.GameID))
 	if err != nil {
-		return fmt.Errorf("fetch summary: %w", err)
+		return false, fmt.Errorf("fetch summary: %w", err)
 	}
 	plays, err := fetchJSON[playsResponse](ctx, t.client, fmt.Sprintf(playsURLFmt, t.cfg.GameID, t.cfg.GameID))
 	if err != nil {
-		return fmt.Errorf("fetch plays: %w", err)
+		return false, fmt.Errorf("fetch plays: %w", err)
 	}
 
+	var gameFinal bool
 	competition, ok := currentCompetition(summary)
 	if ok {
 		t.mu.Lock()
@@ -203,8 +211,8 @@ func (t *Tracker) poll(ctx context.Context) error {
 
 		// Update game state for WS clients
 		gs := &GameState{
-			GameID:  t.cfg.GameID,
-			Status:  status,
+			GameID: t.cfg.GameID,
+			Status: status,
 		}
 		if competition.Status.Type.Name != "" {
 			gs.Status = competition.Status.Type.Name
@@ -218,13 +226,32 @@ func (t *Tracker) poll(ctx context.Context) error {
 				gs.AwayScore = comp.Score
 			}
 		}
-		// Quarter and clock from status detail
+
+		// Quarter: prefer competition.Status.Period from the summary response;
+		// fall back to the last play's period.number if the status field is zero.
+		gs.Quarter = competition.Status.Period
+		if gs.Quarter == 0 && len(plays.Items) > 0 {
+			gs.Quarter = plays.Items[len(plays.Items)-1].Period.Number
+		}
+
+		// Clock from status detail
 		if competition.Status.Type.Detail != "" {
 			gs.Clock = competition.Status.Type.Detail
 		}
 		t.gameStateMu.Lock()
 		t.gameState = gs
 		t.gameStateMu.Unlock()
+
+		// Broadcast updated game state
+		if t.broadcastCh != nil {
+			select {
+			case t.broadcastCh <- WSMessage{Type: "game_state", Data: gs}:
+			default:
+			}
+		}
+
+		// Detect game completion via status.type.completed from the ESPN summary response.
+		gameFinal = competition.Status.Type.Completed
 	}
 
 	playerMap := buildPlayerMap(&summary)
@@ -244,10 +271,18 @@ func (t *Tracker) poll(ctx context.Context) error {
 			continue
 		}
 		if err := t.addShot(shot); err != nil {
-			return err
+			return false, err
 		}
 	}
-	return nil
+
+	if gameFinal {
+		log.Printf("[game] Game %s is final — stopping poller", t.cfg.GameID)
+		if err := t.Flush(); err != nil {
+			return true, fmt.Errorf("final flush: %w", err)
+		}
+		return true, nil
+	}
+	return false, nil
 }
 
 func (t *Tracker) convertPlay(play playItem, playerMap, playerNameToID, teamMap, playerTeamMap map[string]string) (ShotEvent, bool) {
@@ -330,30 +365,8 @@ func (t *Tracker) addShot(shot ShotEvent) error {
 
 	// Broadcast new shot to WS clients
 	if t.broadcastCh != nil {
-		msg := map[string]interface{}{
-			"type": "shot",
-			"data": map[string]interface{}{
-				"nonce":          shot.Nonce,
-				"event_id":       shot.EventID,
-				"game_id":        shot.GameID,
-				"timestamp_ns":   shot.TimestampNS,
-				"espn_timestamp": shot.ESPNTimestamp,
-				"quarter":        shot.Quarter,
-				"game_clock":     shot.GameClock,
-				"game_clock_secs": shot.GameClockSecs,
-				"player_id":      shot.PlayerID,
-				"player_name":    shot.PlayerName,
-				"team":           shot.Team,
-				"made":           shot.Made,
-				"shot_type":      shot.ShotType,
-				"location_x":     shot.LocationX,
-				"location_y":     shot.LocationY,
-				"location_zone":  shot.LocationZone,
-				"description":    shot.Description,
-			},
-		}
 		select {
-		case t.broadcastCh <- msg:
+		case t.broadcastCh <- WSMessage{Type: "shot", Data: shot}:
 		default:
 			log.Printf("[ws] broadcast channel full, dropping shot %s", shot.EventID)
 		}
