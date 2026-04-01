@@ -140,12 +140,16 @@ func PollMLBGame(ctx context.Context, client *Client, gameID string, seen map[st
 }
 
 func normalizeMLBGameState(gameID string, summary mlbSummaryResponse) game.GameState {
-	state := game.GameState{GameID: gameID, Sport: string(game.SportMLB), Status: "live"}
+	state := game.GameState{GameID: gameID, Sport: string(game.SportMLB), Status: "in_progress", State: "in", Tracked: true}
 	if len(summary.Header.Competitions) == 0 {
 		return state
 	}
 	comp := summary.Header.Competitions[0]
 	state.Status = normalizeStatus(comp.Status.Type.State, comp.Status.Type.Completed)
+	state.State = comp.Status.Type.State
+	state.Detail = comp.Status.Type.Detail
+	state.StartTime = comp.Date
+	state.Completed = comp.Status.Type.Completed
 	state.Period = formatMLBPeriod(comp.Status.Period, comp.Status.Type.Detail)
 	for _, competitor := range comp.Competitors {
 		if competitor.HomeAway == "home" {

@@ -53,11 +53,20 @@ func (s *Store) RunPersistLoop(done <-chan struct{}) {
 
 func (s *Store) SaveBet(b *Bet) {
 	s.mu.Lock()
+	defer s.mu.Unlock()
+	for i, existing := range s.bets {
+		if existing != nil && b != nil && existing.BetID == b.BetID && b.BetID != "" {
+			s.bets[i] = b
+			s.enqueuePersistLocked("bets", func() any {
+				out := make([]*Bet, len(s.bets))
+				copy(out, s.bets)
+				return out
+			})
+			return
+		}
+	}
 	s.bets = append(s.bets, b)
-	s.mu.Unlock()
-	s.enqueuePersist("bets", func() any {
-		s.mu.RLock()
-		defer s.mu.RUnlock()
+	s.enqueuePersistLocked("bets", func() any {
 		out := make([]*Bet, len(s.bets))
 		copy(out, s.bets)
 		return out
@@ -66,11 +75,20 @@ func (s *Store) SaveBet(b *Bet) {
 
 func (s *Store) SaveResult(r *BetResult) {
 	s.mu.Lock()
+	defer s.mu.Unlock()
+	for i, existing := range s.results {
+		if existing != nil && r != nil && existing.Wallet == r.Wallet && existing.Nonce == r.Nonce && existing.RoundID == r.RoundID {
+			s.results[i] = r
+			s.enqueuePersistLocked("results", func() any {
+				out := make([]*BetResult, len(s.results))
+				copy(out, s.results)
+				return out
+			})
+			return
+		}
+	}
 	s.results = append(s.results, r)
-	s.mu.Unlock()
-	s.enqueuePersist("results", func() any {
-		s.mu.RLock()
-		defer s.mu.RUnlock()
+	s.enqueuePersistLocked("results", func() any {
 		out := make([]*BetResult, len(s.results))
 		copy(out, s.results)
 		return out
@@ -82,22 +100,8 @@ func (s *Store) BetsByWallet(wallet [20]byte) []*Bet {
 	defer s.mu.RUnlock()
 	var out []*Bet
 	for _, b := range s.bets {
-		if b.Wallet == wallet {
+		if b != nil && b.Wallet == wallet {
 			out = append(out, b)
-		}
-	}
-	return out
-}
-
-func (s *Store) ResultsByWallet(wallet [20]byte) []*BetResult {
-	s.mu.RLock()
-	defer s.mu.RUnlock()
-	hex := WalletHex(wallet)
-	var out []*BetResult
-	for _, r := range s.results {
-		if r != nil && r.Type == "bet_result" && hex != "" {
-			// wallet is implicit in BetID lookup on the backend; results are routed live.
-			// Historical replay is intentionally omitted for now to keep the store simple.
 		}
 	}
 	return out
@@ -111,7 +115,7 @@ func (s *Store) AllBets() []*Bet {
 	return out
 }
 
-func (s *Store) enqueuePersist(prefix string, snapshot func() any) {
+func (s *Store) enqueuePersistLocked(prefix string, snapshot func() any) {
 	select {
 	case s.persistCh <- func() {
 		filename := fmt.Sprintf("%s_%s.json", prefix, time.Now().UTC().Format("2006-01-02"))

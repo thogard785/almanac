@@ -84,12 +84,16 @@ func PollGolfGame(ctx context.Context, client *Client, gameID string, seen map[s
 }
 
 func normalizeGolfGameState(gameID string, board scoreboardResponse) game.GameState {
-	state := game.GameState{GameID: gameID, Sport: string(game.SportGolf), Status: "live"}
+	state := game.GameState{GameID: gameID, Sport: string(game.SportGolf), Status: "in_progress", State: "in", Tracked: true}
 	for _, ev := range board.Events {
 		if ev.ID != gameID {
 			continue
 		}
 		state.Status = normalizeStatus(ev.Status.Type.State, ev.Status.Type.Completed)
+		state.State = ev.Status.Type.State
+		state.Detail = ev.Status.Type.Detail
+		state.StartTime = ev.Date
+		state.Completed = ev.Status.Type.Completed
 		state.Home = ev.ShortName
 		state.Period = stringsTrimSpaceOr(ev.Status.Type.Description, ev.Status.Type.Detail)
 		state.Clock = ""
