@@ -176,12 +176,14 @@ func (t *Tracker) convertPlay(play playItem, playerMap, playerNameToID, teamMap,
 	shotType := inferShotType(play)
 	team := teamAbbreviation(play, teamMap, playerTeamMap, playerID)
 	locationX, locationY := 0.0, 0.0
-	if play.Coordinate != nil && !isInvalidCoordinate(play.Coordinate.X, play.Coordinate.Y) {
+	if play.Coordinate != nil {
 		locationX = play.Coordinate.X
 		locationY = play.Coordinate.Y
 	}
 	zone := inferLocationZone(locationX, locationY, shotType)
-	if play.Coordinate == nil || isInvalidCoordinate(play.Coordinate.X, play.Coordinate.Y) {
+	if play.Coordinate == nil {
+		zone = "missing"
+	} else if isInvalidCoordinate(play.Coordinate.X, play.Coordinate.Y) {
 		if shotType == "free_throw" {
 			zone = "free_throw"
 		} else {
@@ -224,11 +226,12 @@ func (t *Tracker) addShot(shot ShotEvent) error {
 	if err := saveStore(t.cfg.OutputPath, t.store); err != nil {
 		return fmt.Errorf("save store after event %s: %w", shot.EventID, err)
 	}
-	fmt.Printf("[Q%d %s] %s %s %s @ (%.1f, %.1f) | shots: %d\n",
+	fmt.Printf("[Q%d %s] %s (%s) %s %s @ (%.1f, %.1f) — shots stored: %d\n",
 		shot.Quarter,
 		shot.GameClock,
 		coalesce(shot.PlayerName, "Unknown Player"),
-		boolWord(shot.Made, "MADE", "MISS"),
+		coalesce(shot.Team, "?"),
+		boolWord(shot.Made, "MADE", "MISSED"),
 		shot.ShotTypeLabel(),
 		shot.LocationX,
 		shot.LocationY,
