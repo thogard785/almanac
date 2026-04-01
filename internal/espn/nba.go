@@ -140,12 +140,12 @@ type nbaPlay struct {
 }
 
 func FetchNBAScoreboard(ctx context.Context, client *Client) ([]string, error) {
-	resp, err := FetchJSON[scoreboardResponse](ctx, client, NBAScoreboardURL)
+	events, err := fetchScoreboardEvents(ctx, client, NBAScoreboardURL)
 	if err != nil {
 		return nil, err
 	}
 	var ids []string
-	for _, ev := range resp.Events {
+	for _, ev := range events {
 		state := ev.Status.Type.State
 		if state == "in" || state == "post" {
 			ids = append(ids, ev.ID)
