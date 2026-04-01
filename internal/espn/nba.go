@@ -347,6 +347,10 @@ func convertNBAPlay(gameID string, play PlayItem, playerMap, playerNameToID, tea
 		zone = "missing"
 	} else if isInvalidCoordinate(play.Coordinate.X, play.Coordinate.Y) {
 		if shotType == "free_throw" {
+			// ESPN uses sentinel coordinates for free throws; normalize them back to the
+			// documented 0,0 placeholder so downstream renderers do not fling markers off-court.
+			locationX = 0
+			locationY = 0
 			zone = "free_throw"
 		} else {
 			zone = "invalid"
