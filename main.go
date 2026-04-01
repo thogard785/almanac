@@ -526,6 +526,9 @@ func (t *Tracker) convertPlay(play playItem, playerMap, playerNameToID, teamMap,
 		zone = "missing"
 	} else if isInvalidCoordinate(play.Coordinate.X, play.Coordinate.Y) {
 		if shotType == "free_throw" {
+			// Keep legacy tracker output aligned with the documented contract used by the frontend.
+			locationX = 0
+			locationY = 0
 			zone = "free_throw"
 		} else {
 			zone = "invalid"
