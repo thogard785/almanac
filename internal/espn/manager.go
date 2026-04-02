@@ -117,11 +117,21 @@ func (m *Manager) discover(ctx context.Context) {
 
 func (m *Manager) pollAll(ctx context.Context) {
 	m.mu.RLock()
-	games := make([]*trackedGame, 0, len(m.tracked))
+	liveGames := make([]*trackedGame, 0, len(m.tracked))
+	otherGames := make([]*trackedGame, 0, len(m.tracked))
 	for _, tg := range m.tracked {
-		games = append(games, tg)
+		if tg.state.Completed {
+			continue
+		}
+		if tg.state.State == "in" || tg.state.Status == "in_progress" {
+			liveGames = append(liveGames, tg)
+			continue
+		}
+		otherGames = append(otherGames, tg)
 	}
 	m.mu.RUnlock()
+
+	games := append(liveGames, otherGames...)
 	for _, tg := range games {
 		func() {
 			defer recoverLog(fmt.Sprintf("poll %s:%s", tg.sport, tg.id))
