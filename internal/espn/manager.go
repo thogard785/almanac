@@ -13,20 +13,26 @@ import (
 
 type EventHandler func(game.PlayEvent)
 
+// CompletionHandler is called when a tracked game transitions to completed.
+// It receives the final game state and all play events observed during tracking.
+type CompletionHandler func(gameID string, sport game.Sport, state game.GameState, plays []game.PlayEvent)
+
 type Manager struct {
-	client       *Client
-	pollInterval time.Duration
-	eventHandler EventHandler
+	client            *Client
+	pollInterval      time.Duration
+	eventHandler      EventHandler
+	completionHandler CompletionHandler
 
 	mu      sync.RWMutex
 	tracked map[string]*trackedGame
 }
 
 type trackedGame struct {
-	sport game.Sport
-	id    string
-	seen  map[string]struct{}
-	state game.GameState
+	sport    game.Sport
+	id       string
+	seen     map[string]struct{}
+	state    game.GameState
+	allPlays []game.PlayEvent // all play events emitted for this game
 }
 
 func NewManager(client *Client, pollInterval time.Duration, eventHandler EventHandler) *Manager {
@@ -39,6 +45,11 @@ func NewManager(client *Client, pollInterval time.Duration, eventHandler EventHa
 		eventHandler: eventHandler,
 		tracked:      make(map[string]*trackedGame),
 	}
+}
+
+// SetCompletionHandler registers a callback invoked when a game finishes.
+func (m *Manager) SetCompletionHandler(h CompletionHandler) {
+	m.completionHandler = h
 }
 
 func (m *Manager) Run(ctx context.Context) {
@@ -140,13 +151,22 @@ func (m *Manager) pollAll(ctx context.Context) {
 				log.Printf("[espn] %s %s poll error: %v", tg.sport, tg.id, err)
 				return
 			}
+			wasCompleted := tg.state.Completed
 			m.mu.Lock()
 			tg.state = state
+			tg.allPlays = append(tg.allPlays, events...)
 			m.mu.Unlock()
 			for _, event := range events {
 				if m.eventHandler != nil {
 					m.eventHandler(event)
 				}
+			}
+			if state.Completed && !wasCompleted && m.completionHandler != nil {
+				m.mu.RLock()
+				plays := make([]game.PlayEvent, len(tg.allPlays))
+				copy(plays, tg.allPlays)
+				m.mu.RUnlock()
+				m.completionHandler(tg.id, tg.sport, state, plays)
 			}
 		}()
 	}

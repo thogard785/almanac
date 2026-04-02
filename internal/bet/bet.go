@@ -21,10 +21,34 @@ const (
 
 var SignInTypeHash = crypto.Keccak256Hash([]byte("SignIn(address wallet,uint256 timestamp,bool simulation)"))
 
+// BalanceProvider abstracts balance storage so regular and simulation modes
+// can each have fully isolated balance state.
+type BalanceProvider interface {
+	GetBalance(wallet [20]byte) float64
+	AddBalance(wallet [20]byte, delta float64) float64
+	SetBalance(wallet [20]byte, balance float64)
+}
+
+// ---------- default (regular-mode) balance provider ----------
+
 var balanceState = struct {
 	mu       sync.RWMutex
 	balances map[[20]byte]float64
 }{balances: make(map[[20]byte]float64)}
+
+type defaultBalanceProvider struct{}
+
+func (defaultBalanceProvider) GetBalance(wallet [20]byte) float64 { return getUserBalance(wallet) }
+func (defaultBalanceProvider) AddBalance(wallet [20]byte, delta float64) float64 {
+	return addUserBalance(wallet, delta)
+}
+func (defaultBalanceProvider) SetBalance(wallet [20]byte, balance float64) {
+	setUserBalance(wallet, balance)
+}
+
+// DefaultBalanceProvider is the regular-mode balance provider backed by the
+// package-level balanceState map.
+var DefaultBalanceProvider BalanceProvider = defaultBalanceProvider{}
 
 // Bet is the validated backend record for a user's wager.
 type Bet struct {
