@@ -1,0 +1,4574 @@
+{
+  "game_id": "401810961",
+  "sport": "nba",
+  "state": {
+    "game_id": "401810961",
+    "sport": "nba",
+    "status": "final",
+    "state": "post",
+    "detail": "Final",
+    "start_time": "2026-04-01T23:30Z",
+    "home": "MIA",
+    "away": "BOS",
+    "home_score": 129,
+    "away_score": 147,
+    "period": "Q0",
+    "clock": "",
+    "completed": true,
+    "tracked": true
+  },
+  "plays": [
+    {
+      "game_id": "401810961",
+      "play_id": "4018109617",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:43:06Z",
+      "location": {
+        "x": 260,
+        "y": 250.67
+      },
+      "event": {
+        "clock": "11:38",
+        "description": "Bam Adebayo makes 15-foot step back jumpshot (Pelle Larsson assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "4018109619",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:43:25Z",
+      "location": {
+        "x": 300,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "11:17",
+        "description": "Jaylen Brown makes 9-foot driving floating jump shot (Jayson Tatum assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096110",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:43:39Z",
+      "location": {
+        "x": 380,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "11:03",
+        "description": "Andrew Wiggins makes 25-foot three point jumper (Bam Adebayo assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096112",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:43:50Z",
+      "location": {
+        "x": 280,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "10:52",
+        "description": "Jaylen Brown makes 5-foot two point shot",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096113",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:43:57Z",
+      "location": {
+        "x": 260,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "10:46",
+        "description": "Bam Adebayo makes 25-foot three point jumper (Davion Mitchell assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096115",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:44:10Z",
+      "location": {
+        "x": 60,
+        "y": 297.67
+      },
+      "event": {
+        "clock": "10:32",
+        "description": "Jaylen Brown makes 26-foot three point jumper",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096116",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:44:20Z",
+      "location": {
+        "x": 70,
+        "y": 297.67
+      },
+      "event": {
+        "clock": "10:22",
+        "description": "Bam Adebayo makes 26-foot three point jumper (Davion Mitchell assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096120",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:45:02Z",
+      "location": null,
+      "event": {
+        "clock": "10:12",
+        "description": "Jaylen Brown makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096121",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:45:22Z",
+      "location": null,
+      "event": {
+        "clock": "10:12",
+        "description": "Jaylen Brown makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096123",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:45:51Z",
+      "location": {
+        "x": 230,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "10:02",
+        "description": "Bam Adebayo misses 24-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096126",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:46:00Z",
+      "location": {
+        "x": 270,
+        "y": 94
+      },
+      "event": {
+        "clock": "9:53",
+        "description": "Jaylen Brown makes 5-foot two point shot",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096129",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:46:48Z",
+      "location": null,
+      "event": {
+        "clock": "9:39",
+        "description": "Andrew Wiggins makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096130",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:47:06Z",
+      "location": null,
+      "event": {
+        "clock": "9:39",
+        "description": "Andrew Wiggins makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096131",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:47:21Z",
+      "location": {
+        "x": 100,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "9:25",
+        "description": "Sam Hauser makes 15-foot pullup jump shot (Derrick White assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096135",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:48:06Z",
+      "location": null,
+      "event": {
+        "clock": "9:13",
+        "description": "Tyler Herro makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096136",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:48:24Z",
+      "location": null,
+      "event": {
+        "clock": "9:13",
+        "description": "Tyler Herro makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096137",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:48:42Z",
+      "location": {
+        "x": 310,
+        "y": 219.33
+      },
+      "event": {
+        "clock": "8:55",
+        "description": "Jaylen Brown misses 15-foot pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096139",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:48:53Z",
+      "location": {
+        "x": 230,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "8:43",
+        "description": "Neemias Queta blocks Bam Adebayo 's 3-foot driving layup",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096143",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:48:59Z",
+      "location": {
+        "x": 220,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "8:38",
+        "description": "Pelle Larsson misses two point shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096145",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:49:05Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "8:31",
+        "description": "Bam Adebayo makes tip shot",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096146",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:49:10Z",
+      "location": {
+        "x": 290,
+        "y": 423
+      },
+      "event": {
+        "clock": "8:26",
+        "description": "Jayson Tatum makes 26-foot three point step back jumpshot (Neemias Queta assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096147",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:49:26Z",
+      "location": {
+        "x": 20,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "8:10",
+        "description": "Pelle Larsson makes 22-foot three point jumper (Tyler Herro assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096150",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:49:50Z",
+      "location": {
+        "x": 250,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "7:46",
+        "description": "Jaylen Brown makes two point shot",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096151",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:50:02Z",
+      "location": {
+        "x": 200,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "7:34",
+        "description": "Tyler Herro misses 26-foot three point step back jumpshot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096153",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:50:10Z",
+      "location": {
+        "x": 130,
+        "y": 376
+      },
+      "event": {
+        "clock": "7:27",
+        "description": "Bam Adebayo misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096155",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:50:27Z",
+      "location": {
+        "x": 330,
+        "y": 423
+      },
+      "event": {
+        "clock": "7:10",
+        "description": "Jayson Tatum misses 27-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096159",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:51:10Z",
+      "location": null,
+      "event": {
+        "clock": "7:03",
+        "description": "Bam Adebayo makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096162",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:51:10Z",
+      "location": null,
+      "event": {
+        "clock": "7:03",
+        "description": "Bam Adebayo misses free throw 2 of 2",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096164",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:51:54Z",
+      "location": {
+        "x": 480,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "6:41",
+        "description": "Sam Hauser makes 22-foot three point jumper (Baylor Scheierman assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096177",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:56:08Z",
+      "location": {
+        "x": 270,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "6:16",
+        "description": "Davion Mitchell makes 24-foot three pointer",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096178",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:56:28Z",
+      "location": {
+        "x": 20,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "5:56",
+        "description": "Baylor Scheierman makes 25-foot three point jumper (Jaylen Brown assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096180",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:56:40Z",
+      "location": {
+        "x": 330,
+        "y": 141
+      },
+      "event": {
+        "clock": "5:44",
+        "description": "Jaime Jaquez Jr. makes 11-foot two point shot",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096181",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:57:00Z",
+      "location": {
+        "x": 180,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:24",
+        "description": "Luka Garza makes 7-foot floating jump shot (Payton Pritchard assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096185",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:57:45Z",
+      "location": null,
+      "event": {
+        "clock": "5:15",
+        "description": "Tyler Herro makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096186",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:58:00Z",
+      "location": null,
+      "event": {
+        "clock": "5:15",
+        "description": "Tyler Herro makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096187",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:58:22Z",
+      "location": {
+        "x": 70,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "4:54",
+        "description": "Payton Pritchard makes 29-foot three point jumper (Baylor Scheierman assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096191",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:59:02Z",
+      "location": null,
+      "event": {
+        "clock": "4:44",
+        "description": "Kel'el Ware makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096192",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:59:16Z",
+      "location": null,
+      "event": {
+        "clock": "4:44",
+        "description": "Kel'el Ware makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096193",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:59:32Z",
+      "location": {
+        "x": 350,
+        "y": 156.67
+      },
+      "event": {
+        "clock": "4:30",
+        "description": "Jaylen Brown misses 14-foot two point shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096195",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:59:42Z",
+      "location": {
+        "x": 220,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "4:19",
+        "description": "Tyler Herro misses two point shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096197",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:59:49Z",
+      "location": {
+        "x": 40,
+        "y": 250.67
+      },
+      "event": {
+        "clock": "4:12",
+        "description": "Sam Hauser makes 26-foot three pointer",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "40181096198",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:00:02Z",
+      "location": {
+        "x": 260,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "3:59",
+        "description": "Jaime Jaquez Jr. misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961108",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:00:49Z",
+      "location": {
+        "x": 240,
+        "y": 156.67
+      },
+      "event": {
+        "clock": "3:44",
+        "description": "Baylor Scheierman misses driving floating jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961110",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:01:01Z",
+      "location": {
+        "x": 190,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "3:42",
+        "description": "Jaime Jaquez Jr. blocks Neemias Queta 's 6-foot two point shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961114",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:01:11Z",
+      "location": {
+        "x": 20,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "3:40",
+        "description": "Sam Hauser makes 24-foot three point jumper (Baylor Scheierman assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961116",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:01:30Z",
+      "location": {
+        "x": 180,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "3:21",
+        "description": "Tyler Herro misses 13-foot pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961118",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:01:33Z",
+      "location": {
+        "x": 260,
+        "y": 94
+      },
+      "event": {
+        "clock": "3:17",
+        "description": "Dru Smith misses 6-foot floating jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961120",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:01:46Z",
+      "location": {
+        "x": 190,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "3:04",
+        "description": "Jaylen Brown makes driving layup (Neemias Queta assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961121",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:01:55Z",
+      "location": {
+        "x": 240,
+        "y": 94
+      },
+      "event": {
+        "clock": "2:55",
+        "description": "Kel'el Ware misses two point shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961123",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:02:04Z",
+      "location": {
+        "x": 260,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "2:47",
+        "description": "Jaylen Brown makes 3-foot running dunk (Baylor Scheierman assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961129",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:06:08Z",
+      "location": {
+        "x": 270,
+        "y": 501.33
+      },
+      "event": {
+        "clock": "2:18",
+        "description": "Payton Pritchard misses 31-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961133",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:06:17Z",
+      "location": {
+        "x": 480,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "2:10",
+        "description": "Sam Hauser makes 24-foot running jump shot (Payton Pritchard assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961135",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:06:31Z",
+      "location": {
+        "x": 440,
+        "y": 297.67
+      },
+      "event": {
+        "clock": "1:54",
+        "description": "Tyler Herro makes 26-foot three point step back jumpshot (Dru Smith assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961136",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:06:45Z",
+      "location": {
+        "x": 20,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "1:41",
+        "description": "Jaylen Brown makes 23-foot three point step back jumpshot",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961138",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:06:56Z",
+      "location": {
+        "x": 20,
+        "y": 0
+      },
+      "event": {
+        "clock": "1:30",
+        "description": "Bam Adebayo misses 22-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961140",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:07:03Z",
+      "location": {
+        "x": 180,
+        "y": 454.33
+      },
+      "event": {
+        "clock": "1:23",
+        "description": "Jaylen Brown misses running pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961142",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:07:15Z",
+      "location": {
+        "x": 300,
+        "y": 423
+      },
+      "event": {
+        "clock": "1:11",
+        "description": "Tyler Herro misses 27-foot three point step back jumpshot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961146",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:07:52Z",
+      "location": null,
+      "event": {
+        "clock": "1:10",
+        "description": "Bam Adebayo misses free throw 1 of 2",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961154",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:07:52Z",
+      "location": null,
+      "event": {
+        "clock": "1:10",
+        "description": "Bam Adebayo misses free throw 2 of 2",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961156",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:08:23Z",
+      "location": {
+        "x": 480,
+        "y": 94
+      },
+      "event": {
+        "clock": "1:03",
+        "description": "Baylor Scheierman makes 23-foot three point jumper (Jayson Tatum assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961159",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:08:38Z",
+      "location": {
+        "x": 200,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "48.9",
+        "description": "Neemias Queta blocks Jaime Jaquez Jr. 's 7-foot floating jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961163",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:09:07Z",
+      "location": {
+        "x": 280,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "40.8",
+        "description": "Jaime Jaquez Jr. misses 11-foot two point shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961165",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:09:15Z",
+      "location": {
+        "x": 480,
+        "y": -15.67
+      },
+      "event": {
+        "clock": "33.2",
+        "description": "Sam Hauser makes 23-foot three point jumper (Jayson Tatum assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961167",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:09:26Z",
+      "location": {
+        "x": 260,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "24.3",
+        "description": "Sam Hauser blocks Bam Adebayo 's 3-foot driving layup",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961170",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:09:45Z",
+      "location": {
+        "x": 170,
+        "y": 454.33
+      },
+      "event": {
+        "clock": "5.7",
+        "description": "Jayson Tatum misses 29-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961172",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:09:49Z",
+      "location": {
+        "x": 180,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "2.7",
+        "description": "Payton Pritchard makes two point shot",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961183",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:13:54Z",
+      "location": {
+        "x": 290,
+        "y": 47
+      },
+      "event": {
+        "clock": "11:38",
+        "description": "Luka Garza misses layup",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961185",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:14:04Z",
+      "location": {
+        "x": 470,
+        "y": 219.33
+      },
+      "event": {
+        "clock": "11:28",
+        "description": "Simone Fontecchio misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961187",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:14:24Z",
+      "location": {
+        "x": 210,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "11:08",
+        "description": "Luka Garza misses 8-foot hook shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961189",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:14:32Z",
+      "location": {
+        "x": 270,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "11:00",
+        "description": "Luka Garza blocks Simone Fontecchio 's 5-foot running pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961192",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:14:36Z",
+      "location": {
+        "x": 260,
+        "y": 438.67
+      },
+      "event": {
+        "clock": "10:57",
+        "description": "Jayson Tatum makes 27-foot running pullup jump shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961193",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:14:53Z",
+      "location": {
+        "x": 130,
+        "y": 47
+      },
+      "event": {
+        "clock": "10:39",
+        "description": "Bam Adebayo misses 12-foot jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961197",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:15:30Z",
+      "location": null,
+      "event": {
+        "clock": "10:38",
+        "description": "Simone Fontecchio makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961198",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:15:44Z",
+      "location": null,
+      "event": {
+        "clock": "10:38",
+        "description": "Simone Fontecchio makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961201",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:16:33Z",
+      "location": {
+        "x": 210,
+        "y": 423
+      },
+      "event": {
+        "clock": "10:13",
+        "description": "Luka Garza makes 27-foot three point jumper (Derrick White assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961203",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:16:56Z",
+      "location": {
+        "x": 290,
+        "y": 94
+      },
+      "event": {
+        "clock": "9:51",
+        "description": "Simone Fontecchio misses 7-foot two point shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961205",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:17:00Z",
+      "location": {
+        "x": 240,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "9:46",
+        "description": "Davion Mitchell misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961209",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:17:43Z",
+      "location": {
+        "x": 180,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "9:24",
+        "description": "Luka Garza misses 27-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961213",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:18:23Z",
+      "location": null,
+      "event": {
+        "clock": "9:16",
+        "description": "Bam Adebayo makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961218",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:18:23Z",
+      "location": null,
+      "event": {
+        "clock": "9:16",
+        "description": "Bam Adebayo misses free throw 2 of 2",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961220",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:19:07Z",
+      "location": {
+        "x": 280,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "8:52",
+        "description": "Luka Garza makes 3-foot reverse layup (Jordan Walsh assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961224",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:19:22Z",
+      "location": {
+        "x": 340,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "8:37",
+        "description": "Bam Adebayo makes 25-foot three point jumper (Andrew Wiggins assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961226",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:19:38Z",
+      "location": {
+        "x": 290,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "8:22",
+        "description": "Andrew Wiggins blocks Jayson Tatum 's 8-foot driving layup",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961228",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:19:45Z",
+      "location": {
+        "x": 410,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "8:15",
+        "description": "Simone Fontecchio makes 25-foot running jump shot (Pelle Larsson assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961233",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:23:38Z",
+      "location": {
+        "x": 180,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "7:57",
+        "description": "Jayson Tatum makes 14-foot fade away jump shot (Derrick White assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961235",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:23:49Z",
+      "location": {
+        "x": 230,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "7:46",
+        "description": "Davion Mitchell makes 10-foot driving floating jump shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961236",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:24:05Z",
+      "location": {
+        "x": 170,
+        "y": 423
+      },
+      "event": {
+        "clock": "7:29",
+        "description": "Jayson Tatum makes 28-foot three pointer",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961237",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:24:23Z",
+      "location": {
+        "x": 210,
+        "y": 94
+      },
+      "event": {
+        "clock": "7:14",
+        "description": "Payton Pritchard blocks Andrew Wiggins 's 7-foot jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961241",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:24:45Z",
+      "location": {
+        "x": 220,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "7:06",
+        "description": "Jordan Walsh blocks Bam Adebayo 's 3-foot layup",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961244",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:25:04Z",
+      "location": {
+        "x": 200,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "6:56",
+        "description": "Jayson Tatum misses 8-foot fade away jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961248",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:25:30Z",
+      "location": {
+        "x": 210,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "6:39",
+        "description": "Pelle Larsson makes 3-foot dunk (Tyler Herro assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961253",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:26:32Z",
+      "location": {
+        "x": 300,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "6:02",
+        "description": "Jaylen Brown makes driving layup",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961254",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:26:45Z",
+      "location": {
+        "x": 120,
+        "y": 376
+      },
+      "event": {
+        "clock": "5:47",
+        "description": "Davion Mitchell misses 27-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961256",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:26:57Z",
+      "location": {
+        "x": 360,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "5:36",
+        "description": "Jaylen Brown misses 26-foot three point step back jumpshot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961261",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:27:12Z",
+      "location": {
+        "x": 240,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "5:21",
+        "description": "Jordan Walsh misses running layup",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961263",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:27:18Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "5:20",
+        "description": "Tyler Herro blocks Luka Garza's tip shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961266",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:27:22Z",
+      "location": {
+        "x": 170,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "5:10",
+        "description": "Tyler Herro makes 25-foot running jump shot (Bam Adebayo assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961268",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:27:35Z",
+      "location": {
+        "x": 380,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "4:57",
+        "description": "Andrew Wiggins blocks Sam Hauser 's 27-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961271",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:27:44Z",
+      "location": {
+        "x": 220,
+        "y": 47
+      },
+      "event": {
+        "clock": "4:49",
+        "description": "Andrew Wiggins makes two point shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961272",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:27:53Z",
+      "location": {
+        "x": 380,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "4:39",
+        "description": "Jaylen Brown misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961274",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:27:58Z",
+      "location": {
+        "x": 270,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "4:37",
+        "description": "Luka Garza makes two point shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961286",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:31:52Z",
+      "location": {
+        "x": 260,
+        "y": 94
+      },
+      "event": {
+        "clock": "4:19",
+        "description": "Pelle Larsson makes layup (Tyler Herro assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961288",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:32:07Z",
+      "location": {
+        "x": 200,
+        "y": 47
+      },
+      "event": {
+        "clock": "4:04",
+        "description": "Jayson Tatum makes 5-foot two point shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961289",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:32:32Z",
+      "location": {
+        "x": 270,
+        "y": 94
+      },
+      "event": {
+        "clock": "3:38",
+        "description": "Pelle Larsson misses 5-foot two point shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961291",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:32:35Z",
+      "location": {
+        "x": 280,
+        "y": 47
+      },
+      "event": {
+        "clock": "3:38",
+        "description": "Pelle Larsson makes two point shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961294",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:33:10Z",
+      "location": null,
+      "event": {
+        "clock": "3:38",
+        "description": "Pelle Larsson misses free throw 1 of 1",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961296",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:33:29Z",
+      "location": {
+        "x": 460,
+        "y": 219.33
+      },
+      "event": {
+        "clock": "3:17",
+        "description": "Sam Hauser misses 25-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961298",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:33:40Z",
+      "location": {
+        "x": 310,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "3:06",
+        "description": "Derrick White blocks Tyler Herro 's 7-foot pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961303",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:33:51Z",
+      "location": {
+        "x": 270,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "2:56",
+        "description": "Bam Adebayo makes two point shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961304",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:34:08Z",
+      "location": {
+        "x": 190,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "2:38",
+        "description": "Neemias Queta makes 6-foot dunk (Jayson Tatum assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961306",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:34:22Z",
+      "location": {
+        "x": 130,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "2:23",
+        "description": "Davion Mitchell misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961308",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:34:47Z",
+      "location": {
+        "x": 70,
+        "y": 47
+      },
+      "event": {
+        "clock": "2:01",
+        "description": "Jaylen Brown misses 18-foot fade away jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961313",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:35:45Z",
+      "location": {
+        "x": 430,
+        "y": 282
+      },
+      "event": {
+        "clock": "1:42",
+        "description": "Bam Adebayo misses 24-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961315",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:36:02Z",
+      "location": {
+        "x": 280,
+        "y": 438.67
+      },
+      "event": {
+        "clock": "1:25",
+        "description": "Jayson Tatum misses 28-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961324",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:37:10Z",
+      "location": {
+        "x": 390,
+        "y": 156.67
+      },
+      "event": {
+        "clock": "1:03",
+        "description": "Jaime Jaquez Jr. misses 17-foot step back jumpshot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961326",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:37:19Z",
+      "location": {
+        "x": 280,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "55.5",
+        "description": "Derrick White makes running layup",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961327",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:37:28Z",
+      "location": {
+        "x": 440,
+        "y": 297.67
+      },
+      "event": {
+        "clock": "47.3",
+        "description": "Tyler Herro misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961330",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:37:57Z",
+      "location": {
+        "x": 190,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "36.7",
+        "description": "Bam Adebayo misses 10-foot turnaround jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961335",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:38:09Z",
+      "location": {
+        "x": 260,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "28.2",
+        "description": "Derrick White makes running layup",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961338",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:38:37Z",
+      "location": {
+        "x": 300,
+        "y": 47
+      },
+      "event": {
+        "clock": "1.5",
+        "description": "Jaylen Brown makes alley oop layup (Derrick White assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961340",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:38:45Z",
+      "location": {
+        "x": 210,
+        "y": 94
+      },
+      "event": {
+        "clock": "0.4",
+        "description": "Pelle Larsson misses layup",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961348",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:54:24Z",
+      "location": {
+        "x": 280,
+        "y": 94
+      },
+      "event": {
+        "clock": "11:44",
+        "description": "Sam Hauser makes driving layup (Neemias Queta assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961351",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:54:50Z",
+      "location": null,
+      "event": {
+        "clock": "11:44",
+        "description": "Sam Hauser misses free throw 1 of 1",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961353",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:55:04Z",
+      "location": {
+        "x": 180,
+        "y": 423
+      },
+      "event": {
+        "clock": "11:29",
+        "description": "Pelle Larsson misses 27-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961355",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:55:15Z",
+      "location": {
+        "x": 280,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "11:18",
+        "description": "Neemias Queta makes 3-foot dunk (Jaylen Brown assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961359",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:55:56Z",
+      "location": null,
+      "event": {
+        "clock": "11:07",
+        "description": "Pelle Larsson misses free throw 1 of 2",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961361",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:56:11Z",
+      "location": null,
+      "event": {
+        "clock": "11:07",
+        "description": "Pelle Larsson makes free throw 2 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961362",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:56:33Z",
+      "location": {
+        "x": 470,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "10:47",
+        "description": "Derrick White misses 30-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961364",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:56:45Z",
+      "location": {
+        "x": 380,
+        "y": 376
+      },
+      "event": {
+        "clock": "10:35",
+        "description": "Andrew Wiggins makes 27-foot three point jumper (Pelle Larsson assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961367",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:57:12Z",
+      "location": {
+        "x": 110,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "10:08",
+        "description": "Jayson Tatum misses 28-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961371",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:57:48Z",
+      "location": null,
+      "event": {
+        "clock": "10:05",
+        "description": "Neemias Queta makes free throw 1 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961372",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:58:02Z",
+      "location": null,
+      "event": {
+        "clock": "10:05",
+        "description": "Neemias Queta misses free throw 2 of 2",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961374",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:58:12Z",
+      "location": {
+        "x": 320,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "9:54",
+        "description": "Jayson Tatum makes 13-foot two point shot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961375",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:58:22Z",
+      "location": {
+        "x": 120,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "9:44",
+        "description": "Tyler Herro makes 28-foot three point jumper (Andrew Wiggins assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961380",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:59:01Z",
+      "location": {
+        "x": 210,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "9:27",
+        "description": "Bam Adebayo misses 12-foot jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961384",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:59:40Z",
+      "location": null,
+      "event": {
+        "clock": "9:18",
+        "description": "Jaylen Brown makes free throw 1 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961385",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:59:58Z",
+      "location": null,
+      "event": {
+        "clock": "9:18",
+        "description": "Jaylen Brown makes free throw 2 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961386",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:00:18Z",
+      "location": {
+        "x": 410,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "9:00",
+        "description": "Andrew Wiggins makes 26-foot three point jumper (Pelle Larsson assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961389",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:00:54Z",
+      "location": {
+        "x": 490,
+        "y": 47
+      },
+      "event": {
+        "clock": "8:46",
+        "description": "Jaylen Brown makes 24-foot three point jumper (Jayson Tatum assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961393",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:01:38Z",
+      "location": null,
+      "event": {
+        "clock": "8:34",
+        "description": "Bam Adebayo makes free throw 1 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961394",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:01:55Z",
+      "location": null,
+      "event": {
+        "clock": "8:34",
+        "description": "Bam Adebayo makes free throw 2 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961395",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:02:13Z",
+      "location": {
+        "x": 350,
+        "y": 219.33
+      },
+      "event": {
+        "clock": "8:20",
+        "description": "Jaylen Brown makes 16-foot driving floating jump shot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961398",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:02:44Z",
+      "location": null,
+      "event": {
+        "clock": "8:20",
+        "description": "Jaylen Brown makes free throw 1 of 1",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961399",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:03:01Z",
+      "location": {
+        "x": 260,
+        "y": 188
+      },
+      "event": {
+        "clock": "8:04",
+        "description": "Bam Adebayo makes 11-foot jumper (Davion Mitchell assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961401",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:03:22Z",
+      "location": {
+        "x": 150,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "7:42",
+        "description": "Jaylen Brown misses 14-foot pullup jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961403",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:03:31Z",
+      "location": {
+        "x": 10,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "7:34",
+        "description": "Pelle Larsson makes 23-foot three point jumper (Tyler Herro assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961405",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:03:56Z",
+      "location": {
+        "x": 230,
+        "y": 94
+      },
+      "event": {
+        "clock": "7:10",
+        "description": "Neemias Queta misses 6-foot hook shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961408",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:04:20Z",
+      "location": {
+        "x": 450,
+        "y": 250.67
+      },
+      "event": {
+        "clock": "6:58",
+        "description": "Davion Mitchell makes 25-foot three point jumper (Pelle Larsson assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961413",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:08:20Z",
+      "location": {
+        "x": 10,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "6:36",
+        "description": "Jayson Tatum misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961415",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:08:34Z",
+      "location": {
+        "x": 10,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "6:23",
+        "description": "Tyler Herro misses 23-foot three point step back jumpshot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961417",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:08:55Z",
+      "location": {
+        "x": 260,
+        "y": 188
+      },
+      "event": {
+        "clock": "6:01",
+        "description": "Jayson Tatum makes 11-foot step back jumpshot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961419",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:09:40Z",
+      "location": {
+        "x": 250,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "5:36",
+        "description": "Jaylen Brown makes 7-foot two point shot (Jayson Tatum assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961426",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:10:30Z",
+      "location": {
+        "x": 190,
+        "y": 47
+      },
+      "event": {
+        "clock": "5:10",
+        "description": "Pelle Larsson misses driving layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961428",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:10:44Z",
+      "location": {
+        "x": 320,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "4:55",
+        "description": "Jaylen Brown makes 10-foot driving floating jump shot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961432",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:14:30Z",
+      "location": {
+        "x": 220,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "4:38",
+        "description": "Jaime Jaquez Jr. misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961434",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:14:41Z",
+      "location": {
+        "x": 20,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "4:27",
+        "description": "Jaylen Brown misses 22-foot three point shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961436",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:14:51Z",
+      "location": {
+        "x": 250,
+        "y": 94
+      },
+      "event": {
+        "clock": "4:19",
+        "description": "Jaime Jaquez Jr. makes 6-foot two point shot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961441",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:15:25Z",
+      "location": null,
+      "event": {
+        "clock": "4:19",
+        "description": "Jaime Jaquez Jr. makes free throw 1 of 1",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961442",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:15:42Z",
+      "location": {
+        "x": 300,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "4:03",
+        "description": "Payton Pritchard makes 26-foot three point jumper (Jayson Tatum assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961444",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:15:56Z",
+      "location": {
+        "x": 180,
+        "y": 47
+      },
+      "event": {
+        "clock": "3:49",
+        "description": "Jaime Jaquez Jr. makes 7-foot two point shot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961445",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:16:05Z",
+      "location": {
+        "x": 420,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "3:39",
+        "description": "Jayson Tatum misses 27-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961448",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:16:21Z",
+      "location": {
+        "x": 350,
+        "y": 376
+      },
+      "event": {
+        "clock": "3:30",
+        "description": "Davion Mitchell makes 25-foot three point jumper (Jaime Jaquez Jr. assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961450",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:16:31Z",
+      "location": {
+        "x": 10,
+        "y": -15.67
+      },
+      "event": {
+        "clock": "3:20",
+        "description": "Payton Pritchard makes 24-foot three point jumper (Jaylen Brown assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961452",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:16:45Z",
+      "location": {
+        "x": 20,
+        "y": 188
+      },
+      "event": {
+        "clock": "3:06",
+        "description": "Jaime Jaquez Jr. makes 25-foot three point jumper (Davion Mitchell assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961454",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:17:04Z",
+      "location": {
+        "x": 120,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "2:47",
+        "description": "Luka Garza makes 25-foot three point jumper (Jayson Tatum assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961456",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:17:17Z",
+      "location": {
+        "x": 280,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "2:35",
+        "description": "Pelle Larsson makes 2-foot dunk (Jaime Jaquez Jr. assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961458",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:17:35Z",
+      "location": {
+        "x": 370,
+        "y": -15.67
+      },
+      "event": {
+        "clock": "2:15",
+        "description": "Baylor Scheierman makes 12-foot floating jump shot (Jayson Tatum assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961460",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:17:49Z",
+      "location": {
+        "x": 210,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "2:02",
+        "description": "Jaime Jaquez Jr. misses 11-foot two point shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961464",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:18:02Z",
+      "location": {
+        "x": 120,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "1:50",
+        "description": "Davion Mitchell misses running pullup jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961466",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:18:14Z",
+      "location": {
+        "x": 10,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "1:38",
+        "description": "Jaime Jaquez Jr. makes 24-foot three point jumper (Pelle Larsson assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961468",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:18:37Z",
+      "location": {
+        "x": 400,
+        "y": 329
+      },
+      "event": {
+        "clock": "1:14",
+        "description": "Luka Garza misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961470",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:18:46Z",
+      "location": {
+        "x": 200,
+        "y": 438.67
+      },
+      "event": {
+        "clock": "1:06",
+        "description": "Kel'el Ware makes 28-foot three point jumper (Davion Mitchell assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961472",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:19:05Z",
+      "location": {
+        "x": 70,
+        "y": 329
+      },
+      "event": {
+        "clock": "49.3",
+        "description": "Payton Pritchard misses 27-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961474",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:19:16Z",
+      "location": {
+        "x": 160,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "39.0",
+        "description": "Davion Mitchell makes 26-foot three point jumper (Tyler Herro assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961476",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:19:27Z",
+      "location": {
+        "x": 80,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "31.1",
+        "description": "Jayson Tatum misses 29-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961486",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:23:24Z",
+      "location": {
+        "x": 170,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "17.5",
+        "description": "Payton Pritchard misses 11-foot pullup jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961488",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:23:31Z",
+      "location": {
+        "x": 190,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "9.8",
+        "description": "Davion Mitchell misses running layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961493",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:24:08Z",
+      "location": {
+        "x": 20,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "0.0",
+        "description": "Davion Mitchell makes 23-foot three point jumper (Tyler Herro assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961502",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:28:04Z",
+      "location": {
+        "x": 270,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "11:44",
+        "description": "Jaime Jaquez Jr. misses driving floating jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961504",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:28:28Z",
+      "location": {
+        "x": 350,
+        "y": 219.33
+      },
+      "event": {
+        "clock": "11:19",
+        "description": "Sam Hauser makes 16-foot pullup jump shot (Payton Pritchard assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961506",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:28:44Z",
+      "location": {
+        "x": 330,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "11:03",
+        "description": "Tyler Herro misses 26-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961508",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:28:57Z",
+      "location": {
+        "x": 330,
+        "y": 266.33
+      },
+      "event": {
+        "clock": "10:50",
+        "description": "Jayson Tatum misses 18-foot pullup jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961510",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:29:06Z",
+      "location": {
+        "x": 290,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "10:41",
+        "description": "Tyler Herro makes 25-foot running pullup jump shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961511",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:29:32Z",
+      "location": {
+        "x": 120,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "10:16",
+        "description": "Sam Hauser makes 13-foot pullup jump shot (Jayson Tatum assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961517",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:30:33Z",
+      "location": null,
+      "event": {
+        "clock": "9:58",
+        "description": "Jayson Tatum makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961520",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:30:53Z",
+      "location": null,
+      "event": {
+        "clock": "9:58",
+        "description": "Jayson Tatum makes free throw 2 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961521",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:31:03Z",
+      "location": {
+        "x": 180,
+        "y": 423
+      },
+      "event": {
+        "clock": "9:49",
+        "description": "Jaime Jaquez Jr. misses 27-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961523",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:31:15Z",
+      "location": {
+        "x": 120,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "9:37",
+        "description": "Jayson Tatum makes 25-foot three point step back jumpshot (Payton Pritchard assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961526",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:34:57Z",
+      "location": {
+        "x": 250,
+        "y": 141
+      },
+      "event": {
+        "clock": "9:28",
+        "description": "Davion Mitchell makes 8-foot two point shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961527",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:35:10Z",
+      "location": {
+        "x": 310,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "9:14",
+        "description": "Neemias Queta makes layup (Jayson Tatum assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961529",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:35:22Z",
+      "location": {
+        "x": 360,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "9:02",
+        "description": "Kel'el Ware makes 25-foot three point jumper (Davion Mitchell assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961533",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:36:11Z",
+      "location": null,
+      "event": {
+        "clock": "8:48",
+        "description": "Jayson Tatum makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961538",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:36:11Z",
+      "location": null,
+      "event": {
+        "clock": "8:48",
+        "description": "Jayson Tatum misses free throw 2 of 2",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961539",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:36:54Z",
+      "location": {
+        "x": 260,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "8:31",
+        "description": "Davion Mitchell misses driving floating jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961545",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:37:37Z",
+      "location": null,
+      "event": {
+        "clock": "8:21",
+        "description": "Jaylen Brown misses free throw 1 of 2",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961547",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:37:37Z",
+      "location": null,
+      "event": {
+        "clock": "8:21",
+        "description": "Jaylen Brown misses free throw 2 of 2",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961549",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:38:02Z",
+      "location": {
+        "x": 110,
+        "y": 376
+      },
+      "event": {
+        "clock": "8:15",
+        "description": "Tyler Herro misses running pullup jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961551",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:38:25Z",
+      "location": {
+        "x": 270,
+        "y": 423
+      },
+      "event": {
+        "clock": "7:51",
+        "description": "Jayson Tatum misses 27-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961553",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:38:30Z",
+      "location": {
+        "x": 290,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "7:47",
+        "description": "Jaylen Brown makes layup",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961554",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:38:53Z",
+      "location": {
+        "x": 300,
+        "y": 423
+      },
+      "event": {
+        "clock": "7:23",
+        "description": "Bam Adebayo misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961556",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:39:04Z",
+      "location": {
+        "x": 230,
+        "y": 141
+      },
+      "event": {
+        "clock": "7:13",
+        "description": "Bam Adebayo makes 8-foot two point shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961557",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:39:24Z",
+      "location": {
+        "x": 20,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "6:52",
+        "description": "Payton Pritchard makes 23-foot three point jumper (Jaylen Brown assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961559",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:39:36Z",
+      "location": {
+        "x": 460,
+        "y": 219.33
+      },
+      "event": {
+        "clock": "6:40",
+        "description": "Andrew Wiggins misses 24-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961565",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:40:24Z",
+      "location": {
+        "x": 290,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "6:19",
+        "description": "Neemias Queta makes 4-foot layup (Jaylen Brown assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961567",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:40:35Z",
+      "location": {
+        "x": 280,
+        "y": 250.67
+      },
+      "event": {
+        "clock": "6:08",
+        "description": "Tyler Herro makes 16-foot driving floating jump shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961568",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:40:55Z",
+      "location": {
+        "x": 120,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "5:48",
+        "description": "Jaylen Brown misses 14-foot step back jumpshot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961574",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:41:34Z",
+      "location": null,
+      "event": {
+        "clock": "5:41",
+        "description": "Neemias Queta makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961575",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:41:51Z",
+      "location": null,
+      "event": {
+        "clock": "5:41",
+        "description": "Neemias Queta makes free throw 2 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961576",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:42:04Z",
+      "location": {
+        "x": 180,
+        "y": 94
+      },
+      "event": {
+        "clock": "5:31",
+        "description": "Jaime Jaquez Jr. makes 9-foot two point shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961577",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:42:24Z",
+      "location": {
+        "x": 270,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "5:10",
+        "description": "Jayson Tatum makes 8-foot two point shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961578",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:42:38Z",
+      "location": {
+        "x": 370,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "4:58",
+        "description": "Tyler Herro misses driving floating jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961580",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:42:51Z",
+      "location": {
+        "x": 260,
+        "y": 156.67
+      },
+      "event": {
+        "clock": "4:45",
+        "description": "Neemias Queta makes 9-foot floating jump shot (Jaylen Brown assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961583",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:43:06Z",
+      "location": {
+        "x": 350,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "4:29",
+        "description": "Bam Adebayo makes 27-foot three point jumper (Tyler Herro assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961585",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:43:27Z",
+      "location": {
+        "x": 430,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "4:08",
+        "description": "Jaylen Brown misses 29-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961590",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:43:57Z",
+      "location": {
+        "x": 270,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "3:55",
+        "description": "Andrew Wiggins misses 10-foot two point shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961592",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:44:19Z",
+      "location": {
+        "x": 100,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "3:33",
+        "description": "Payton Pritchard misses 24-foot three point step back jumpshot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961596",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:44:57Z",
+      "location": null,
+      "event": {
+        "clock": "3:30",
+        "description": "Neemias Queta makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961597",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:45:10Z",
+      "location": null,
+      "event": {
+        "clock": "3:30",
+        "description": "Neemias Queta makes free throw 2 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961598",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:45:22Z",
+      "location": {
+        "x": 20,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "3:21",
+        "description": "Bam Adebayo makes 23-foot three point jumper (Davion Mitchell assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961604",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:45:59Z",
+      "location": {
+        "x": 370,
+        "y": 438.67
+      },
+      "event": {
+        "clock": "2:45",
+        "description": "Jayson Tatum misses 30-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961613",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:49:54Z",
+      "location": null,
+      "event": {
+        "clock": "2:43",
+        "description": "Neemias Queta makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961614",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:49:54Z",
+      "location": null,
+      "event": {
+        "clock": "2:43",
+        "description": "Neemias Queta misses free throw 2 of 2",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961616",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:50:21Z",
+      "location": {
+        "x": 200,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "2:28",
+        "description": "Pelle Larsson misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961620",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:50:49Z",
+      "location": {
+        "x": 280,
+        "y": 47
+      },
+      "event": {
+        "clock": "2:22",
+        "description": "Pelle Larsson makes two point shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961624",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:51:15Z",
+      "location": null,
+      "event": {
+        "clock": "2:22",
+        "description": "Pelle Larsson makes free throw 1 of 1",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961625",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:51:34Z",
+      "location": {
+        "x": 200,
+        "y": 454.33
+      },
+      "event": {
+        "clock": "2:05",
+        "description": "Jaylen Brown misses 28-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961627",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:51:46Z",
+      "location": {
+        "x": 80,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "1:53",
+        "description": "Jaylen Brown misses 16-foot fade away jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961629",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:52:00Z",
+      "location": {
+        "x": 190,
+        "y": 156.67
+      },
+      "event": {
+        "clock": "1:38",
+        "description": "Jaylen Brown makes 11-foot two point shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961630",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:52:12Z",
+      "location": {
+        "x": 190,
+        "y": 47
+      },
+      "event": {
+        "clock": "1:30",
+        "description": "Davion Mitchell makes 6-foot two point shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961631",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:52:31Z",
+      "location": {
+        "x": 430,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "1:13",
+        "description": "Jaylen Brown makes 28-foot three point step back jumpshot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961632",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:52:42Z",
+      "location": {
+        "x": 260,
+        "y": 94
+      },
+      "event": {
+        "clock": "1:05",
+        "description": "Neemias Queta blocks Jaime Jaquez Jr. 's 6-foot driving layup",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961635",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:52:47Z",
+      "location": {
+        "x": 220,
+        "y": 94
+      },
+      "event": {
+        "clock": "1:02",
+        "description": "Jaime Jaquez Jr. makes two point shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961636",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:53:07Z",
+      "location": {
+        "x": 350,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "42.3",
+        "description": "Derrick White makes 12-foot two point shot (Jaylen Brown assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810961",
+      "play_id": "401810961638",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:53:16Z",
+      "location": {
+        "x": 450,
+        "y": 266.33
+      },
+      "event": {
+        "clock": "36.5",
+        "description": "Davion Mitchell misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    }
+  ],
+  "saved_at": "2026-04-02T21:05:45.318250649Z"
+}

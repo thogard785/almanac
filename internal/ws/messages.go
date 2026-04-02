@@ -45,7 +45,7 @@ type PongMessage struct {
 type GameStateMessage struct {
 	Type       string           `json:"type"`
 	Games      []game.GameState `json:"games"`
-	Simulation bool             `json:"simulation,omitempty"`
+	Simulation bool             `json:"simulation"`
 }
 
 type PlayEventMessage struct {
@@ -56,7 +56,7 @@ type PlayEventMessage struct {
 	Timestamp  string      `json:"timestamp"`
 	Location   *game.Coord `json:"location"`
 	Event      any         `json:"event"`
-	Simulation bool        `json:"simulation,omitempty"`
+	Simulation bool        `json:"simulation"`
 }
 
 type ErrorMessage struct {

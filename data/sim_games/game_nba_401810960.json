@@ -1,0 +1,4524 @@
+{
+  "game_id": "401810960",
+  "sport": "nba",
+  "state": {
+    "game_id": "401810960",
+    "sport": "nba",
+    "status": "final",
+    "state": "post",
+    "detail": "Final",
+    "start_time": "2026-04-01T23:00Z",
+    "home": "WSH",
+    "away": "PHI",
+    "home_score": 131,
+    "away_score": 153,
+    "period": "Q0",
+    "clock": "",
+    "completed": true,
+    "tracked": true
+  },
+  "plays": [
+    {
+      "game_id": "401810960",
+      "play_id": "4018109607",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:11:26Z",
+      "location": {
+        "x": 190,
+        "y": 188
+      },
+      "event": {
+        "clock": "11:38",
+        "description": "Paul George makes 12-foot pullup jump shot (Tyrese Maxey assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "4018109608",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:11:42Z",
+      "location": {
+        "x": 140,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "11:21",
+        "description": "Bub Carrington makes 16-foot jumper",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096012",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:12:20Z",
+      "location": {
+        "x": 40,
+        "y": 0
+      },
+      "event": {
+        "clock": "10:44",
+        "description": "Adem Bona blocks Bilal Coulibaly's step back jumpshot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096014",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:12:26Z",
+      "location": {
+        "x": 120,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "10:38",
+        "description": "Tyrese Maxey misses running pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096017",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:12:57Z",
+      "location": {
+        "x": 200,
+        "y": 235
+      },
+      "event": {
+        "clock": "10:28",
+        "description": "Paul George makes 15-foot pullup jump shot (VJ Edgecombe assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096019",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:13:18Z",
+      "location": {
+        "x": 270,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "10:08",
+        "description": "Bilal Coulibaly makes 3-foot dunk (Tristan Vukcevic assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096021",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:13:25Z",
+      "location": {
+        "x": 20,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "10:01",
+        "description": "VJ Edgecombe misses 24-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096023",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:13:28Z",
+      "location": {
+        "x": 270,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "9:57",
+        "description": "Adem Bona makes 2-foot dunk",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096024",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:13:38Z",
+      "location": {
+        "x": 250,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "9:48",
+        "description": "Tristan Vukcevic misses 8-foot floating jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096026",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:13:49Z",
+      "location": {
+        "x": 350,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "9:37",
+        "description": "Paul George misses 27-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096028",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:13:56Z",
+      "location": {
+        "x": 380,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "9:30",
+        "description": "Tre Johnson misses running pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096030",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:14:05Z",
+      "location": {
+        "x": 280,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "9:21",
+        "description": "Paul George makes running layup",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096031",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:14:25Z",
+      "location": {
+        "x": 250,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "9:00",
+        "description": "Tristan Vukcevic makes 1-foot dunk (Will Riley assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096034",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:14:58Z",
+      "location": null,
+      "event": {
+        "clock": "8:51",
+        "description": "Tyrese Maxey misses technical free throw",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096036",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:15:16Z",
+      "location": {
+        "x": 250,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "8:47",
+        "description": "Tyrese Maxey makes 1-foot layup (VJ Edgecombe assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096040",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:16:00Z",
+      "location": null,
+      "event": {
+        "clock": "8:35",
+        "description": "Tristan Vukcevic makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096041",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:16:13Z",
+      "location": null,
+      "event": {
+        "clock": "8:35",
+        "description": "Tristan Vukcevic makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096044",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:16:58Z",
+      "location": null,
+      "event": {
+        "clock": "8:20",
+        "description": "Paul George makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096045",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:17:14Z",
+      "location": null,
+      "event": {
+        "clock": "8:20",
+        "description": "Paul George makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096046",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:17:33Z",
+      "location": {
+        "x": 390,
+        "y": 329
+      },
+      "event": {
+        "clock": "8:03",
+        "description": "Bub Carrington misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096048",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:17:42Z",
+      "location": {
+        "x": 310,
+        "y": 235
+      },
+      "event": {
+        "clock": "7:57",
+        "description": "Tyrese Maxey makes 16-foot pullup jump shot (Paul George assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096054",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:18:20Z",
+      "location": null,
+      "event": {
+        "clock": "7:57",
+        "description": "Tyrese Maxey makes free throw 1 of 1",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096055",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:18:40Z",
+      "location": {
+        "x": 410,
+        "y": 329
+      },
+      "event": {
+        "clock": "7:39",
+        "description": "Will Riley misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096057",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:18:50Z",
+      "location": {
+        "x": 270,
+        "y": 47
+      },
+      "event": {
+        "clock": "7:32",
+        "description": "Adem Bona makes layup (VJ Edgecombe assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096061",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:19:17Z",
+      "location": null,
+      "event": {
+        "clock": "7:32",
+        "description": "Adem Bona makes free throw 1 of 1",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096065",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:19:52Z",
+      "location": {
+        "x": 220,
+        "y": 423
+      },
+      "event": {
+        "clock": "7:13",
+        "description": "Tristan Vukcevic makes 26-foot three point step back jumpshot (Tre Johnson assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096070",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:23:22Z",
+      "location": null,
+      "event": {
+        "clock": "6:57",
+        "description": "Paul George makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096071",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:23:22Z",
+      "location": null,
+      "event": {
+        "clock": "6:57",
+        "description": "Paul George misses free throw 2 of 2",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096075",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:23:53Z",
+      "location": {
+        "x": 260,
+        "y": 47
+      },
+      "event": {
+        "clock": "6:40",
+        "description": "VJ Edgecombe makes 2-foot running dunk (Paul George assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096081",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:24:12Z",
+      "location": {
+        "x": 250,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "6:26",
+        "description": "Bilal Coulibaly makes driving layup",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096082",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:24:17Z",
+      "location": {
+        "x": 250,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "6:15",
+        "description": "Tyrese Maxey misses 10-foot pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096084",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:24:27Z",
+      "location": {
+        "x": 280,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "6:06",
+        "description": "Bub Carrington makes running layup",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096085",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:24:49Z",
+      "location": {
+        "x": 90,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "5:44",
+        "description": "Paul George makes 25-foot three point step back jumpshot",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096086",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:24:56Z",
+      "location": {
+        "x": 430,
+        "y": 329
+      },
+      "event": {
+        "clock": "5:37",
+        "description": "Tristan Vukcevic makes 27-foot three point jumper (Will Riley assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "40181096098",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:25:49Z",
+      "location": {
+        "x": 260,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "5:07",
+        "description": "Tre Johnson misses 10-foot pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960101",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:26:27Z",
+      "location": {
+        "x": 300,
+        "y": 156.67
+      },
+      "event": {
+        "clock": "4:46",
+        "description": "Kelly Oubre Jr. misses 10-foot turnaround jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960103",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:26:33Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "4:40",
+        "description": "Andre Drummond misses tip shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960107",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:26:50Z",
+      "location": {
+        "x": 220,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "4:23",
+        "description": "Quentin Grimes makes running layup (Tyrese Maxey assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960109",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:27:04Z",
+      "location": {
+        "x": 260,
+        "y": 94
+      },
+      "event": {
+        "clock": "4:09",
+        "description": "Bilal Coulibaly misses 5-foot floating jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960111",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:27:14Z",
+      "location": {
+        "x": 350,
+        "y": 94
+      },
+      "event": {
+        "clock": "3:59",
+        "description": "Tyrese Maxey misses 11-foot turnaround jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960113",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:27:25Z",
+      "location": {
+        "x": 230,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "3:51",
+        "description": "Bilal Coulibaly makes driving layup",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960118",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:27:55Z",
+      "location": null,
+      "event": {
+        "clock": "3:51",
+        "description": "Bilal Coulibaly makes free throw 1 of 1",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960119",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:28:08Z",
+      "location": {
+        "x": 340,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "3:40",
+        "description": "Paul George misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960121",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:28:17Z",
+      "location": {
+        "x": 100,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "3:31",
+        "description": "Bilal Coulibaly misses 26-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960126",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:28:49Z",
+      "location": {
+        "x": 220,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "3:16",
+        "description": "Kelly Oubre Jr. misses driving layup",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960128",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:28:59Z",
+      "location": {
+        "x": 240,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "3:06",
+        "description": "Justin Champagnie makes alley oop layup (Bub Carrington assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960130",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:29:14Z",
+      "location": {
+        "x": 270,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "2:51",
+        "description": "Paul George makes driving layup (Kelly Oubre Jr. assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960131",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:29:24Z",
+      "location": {
+        "x": 430,
+        "y": 297.67
+      },
+      "event": {
+        "clock": "2:41",
+        "description": "Bub Carrington misses 25-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960133",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:29:29Z",
+      "location": {
+        "x": 230,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "2:36",
+        "description": "Jamir Watkins makes 2-foot dunk",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960134",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:29:44Z",
+      "location": {
+        "x": 240,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "2:20",
+        "description": "Justin Champagnie blocks Quentin Grimes 's 1-foot driving layup",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960137",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:29:59Z",
+      "location": {
+        "x": 70,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "2:06",
+        "description": "Bub Carrington misses 26-foot three point step back jumpshot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960139",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:30:09Z",
+      "location": {
+        "x": 260,
+        "y": 250.67
+      },
+      "event": {
+        "clock": "1:56",
+        "description": "Bub Carrington misses 16-foot pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960141",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:30:18Z",
+      "location": {
+        "x": 280,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "1:48",
+        "description": "Tyrese Maxey makes running layup",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960149",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:33:27Z",
+      "location": {
+        "x": 300,
+        "y": 219.33
+      },
+      "event": {
+        "clock": "1:33",
+        "description": "Justin Champagnie misses 14-foot pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960153",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:33:51Z",
+      "location": {
+        "x": 190,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "1:17",
+        "description": "Sharife Cooper makes 7-foot step back jumpshot (Anthony Gill assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960155",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:34:14Z",
+      "location": {
+        "x": 10,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "56.1",
+        "description": "Quentin Grimes makes 23-foot three point jumper (Justin Edwards assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960157",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:34:32Z",
+      "location": {
+        "x": 140,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "40.3",
+        "description": "Jaden Hardy misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960159",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:34:44Z",
+      "location": {
+        "x": 240,
+        "y": 0
+      },
+      "event": {
+        "clock": "29.1",
+        "description": "Quentin Grimes makes dunk (Andre Drummond assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960161",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:35:12Z",
+      "location": {
+        "x": 210,
+        "y": 156.67
+      },
+      "event": {
+        "clock": "5.9",
+        "description": "Sharife Cooper makes 10-foot driving floating jump shot",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960162",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:35:21Z",
+      "location": {
+        "x": 250,
+        "y": 689.33
+      },
+      "event": {
+        "clock": "0.5",
+        "description": "VJ Edgecombe misses heave jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960171",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:38:25Z",
+      "location": {
+        "x": 480,
+        "y": 47
+      },
+      "event": {
+        "clock": "11:39",
+        "description": "Jaden Hardy makes 22-foot three point jumper (Jamir Watkins assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960173",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:38:40Z",
+      "location": {
+        "x": 290,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "11:24",
+        "description": "VJ Edgecombe misses 11-foot pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960175",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:38:45Z",
+      "location": {
+        "x": 250,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "11:19",
+        "description": "Kelly Oubre Jr. makes driving layup",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960176",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:38:58Z",
+      "location": {
+        "x": 230,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "11:06",
+        "description": "Will Riley makes alley oop layup (Tristan Vukcevic assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960178",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:39:14Z",
+      "location": {
+        "x": 230,
+        "y": 156.67
+      },
+      "event": {
+        "clock": "10:50",
+        "description": "Kelly Oubre Jr. makes 9-foot pullup jump shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960179",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:39:29Z",
+      "location": {
+        "x": 270,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "10:35",
+        "description": "Tristan Vukcevic makes driving layup (Jaden Hardy assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960181",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:39:40Z",
+      "location": {
+        "x": 280,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "10:25",
+        "description": "Andre Drummond misses layup",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960183",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:39:46Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "10:18",
+        "description": "Andre Drummond misses tip shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960188",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:40:23Z",
+      "location": {
+        "x": 80,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "9:58",
+        "description": "Justin Edwards makes 25-foot three point jumper (VJ Edgecombe assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960192",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:41:05Z",
+      "location": {
+        "x": 380,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "9:36",
+        "description": "Tristan Vukcevic makes 25-foot three point jumper",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960199",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:42:24Z",
+      "location": {
+        "x": 220,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "9:08",
+        "description": "Justin Edwards misses two point shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960201",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:42:32Z",
+      "location": {
+        "x": 260,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "8:59",
+        "description": "Anthony Gill makes 2-foot dunk (Jaden Hardy assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960203",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:42:49Z",
+      "location": {
+        "x": 230,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "8:44",
+        "description": "Quentin Grimes misses driving layup",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960207",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:43:22Z",
+      "location": null,
+      "event": {
+        "clock": "8:41",
+        "description": "Jamir Watkins makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960210",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:43:45Z",
+      "location": null,
+      "event": {
+        "clock": "8:41",
+        "description": "Jamir Watkins makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960211",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:44:03Z",
+      "location": {
+        "x": 290,
+        "y": 94
+      },
+      "event": {
+        "clock": "8:24",
+        "description": "Justin Champagnie blocks Kelly Oubre Jr. 's 6-foot pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960214",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:44:16Z",
+      "location": {
+        "x": 90,
+        "y": 329
+      },
+      "event": {
+        "clock": "8:11",
+        "description": "Justin Champagnie misses 26-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960216",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:44:29Z",
+      "location": {
+        "x": 110,
+        "y": 329
+      },
+      "event": {
+        "clock": "7:57",
+        "description": "Justin Edwards misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960218",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:44:39Z",
+      "location": {
+        "x": 270,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "7:50",
+        "description": "Jaden Hardy makes 2-foot running dunk",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960227",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:47:52Z",
+      "location": {
+        "x": 260,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "7:31",
+        "description": "Tyrese Maxey makes two point shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960228",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:48:04Z",
+      "location": {
+        "x": 260,
+        "y": 94
+      },
+      "event": {
+        "clock": "7:23",
+        "description": "Justin Champagnie makes 6-foot two point shot (Anthony Gill assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960234",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:48:37Z",
+      "location": null,
+      "event": {
+        "clock": "7:23",
+        "description": "Justin Champagnie makes free throw 1 of 1",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960235",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:48:56Z",
+      "location": {
+        "x": 260,
+        "y": 47
+      },
+      "event": {
+        "clock": "7:06",
+        "description": "Tyrese Maxey makes 3-foot driving dunk (Quentin Grimes assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960236",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:49:09Z",
+      "location": {
+        "x": 220,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "6:52",
+        "description": "Anthony Gill makes 26-foot three point jumper (Tre Johnson assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960239",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:49:29Z",
+      "location": {
+        "x": 140,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "6:32",
+        "description": "Quentin Grimes misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960245",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:50:06Z",
+      "location": {
+        "x": 10,
+        "y": 141
+      },
+      "event": {
+        "clock": "6:11",
+        "description": "Bub Carrington makes 25-foot three point jumper (Tre Johnson assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960247",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:50:21Z",
+      "location": {
+        "x": 300,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "5:57",
+        "description": "Paul George makes 8-foot pullup jump shot (Tyrese Maxey assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960249",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:50:38Z",
+      "location": {
+        "x": 270,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:39",
+        "description": "Justin Champagnie makes driving layup (Anthony Gill assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960251",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:50:47Z",
+      "location": {
+        "x": 390,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "5:31",
+        "description": "Paul George misses 25-foot three point step back jumpshot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960253",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:50:54Z",
+      "location": {
+        "x": 480,
+        "y": 47
+      },
+      "event": {
+        "clock": "5:24",
+        "description": "Jaden Hardy misses 22-foot running jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960255",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:51:00Z",
+      "location": {
+        "x": 220,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:18",
+        "description": "Justin Champagnie makes layup (Jaden Hardy assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960257",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:51:12Z",
+      "location": {
+        "x": 290,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "5:06",
+        "description": "Tyrese Maxey makes 8-foot two point shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960258",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:51:29Z",
+      "location": {
+        "x": 160,
+        "y": 47
+      },
+      "event": {
+        "clock": "4:49",
+        "description": "Tre Johnson misses 9-foot turnaround jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960262",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:52:20Z",
+      "location": null,
+      "event": {
+        "clock": "4:43",
+        "description": "Tyrese Maxey makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960267",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:52:20Z",
+      "location": null,
+      "event": {
+        "clock": "4:43",
+        "description": "Tyrese Maxey makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960270",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:53:31Z",
+      "location": {
+        "x": 200,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "4:19",
+        "description": "Tre Johnson misses 13-foot pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960273",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:53:54Z",
+      "location": {
+        "x": 240,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "4:07",
+        "description": "Tyrese Maxey makes driving layup",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960274",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:54:06Z",
+      "location": {
+        "x": 120,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "3:57",
+        "description": "Tre Johnson misses 26-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960279",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:54:30Z",
+      "location": {
+        "x": 220,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "3:52",
+        "description": "Will Riley makes driving layup (Bub Carrington assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960281",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:54:41Z",
+      "location": {
+        "x": 260,
+        "y": 94
+      },
+      "event": {
+        "clock": "3:41",
+        "description": "VJ Edgecombe makes 5-foot two point shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960282",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:54:57Z",
+      "location": {
+        "x": 280,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "3:25",
+        "description": "Bub Carrington misses 25-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960286",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:55:36Z",
+      "location": null,
+      "event": {
+        "clock": "3:18",
+        "description": "Adem Bona makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960287",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:55:54Z",
+      "location": null,
+      "event": {
+        "clock": "3:18",
+        "description": "Adem Bona makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960288",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:56:07Z",
+      "location": {
+        "x": 220,
+        "y": 47
+      },
+      "event": {
+        "clock": "3:08",
+        "description": "Bilal Coulibaly makes driving layup",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960291",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:56:30Z",
+      "location": null,
+      "event": {
+        "clock": "3:08",
+        "description": "Bilal Coulibaly makes free throw 1 of 1",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960292",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:56:54Z",
+      "location": {
+        "x": 340,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "2:49",
+        "description": "Tyrese Maxey misses 11-foot step back jumpshot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960294",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:57:06Z",
+      "location": {
+        "x": 410,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "2:36",
+        "description": "Bub Carrington misses 17-foot step back jumpshot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960296",
+      "sport": "nba",
+      "timestamp": "2026-04-01T23:57:12Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "2:35",
+        "description": "Tre Johnson misses tip in dunk",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960303",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:00:47Z",
+      "location": {
+        "x": 130,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "2:01",
+        "description": "Paul George makes 25-foot three pointer (Dominick Barlow assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960307",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:01:01Z",
+      "location": {
+        "x": 270,
+        "y": 47
+      },
+      "event": {
+        "clock": "1:47",
+        "description": "Tyrese Maxey makes running layup (Paul George assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960309",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:01:17Z",
+      "location": {
+        "x": 240,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "1:30",
+        "description": "Bilal Coulibaly misses driving floating jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960311",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:01:25Z",
+      "location": {
+        "x": 240,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "1:25",
+        "description": "VJ Edgecombe makes running layup (Paul George assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960314",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:01:54Z",
+      "location": null,
+      "event": {
+        "clock": "1:25",
+        "description": "VJ Edgecombe makes free throw 1 of 1",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960315",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:02:13Z",
+      "location": {
+        "x": 250,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "1:11",
+        "description": "Will Riley makes 6-foot pullup jump shot (Bub Carrington assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960318",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:02:24Z",
+      "location": {
+        "x": 380,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "59.7",
+        "description": "Paul George makes 17-foot pullup jump shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960319",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:02:43Z",
+      "location": {
+        "x": 20,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "43.9",
+        "description": "Anthony Gill makes 23-foot three point jumper (Will Riley assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960321",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:02:56Z",
+      "location": {
+        "x": 270,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "36.2",
+        "description": "VJ Edgecombe makes driving layup",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960322",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:03:06Z",
+      "location": {
+        "x": 140,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "27.2",
+        "description": "Anthony Gill makes 26-foot three point jumper (Bub Carrington assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960324",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:03:35Z",
+      "location": {
+        "x": 360,
+        "y": 376
+      },
+      "event": {
+        "clock": "2.9",
+        "description": "Paul George makes 26-foot three point step back jumpshot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960325",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:03:41Z",
+      "location": {
+        "x": 120,
+        "y": 830.33
+      },
+      "event": {
+        "clock": "1.0",
+        "description": "Tre Johnson misses heave jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960331",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:19:32Z",
+      "location": {
+        "x": 280,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "11:39",
+        "description": "Bilal Coulibaly makes driving layup",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960333",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:20:01Z",
+      "location": {
+        "x": 480,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "11:21",
+        "description": "Paul George misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960335",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:20:06Z",
+      "location": {
+        "x": 480,
+        "y": 47
+      },
+      "event": {
+        "clock": "11:17",
+        "description": "Paul George makes 23-foot three point jumper (Tyrese Maxey assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960337",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:20:21Z",
+      "location": {
+        "x": 400,
+        "y": 156.67
+      },
+      "event": {
+        "clock": "11:02",
+        "description": "Will Riley makes 18-foot pullup jump shot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960338",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:20:40Z",
+      "location": {
+        "x": 240,
+        "y": 47
+      },
+      "event": {
+        "clock": "10:42",
+        "description": "Adem Bona makes 2-foot driving dunk (Paul George assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960340",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:20:52Z",
+      "location": {
+        "x": 280,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "10:30",
+        "description": "Tristan Vukcevic makes driving layup",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960341",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:20:59Z",
+      "location": {
+        "x": 240,
+        "y": 47
+      },
+      "event": {
+        "clock": "10:23",
+        "description": "Adem Bona makes 2-foot dunk (Paul George assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960343",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:21:17Z",
+      "location": {
+        "x": 250,
+        "y": 47
+      },
+      "event": {
+        "clock": "10:05",
+        "description": "Will Riley makes 2-foot dunk (Bub Carrington assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960349",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:21:55Z",
+      "location": {
+        "x": 180,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "9:54",
+        "description": "Paul George makes 25-foot three point jumper (VJ Edgecombe assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960351",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:22:03Z",
+      "location": {
+        "x": 360,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "9:45",
+        "description": "Bub Carrington misses 26-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960353",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:22:14Z",
+      "location": {
+        "x": 260,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "9:35",
+        "description": "Paul George makes driving layup",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960354",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:22:30Z",
+      "location": {
+        "x": 380,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "9:18",
+        "description": "Bub Carrington misses 14-foot fade away jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960360",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:23:30Z",
+      "location": {
+        "x": 240,
+        "y": 47
+      },
+      "event": {
+        "clock": "9:05",
+        "description": "Anthony Gill makes 3-foot dunk (Tre Johnson assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960362",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:23:42Z",
+      "location": {
+        "x": 230,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "8:53",
+        "description": "Tyrese Maxey makes 3-foot driving dunk (Adem Bona assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960364",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:23:55Z",
+      "location": {
+        "x": 20,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "8:40",
+        "description": "Will Riley misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960366",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:24:05Z",
+      "location": {
+        "x": 350,
+        "y": 219.33
+      },
+      "event": {
+        "clock": "8:30",
+        "description": "Tyrese Maxey makes 16-foot step back jumpshot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960368",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:24:36Z",
+      "location": {
+        "x": 290,
+        "y": 423
+      },
+      "event": {
+        "clock": "8:16",
+        "description": "Tre Johnson misses 27-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960374",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:25:15Z",
+      "location": {
+        "x": 330,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "8:04",
+        "description": "Bub Carrington misses 8-foot two point shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960376",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:25:22Z",
+      "location": {
+        "x": 320,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "7:56",
+        "description": "Tyrese Maxey makes 26-foot running pullup jump shot (Andre Drummond assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960379",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:28:35Z",
+      "location": {
+        "x": 480,
+        "y": 47
+      },
+      "event": {
+        "clock": "7:45",
+        "description": "Bilal Coulibaly misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960381",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:28:44Z",
+      "location": {
+        "x": 230,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "7:36",
+        "description": "VJ Edgecombe makes running layup",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960382",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:28:58Z",
+      "location": {
+        "x": 350,
+        "y": 94
+      },
+      "event": {
+        "clock": "7:23",
+        "description": "Tre Johnson misses 11-foot two point shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960384",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:29:09Z",
+      "location": {
+        "x": 380,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "7:11",
+        "description": "Tyrese Maxey misses 26-foot three point step back jumpshot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960391",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:29:47Z",
+      "location": {
+        "x": 400,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "6:58",
+        "description": "Paul George makes 26-foot three pointer (VJ Edgecombe assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960392",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:30:00Z",
+      "location": {
+        "x": 200,
+        "y": 282
+      },
+      "event": {
+        "clock": "6:45",
+        "description": "Tre Johnson makes 18-foot pullup jump shot (Anthony Gill assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960394",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:30:11Z",
+      "location": {
+        "x": 270,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "6:35",
+        "description": "Paul George makes driving layup",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960399",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:30:23Z",
+      "location": {
+        "x": 270,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "6:22",
+        "description": "VJ Edgecombe makes alley oop layup (Tyrese Maxey assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960403",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:30:45Z",
+      "location": {
+        "x": 480,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "6:00",
+        "description": "VJ Edgecombe makes 24-foot three pointer (Dominick Barlow assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960408",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:33:55Z",
+      "location": {
+        "x": 280,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:49",
+        "description": "Anthony Gill makes 3-foot dunk (Bub Carrington assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960410",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:34:14Z",
+      "location": {
+        "x": 250,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "5:29",
+        "description": "Dominick Barlow makes 4-foot two point shot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960413",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:34:50Z",
+      "location": {
+        "x": 240,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:14",
+        "description": "Anthony Gill makes 1-foot driving dunk (Sharife Cooper assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960415",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:35:12Z",
+      "location": {
+        "x": 300,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "4:51",
+        "description": "Paul George misses 26-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960417",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:35:21Z",
+      "location": {
+        "x": 100,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "4:42",
+        "description": "Tre Johnson makes 24-foot three pointer (Bub Carrington assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960419",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:35:37Z",
+      "location": {
+        "x": 260,
+        "y": 47
+      },
+      "event": {
+        "clock": "4:26",
+        "description": "Paul George makes driving layup",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960420",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:35:56Z",
+      "location": {
+        "x": 20,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "4:07",
+        "description": "Will Riley makes 23-foot three point jumper (Anthony Gill assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960422",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:36:12Z",
+      "location": {
+        "x": 10,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "3:52",
+        "description": "Andre Drummond makes 24-foot three point jumper (VJ Edgecombe assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960424",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:36:25Z",
+      "location": {
+        "x": 80,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "3:38",
+        "description": "Tre Johnson makes 26-foot three point step back jumpshot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960437",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:38:26Z",
+      "location": {
+        "x": 150,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "3:16",
+        "description": "Cameron Payne makes 12-foot driving floating jump shot (Tyrese Maxey assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960439",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:36:04Z",
+      "location": {
+        "x": 240,
+        "y": 0
+      },
+      "event": {
+        "clock": "3:59",
+        "description": "Bub Carrington blocks VJ Edgecombe's driving layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960442",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:38:39Z",
+      "location": {
+        "x": 280,
+        "y": 94
+      },
+      "event": {
+        "clock": "3:03",
+        "description": "Jaden Hardy makes 6-foot driving floating jump shot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960443",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:38:54Z",
+      "location": {
+        "x": 270,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "2:47",
+        "description": "Tyrese Maxey makes driving layup (Cameron Payne assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960444",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:39:10Z",
+      "location": {
+        "x": 110,
+        "y": 47
+      },
+      "event": {
+        "clock": "2:32",
+        "description": "Justin Champagnie misses 14-foot jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960446",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:39:22Z",
+      "location": {
+        "x": 20,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "2:20",
+        "description": "Andre Drummond makes 23-foot three point jumper (Tyrese Maxey assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960451",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:40:11Z",
+      "location": {
+        "x": 320,
+        "y": 423
+      },
+      "event": {
+        "clock": "2:03",
+        "description": "Jaden Hardy misses 27-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960454",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:40:45Z",
+      "location": {
+        "x": 270,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "1:40",
+        "description": "Kelly Oubre Jr. misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960460",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:41:17Z",
+      "location": null,
+      "event": {
+        "clock": "1:32",
+        "description": "Justin Champagnie misses free throw 1 of 2",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960462",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:41:17Z",
+      "location": null,
+      "event": {
+        "clock": "1:32",
+        "description": "Justin Champagnie makes free throw 2 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960463",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:39:31Z",
+      "location": {
+        "x": 240,
+        "y": 47
+      },
+      "event": {
+        "clock": "2:08",
+        "description": "Cameron Payne blocks Anthony Gill 's 2-foot layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960466",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:41:43Z",
+      "location": {
+        "x": 390,
+        "y": 329
+      },
+      "event": {
+        "clock": "1:20",
+        "description": "Tyrese Maxey misses 25-foot three point step back jumpshot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960468",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:41:50Z",
+      "location": {
+        "x": 270,
+        "y": 47
+      },
+      "event": {
+        "clock": "1:15",
+        "description": "Sharife Cooper misses running layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960470",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:41:55Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "1:13",
+        "description": "Justin Champagnie makes tip in dunk",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960471",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:42:13Z",
+      "location": {
+        "x": 220,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "51.9",
+        "description": "Kelly Oubre Jr. makes 3-foot two point shot (Tyrese Maxey assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960475",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:43:05Z",
+      "location": null,
+      "event": {
+        "clock": "33.3",
+        "description": "Anthony Gill makes free throw 1 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960476",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:43:21Z",
+      "location": null,
+      "event": {
+        "clock": "33.3",
+        "description": "Anthony Gill makes free throw 2 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960479",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:44:06Z",
+      "location": {
+        "x": 120,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "0.8",
+        "description": "Jaden Hardy misses 26-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960487",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:47:04Z",
+      "location": {
+        "x": 130,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "11:43",
+        "description": "VJ Edgecombe misses 18-foot step back jumpshot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960490",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:47:27Z",
+      "location": {
+        "x": 380,
+        "y": 376
+      },
+      "event": {
+        "clock": "11:36",
+        "description": "Quentin Grimes makes 26-foot three point jumper (Andre Drummond assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960492",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:47:40Z",
+      "location": {
+        "x": 60,
+        "y": 266.33
+      },
+      "event": {
+        "clock": "11:22",
+        "description": "Jaden Hardy misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960499",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:49:04Z",
+      "location": null,
+      "event": {
+        "clock": "10:50",
+        "description": "Sharife Cooper makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960500",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:49:19Z",
+      "location": null,
+      "event": {
+        "clock": "10:50",
+        "description": "Sharife Cooper makes free throw 2 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960503",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:49:53Z",
+      "location": null,
+      "event": {
+        "clock": "10:41",
+        "description": "Cameron Payne makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960504",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:50:08Z",
+      "location": null,
+      "event": {
+        "clock": "10:41",
+        "description": "Cameron Payne makes free throw 2 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960505",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:50:22Z",
+      "location": {
+        "x": 320,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "10:27",
+        "description": "Jamir Watkins misses 26-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960507",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:50:38Z",
+      "location": {
+        "x": 140,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "10:13",
+        "description": "Quentin Grimes makes 17-foot pullup jump shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960512",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:51:30Z",
+      "location": {
+        "x": 230,
+        "y": 423
+      },
+      "event": {
+        "clock": "9:54",
+        "description": "Jamir Watkins makes 26-foot three point jumper (Sharife Cooper assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960514",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:51:40Z",
+      "location": {
+        "x": 100,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "9:43",
+        "description": "VJ Edgecombe misses driving floating jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960520",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:52:13Z",
+      "location": {
+        "x": 480,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "9:39",
+        "description": "Kelly Oubre Jr. makes 23-foot three point jumper (VJ Edgecombe assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960522",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:52:30Z",
+      "location": {
+        "x": 390,
+        "y": 376
+      },
+      "event": {
+        "clock": "9:22",
+        "description": "Jaden Hardy misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960524",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:52:41Z",
+      "location": {
+        "x": 220,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "9:12",
+        "description": "Quentin Grimes misses driving floating jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960526",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:52:47Z",
+      "location": {
+        "x": 270,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "9:06",
+        "description": "Justin Champagnie makes running layup (Jamir Watkins assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960529",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:53:13Z",
+      "location": {
+        "x": 490,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "8:46",
+        "description": "VJ Edgecombe makes 24-foot three point jumper (Andre Drummond assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960531",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:53:31Z",
+      "location": {
+        "x": 20,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "8:22",
+        "description": "Bub Carrington makes 24-foot three point jumper (Sharife Cooper assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960533",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:53:40Z",
+      "location": {
+        "x": 250,
+        "y": 47
+      },
+      "event": {
+        "clock": "8:12",
+        "description": "VJ Edgecombe makes driving layup",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960534",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:53:53Z",
+      "location": {
+        "x": 280,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "7:59",
+        "description": "Sharife Cooper misses driving layup",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960536",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:53:56Z",
+      "location": {
+        "x": 210,
+        "y": 0
+      },
+      "event": {
+        "clock": "7:56",
+        "description": "Justin Champagnie makes 3-foot reverse layup",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960537",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:54:12Z",
+      "location": {
+        "x": 480,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "7:40",
+        "description": "Kelly Oubre Jr. makes 23-foot three point jumper (VJ Edgecombe assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960539",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:54:21Z",
+      "location": {
+        "x": 390,
+        "y": 376
+      },
+      "event": {
+        "clock": "7:31",
+        "description": "Bub Carrington makes 27-foot three point step back jumpshot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960540",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:54:38Z",
+      "location": {
+        "x": 90,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "7:14",
+        "description": "Kelly Oubre Jr. misses 25-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960555",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:58:29Z",
+      "location": null,
+      "event": {
+        "clock": "6:55",
+        "description": "Justin Champagnie makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960556",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:58:29Z",
+      "location": null,
+      "event": {
+        "clock": "6:55",
+        "description": "Justin Champagnie misses free throw 2 of 2",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960558",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:58:58Z",
+      "location": {
+        "x": 170,
+        "y": 141
+      },
+      "event": {
+        "clock": "6:41",
+        "description": "Cameron Payne misses driving floating jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960560",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:59:12Z",
+      "location": {
+        "x": 250,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "6:27",
+        "description": "Jaden Hardy misses driving floating jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960562",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:59:19Z",
+      "location": {
+        "x": 140,
+        "y": 376
+      },
+      "event": {
+        "clock": "6:22",
+        "description": "Tyrese Maxey misses running pullup jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960564",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:59:32Z",
+      "location": {
+        "x": 80,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "6:07",
+        "description": "Will Riley misses 26-foot three point step back jumpshot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960566",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:59:47Z",
+      "location": {
+        "x": 20,
+        "y": 141
+      },
+      "event": {
+        "clock": "5:52",
+        "description": "Quentin Grimes misses 24-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960568",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:00:09Z",
+      "location": {
+        "x": 240,
+        "y": 47
+      },
+      "event": {
+        "clock": "5:31",
+        "description": "Will Riley makes two point shot (Anthony Gill assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960570",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:00:30Z",
+      "location": {
+        "x": 420,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "5:22",
+        "description": "Paul George misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960572",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:00:36Z",
+      "location": {
+        "x": 220,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "5:05",
+        "description": "Sharife Cooper makes 25-foot three point jumper",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960582",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:03:49Z",
+      "location": {
+        "x": 190,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "4:49",
+        "description": "Paul George misses driving floating jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960585",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:04:18Z",
+      "location": {
+        "x": 240,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "4:35",
+        "description": "Tyrese Maxey misses two point shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960587",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:04:24Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "4:30",
+        "description": "Adem Bona makes tip in dunk",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960588",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:04:41Z",
+      "location": {
+        "x": 220,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "4:13",
+        "description": "Sharife Cooper misses two point shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960593",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:05:19Z",
+      "location": {
+        "x": 300,
+        "y": 219.33
+      },
+      "event": {
+        "clock": "3:52",
+        "description": "VJ Edgecombe makes 14-foot pullup jump shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960596",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:05:38Z",
+      "location": {
+        "x": 260,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "3:33",
+        "description": "Dominick Barlow makes alley oop layup (Tyrese Maxey assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960598",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:05:49Z",
+      "location": {
+        "x": 330,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "3:23",
+        "description": "Jaden Hardy misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960602",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:06:24Z",
+      "location": {
+        "x": 240,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "2:59",
+        "description": "Dominick Barlow makes 2-foot driving dunk (VJ Edgecombe assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960615",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:08:19Z",
+      "location": {
+        "x": 280,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "2:39",
+        "description": "Sharife Cooper misses driving layup",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960617",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:08:25Z",
+      "location": {
+        "x": 260,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "2:33",
+        "description": "Trendon Watford makes running layup (MarJon Beauchamp assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960619",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:08:39Z",
+      "location": {
+        "x": 390,
+        "y": 376
+      },
+      "event": {
+        "clock": "2:18",
+        "description": "Will Riley misses 27-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960621",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:09:02Z",
+      "location": {
+        "x": 240,
+        "y": 423
+      },
+      "event": {
+        "clock": "1:57",
+        "description": "Cameron Payne misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960623",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:09:11Z",
+      "location": {
+        "x": 360,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "1:48",
+        "description": "Will Riley makes 25-foot three point jumper (Jaden Hardy assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960625",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:09:21Z",
+      "location": {
+        "x": 360,
+        "y": 376
+      },
+      "event": {
+        "clock": "1:42",
+        "description": "MarJon Beauchamp makes 26-foot three pointer",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960626",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:09:34Z",
+      "location": {
+        "x": 340,
+        "y": 235
+      },
+      "event": {
+        "clock": "1:31",
+        "description": "Jaden Hardy misses 17-foot pullup jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960629",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:10:02Z",
+      "location": {
+        "x": 480,
+        "y": 47
+      },
+      "event": {
+        "clock": "1:20",
+        "description": "Justin Edwards misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960631",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:10:15Z",
+      "location": {
+        "x": 240,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "1:09",
+        "description": "Anthony Gill makes 2-foot dunk (Jaden Hardy assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960635",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:10:53Z",
+      "location": null,
+      "event": {
+        "clock": "52.5",
+        "description": "Justin Edwards makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960636",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:11:05Z",
+      "location": null,
+      "event": {
+        "clock": "52.5",
+        "description": "Justin Edwards makes free throw 2 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960637",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:11:21Z",
+      "location": {
+        "x": 20,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "38.7",
+        "description": "Jamir Watkins misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960644",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:13:00Z",
+      "location": null,
+      "event": {
+        "clock": "25.3",
+        "description": "Sharife Cooper makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810960",
+      "play_id": "401810960645",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:13:13Z",
+      "location": null,
+      "event": {
+        "clock": "25.3",
+        "description": "Sharife Cooper makes free throw 2 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    }
+  ],
+  "saved_at": "2026-04-02T21:05:44.618184833Z"
+}

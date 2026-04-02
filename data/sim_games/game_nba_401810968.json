@@ -1,0 +1,4419 @@
+{
+  "game_id": "401810968",
+  "sport": "nba",
+  "state": {
+    "game_id": "401810968",
+    "sport": "nba",
+    "status": "final",
+    "state": "post",
+    "detail": "Final",
+    "start_time": "2026-04-02T02:00Z",
+    "home": "GS",
+    "away": "SA",
+    "home_score": 113,
+    "away_score": 127,
+    "period": "Q0",
+    "clock": "",
+    "completed": true,
+    "tracked": true
+  },
+  "plays": [
+    {
+      "game_id": "401810968",
+      "play_id": "4018109687",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:13:11Z",
+      "location": {
+        "x": 130,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "11:42",
+        "description": "Victor Wembanyama makes 13-foot two point shot (Devin Vassell assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096811",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:13:37Z",
+      "location": null,
+      "event": {
+        "clock": "11:42",
+        "description": "Victor Wembanyama makes free throw 1 of 1",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096812",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:13:57Z",
+      "location": {
+        "x": 300,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "11:23",
+        "description": "LJ Cryer misses 25-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096814",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:14:06Z",
+      "location": {
+        "x": 260,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "11:14",
+        "description": "Victor Wembanyama misses driving floating jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096817",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:14:51Z",
+      "location": {
+        "x": 390,
+        "y": 329
+      },
+      "event": {
+        "clock": "11:00",
+        "description": "LJ Cryer misses 25-foot three point step back jumpshot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096819",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:15:02Z",
+      "location": {
+        "x": 210,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "10:50",
+        "description": "Victor Wembanyama makes two point shot",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096820",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:15:15Z",
+      "location": {
+        "x": 80,
+        "y": 297.67
+      },
+      "event": {
+        "clock": "10:37",
+        "description": "Will Richard misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096823",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:15:29Z",
+      "location": {
+        "x": 240,
+        "y": 438.67
+      },
+      "event": {
+        "clock": "10:29",
+        "description": "Victor Wembanyama misses 27-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096825",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:15:44Z",
+      "location": {
+        "x": 250,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "10:17",
+        "description": "Nate Williams misses driving floating jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096831",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:16:17Z",
+      "location": null,
+      "event": {
+        "clock": "10:09",
+        "description": "Stephon Castle makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096832",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:16:17Z",
+      "location": null,
+      "event": {
+        "clock": "10:09",
+        "description": "Stephon Castle makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096833",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:16:49Z",
+      "location": {
+        "x": 240,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "9:57",
+        "description": "Draymond Green misses 5-foot two point shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096837",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:17:19Z",
+      "location": null,
+      "event": {
+        "clock": "9:55",
+        "description": "Victor Wembanyama makes free throw 1 of 1",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096838",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:17:47Z",
+      "location": {
+        "x": 180,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "9:36",
+        "description": "De'Aaron Fox makes 10-foot turnaround jump shot",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096839",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:17:59Z",
+      "location": {
+        "x": 400,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "9:24",
+        "description": "Brandin Podziemski misses 24-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096842",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:18:25Z",
+      "location": {
+        "x": 30,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "9:07",
+        "description": "Brandin Podziemski makes 25-foot three point jumper (Will Richard assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096844",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:18:41Z",
+      "location": {
+        "x": 240,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "8:51",
+        "description": "Victor Wembanyama makes 1-foot alley oop dunk (Stephon Castle assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096849",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:19:19Z",
+      "location": {
+        "x": 280,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "8:37",
+        "description": "Brandin Podziemski misses finger roll layup",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096851",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:19:32Z",
+      "location": {
+        "x": 230,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "8:24",
+        "description": "Victor Wembanyama makes alley oop layup (Stephon Castle assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096853",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:19:44Z",
+      "location": {
+        "x": 490,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "8:12",
+        "description": "LJ Cryer misses 24-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096855",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:19:52Z",
+      "location": {
+        "x": 410,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "8:04",
+        "description": "Julian Champagnie makes 25-foot three point jumper (Victor Wembanyama assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096862",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:23:52Z",
+      "location": {
+        "x": 50,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "7:47",
+        "description": "Seth Curry makes 20-foot pullup jump shot (Omer Yurtseven assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096866",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:24:34Z",
+      "location": {
+        "x": 230,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "7:27",
+        "description": "De'Aaron Fox makes driving layup",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096869",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:25:08Z",
+      "location": null,
+      "event": {
+        "clock": "7:16",
+        "description": "Omer Yurtseven makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096874",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:25:28Z",
+      "location": null,
+      "event": {
+        "clock": "7:16",
+        "description": "Omer Yurtseven makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096876",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:26:08Z",
+      "location": {
+        "x": 310,
+        "y": 94
+      },
+      "event": {
+        "clock": "6:55",
+        "description": "Pat Spencer misses 8-foot two point shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096878",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:26:14Z",
+      "location": {
+        "x": 290,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "6:45",
+        "description": "Dylan Harper makes running layup (Devin Vassell assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096880",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:26:32Z",
+      "location": {
+        "x": 250,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "6:27",
+        "description": "Nate Williams makes driving layup",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096883",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:27:24Z",
+      "location": null,
+      "event": {
+        "clock": "6:10",
+        "description": "Victor Wembanyama makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096884",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:27:46Z",
+      "location": null,
+      "event": {
+        "clock": "6:10",
+        "description": "Victor Wembanyama makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096885",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:28:01Z",
+      "location": {
+        "x": 200,
+        "y": 94
+      },
+      "event": {
+        "clock": "5:58",
+        "description": "Victor Wembanyama blocks Nate Williams 's 7-foot driving layup",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096891",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:28:23Z",
+      "location": {
+        "x": 20,
+        "y": 47
+      },
+      "event": {
+        "clock": "5:54",
+        "description": "Omer Yurtseven misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096893",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:28:29Z",
+      "location": {
+        "x": 280,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:48",
+        "description": "Victor Wembanyama makes 3-foot layup (Dylan Harper assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096895",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:29:01Z",
+      "location": {
+        "x": 320,
+        "y": 141
+      },
+      "event": {
+        "clock": "5:28",
+        "description": "Pat Spencer makes 10-foot pullup jump shot",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096896",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:29:14Z",
+      "location": {
+        "x": 10,
+        "y": 47
+      },
+      "event": {
+        "clock": "5:16",
+        "description": "Draymond Green blocks Keldon Johnson 's 23-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "40181096899",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:29:30Z",
+      "location": {
+        "x": 20,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "4:59",
+        "description": "Seth Curry misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968103",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:30:11Z",
+      "location": null,
+      "event": {
+        "clock": "4:55",
+        "description": "Stephon Castle misses free throw 1 of 2",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968111",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:30:11Z",
+      "location": null,
+      "event": {
+        "clock": "4:55",
+        "description": "Stephon Castle misses free throw 2 of 2",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968116",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:31:09Z",
+      "location": {
+        "x": 20,
+        "y": -15.67
+      },
+      "event": {
+        "clock": "4:43",
+        "description": "Keldon Johnson makes 23-foot three point jumper (Dylan Harper assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968121",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:31:44Z",
+      "location": {
+        "x": 230,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "4:14",
+        "description": "Nate Williams makes 4-foot running pullup jump shot (Pat Spencer assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968123",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:31:56Z",
+      "location": {
+        "x": 20,
+        "y": 0
+      },
+      "event": {
+        "clock": "4:02",
+        "description": "Harrison Barnes misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968125",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:32:06Z",
+      "location": {
+        "x": 370,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "3:52",
+        "description": "Brandin Podziemski makes 25-foot three point jumper (Malevy Leons assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968130",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:35:57Z",
+      "location": {
+        "x": 350,
+        "y": 376
+      },
+      "event": {
+        "clock": "3:40",
+        "description": "Julian Champagnie misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968134",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:36:33Z",
+      "location": null,
+      "event": {
+        "clock": "3:30",
+        "description": "Brandin Podziemski makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968135",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:36:48Z",
+      "location": null,
+      "event": {
+        "clock": "3:30",
+        "description": "Brandin Podziemski makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968138",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:37:29Z",
+      "location": null,
+      "event": {
+        "clock": "3:13",
+        "description": "Keldon Johnson makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968139",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:37:45Z",
+      "location": null,
+      "event": {
+        "clock": "3:13",
+        "description": "Keldon Johnson makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968140",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:38:00Z",
+      "location": {
+        "x": 200,
+        "y": 235
+      },
+      "event": {
+        "clock": "2:59",
+        "description": "Brandin Podziemski makes 16-foot pullup jump shot (Pat Spencer assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968146",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:39:07Z",
+      "location": null,
+      "event": {
+        "clock": "2:34",
+        "description": "Brandin Podziemski makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968149",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:39:27Z",
+      "location": null,
+      "event": {
+        "clock": "2:34",
+        "description": "Brandin Podziemski makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968150",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:39:42Z",
+      "location": {
+        "x": 410,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "2:23",
+        "description": "Victor Wembanyama misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968152",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:39:53Z",
+      "location": {
+        "x": 220,
+        "y": 47
+      },
+      "event": {
+        "clock": "2:13",
+        "description": "Malevy Leons makes 4-foot layup (Brandin Podziemski assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968160",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:40:32Z",
+      "location": null,
+      "event": {
+        "clock": "2:13",
+        "description": "Malevy Leons misses free throw 1 of 1",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968164",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:40:54Z",
+      "location": {
+        "x": 150,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "1:52",
+        "description": "Pat Spencer misses running pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968169",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:41:41Z",
+      "location": {
+        "x": 300,
+        "y": 94
+      },
+      "event": {
+        "clock": "1:38",
+        "description": "Victor Wembanyama makes 7-foot two point shot (Harrison Barnes assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968173",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:42:05Z",
+      "location": {
+        "x": 250,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "1:15",
+        "description": "Julian Champagnie makes 1-foot running dunk (De'Aaron Fox assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968175",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:42:23Z",
+      "location": {
+        "x": 170,
+        "y": 376
+      },
+      "event": {
+        "clock": "55.6",
+        "description": "Pat Spencer misses 24-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968181",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:43:54Z",
+      "location": null,
+      "event": {
+        "clock": "54.9",
+        "description": "Victor Wembanyama makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968182",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:43:54Z",
+      "location": null,
+      "event": {
+        "clock": "54.9",
+        "description": "Victor Wembanyama misses free throw 2 of 2",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968184",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:44:26Z",
+      "location": {
+        "x": 180,
+        "y": 94
+      },
+      "event": {
+        "clock": "38.4",
+        "description": "Pat Spencer makes 9-foot fade away jump shot",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968185",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:44:51Z",
+      "location": {
+        "x": 480,
+        "y": 156.67
+      },
+      "event": {
+        "clock": "15.8",
+        "description": "Carter Bryant misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968187",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:45:07Z",
+      "location": {
+        "x": 380,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "1.5",
+        "description": "Stephon Castle misses 28-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968203",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:50:14Z",
+      "location": null,
+      "event": {
+        "clock": "11:24",
+        "description": "Harrison Barnes makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968204",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:50:14Z",
+      "location": null,
+      "event": {
+        "clock": "11:24",
+        "description": "Harrison Barnes misses free throw 2 of 2",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968206",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:50:33Z",
+      "location": {
+        "x": 260,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "11:17",
+        "description": "Nate Williams makes two point shot (Brandin Podziemski assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968208",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:50:49Z",
+      "location": {
+        "x": 60,
+        "y": 266.33
+      },
+      "event": {
+        "clock": "11:01",
+        "description": "Devin Vassell misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968210",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:50:59Z",
+      "location": {
+        "x": 20,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "10:51",
+        "description": "Draymond Green makes 23-foot three point jumper (LJ Cryer assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968215",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:51:44Z",
+      "location": {
+        "x": 330,
+        "y": 250.67
+      },
+      "event": {
+        "clock": "10:20",
+        "description": "Pat Spencer misses 17-foot step back jumpshot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968217",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:52:00Z",
+      "location": {
+        "x": 420,
+        "y": 282
+      },
+      "event": {
+        "clock": "10:04",
+        "description": "Stephon Castle misses 24-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968219",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:52:05Z",
+      "location": {
+        "x": 240,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "10:00",
+        "description": "Devin Vassell misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968221",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:52:14Z",
+      "location": {
+        "x": 410,
+        "y": 297.67
+      },
+      "event": {
+        "clock": "9:51",
+        "description": "Pat Spencer misses 24-foot three point step back jumpshot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968223",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:52:24Z",
+      "location": {
+        "x": 200,
+        "y": 250.67
+      },
+      "event": {
+        "clock": "9:40",
+        "description": "Victor Wembanyama makes 16-foot pullup jump shot (Stephon Castle assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968227",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:53:06Z",
+      "location": null,
+      "event": {
+        "clock": "9:30",
+        "description": "Draymond Green makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968232",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:53:27Z",
+      "location": null,
+      "event": {
+        "clock": "9:30",
+        "description": "Draymond Green makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968233",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:53:44Z",
+      "location": {
+        "x": 250,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "9:17",
+        "description": "De'Aaron Fox misses two point shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968235",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:53:51Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "9:14",
+        "description": "De'Aaron Fox makes tip shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968241",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:54:31Z",
+      "location": {
+        "x": 260,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "8:44",
+        "description": "Victor Wembanyama makes 2-foot alley oop dunk (Devin Vassell assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968243",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:54:40Z",
+      "location": {
+        "x": 140,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "8:35",
+        "description": "Brandin Podziemski misses 25-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968247",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:55:18Z",
+      "location": null,
+      "event": {
+        "clock": "8:30",
+        "description": "Keldon Johnson makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968248",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:55:18Z",
+      "location": null,
+      "event": {
+        "clock": "8:30",
+        "description": "Keldon Johnson misses free throw 2 of 2",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968254",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:56:57Z",
+      "location": {
+        "x": 10,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "8:07",
+        "description": "Pat Spencer misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968256",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:57:03Z",
+      "location": {
+        "x": 290,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "8:01",
+        "description": "Devin Vassell misses running layup",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968260",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:57:47Z",
+      "location": null,
+      "event": {
+        "clock": "7:54",
+        "description": "Devin Vassell makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968267",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:58:14Z",
+      "location": null,
+      "event": {
+        "clock": "7:54",
+        "description": "Devin Vassell makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968268",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:58:40Z",
+      "location": {
+        "x": 420,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "7:32",
+        "description": "Will Richard misses 27-foot three point step back jumpshot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968273",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:59:10Z",
+      "location": {
+        "x": 270,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "7:19",
+        "description": "Dylan Harper makes driving layup",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968276",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:59:37Z",
+      "location": {
+        "x": 220,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "6:54",
+        "description": "Dylan Harper makes running layup (Devin Vassell assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968283",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:03:21Z",
+      "location": null,
+      "event": {
+        "clock": "6:54",
+        "description": "Dylan Harper makes free throw 1 of 1",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968284",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:03:35Z",
+      "location": {
+        "x": 180,
+        "y": 47
+      },
+      "event": {
+        "clock": "6:40",
+        "description": "Nate Williams misses driving layup",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968286",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:03:45Z",
+      "location": {
+        "x": 490,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "6:31",
+        "description": "Devin Vassell misses 24-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968288",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:04:04Z",
+      "location": {
+        "x": 310,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "6:11",
+        "description": "Seth Curry makes 7-foot two point shot (LJ Cryer assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968289",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:04:21Z",
+      "location": {
+        "x": 160,
+        "y": 454.33
+      },
+      "event": {
+        "clock": "5:54",
+        "description": "De'Aaron Fox makes 29-foot three point jumper (Dylan Harper assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968291",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:04:40Z",
+      "location": {
+        "x": 380,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "5:35",
+        "description": "Seth Curry makes 18-foot pullup jump shot (LJ Cryer assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968293",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:04:59Z",
+      "location": {
+        "x": 320,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "5:18",
+        "description": "Dylan Harper misses 10-foot pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968295",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:05:08Z",
+      "location": {
+        "x": 390,
+        "y": 188
+      },
+      "event": {
+        "clock": "5:07",
+        "description": "Seth Curry misses 17-foot step back jumpshot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968297",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:05:17Z",
+      "location": {
+        "x": 240,
+        "y": 94
+      },
+      "event": {
+        "clock": "5:00",
+        "description": "Dylan Harper misses running pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968306",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:05:45Z",
+      "location": {
+        "x": 10,
+        "y": 0
+      },
+      "event": {
+        "clock": "4:56",
+        "description": "Julian Champagnie misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968309",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:06:10Z",
+      "location": {
+        "x": 20,
+        "y": 0
+      },
+      "event": {
+        "clock": "4:52",
+        "description": "Julian Champagnie misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968313",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:06:44Z",
+      "location": null,
+      "event": {
+        "clock": "4:50",
+        "description": "Stephon Castle makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968317",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:07:04Z",
+      "location": null,
+      "event": {
+        "clock": "4:50",
+        "description": "Stephon Castle makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968318",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:07:19Z",
+      "location": {
+        "x": 230,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "4:36",
+        "description": "Nate Williams misses 4-foot two point shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968320",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:07:25Z",
+      "location": {
+        "x": 220,
+        "y": 47
+      },
+      "event": {
+        "clock": "4:31",
+        "description": "Stephon Castle makes two point shot (Julian Champagnie assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968324",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:08:06Z",
+      "location": null,
+      "event": {
+        "clock": "4:21",
+        "description": "LJ Cryer makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968327",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:08:27Z",
+      "location": null,
+      "event": {
+        "clock": "4:21",
+        "description": "LJ Cryer makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968328",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:08:46Z",
+      "location": {
+        "x": 260,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "4:11",
+        "description": "Pat Spencer blocks Stephon Castle 's 7-foot layup",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968332",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:09:07Z",
+      "location": {
+        "x": 30,
+        "y": 219.33
+      },
+      "event": {
+        "clock": "4:04",
+        "description": "Keldon Johnson misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968334",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:09:12Z",
+      "location": {
+        "x": 280,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "4:00",
+        "description": "Julian Champagnie makes 25-foot three point jumper (Stephon Castle assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968340",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:10:06Z",
+      "location": null,
+      "event": {
+        "clock": "3:43",
+        "description": "Julian Champagnie makes free throw 1 of 1",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968345",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:10:45Z",
+      "location": {
+        "x": 210,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "3:22",
+        "description": "Keldon Johnson misses driving layup",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968347",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:10:51Z",
+      "location": {
+        "x": 260,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "3:17",
+        "description": "Will Richard makes running layup (Pat Spencer assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968349",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:11:02Z",
+      "location": {
+        "x": 130,
+        "y": 376
+      },
+      "event": {
+        "clock": "3:05",
+        "description": "Julian Champagnie misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968353",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:11:35Z",
+      "location": null,
+      "event": {
+        "clock": "3:04",
+        "description": "Victor Wembanyama makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968354",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:11:58Z",
+      "location": null,
+      "event": {
+        "clock": "3:04",
+        "description": "Victor Wembanyama makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968355",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:12:22Z",
+      "location": {
+        "x": 40,
+        "y": 219.33
+      },
+      "event": {
+        "clock": "2:42",
+        "description": "Nate Williams misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968357",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:12:33Z",
+      "location": {
+        "x": 420,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "2:32",
+        "description": "Victor Wembanyama makes 18-foot jumper",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968359",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:12:48Z",
+      "location": {
+        "x": 250,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "2:18",
+        "description": "Pat Spencer misses two point shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968361",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:12:56Z",
+      "location": {
+        "x": 210,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "2:12",
+        "description": "Stephon Castle misses running layup",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968365",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:05:48Z",
+      "location": {
+        "x": 200,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "4:55",
+        "description": "Keldon Johnson misses 5-foot tip shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968369",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:16:46Z",
+      "location": {
+        "x": 260,
+        "y": 454.33
+      },
+      "event": {
+        "clock": "1:55",
+        "description": "Seth Curry makes 28-foot three point jumper (Draymond Green assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968371",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:17:04Z",
+      "location": {
+        "x": 480,
+        "y": 47
+      },
+      "event": {
+        "clock": "1:36",
+        "description": "Keldon Johnson makes 23-foot three point jumper (Stephon Castle assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968373",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:17:18Z",
+      "location": {
+        "x": 180,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "1:22",
+        "description": "Draymond Green misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968375",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:17:28Z",
+      "location": {
+        "x": 310,
+        "y": 454.33
+      },
+      "event": {
+        "clock": "1:12",
+        "description": "Victor Wembanyama misses 29-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968377",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:17:45Z",
+      "location": {
+        "x": 240,
+        "y": 423
+      },
+      "event": {
+        "clock": "56.4",
+        "description": "Seth Curry makes 27-foot three point jumper (Pat Spencer assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968379",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:18:08Z",
+      "location": {
+        "x": 270,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "37.6",
+        "description": "Victor Wembanyama makes alley oop layup (Harrison Barnes assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968381",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:18:22Z",
+      "location": {
+        "x": 460,
+        "y": 282
+      },
+      "event": {
+        "clock": "25.6",
+        "description": "Seth Curry misses 27-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968388",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:19:14Z",
+      "location": {
+        "x": 290,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "0.0",
+        "description": "Pat Spencer makes 8-foot step back jumpshot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968402",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:36:18Z",
+      "location": {
+        "x": 100,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "11:40",
+        "description": "Draymond Green makes 26-foot three point jumper (Brandin Podziemski assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968409",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:37:28Z",
+      "location": {
+        "x": 490,
+        "y": 47
+      },
+      "event": {
+        "clock": "10:58",
+        "description": "Draymond Green makes 24-foot three point jumper (Brandin Podziemski assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968411",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:37:43Z",
+      "location": {
+        "x": 300,
+        "y": 94
+      },
+      "event": {
+        "clock": "10:42",
+        "description": "Julian Champagnie misses driving layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968413",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:37:52Z",
+      "location": {
+        "x": 210,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "10:33",
+        "description": "Brandin Podziemski misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968415",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:38:02Z",
+      "location": {
+        "x": 260,
+        "y": 438.67
+      },
+      "event": {
+        "clock": "10:23",
+        "description": "Victor Wembanyama makes 28-foot three point jumper (Stephon Castle assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968417",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:38:21Z",
+      "location": {
+        "x": 170,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "10:04",
+        "description": "Draymond Green misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968419",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:38:40Z",
+      "location": {
+        "x": 20,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "9:46",
+        "description": "Julian Champagnie misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968422",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:42:28Z",
+      "location": {
+        "x": 370,
+        "y": 438.67
+      },
+      "event": {
+        "clock": "9:27",
+        "description": "LJ Cryer misses 29-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968424",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:42:37Z",
+      "location": {
+        "x": 290,
+        "y": 141
+      },
+      "event": {
+        "clock": "9:18",
+        "description": "De'Aaron Fox misses 9-foot fade away jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968428",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:43:27Z",
+      "location": {
+        "x": 310,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "8:55",
+        "description": "LJ Cryer makes 9-foot driving floating jump shot (Will Richard assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968430",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:43:41Z",
+      "location": {
+        "x": 490,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "8:40",
+        "description": "Stephon Castle makes 24-foot three point jumper (De'Aaron Fox assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968432",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:44:01Z",
+      "location": {
+        "x": 250,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "8:20",
+        "description": "Draymond Green makes 25-foot three point jumper (Brandin Podziemski assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968434",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:44:21Z",
+      "location": {
+        "x": 170,
+        "y": 376
+      },
+      "event": {
+        "clock": "8:00",
+        "description": "Devin Vassell makes 25-foot three point jumper (Victor Wembanyama assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968446",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:46:32Z",
+      "location": null,
+      "event": {
+        "clock": "7:33",
+        "description": "Omer Yurtseven makes free throw 1 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968448",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:46:32Z",
+      "location": null,
+      "event": {
+        "clock": "7:33",
+        "description": "Omer Yurtseven misses free throw 2 of 2",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968450",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:46:44Z",
+      "location": {
+        "x": 440,
+        "y": 282
+      },
+      "event": {
+        "clock": "7:16",
+        "description": "Devin Vassell misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968460",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:47:30Z",
+      "location": {
+        "x": 30,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "7:03",
+        "description": "Keldon Johnson misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968462",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:47:35Z",
+      "location": {
+        "x": 250,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "7:03",
+        "description": "Stephon Castle makes two point shot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968465",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:47:59Z",
+      "location": null,
+      "event": {
+        "clock": "7:03",
+        "description": "Stephon Castle makes free throw 1 of 1",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968466",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:48:18Z",
+      "location": {
+        "x": 200,
+        "y": 94
+      },
+      "event": {
+        "clock": "6:47",
+        "description": "Brandin Podziemski makes finger roll layup",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968471",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:49:00Z",
+      "location": {
+        "x": 270,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "6:05",
+        "description": "Keldon Johnson makes finger roll layup",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968479",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:49:48Z",
+      "location": {
+        "x": 330,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "5:39",
+        "description": "Omer Yurtseven blocks Devin Vassell 's 10-foot driving layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968484",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:50:29Z",
+      "location": null,
+      "event": {
+        "clock": "5:27",
+        "description": "Omer Yurtseven makes free throw 1 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968485",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:50:48Z",
+      "location": null,
+      "event": {
+        "clock": "5:27",
+        "description": "Omer Yurtseven makes free throw 2 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968487",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:51:14Z",
+      "location": {
+        "x": 150,
+        "y": 235
+      },
+      "event": {
+        "clock": "5:11",
+        "description": "LJ Cryer makes 17-foot step back jumpshot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968489",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:55:14Z",
+      "location": {
+        "x": 270,
+        "y": 94
+      },
+      "event": {
+        "clock": "4:59",
+        "description": "Dylan Harper makes 6-foot driving floating jump shot (Stephon Castle assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968496",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:57:13Z",
+      "location": null,
+      "event": {
+        "clock": "4:43",
+        "description": "Devin Vassell makes free throw clear path 1 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968497",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:57:13Z",
+      "location": null,
+      "event": {
+        "clock": "4:43",
+        "description": "Devin Vassell misses free throw clear path 2 of 2",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968500",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:58:09Z",
+      "location": {
+        "x": 230,
+        "y": 94
+      },
+      "event": {
+        "clock": "4:18",
+        "description": "Pat Spencer misses 6-foot pullup jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968506",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:58:54Z",
+      "location": null,
+      "event": {
+        "clock": "4:07",
+        "description": "Malevy Leons misses free throw 1 of 2",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968508",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:58:54Z",
+      "location": null,
+      "event": {
+        "clock": "4:07",
+        "description": "Malevy Leons makes free throw 2 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968511",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:59:29Z",
+      "location": {
+        "x": 210,
+        "y": 47
+      },
+      "event": {
+        "clock": "3:45",
+        "description": "Devin Vassell blocks Malevy Leons 's 4-foot running layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968514",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:59:36Z",
+      "location": {
+        "x": 250,
+        "y": 47
+      },
+      "event": {
+        "clock": "3:38",
+        "description": "Omer Yurtseven makes layup",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968515",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:59:54Z",
+      "location": {
+        "x": 260,
+        "y": 94
+      },
+      "event": {
+        "clock": "3:20",
+        "description": "Keldon Johnson misses driving floating jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968517",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:00:03Z",
+      "location": {
+        "x": 250,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "3:11",
+        "description": "LJ Cryer makes 12-foot two point shot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968527",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:00:59Z",
+      "location": {
+        "x": 270,
+        "y": 141
+      },
+      "event": {
+        "clock": "2:50",
+        "description": "Victor Wembanyama makes layup (Dylan Harper assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968529",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:01:09Z",
+      "location": {
+        "x": 340,
+        "y": 156.67
+      },
+      "event": {
+        "clock": "2:40",
+        "description": "Pat Spencer makes 13-foot pullup jump shot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968532",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:01:47Z",
+      "location": {
+        "x": 10,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "2:20",
+        "description": "Harrison Barnes makes 24-foot three pointer (Victor Wembanyama assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968537",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:02:33Z",
+      "location": {
+        "x": 20,
+        "y": 0
+      },
+      "event": {
+        "clock": "1:55",
+        "description": "Harrison Barnes misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968539",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:02:46Z",
+      "location": {
+        "x": 230,
+        "y": 454.33
+      },
+      "event": {
+        "clock": "1:42",
+        "description": "LJ Cryer makes 28-foot three point jumper (Will Richard assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968542",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:03:15Z",
+      "location": null,
+      "event": {
+        "clock": "1:36",
+        "description": "De'Aaron Fox makes free throw 1 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968547",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:03:32Z",
+      "location": null,
+      "event": {
+        "clock": "1:36",
+        "description": "De'Aaron Fox makes free throw 2 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968548",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:03:53Z",
+      "location": {
+        "x": 360,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "1:16",
+        "description": "Omer Yurtseven makes 11-foot floating jump shot (Malevy Leons assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968550",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:04:03Z",
+      "location": {
+        "x": 280,
+        "y": 94
+      },
+      "event": {
+        "clock": "1:06",
+        "description": "Victor Wembanyama makes 6-foot driving floating jump shot (Keldon Johnson assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968552",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:04:24Z",
+      "location": {
+        "x": 310,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "46.7",
+        "description": "Omer Yurtseven makes 6-foot two point shot (Malevy Leons assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968554",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:04:42Z",
+      "location": {
+        "x": 270,
+        "y": 141
+      },
+      "event": {
+        "clock": "31.6",
+        "description": "Dylan Harper misses 8-foot fade away jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968556",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:04:51Z",
+      "location": {
+        "x": 210,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "22.6",
+        "description": "Victor Wembanyama blocks Nate Williams 's 5-foot driving layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968559",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:04:56Z",
+      "location": {
+        "x": 240,
+        "y": 47
+      },
+      "event": {
+        "clock": "21.9",
+        "description": "Nate Williams makes two point shot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968560",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:05:15Z",
+      "location": {
+        "x": 20,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "4.0",
+        "description": "Dylan Harper misses 22-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968567",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:09:32Z",
+      "location": {
+        "x": 220,
+        "y": 423
+      },
+      "event": {
+        "clock": "11:44",
+        "description": "Victor Wembanyama makes 27-foot three point jumper (Harrison Barnes assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968569",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:09:51Z",
+      "location": {
+        "x": 240,
+        "y": 156.67
+      },
+      "event": {
+        "clock": "11:24",
+        "description": "Victor Wembanyama blocks Omer Yurtseven 's 10-foot two point shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968572",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:10:00Z",
+      "location": {
+        "x": 200,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "11:16",
+        "description": "Victor Wembanyama misses running pullup jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968574",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:10:14Z",
+      "location": {
+        "x": 200,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "11:01",
+        "description": "Omer Yurtseven misses 8-foot jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968576",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:10:21Z",
+      "location": {
+        "x": 250,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "10:56",
+        "description": "Harrison Barnes makes 1-foot driving dunk (De'Aaron Fox assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968579",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:14:19Z",
+      "location": {
+        "x": 250,
+        "y": 94
+      },
+      "event": {
+        "clock": "10:34",
+        "description": "Malevy Leons misses 6-foot two point shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968581",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:14:28Z",
+      "location": {
+        "x": 10,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "10:25",
+        "description": "Keldon Johnson misses 23-foot three point step back jumpshot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968583",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:14:41Z",
+      "location": {
+        "x": 280,
+        "y": 141
+      },
+      "event": {
+        "clock": "10:12",
+        "description": "Pat Spencer misses 9-foot two point shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968585",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:14:52Z",
+      "location": {
+        "x": 200,
+        "y": 141
+      },
+      "event": {
+        "clock": "10:01",
+        "description": "Victor Wembanyama makes 10-foot two point shot (De'Aaron Fox assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968587",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:15:04Z",
+      "location": {
+        "x": 210,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "9:49",
+        "description": "Omer Yurtseven makes 11-foot floating jump shot (Nate Williams assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968589",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:15:21Z",
+      "location": {
+        "x": 300,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "9:32",
+        "description": "Victor Wembanyama misses 8-foot two point shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968591",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:15:27Z",
+      "location": {
+        "x": 320,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "9:26",
+        "description": "Nate Williams makes 7-foot running dunk (Pat Spencer assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968593",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:15:56Z",
+      "location": {
+        "x": 310,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "8:57",
+        "description": "Victor Wembanyama makes 6-foot two point shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968594",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:16:08Z",
+      "location": {
+        "x": 10,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "8:46",
+        "description": "Nate Williams misses 24-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968596",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:16:18Z",
+      "location": {
+        "x": 240,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "8:35",
+        "description": "Keldon Johnson misses 3-foot two point shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968598",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:16:24Z",
+      "location": {
+        "x": 360,
+        "y": 376
+      },
+      "event": {
+        "clock": "8:29",
+        "description": "De'Aaron Fox misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968600",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:16:34Z",
+      "location": {
+        "x": 410,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "8:19",
+        "description": "Pat Spencer makes 25-foot three point step back jumpshot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968611",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:17:25Z",
+      "location": {
+        "x": 190,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "7:56",
+        "description": "Devin Vassell makes 14-foot fade away jump shot (Carter Bryant assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968612",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:17:37Z",
+      "location": {
+        "x": 250,
+        "y": 156.67
+      },
+      "event": {
+        "clock": "7:43",
+        "description": "Carter Bryant blocks Malevy Leons 's 9-foot two point shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968619",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:18:27Z",
+      "location": {
+        "x": 310,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "7:29",
+        "description": "Nate Williams misses two point shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968623",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:19:01Z",
+      "location": {
+        "x": 230,
+        "y": 47
+      },
+      "event": {
+        "clock": "7:13",
+        "description": "Carter Bryant blocks Nate Williams 's 4-foot two point shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968625",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:19:05Z",
+      "location": {
+        "x": 250,
+        "y": 94
+      },
+      "event": {
+        "clock": "7:10",
+        "description": "Nate Williams misses two point shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968632",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:19:50Z",
+      "location": {
+        "x": 410,
+        "y": 376
+      },
+      "event": {
+        "clock": "6:58",
+        "description": "Stephon Castle makes 28-foot three point jumper (Dylan Harper assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968634",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:20:11Z",
+      "location": {
+        "x": 260,
+        "y": 250.67
+      },
+      "event": {
+        "clock": "6:36",
+        "description": "LJ Cryer misses driving floating jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968643",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:21:38Z",
+      "location": {
+        "x": 20,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "6:17",
+        "description": "Harrison Barnes makes 23-foot three point jumper (Stephon Castle assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968650",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:25:20Z",
+      "location": {
+        "x": 20,
+        "y": 0
+      },
+      "event": {
+        "clock": "6:07",
+        "description": "Julian Champagnie makes 23-foot three point jumper (Stephon Castle assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968654",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:25:36Z",
+      "location": {
+        "x": 370,
+        "y": 376
+      },
+      "event": {
+        "clock": "5:51",
+        "description": "Harrison Barnes misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968656",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:25:55Z",
+      "location": {
+        "x": 360,
+        "y": 376
+      },
+      "event": {
+        "clock": "5:32",
+        "description": "LJ Cryer makes 25-foot three point jumper (Omer Yurtseven assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968658",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:26:13Z",
+      "location": {
+        "x": 80,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "5:14",
+        "description": "Julian Champagnie misses 25-foot three point step back jumpshot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968660",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:26:18Z",
+      "location": {
+        "x": 20,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:09",
+        "description": "Carter Bryant misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968662",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:26:25Z",
+      "location": {
+        "x": 260,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "5:02",
+        "description": "Nate Williams makes 4-foot running dunk (Pat Spencer assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968664",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:26:52Z",
+      "location": {
+        "x": 350,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "4:36",
+        "description": "Stephon Castle misses 10-foot pullup jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968666",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:27:01Z",
+      "location": {
+        "x": 10,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "4:26",
+        "description": "LJ Cryer misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968668",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:27:07Z",
+      "location": {
+        "x": 260,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "4:20",
+        "description": "Omer Yurtseven makes 2-foot dunk",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968669",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:27:27Z",
+      "location": {
+        "x": 400,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "4:00",
+        "description": "Julian Champagnie misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968671",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:27:33Z",
+      "location": {
+        "x": 240,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "3:55",
+        "description": "Dylan Harper makes two point shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968672",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:27:47Z",
+      "location": {
+        "x": 280,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "3:41",
+        "description": "LJ Cryer makes 3-foot layup (Omer Yurtseven assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968676",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:28:20Z",
+      "location": null,
+      "event": {
+        "clock": "3:41",
+        "description": "LJ Cryer makes free throw 1 of 1",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968677",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:28:39Z",
+      "location": {
+        "x": 400,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "3:28",
+        "description": "Harrison Barnes makes 26-foot three point jumper (Stephon Castle assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968683",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:29:30Z",
+      "location": null,
+      "event": {
+        "clock": "3:28",
+        "description": "Harrison Barnes makes free throw 1 of 1",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968684",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:29:44Z",
+      "location": {
+        "x": 10,
+        "y": 47
+      },
+      "event": {
+        "clock": "3:17",
+        "description": "Nate Williams makes 23-foot three point jumper (Omer Yurtseven assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968687",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:31:42Z",
+      "location": {
+        "x": 240,
+        "y": 47
+      },
+      "event": {
+        "clock": "3:07",
+        "description": "Dylan Harper makes 3-foot dunk (Julian Champagnie assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968693",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:33:47Z",
+      "location": {
+        "x": 270,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "2:12",
+        "description": "Omer Yurtseven makes two point shot (Malevy Leons assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968695",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:34:02Z",
+      "location": {
+        "x": 90,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "1:59",
+        "description": "Julian Champagnie makes 26-foot three point jumper (Stephon Castle assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968697",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:34:17Z",
+      "location": {
+        "x": 460,
+        "y": 250.67
+      },
+      "event": {
+        "clock": "1:47",
+        "description": "Nate Williams makes 26-foot three point jumper (Pat Spencer assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968699",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:34:36Z",
+      "location": {
+        "x": 310,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "1:30",
+        "description": "Dylan Harper misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968701",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:34:48Z",
+      "location": {
+        "x": 480,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "1:18",
+        "description": "Carter Bryant misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968703",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:34:55Z",
+      "location": {
+        "x": 100,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "1:11",
+        "description": "Julian Champagnie misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968705",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:35:10Z",
+      "location": {
+        "x": 360,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "57.8",
+        "description": "Pat Spencer makes 28-foot three pointer",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968706",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:35:34Z",
+      "location": {
+        "x": 130,
+        "y": 376
+      },
+      "event": {
+        "clock": "36.3",
+        "description": "Julian Champagnie misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968708",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:35:44Z",
+      "location": {
+        "x": 290,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "26.9",
+        "description": "Malevy Leons misses driving layup",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810968",
+      "play_id": "401810968710",
+      "sport": "nba",
+      "timestamp": "2026-04-02T04:35:46Z",
+      "location": {
+        "x": 270,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "25.8",
+        "description": "Malevy Leons makes two point shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    }
+  ],
+  "saved_at": "2026-04-02T21:05:40.421338265Z"
+}

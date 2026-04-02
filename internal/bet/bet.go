@@ -76,6 +76,7 @@ type SignInAck struct {
 	Type             string                `json:"type"`
 	Wallet           string                `json:"wallet"`
 	Balance          float64               `json:"balance"`
+	Simulation       bool                  `json:"simulation"`
 	NextNonce        uint64                `json:"nextNonce"`
 	MinimumBetAmount float64               `json:"minimumBetAmount"`
 	GameRadii        map[string]float64    `json:"gameRadii"`
@@ -111,6 +112,7 @@ type BetAck struct {
 	Balance          float64 `json:"balance"`
 	ActualMultiplier uint64  `json:"actualMultiplier"`
 	RejectionReason  string  `json:"rejectionReason"`
+	Simulation       bool    `json:"simulation"`
 }
 
 // BetResult is routed only to the wallet's identified connections.

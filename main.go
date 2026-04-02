@@ -83,6 +83,7 @@ type App struct {
 	connWallets    map[*websocket.Conn][20]byte
 	walletConns    map[[20]byte]map[*websocket.Conn]struct{}
 	connSimulation map[*websocket.Conn]bool
+	connIdentified map[*websocket.Conn]bool
 }
 
 func NewApp(cfg Config) (*App, error) {
@@ -105,6 +106,7 @@ func NewApp(cfg Config) (*App, error) {
 		connWallets:    make(map[*websocket.Conn][20]byte),
 		walletConns:    make(map[[20]byte]map[*websocket.Conn]struct{}),
 		connSimulation: make(map[*websocket.Conn]bool),
+		connIdentified: make(map[*websocket.Conn]bool),
 	}
 	app.manager = espn.NewManager(client, cfg.PollInterval, app.handlePlayEvent)
 	// Wire ESPN game completion to save games for sim replay.
@@ -152,6 +154,7 @@ func (a *App) handleConnect(conn *websocket.Conn) {
 func (a *App) handleDisconnect(conn *websocket.Conn) {
 	a.mu.Lock()
 	delete(a.connSimulation, conn)
+	delete(a.connIdentified, conn)
 	if wallet, ok := a.connWallets[conn]; ok {
 		delete(a.connWallets, conn)
 		if conns := a.walletConns[wallet]; conns != nil {
@@ -183,22 +186,7 @@ func (a *App) handleMessage(conn *websocket.Conn, payload []byte) {
 		}
 		a.handleSignIn(conn, msg)
 	case "subscribe_wallet":
-		var msg ws.SubscribeWalletMessage
-		if err := json.Unmarshal(payload, &msg); err != nil {
-			a.sendError(conn, "invalid wallet")
-			return
-		}
-		walletValue := msg.WalletAddr
-		if walletValue == "" {
-			walletValue = msg.Wallet
-		}
-		wallet, err := bet.ParseWallet(walletValue)
-		if err != nil {
-			a.sendError(conn, "invalid wallet")
-			return
-		}
-		a.identifyConnection(conn, wallet, false)
-		_ = a.hub.SendTo(conn, bet.BalanceUpdate{Type: "balance_update", Wallet: bet.WalletHex(wallet), Balance: 0.0})
+		a.sendError(conn, "subscribe_wallet is no longer supported; use signed signin")
 	case "place_bet":
 		var msg ws.PlaceBetMessage
 		if err := json.Unmarshal(payload, &msg); err != nil {
@@ -248,6 +236,7 @@ func (a *App) handleSignIn(conn *websocket.Conn, msg ws.SignInMessage) {
 		Type:             "signin_ack",
 		Wallet:           bet.WalletHex(wallet),
 		Balance:          bet.CurrentBalance(wallet),
+		Simulation:       false,
 		NextNonce:        a.bets.NextNonce(wallet),
 		MinimumBetAmount: bet.MinimumBetAmount,
 		GameRadii:        a.currentGameRadii(),
@@ -268,6 +257,7 @@ func (a *App) handleSimSignIn(conn *websocket.Conn, wallet [20]byte) {
 		Type:             "signin_ack",
 		Wallet:           bet.WalletHex(wallet),
 		Balance:          balance,
+		Simulation:       true,
 		NextNonce:        a.sim.NextNonce(wallet),
 		MinimumBetAmount: bet.MinimumBetAmount,
 		GameRadii:        a.sim.GameRadii(),
@@ -298,10 +288,15 @@ func (a *App) placeBet(conn *websocket.Conn, msg ws.PlaceBetMessage) {
 	}
 
 	a.mu.RLock()
-	identified, hasIdentity := a.connWallets[conn]
+	identifiedWallet, hasWallet := a.connWallets[conn]
 	connSim := a.connSimulation[conn]
+	identified := a.connIdentified[conn]
 	a.mu.RUnlock()
-	if hasIdentity && identified != wallet {
+	if !identified {
+		a.sendError(conn, "signin required before place_bet")
+		return
+	}
+	if hasWallet && identifiedWallet != wallet {
 		a.sendError(conn, "wallet does not match identified connection")
 		return
 	}
@@ -375,6 +370,7 @@ func (a *App) identifyConnection(conn *websocket.Conn, wallet [20]byte, simulati
 	}
 	a.connWallets[conn] = wallet
 	a.connSimulation[conn] = simulation
+	a.connIdentified[conn] = true
 	if a.walletConns[wallet] == nil {
 		a.walletConns[wallet] = make(map[*websocket.Conn]struct{})
 	}
@@ -387,13 +383,14 @@ func (a *App) handlePlayEvent(event game.PlayEvent) {
 	a.bets.OnPlayEvent(event)
 	// Broadcast only to regular-mode connections.
 	a.hub.BroadcastFiltered(ws.PlayEventMessage{
-		Type:      "play_event",
-		GameID:    event.GameID,
-		PlayID:    event.PlayID,
-		Sport:     event.Sport,
-		Timestamp: event.Timestamp.UTC().Format(time.RFC3339),
-		Location:  event.Location,
-		Event:     event.EventData,
+		Type:       "play_event",
+		GameID:     event.GameID,
+		PlayID:     event.PlayID,
+		Sport:      event.Sport,
+		Timestamp:  event.Timestamp.UTC().Format(time.RFC3339),
+		Location:   event.Location,
+		Event:      event.EventData,
+		Simulation: false,
 	}, a.isRegularConn)
 }
 
@@ -512,7 +509,7 @@ func (a *App) currentGameStateMessage() ws.GameStateMessage {
 		}
 		return games[i].Sport < games[j].Sport
 	})
-	return ws.GameStateMessage{Type: "game_state", Games: games}
+	return ws.GameStateMessage{Type: "game_state", Games: games, Simulation: false}
 }
 
 func (a *App) filteredGames() []game.GameState {
@@ -551,13 +548,18 @@ func (a *App) sendError(conn *websocket.Conn, reason string) {
 
 func (a *App) isSimConn(conn *websocket.Conn) bool {
 	a.mu.RLock()
+	identified := a.connIdentified[conn]
 	v := a.connSimulation[conn]
 	a.mu.RUnlock()
-	return v
+	return identified && v
 }
 
 func (a *App) isRegularConn(conn *websocket.Conn) bool {
-	return !a.isSimConn(conn)
+	a.mu.RLock()
+	identified := a.connIdentified[conn]
+	v := a.connSimulation[conn]
+	a.mu.RUnlock()
+	return identified && !v
 }
 
 // sendToWalletMode sends a message to all connections for a wallet that match

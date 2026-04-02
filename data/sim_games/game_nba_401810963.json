@@ -1,0 +1,4480 @@
+{
+  "game_id": "401810963",
+  "sport": "nba",
+  "state": {
+    "game_id": "401810963",
+    "sport": "nba",
+    "status": "final",
+    "state": "post",
+    "detail": "Final",
+    "start_time": "2026-04-02T00:00Z",
+    "home": "TOR",
+    "away": "SAC",
+    "home_score": 115,
+    "away_score": 123,
+    "period": "Q0",
+    "clock": "",
+    "completed": true,
+    "tracked": true
+  },
+  "plays": [
+    {
+      "game_id": "401810963",
+      "play_id": "4018109638",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:13:02Z",
+      "location": {
+        "x": 220,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "11:38",
+        "description": "Jakob Poeltl misses layup",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096311",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:13:16Z",
+      "location": {
+        "x": 100,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "11:23",
+        "description": "DeMar DeRozan misses 14-foot turnaround jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096314",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:13:23Z",
+      "location": {
+        "x": 250,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "11:16",
+        "description": "Jakob Poeltl makes running layup (Ja'Kobe Walter assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096320",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:14:04Z",
+      "location": null,
+      "event": {
+        "clock": "11:06",
+        "description": "Scottie Barnes misses free throw 1 of 2",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096322",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:14:04Z",
+      "location": null,
+      "event": {
+        "clock": "11:06",
+        "description": "Scottie Barnes misses free throw 2 of 2",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096324",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:14:37Z",
+      "location": {
+        "x": 150,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "10:48",
+        "description": "Maxime Raynaud makes 10-foot floating jump shot (DeMar DeRozan assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096326",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:14:48Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "10:38",
+        "description": "Ja'Kobe Walter makes reverse layup (Scottie Barnes assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096328",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:15:01Z",
+      "location": {
+        "x": 170,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "10:25",
+        "description": "DeMar DeRozan misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096330",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:15:08Z",
+      "location": {
+        "x": 260,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "10:17",
+        "description": "Scottie Barnes makes 6-foot running pullup jump shot (Jamal Shead assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096333",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:15:48Z",
+      "location": {
+        "x": 300,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "9:56",
+        "description": "Precious Achiuwa misses driving floating jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096336",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:16:03Z",
+      "location": {
+        "x": 240,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "9:51",
+        "description": "Jamal Shead misses driving floating jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096338",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:16:18Z",
+      "location": {
+        "x": 300,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "9:38",
+        "description": "Scottie Barnes blocks Nique Clifford 's 6-foot driving floating jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096342",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:16:43Z",
+      "location": {
+        "x": 240,
+        "y": 0
+      },
+      "event": {
+        "clock": "9:30",
+        "description": "Precious Achiuwa makes 1-foot dunk (Nique Clifford assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096344",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:16:53Z",
+      "location": {
+        "x": 380,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "9:19",
+        "description": "Scottie Barnes makes 12-foot two point shot",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096346",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:17:16Z",
+      "location": {
+        "x": 150,
+        "y": 376
+      },
+      "event": {
+        "clock": "8:56",
+        "description": "Precious Achiuwa misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096348",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:17:21Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "8:55",
+        "description": "Devin Carter makes tip in dunk",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096349",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:17:39Z",
+      "location": {
+        "x": 370,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "8:34",
+        "description": "Scottie Barnes misses 17-foot pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096351",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:17:49Z",
+      "location": {
+        "x": 210,
+        "y": 47
+      },
+      "event": {
+        "clock": "8:23",
+        "description": "Maxime Raynaud makes 4-foot two point shot (Devin Carter assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096353",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:18:03Z",
+      "location": {
+        "x": 240,
+        "y": 141
+      },
+      "event": {
+        "clock": "8:11",
+        "description": "RJ Barrett misses driving floating jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096361",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:19:19Z",
+      "location": null,
+      "event": {
+        "clock": "7:50",
+        "description": "Devin Carter makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096362",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:19:35Z",
+      "location": null,
+      "event": {
+        "clock": "7:50",
+        "description": "Devin Carter makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096363",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:20:00Z",
+      "location": {
+        "x": 10,
+        "y": -15.67
+      },
+      "event": {
+        "clock": "7:28",
+        "description": "A.J. Lawson misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096365",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:20:07Z",
+      "location": {
+        "x": 20,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "7:20",
+        "description": "Devin Carter misses 23-foot running jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096373",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:23:40Z",
+      "location": {
+        "x": 360,
+        "y": 266.33
+      },
+      "event": {
+        "clock": "6:56",
+        "description": "Jamal Shead misses 20-foot pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096377",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:24:18Z",
+      "location": null,
+      "event": {
+        "clock": "6:44",
+        "description": "Jakob Poeltl makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096378",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:24:18Z",
+      "location": null,
+      "event": {
+        "clock": "6:44",
+        "description": "Jakob Poeltl misses free throw 2 of 2",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096380",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:24:51Z",
+      "location": {
+        "x": 200,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "6:23",
+        "description": "Maxime Raynaud misses 5-foot turnaround jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096382",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:24:56Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "6:22",
+        "description": "Precious Achiuwa makes tip in dunk",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096385",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:25:35Z",
+      "location": null,
+      "event": {
+        "clock": "6:08",
+        "description": "Jakob Poeltl makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096392",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:25:58Z",
+      "location": null,
+      "event": {
+        "clock": "6:08",
+        "description": "Jakob Poeltl makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096393",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:26:20Z",
+      "location": {
+        "x": 20,
+        "y": 0
+      },
+      "event": {
+        "clock": "5:47",
+        "description": "Malik Monk misses 22-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "40181096395",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:26:32Z",
+      "location": {
+        "x": 340,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "5:35",
+        "description": "Sandro Mamukelashvili makes 27-foot three point jumper (Ja'Kobe Walter assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963107",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:28:14Z",
+      "location": {
+        "x": 250,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "4:48",
+        "description": "Killian Hayes misses 12-foot pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963113",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:29:14Z",
+      "location": {
+        "x": 300,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "4:34",
+        "description": "Malik Monk makes 11-foot fade away jump shot",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963114",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:29:30Z",
+      "location": {
+        "x": 250,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "4:17",
+        "description": "Collin Murray-Boyles makes driving layup (A.J. Lawson assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963118",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:30:15Z",
+      "location": null,
+      "event": {
+        "clock": "3:59",
+        "description": "Malik Monk misses free throw 1 of 2",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963124",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:30:37Z",
+      "location": null,
+      "event": {
+        "clock": "3:59",
+        "description": "Malik Monk makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963125",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:30:49Z",
+      "location": {
+        "x": 130,
+        "y": 376
+      },
+      "event": {
+        "clock": "3:48",
+        "description": "Scottie Barnes misses 26-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963127",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:31:07Z",
+      "location": {
+        "x": 240,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "3:30",
+        "description": "Precious Achiuwa makes dunk (Dylan Cardwell assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963129",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:31:18Z",
+      "location": {
+        "x": 250,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "3:19",
+        "description": "Collin Murray-Boyles makes layup (Sandro Mamukelashvili assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963131",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:31:32Z",
+      "location": {
+        "x": 180,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "3:05",
+        "description": "Malik Monk makes 26-foot three point jumper (Killian Hayes assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963133",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:31:46Z",
+      "location": {
+        "x": 340,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "2:51",
+        "description": "Sandro Mamukelashvili misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963135",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:31:51Z",
+      "location": {
+        "x": 260,
+        "y": 423
+      },
+      "event": {
+        "clock": "2:46",
+        "description": "Malik Monk makes 26-foot running pullup jump shot",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963136",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:32:13Z",
+      "location": {
+        "x": 490,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "2:24",
+        "description": "Collin Murray-Boyles misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963138",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:32:23Z",
+      "location": {
+        "x": 200,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "2:17",
+        "description": "Killian Hayes makes 6-foot two point shot",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963146",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:35:41Z",
+      "location": null,
+      "event": {
+        "clock": "2:17",
+        "description": "Killian Hayes makes free throw 1 of 1",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963147",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:35:59Z",
+      "location": {
+        "x": 70,
+        "y": 329
+      },
+      "event": {
+        "clock": "2:00",
+        "description": "Alijah Martin misses 27-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963149",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:36:04Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "1:55",
+        "description": "Jakob Poeltl misses two point shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963154",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:36:37Z",
+      "location": null,
+      "event": {
+        "clock": "1:50",
+        "description": "Precious Achiuwa makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963157",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:36:37Z",
+      "location": null,
+      "event": {
+        "clock": "1:50",
+        "description": "Precious Achiuwa misses free throw 2 of 2",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963159",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:37:12Z",
+      "location": {
+        "x": 230,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "1:37",
+        "description": "Malik Monk blocks RJ Barrett 's 6-foot driving layup",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963165",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:39:24Z",
+      "location": {
+        "x": 490,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "1:18",
+        "description": "Daeqwon Plowden misses 24-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963167",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:39:29Z",
+      "location": {
+        "x": 480,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "1:13",
+        "description": "Daeqwon Plowden misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963169",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:39:38Z",
+      "location": {
+        "x": 270,
+        "y": 94
+      },
+      "event": {
+        "clock": "1:04",
+        "description": "RJ Barrett makes 6-foot running pullup jump shot",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963170",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:39:57Z",
+      "location": {
+        "x": 300,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "46.1",
+        "description": "Sandro Mamukelashvili blocks Precious Achiuwa 's 5-foot driving layup",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963173",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:40:03Z",
+      "location": {
+        "x": 270,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "39.7",
+        "description": "Dylan Cardwell misses 10-foot two point shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963175",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:40:16Z",
+      "location": {
+        "x": 260,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "28.4",
+        "description": "RJ Barrett makes 1-foot layup (Scottie Barnes assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963177",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:40:34Z",
+      "location": {
+        "x": 400,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "11.3",
+        "description": "Killian Hayes misses 26-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963179",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:40:46Z",
+      "location": {
+        "x": 450,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "0.5",
+        "description": "Malik Monk misses 29-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963189",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:44:03Z",
+      "location": {
+        "x": 30,
+        "y": 235
+      },
+      "event": {
+        "clock": "11:37",
+        "description": "Daeqwon Plowden misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963191",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:44:08Z",
+      "location": {
+        "x": 240,
+        "y": 47
+      },
+      "event": {
+        "clock": "11:31",
+        "description": "Daeqwon Plowden makes 2-foot floating jump shot (Dylan Cardwell assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963193",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:44:16Z",
+      "location": {
+        "x": 260,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "11:24",
+        "description": "Sandro Mamukelashvili makes two point shot (RJ Barrett assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963195",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:44:32Z",
+      "location": {
+        "x": 480,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "11:08",
+        "description": "Daeqwon Plowden makes 23-foot three point jumper (Malik Monk assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963199",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:44:56Z",
+      "location": {
+        "x": 450,
+        "y": 235
+      },
+      "event": {
+        "clock": "10:44",
+        "description": "Doug McDermott misses 25-foot running jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963202",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:45:24Z",
+      "location": {
+        "x": 250,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "10:26",
+        "description": "Nique Clifford makes driving layup",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963210",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:48:51Z",
+      "location": {
+        "x": 440,
+        "y": 282
+      },
+      "event": {
+        "clock": "10:12",
+        "description": "Ja'Kobe Walter makes 26-foot three point jumper (Jamal Shead assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963212",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:49:09Z",
+      "location": {
+        "x": 360,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "9:54",
+        "description": "Malik Monk misses 26-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963214",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:49:19Z",
+      "location": {
+        "x": 400,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "9:44",
+        "description": "RJ Barrett misses 26-foot running jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963216",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:49:26Z",
+      "location": {
+        "x": 440,
+        "y": 266.33
+      },
+      "event": {
+        "clock": "9:37",
+        "description": "RJ Barrett makes 25-foot three point jumper (Scottie Barnes assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963218",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:49:37Z",
+      "location": {
+        "x": 440,
+        "y": 282
+      },
+      "event": {
+        "clock": "9:26",
+        "description": "Daeqwon Plowden misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963220",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:49:49Z",
+      "location": {
+        "x": 230,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "9:16",
+        "description": "Dylan Cardwell blocks Collin Murray-Boyles 's 2-foot two point shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963226",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:50:24Z",
+      "location": {
+        "x": 160,
+        "y": 376
+      },
+      "event": {
+        "clock": "9:05",
+        "description": "Doug McDermott misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963230",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:50:52Z",
+      "location": null,
+      "event": {
+        "clock": "8:58",
+        "description": "Scottie Barnes makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963235",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:50:52Z",
+      "location": null,
+      "event": {
+        "clock": "8:58",
+        "description": "Scottie Barnes misses free throw 2 of 2",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963237",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:51:27Z",
+      "location": {
+        "x": 260,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "8:53",
+        "description": "RJ Barrett makes 1-foot dunk (Ja'Kobe Walter assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963241",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:51:45Z",
+      "location": {
+        "x": 250,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "8:34",
+        "description": "Collin Murray-Boyles makes running dunk (Scottie Barnes assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963246",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:54:57Z",
+      "location": {
+        "x": 20,
+        "y": -15.67
+      },
+      "event": {
+        "clock": "8:22",
+        "description": "Doug McDermott makes 23-foot three point jumper (Nique Clifford assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963248",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:55:15Z",
+      "location": {
+        "x": 290,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "8:08",
+        "description": "RJ Barrett makes 4-foot two point shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963255",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:55:55Z",
+      "location": null,
+      "event": {
+        "clock": "8:08",
+        "description": "RJ Barrett makes free throw 1 of 1",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963256",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:56:12Z",
+      "location": {
+        "x": 260,
+        "y": 235
+      },
+      "event": {
+        "clock": "7:52",
+        "description": "DeMar DeRozan misses 15-foot pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963260",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:56:53Z",
+      "location": null,
+      "event": {
+        "clock": "7:43",
+        "description": "Collin Murray-Boyles makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963266",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:57:40Z",
+      "location": null,
+      "event": {
+        "clock": "7:43",
+        "description": "Collin Murray-Boyles makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963270",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:58:18Z",
+      "location": {
+        "x": 140,
+        "y": 156.67
+      },
+      "event": {
+        "clock": "7:23",
+        "description": "DeMar DeRozan misses 14-foot pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963272",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:58:22Z",
+      "location": {
+        "x": 270,
+        "y": 0
+      },
+      "event": {
+        "clock": "7:19",
+        "description": "Jamal Shead blocks Devin Carter 's 1-foot driving floating jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963275",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:58:27Z",
+      "location": {
+        "x": 10,
+        "y": 0
+      },
+      "event": {
+        "clock": "7:13",
+        "description": "Ja'Kobe Walter makes 24-foot running jump shot (RJ Barrett assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963279",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:58:48Z",
+      "location": {
+        "x": 100,
+        "y": 47
+      },
+      "event": {
+        "clock": "6:53",
+        "description": "Collin Murray-Boyles makes 15-foot running jump shot (RJ Barrett assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963284",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:01:09Z",
+      "location": {
+        "x": 240,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "6:37",
+        "description": "Dylan Cardwell makes 1-foot alley oop dunk (DeMar DeRozan assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963290",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:03:32Z",
+      "location": null,
+      "event": {
+        "clock": "6:26",
+        "description": "Collin Murray-Boyles makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963291",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:03:50Z",
+      "location": null,
+      "event": {
+        "clock": "6:26",
+        "description": "Collin Murray-Boyles makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963292",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:04:02Z",
+      "location": {
+        "x": 90,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "6:16",
+        "description": "Nique Clifford misses 25-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963296",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:04:34Z",
+      "location": null,
+      "event": {
+        "clock": "6:15",
+        "description": "Devin Carter makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963297",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:04:51Z",
+      "location": null,
+      "event": {
+        "clock": "6:15",
+        "description": "Devin Carter makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963298",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:05:05Z",
+      "location": {
+        "x": 20,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "6:02",
+        "description": "A.J. Lawson misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963300",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:05:23Z",
+      "location": {
+        "x": 480,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:43",
+        "description": "Precious Achiuwa makes 23-foot three point jumper (DeMar DeRozan assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963310",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:06:09Z",
+      "location": {
+        "x": 230,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:20",
+        "description": "Devin Carter misses two point shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963312",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:06:21Z",
+      "location": {
+        "x": 310,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:08",
+        "description": "Nique Clifford makes 5-foot two point shot (Dylan Cardwell assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963314",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:06:42Z",
+      "location": {
+        "x": 210,
+        "y": 141
+      },
+      "event": {
+        "clock": "4:47",
+        "description": "Scottie Barnes misses 9-foot pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963316",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:06:51Z",
+      "location": {
+        "x": 330,
+        "y": 423
+      },
+      "event": {
+        "clock": "4:38",
+        "description": "Devin Carter misses 28-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963320",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:07:30Z",
+      "location": null,
+      "event": {
+        "clock": "4:29",
+        "description": "Jakob Poeltl makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963325",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:07:30Z",
+      "location": null,
+      "event": {
+        "clock": "4:29",
+        "description": "Jakob Poeltl misses free throw 2 of 2",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963329",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:08:21Z",
+      "location": null,
+      "event": {
+        "clock": "4:20",
+        "description": "DeMar DeRozan makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963330",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:08:38Z",
+      "location": null,
+      "event": {
+        "clock": "4:20",
+        "description": "DeMar DeRozan makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963331",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:08:58Z",
+      "location": {
+        "x": 260,
+        "y": 94
+      },
+      "event": {
+        "clock": "4:02",
+        "description": "Jakob Poeltl makes 5-foot two point shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963332",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:09:16Z",
+      "location": {
+        "x": 260,
+        "y": 250.67
+      },
+      "event": {
+        "clock": "3:44",
+        "description": "DeMar DeRozan misses 16-foot pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963334",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:09:20Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "3:40",
+        "description": "Sandro Mamukelashvili blocks Precious Achiuwa's tip shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963337",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:09:23Z",
+      "location": {
+        "x": 250,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "3:36",
+        "description": "Precious Achiuwa makes driving dunk",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963340",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:09:33Z",
+      "location": {
+        "x": 250,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "3:27",
+        "description": "Devin Carter makes two point shot (Daeqwon Plowden assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963345",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:11:22Z",
+      "location": {
+        "x": 210,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "3:14",
+        "description": "RJ Barrett misses two point shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963347",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:11:38Z",
+      "location": {
+        "x": 480,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "2:57",
+        "description": "Nique Clifford makes 22-foot three point jumper (Devin Carter assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963349",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:11:53Z",
+      "location": {
+        "x": 270,
+        "y": 141
+      },
+      "event": {
+        "clock": "2:41",
+        "description": "Scottie Barnes misses 9-foot two point shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963351",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:12:04Z",
+      "location": {
+        "x": 410,
+        "y": 94
+      },
+      "event": {
+        "clock": "2:31",
+        "description": "DeMar DeRozan misses 16-foot pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963353",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:12:08Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "2:27",
+        "description": "Precious Achiuwa makes tip shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963356",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:12:47Z",
+      "location": null,
+      "event": {
+        "clock": "2:15",
+        "description": "RJ Barrett misses free throw 1 of 2",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963362",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:13:08Z",
+      "location": null,
+      "event": {
+        "clock": "2:15",
+        "description": "RJ Barrett makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963363",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:13:31Z",
+      "location": {
+        "x": 120,
+        "y": 141
+      },
+      "event": {
+        "clock": "1:53",
+        "description": "DeMar DeRozan misses 15-foot pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963367",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:14:13Z",
+      "location": null,
+      "event": {
+        "clock": "1:47",
+        "description": "Collin Murray-Boyles makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963368",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:14:13Z",
+      "location": null,
+      "event": {
+        "clock": "1:47",
+        "description": "Collin Murray-Boyles misses free throw 2 of 2",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963370",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:14:51Z",
+      "location": {
+        "x": 270,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "1:29",
+        "description": "DeMar DeRozan misses two point shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963372",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:14:54Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "1:28",
+        "description": "Precious Achiuwa misses tip shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963374",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:14:56Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "1:26",
+        "description": "Precious Achiuwa makes two point shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963375",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:15:08Z",
+      "location": {
+        "x": 40,
+        "y": 235
+      },
+      "event": {
+        "clock": "1:11",
+        "description": "Jamal Shead makes 26-foot three point jumper (RJ Barrett assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963377",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:15:34Z",
+      "location": {
+        "x": 260,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "45.0",
+        "description": "Precious Achiuwa makes 10-foot fade away jump shot (Daeqwon Plowden assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963381",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:16:25Z",
+      "location": null,
+      "event": {
+        "clock": "30.8",
+        "description": "RJ Barrett misses free throw 1 of 2",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963385",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:16:44Z",
+      "location": null,
+      "event": {
+        "clock": "30.8",
+        "description": "RJ Barrett makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963386",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:17:13Z",
+      "location": {
+        "x": 410,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "6.3",
+        "description": "Devin Carter misses 25-foot three point step back jumpshot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963388",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:17:20Z",
+      "location": {
+        "x": 400,
+        "y": 329
+      },
+      "event": {
+        "clock": "0.2",
+        "description": "Ja'Kobe Walter misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963396",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:33:04Z",
+      "location": {
+        "x": 280,
+        "y": 282
+      },
+      "event": {
+        "clock": "11:42",
+        "description": "Nique Clifford misses 17-foot pullup jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963398",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:33:18Z",
+      "location": {
+        "x": 10,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "11:26",
+        "description": "Scottie Barnes misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963401",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:34:01Z",
+      "location": {
+        "x": 490,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "11:04",
+        "description": "Maxime Raynaud misses 24-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963404",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:34:40Z",
+      "location": {
+        "x": 110,
+        "y": 141
+      },
+      "event": {
+        "clock": "10:32",
+        "description": "Devin Carter misses 16-foot two point shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963406",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:34:53Z",
+      "location": {
+        "x": 90,
+        "y": 282
+      },
+      "event": {
+        "clock": "10:19",
+        "description": "Jamal Shead makes 24-foot three point jumper (Scottie Barnes assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963410",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:35:45Z",
+      "location": null,
+      "event": {
+        "clock": "9:58",
+        "description": "Precious Achiuwa makes free throw 1 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963411",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:36:03Z",
+      "location": null,
+      "event": {
+        "clock": "9:58",
+        "description": "Precious Achiuwa makes free throw 2 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963412",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:36:20Z",
+      "location": {
+        "x": 250,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "9:43",
+        "description": "Collin Murray-Boyles makes 6-foot floating jump shot (Scottie Barnes assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963416",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:37:18Z",
+      "location": null,
+      "event": {
+        "clock": "9:25",
+        "description": "DeMar DeRozan makes free throw 1 of 3",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963417",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:37:31Z",
+      "location": null,
+      "event": {
+        "clock": "9:25",
+        "description": "DeMar DeRozan makes free throw 2 of 3",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963418",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:37:47Z",
+      "location": null,
+      "event": {
+        "clock": "9:25",
+        "description": "DeMar DeRozan makes free throw 3 of 3",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963419",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:38:00Z",
+      "location": {
+        "x": 230,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "9:14",
+        "description": "Collin Murray-Boyles makes 2-foot reverse layup (Scottie Barnes assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963426",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:39:15Z",
+      "location": null,
+      "event": {
+        "clock": "8:53",
+        "description": "DeMar DeRozan makes free throw 1 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963429",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:39:35Z",
+      "location": null,
+      "event": {
+        "clock": "8:53",
+        "description": "DeMar DeRozan makes free throw 2 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963430",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:39:56Z",
+      "location": {
+        "x": 260,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "8:33",
+        "description": "RJ Barrett misses driving floating jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963432",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:40:01Z",
+      "location": {
+        "x": 240,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "8:28",
+        "description": "RJ Barrett makes 1-foot two point shot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963433",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:40:17Z",
+      "location": {
+        "x": 60,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "8:12",
+        "description": "Devin Carter makes 27-foot three point jumper (DeMar DeRozan assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963435",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:40:33Z",
+      "location": {
+        "x": 240,
+        "y": 0
+      },
+      "event": {
+        "clock": "7:57",
+        "description": "Scottie Barnes makes alley oop layup (Jamal Shead assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963437",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:40:46Z",
+      "location": {
+        "x": 100,
+        "y": 329
+      },
+      "event": {
+        "clock": "7:43",
+        "description": "DeMar DeRozan makes 25-foot three point jumper (Devin Carter assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963439",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:41:10Z",
+      "location": {
+        "x": 460,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "7:19",
+        "description": "RJ Barrett misses 24-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963441",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:41:23Z",
+      "location": {
+        "x": 100,
+        "y": 235
+      },
+      "event": {
+        "clock": "7:07",
+        "description": "DeMar DeRozan makes 21-foot two point shot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963451",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:45:39Z",
+      "location": {
+        "x": 260,
+        "y": 235
+      },
+      "event": {
+        "clock": "6:28",
+        "description": "Devin Carter misses driving floating jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963453",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:45:43Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "6:25",
+        "description": "Devin Carter makes tip shot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963454",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:45:51Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "6:18",
+        "description": "Jakob Poeltl makes layup (RJ Barrett assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963456",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:46:06Z",
+      "location": {
+        "x": 170,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "6:02",
+        "description": "DeMar DeRozan misses 27-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963458",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:46:15Z",
+      "location": {
+        "x": 240,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:54",
+        "description": "Scottie Barnes misses running layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963460",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:46:30Z",
+      "location": {
+        "x": 250,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:38",
+        "description": "Precious Achiuwa makes 1-foot dunk (Malik Monk assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963462",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:46:41Z",
+      "location": {
+        "x": 230,
+        "y": 47
+      },
+      "event": {
+        "clock": "5:28",
+        "description": "RJ Barrett misses driving layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963468",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:47:23Z",
+      "location": {
+        "x": 240,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:24",
+        "description": "RJ Barrett makes 1-foot layup (Scottie Barnes assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963470",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:47:48Z",
+      "location": {
+        "x": 100,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "4:59",
+        "description": "Killian Hayes misses 29-foot jump bank shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963472",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:47:56Z",
+      "location": {
+        "x": 250,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "4:52",
+        "description": "Sandro Mamukelashvili makes running layup (Scottie Barnes assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963474",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:48:15Z",
+      "location": {
+        "x": 260,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "4:33",
+        "description": "DeMar DeRozan makes driving layup (Precious Achiuwa assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963476",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:48:29Z",
+      "location": {
+        "x": 210,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "4:19",
+        "description": "Scottie Barnes makes 5-foot pullup jump shot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963479",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:48:55Z",
+      "location": {
+        "x": 250,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "3:53",
+        "description": "Sandro Mamukelashvili makes running dunk (RJ Barrett assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963481",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:49:18Z",
+      "location": {
+        "x": 220,
+        "y": 47
+      },
+      "event": {
+        "clock": "3:30",
+        "description": "Killian Hayes misses two point shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963483",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:49:21Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "3:27",
+        "description": "Precious Achiuwa makes tip in dunk",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963490",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:49:45Z",
+      "location": {
+        "x": 250,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "3:02",
+        "description": "Malik Monk makes 10-foot running pullup jump shot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963502",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:52:54Z",
+      "location": {
+        "x": 240,
+        "y": 94
+      },
+      "event": {
+        "clock": "2:51",
+        "description": "Jakob Poeltl makes layup (Jamal Shead assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963505",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:53:31Z",
+      "location": {
+        "x": 300,
+        "y": 141
+      },
+      "event": {
+        "clock": "2:26",
+        "description": "Dylan Cardwell misses 9-foot two point shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963507",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:53:39Z",
+      "location": {
+        "x": 180,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "2:17",
+        "description": "Sandro Mamukelashvili misses 26-foot running jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963509",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:53:53Z",
+      "location": {
+        "x": 270,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "2:04",
+        "description": "Malik Monk makes 7-foot driving floating jump shot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963510",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:54:08Z",
+      "location": {
+        "x": 300,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "1:50",
+        "description": "RJ Barrett misses two point shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963521",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:57:23Z",
+      "location": {
+        "x": 220,
+        "y": 0
+      },
+      "event": {
+        "clock": "1:16",
+        "description": "Precious Achiuwa blocks Sandro Mamukelashvili 's 3-foot driving layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963538",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:58:12Z",
+      "location": {
+        "x": 270,
+        "y": 141
+      },
+      "event": {
+        "clock": "57.1",
+        "description": "Jamal Shead misses driving floating jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963540",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:58:27Z",
+      "location": {
+        "x": 200,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "41.4",
+        "description": "Precious Achiuwa makes 12-foot fade away jump shot (Killian Hayes assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963541",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:58:44Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "27.0",
+        "description": "A.J. Lawson makes layup (Jakob Poeltl assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963543",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:59:11Z",
+      "location": {
+        "x": 210,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "2.0",
+        "description": "Malik Monk misses two point shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963545",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:59:16Z",
+      "location": {
+        "x": 400,
+        "y": 924.33
+      },
+      "event": {
+        "clock": "0.0",
+        "description": "Jamal Shead misses heave jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963555",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:02:13Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "11:43",
+        "description": "Jakob Poeltl makes layup (Scottie Barnes assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963561",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:02:47Z",
+      "location": {
+        "x": 240,
+        "y": -15.67
+      },
+      "event": {
+        "clock": "11:08",
+        "description": "Jakob Poeltl makes 1-foot layup (Sandro Mamukelashvili assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963564",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:03:35Z",
+      "location": {
+        "x": 200,
+        "y": 94
+      },
+      "event": {
+        "clock": "10:45",
+        "description": "Precious Achiuwa misses driving floating jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963567",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:03:41Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "10:44",
+        "description": "Precious Achiuwa misses tip shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963569",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:03:49Z",
+      "location": {
+        "x": 480,
+        "y": 156.67
+      },
+      "event": {
+        "clock": "10:32",
+        "description": "Daeqwon Plowden makes 25-foot three point jumper (Killian Hayes assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963578",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:05:10Z",
+      "location": null,
+      "event": {
+        "clock": "10:12",
+        "description": "Killian Hayes makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963585",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:05:34Z",
+      "location": null,
+      "event": {
+        "clock": "10:12",
+        "description": "Killian Hayes makes free throw 2 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963586",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:05:48Z",
+      "location": {
+        "x": 250,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "10:01",
+        "description": "Jamal Shead makes driving layup",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963589",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:06:19Z",
+      "location": {
+        "x": 300,
+        "y": 423
+      },
+      "event": {
+        "clock": "9:48",
+        "description": "Malik Monk misses 27-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963593",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:06:58Z",
+      "location": null,
+      "event": {
+        "clock": "9:40",
+        "description": "Jamal Shead makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963598",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:07:22Z",
+      "location": null,
+      "event": {
+        "clock": "9:40",
+        "description": "Jamal Shead makes free throw 2 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963601",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:08:03Z",
+      "location": null,
+      "event": {
+        "clock": "9:27",
+        "description": "Maxime Raynaud makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963606",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:08:28Z",
+      "location": null,
+      "event": {
+        "clock": "9:27",
+        "description": "Maxime Raynaud makes free throw 2 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963607",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:08:51Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "9:05",
+        "description": "Sandro Mamukelashvili makes two point shot (Collin Murray-Boyles assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963611",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:09:37Z",
+      "location": null,
+      "event": {
+        "clock": "8:48",
+        "description": "DeMar DeRozan makes free throw 1 of 3",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963612",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:09:50Z",
+      "location": null,
+      "event": {
+        "clock": "8:48",
+        "description": "DeMar DeRozan makes free throw 2 of 3",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963613",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:10:05Z",
+      "location": null,
+      "event": {
+        "clock": "8:48",
+        "description": "DeMar DeRozan makes free throw 3 of 3",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963614",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:10:14Z",
+      "location": {
+        "x": 180,
+        "y": 423
+      },
+      "event": {
+        "clock": "8:40",
+        "description": "RJ Barrett misses 27-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963616",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:10:25Z",
+      "location": {
+        "x": 230,
+        "y": 297.67
+      },
+      "event": {
+        "clock": "8:30",
+        "description": "DeMar DeRozan makes 18-foot pullup jump shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963617",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:10:35Z",
+      "location": {
+        "x": 30,
+        "y": 219.33
+      },
+      "event": {
+        "clock": "8:19",
+        "description": "Sandro Mamukelashvili makes 25-foot three point jumper (Jamal Shead assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963619",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:10:58Z",
+      "location": {
+        "x": 400,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "7:55",
+        "description": "Daeqwon Plowden makes 26-foot three point jumper (Malik Monk assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963621",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:11:22Z",
+      "location": {
+        "x": 260,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "7:32",
+        "description": "RJ Barrett makes 6-foot two point shot (Jamal Shead assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963622",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:11:43Z",
+      "location": {
+        "x": 90,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "7:10",
+        "description": "Malik Monk makes 29-foot three point jumper (Nique Clifford assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963624",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:11:54Z",
+      "location": {
+        "x": 240,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "7:00",
+        "description": "Collin Murray-Boyles makes 1-foot layup (Jamal Shead assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963626",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:12:14Z",
+      "location": {
+        "x": 160,
+        "y": 297.67
+      },
+      "event": {
+        "clock": "6:40",
+        "description": "DeMar DeRozan misses 20-foot pullup jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963628",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:12:25Z",
+      "location": {
+        "x": 230,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "6:29",
+        "description": "Sandro Mamukelashvili makes 26-foot three point jumper (Collin Murray-Boyles assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963632",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:12:56Z",
+      "location": {
+        "x": 260,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "6:00",
+        "description": "Jamal Shead makes 1-foot two point shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963646",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:16:23Z",
+      "location": null,
+      "event": {
+        "clock": "6:00",
+        "description": "Jamal Shead makes free throw 1 of 1",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963647",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:16:39Z",
+      "location": {
+        "x": 240,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:46",
+        "description": "RJ Barrett blocks Devin Carter 's 2-foot two point shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963652",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:17:31Z",
+      "location": null,
+      "event": {
+        "clock": "5:26",
+        "description": "Collin Murray-Boyles misses free throw 1 of 2",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963656",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:17:55Z",
+      "location": null,
+      "event": {
+        "clock": "5:26",
+        "description": "Collin Murray-Boyles makes free throw 2 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963657",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:18:18Z",
+      "location": {
+        "x": 230,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:05",
+        "description": "Nique Clifford makes 2-foot two point shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963658",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:18:30Z",
+      "location": {
+        "x": 220,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "4:54",
+        "description": "Scottie Barnes misses 8-foot pullup jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963662",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:19:13Z",
+      "location": null,
+      "event": {
+        "clock": "4:44",
+        "description": "DeMar DeRozan makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963667",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:19:37Z",
+      "location": null,
+      "event": {
+        "clock": "4:44",
+        "description": "DeMar DeRozan makes free throw 2 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963668",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:19:52Z",
+      "location": {
+        "x": 240,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "4:30",
+        "description": "RJ Barrett misses driving floating jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963670",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:20:17Z",
+      "location": {
+        "x": 230,
+        "y": 188
+      },
+      "event": {
+        "clock": "4:05",
+        "description": "Nique Clifford misses 11-foot two point shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963672",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:20:26Z",
+      "location": {
+        "x": 380,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "3:56",
+        "description": "Jamal Shead makes 28-foot running jump shot (Sandro Mamukelashvili assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963683",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:24:30Z",
+      "location": null,
+      "event": {
+        "clock": "3:17",
+        "description": "Jakob Poeltl makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963684",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:24:44Z",
+      "location": null,
+      "event": {
+        "clock": "3:17",
+        "description": "Jakob Poeltl makes free throw 2 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963687",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:25:08Z",
+      "location": {
+        "x": 240,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "2:56",
+        "description": "DeMar DeRozan misses two point shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963689",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:25:13Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "2:54",
+        "description": "DeMar DeRozan makes two point shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963690",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:25:25Z",
+      "location": {
+        "x": 220,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "2:39",
+        "description": "Scottie Barnes misses 3-foot two point shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963694",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:25:54Z",
+      "location": null,
+      "event": {
+        "clock": "2:38",
+        "description": "Scottie Barnes makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963696",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:26:08Z",
+      "location": null,
+      "event": {
+        "clock": "2:38",
+        "description": "Scottie Barnes makes free throw 2 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963697",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:26:30Z",
+      "location": {
+        "x": 250,
+        "y": 423
+      },
+      "event": {
+        "clock": "2:22",
+        "description": "Nique Clifford misses 26-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963705",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:29:28Z",
+      "location": null,
+      "event": {
+        "clock": "1:50",
+        "description": "Malik Monk makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963706",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:29:41Z",
+      "location": null,
+      "event": {
+        "clock": "1:50",
+        "description": "Malik Monk makes free throw 2 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963707",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:29:54Z",
+      "location": {
+        "x": 230,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "1:40",
+        "description": "Scottie Barnes makes 2-foot two point shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963708",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:30:10Z",
+      "location": {
+        "x": 260,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "1:27",
+        "description": "DeMar DeRozan makes two point shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963711",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:30:45Z",
+      "location": null,
+      "event": {
+        "clock": "1:18",
+        "description": "Scottie Barnes misses free throw 1 of 2",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963715",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:31:08Z",
+      "location": null,
+      "event": {
+        "clock": "1:18",
+        "description": "Scottie Barnes makes free throw 2 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963716",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:31:32Z",
+      "location": {
+        "x": 490,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "1:05",
+        "description": "DeMar DeRozan makes 23-foot three point jumper (Malik Monk assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963718",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:31:48Z",
+      "location": {
+        "x": 140,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "55.1",
+        "description": "Scottie Barnes misses 25-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963721",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:32:08Z",
+      "location": {
+        "x": 20,
+        "y": 94
+      },
+      "event": {
+        "clock": "51.5",
+        "description": "RJ Barrett misses 23-foot jump bank shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963723",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:32:26Z",
+      "location": {
+        "x": 260,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "34.7",
+        "description": "Precious Achiuwa makes two point shot (Malik Monk assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963724",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:32:38Z",
+      "location": {
+        "x": 260,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "27.4",
+        "description": "Jamal Shead misses driving floating jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810963",
+      "play_id": "401810963727",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:33:25Z",
+      "location": {
+        "x": 320,
+        "y": 705
+      },
+      "event": {
+        "clock": "0.0",
+        "description": "Jamal Shead misses heave jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    }
+  ],
+  "saved_at": "2026-04-02T21:05:32.163574113Z"
+}

@@ -1,0 +1,4735 @@
+{
+  "game_id": "401810967",
+  "sport": "nba",
+  "state": {
+    "game_id": "401810967",
+    "sport": "nba",
+    "status": "final",
+    "state": "post",
+    "detail": "Final",
+    "start_time": "2026-04-02T01:00Z",
+    "home": "UTAH",
+    "away": "DEN",
+    "home_score": 117,
+    "away_score": 130,
+    "period": "Q0",
+    "clock": "",
+    "completed": true,
+    "tracked": true
+  },
+  "plays": [
+    {
+      "game_id": "401810967",
+      "play_id": "4018109677",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:11:34Z",
+      "location": {
+        "x": 200,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "11:48",
+        "description": "Jamal Murray makes 25-foot three point jumper (Nikola Jokic assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "4018109679",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:12:00Z",
+      "location": {
+        "x": 270,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "11:23",
+        "description": "Kyle Filipowski misses driving floating jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096711",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:12:08Z",
+      "location": {
+        "x": 10,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "11:14",
+        "description": "Jamal Murray makes 23-foot three point jumper (Cameron Johnson assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096713",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:12:29Z",
+      "location": {
+        "x": 350,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "10:53",
+        "description": "Oscar Tshiebwe misses 10-foot floating jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096715",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:12:46Z",
+      "location": {
+        "x": 290,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "10:36",
+        "description": "Jamal Murray makes 25-foot three point jumper (Aaron Gordon assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096718",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:15:58Z",
+      "location": {
+        "x": 180,
+        "y": 297.67
+      },
+      "event": {
+        "clock": "10:22",
+        "description": "Ace Bailey misses 19-foot pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096720",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:16:04Z",
+      "location": {
+        "x": 120,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "10:16",
+        "description": "Jamal Murray misses running pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096722",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:16:16Z",
+      "location": {
+        "x": 490,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "10:05",
+        "description": "Kyle Filipowski misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096724",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:16:33Z",
+      "location": {
+        "x": 470,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "9:46",
+        "description": "Cameron Johnson misses 24-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096727",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:17:04Z",
+      "location": {
+        "x": 20,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "9:41",
+        "description": "Cameron Johnson makes 23-foot three point jumper (Aaron Gordon assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096729",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:17:23Z",
+      "location": {
+        "x": 20,
+        "y": -15.67
+      },
+      "event": {
+        "clock": "9:21",
+        "description": "Cody Williams makes 23-foot three point jumper (Kyle Filipowski assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096731",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:17:40Z",
+      "location": {
+        "x": 480,
+        "y": 47
+      },
+      "event": {
+        "clock": "9:04",
+        "description": "Aaron Gordon makes 22-foot three point jumper (Nikola Jokic assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096733",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:17:50Z",
+      "location": {
+        "x": 390,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "8:54",
+        "description": "Cody Williams misses 15-foot pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096737",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:18:24Z",
+      "location": null,
+      "event": {
+        "clock": "8:45",
+        "description": "Christian Braun makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096740",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:18:42Z",
+      "location": null,
+      "event": {
+        "clock": "8:45",
+        "description": "Christian Braun makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096741",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:18:56Z",
+      "location": {
+        "x": 20,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "8:33",
+        "description": "Kyle Filipowski misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096744",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:19:22Z",
+      "location": {
+        "x": 330,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "8:12",
+        "description": "Brice Sensabaugh makes 26-foot three point jumper (Kennedy Chandler assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096747",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:20:04Z",
+      "location": {
+        "x": 250,
+        "y": 438.67
+      },
+      "event": {
+        "clock": "7:43",
+        "description": "Brice Sensabaugh misses 27-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096749",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:20:24Z",
+      "location": {
+        "x": 470,
+        "y": -15.67
+      },
+      "event": {
+        "clock": "7:22",
+        "description": "Jamal Murray misses 22-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096751",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:20:32Z",
+      "location": {
+        "x": 300,
+        "y": 156.67
+      },
+      "event": {
+        "clock": "7:15",
+        "description": "Brice Sensabaugh misses running pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096756",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:21:12Z",
+      "location": {
+        "x": 10,
+        "y": 94
+      },
+      "event": {
+        "clock": "7:03",
+        "description": "Jamal Murray makes 24-foot three point jumper (Christian Braun assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096758",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:21:26Z",
+      "location": {
+        "x": 280,
+        "y": 141
+      },
+      "event": {
+        "clock": "6:48",
+        "description": "Kyle Filipowski makes 8-foot jumper (Cody Williams assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096760",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:21:40Z",
+      "location": {
+        "x": 20,
+        "y": 156.67
+      },
+      "event": {
+        "clock": "6:35",
+        "description": "Aaron Gordon misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096762",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:21:53Z",
+      "location": {
+        "x": 20,
+        "y": -15.67
+      },
+      "event": {
+        "clock": "6:22",
+        "description": "Kennedy Chandler misses 22-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096766",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:22:06Z",
+      "location": {
+        "x": 270,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "6:09",
+        "description": "Kyle Filipowski makes running layup (Kennedy Chandler assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096768",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:22:26Z",
+      "location": {
+        "x": 260,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "5:49",
+        "description": "Christian Braun makes 8-foot two point shot (Nikola Jokic assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096772",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:23:29Z",
+      "location": null,
+      "event": {
+        "clock": "5:32",
+        "description": "Cody Williams makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096775",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:23:55Z",
+      "location": null,
+      "event": {
+        "clock": "5:32",
+        "description": "Cody Williams makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096776",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:24:12Z",
+      "location": {
+        "x": 150,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "5:18",
+        "description": "Jamal Murray misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096778",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:24:21Z",
+      "location": {
+        "x": 290,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "5:09",
+        "description": "Kyle Filipowski makes running layup",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096779",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:24:45Z",
+      "location": {
+        "x": 10,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "4:45",
+        "description": "Christian Braun makes 25-foot three point jumper (Nikola Jokic assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096781",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:25:00Z",
+      "location": {
+        "x": 430,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "4:30",
+        "description": "Ace Bailey misses 18-foot pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096788",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:25:54Z",
+      "location": {
+        "x": 230,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "4:14",
+        "description": "Brice Sensabaugh blocks Jamal Murray 's 4-foot layup",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096792",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:26:15Z",
+      "location": {
+        "x": 20,
+        "y": -15.67
+      },
+      "event": {
+        "clock": "4:10",
+        "description": "Tim Hardaway Jr. makes 22-foot jump bank shot (Jamal Murray assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096794",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:26:27Z",
+      "location": {
+        "x": 480,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "3:58",
+        "description": "John Konchar makes 23-foot three point jumper (Ace Bailey assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "40181096798",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:26:35Z",
+      "location": {
+        "x": 220,
+        "y": 376
+      },
+      "event": {
+        "clock": "3:50",
+        "description": "Kyle Filipowski misses 24-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967100",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:26:45Z",
+      "location": {
+        "x": 230,
+        "y": 47
+      },
+      "event": {
+        "clock": "3:42",
+        "description": "Brice Sensabaugh makes layup (Kennedy Chandler assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967107",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:29:57Z",
+      "location": {
+        "x": 20,
+        "y": 94
+      },
+      "event": {
+        "clock": "3:27",
+        "description": "Bruce Brown misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967109",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:30:09Z",
+      "location": {
+        "x": 460,
+        "y": 235
+      },
+      "event": {
+        "clock": "3:15",
+        "description": "Ace Bailey misses 25-foot three point step back jumpshot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967111",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:30:30Z",
+      "location": {
+        "x": 20,
+        "y": 47
+      },
+      "event": {
+        "clock": "2:53",
+        "description": "Peyton Watson misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967113",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:30:40Z",
+      "location": {
+        "x": 320,
+        "y": 141
+      },
+      "event": {
+        "clock": "2:43",
+        "description": "Brice Sensabaugh makes 11-foot driving floating jump shot (John Konchar assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967114",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:30:49Z",
+      "location": {
+        "x": 20,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "2:35",
+        "description": "Peyton Watson misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967116",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:31:03Z",
+      "location": {
+        "x": 480,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "2:21",
+        "description": "Kyle Filipowski makes 23-foot three point jumper (John Konchar assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967118",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:31:16Z",
+      "location": {
+        "x": 270,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "2:07",
+        "description": "Cameron Johnson makes 4-foot layup (Nikola Jokic assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967120",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:31:29Z",
+      "location": {
+        "x": 90,
+        "y": 297.67
+      },
+      "event": {
+        "clock": "1:55",
+        "description": "Brice Sensabaugh makes 24-foot three point jumper (Kyle Filipowski assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967126",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:32:10Z",
+      "location": null,
+      "event": {
+        "clock": "1:55",
+        "description": "Brice Sensabaugh misses free throw 1 of 1",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967132",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:33:05Z",
+      "location": {
+        "x": 270,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "1:23",
+        "description": "Nikola Jokic makes driving layup (Bruce Brown assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967134",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:33:17Z",
+      "location": {
+        "x": 270,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "1:11",
+        "description": "Kennedy Chandler misses driving floating jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967136",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:33:22Z",
+      "location": {
+        "x": 50,
+        "y": 297.67
+      },
+      "event": {
+        "clock": "1:07",
+        "description": "Ace Bailey misses 27-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967138",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:33:33Z",
+      "location": {
+        "x": 290,
+        "y": 156.67
+      },
+      "event": {
+        "clock": "57.0",
+        "description": "Oscar Tshiebwe misses 11-foot floating jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967140",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:33:46Z",
+      "location": {
+        "x": 250,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "43.8",
+        "description": "Tim Hardaway Jr. misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967142",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:33:50Z",
+      "location": {
+        "x": 230,
+        "y": 47
+      },
+      "event": {
+        "clock": "40.3",
+        "description": "Peyton Watson makes 3-foot dunk",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967144",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:34:07Z",
+      "location": {
+        "x": 490,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "33.0",
+        "description": "John Konchar misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967146",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:34:30Z",
+      "location": {
+        "x": 300,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "10.3",
+        "description": "Peyton Watson makes 11-foot driving floating jump shot (Nikola Jokic assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967150",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:35:07Z",
+      "location": null,
+      "event": {
+        "clock": "3.1",
+        "description": "Kennedy Chandler misses free throw 1 of 2",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967154",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:35:31Z",
+      "location": null,
+      "event": {
+        "clock": "3.1",
+        "description": "Kennedy Chandler makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967155",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:35:45Z",
+      "location": {
+        "x": 280,
+        "y": 783.33
+      },
+      "event": {
+        "clock": "0.3",
+        "description": "Jamal Murray makes 49-foot three pointer",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967167",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:39:34Z",
+      "location": {
+        "x": 270,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "11:26",
+        "description": "Jonas Valanciunas misses alley oop layup",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967174",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:42:55Z",
+      "location": {
+        "x": 160,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "11:06",
+        "description": "Ace Bailey misses driving floating jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967176",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:43:14Z",
+      "location": {
+        "x": 140,
+        "y": 219.33
+      },
+      "event": {
+        "clock": "10:46",
+        "description": "Peyton Watson makes 17-foot pullup jump shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967179",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:43:27Z",
+      "location": {
+        "x": 260,
+        "y": 47
+      },
+      "event": {
+        "clock": "10:34",
+        "description": "Bruce Brown makes 2-foot running dunk",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967180",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:43:39Z",
+      "location": {
+        "x": 420,
+        "y": 282
+      },
+      "event": {
+        "clock": "10:21",
+        "description": "Ace Bailey misses 24-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967184",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:44:30Z",
+      "location": null,
+      "event": {
+        "clock": "10:19",
+        "description": "Ace Bailey makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967185",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:44:30Z",
+      "location": null,
+      "event": {
+        "clock": "10:19",
+        "description": "Ace Bailey misses free throw 2 of 2",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967187",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:45:10Z",
+      "location": {
+        "x": 260,
+        "y": 47
+      },
+      "event": {
+        "clock": "10:01",
+        "description": "Jonas Valanciunas makes driving layup",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967189",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:45:22Z",
+      "location": {
+        "x": 370,
+        "y": 0
+      },
+      "event": {
+        "clock": "9:48",
+        "description": "John Konchar makes 11-foot floating jump shot (Kennedy Chandler assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967193",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:46:19Z",
+      "location": null,
+      "event": {
+        "clock": "9:24",
+        "description": "Jonas Valanciunas makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967196",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:46:45Z",
+      "location": null,
+      "event": {
+        "clock": "9:24",
+        "description": "Jonas Valanciunas makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967198",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:47:18Z",
+      "location": {
+        "x": 330,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "9:00",
+        "description": "Jamal Murray misses driving floating jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967200",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:47:29Z",
+      "location": {
+        "x": 320,
+        "y": 141
+      },
+      "event": {
+        "clock": "8:49",
+        "description": "Cody Williams misses driving floating jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967204",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:48:13Z",
+      "location": null,
+      "event": {
+        "clock": "8:40",
+        "description": "Jonas Valanciunas misses free throw 1 of 2",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967208",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:48:36Z",
+      "location": null,
+      "event": {
+        "clock": "8:40",
+        "description": "Jonas Valanciunas makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967209",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:48:55Z",
+      "location": {
+        "x": 200,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "8:22",
+        "description": "Cody Williams makes 9-foot pullup jump shot (John Konchar assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967217",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:49:52Z",
+      "location": {
+        "x": 340,
+        "y": 376
+      },
+      "event": {
+        "clock": "7:50",
+        "description": "Jamal Murray makes 25-foot three point step back jumpshot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967218",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:50:04Z",
+      "location": {
+        "x": 30,
+        "y": -15.67
+      },
+      "event": {
+        "clock": "7:38",
+        "description": "Ace Bailey misses 22-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967220",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:50:23Z",
+      "location": {
+        "x": 10,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "7:19",
+        "description": "Cameron Johnson misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967224",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:51:11Z",
+      "location": null,
+      "event": {
+        "clock": "7:03",
+        "description": "John Konchar misses free throw 1 of 2",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967232",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:51:34Z",
+      "location": null,
+      "event": {
+        "clock": "7:03",
+        "description": "John Konchar makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967233",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:51:56Z",
+      "location": {
+        "x": 230,
+        "y": 156.67
+      },
+      "event": {
+        "clock": "6:45",
+        "description": "Cameron Johnson misses 10-foot pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967237",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:52:20Z",
+      "location": {
+        "x": 280,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "6:22",
+        "description": "Bruce Brown misses running layup",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967239",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:52:26Z",
+      "location": {
+        "x": 370,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "6:16",
+        "description": "Kyle Filipowski makes 25-foot running jump shot (Brice Sensabaugh assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967243",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:53:16Z",
+      "location": null,
+      "event": {
+        "clock": "5:58",
+        "description": "Cameron Johnson makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967248",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:53:43Z",
+      "location": null,
+      "event": {
+        "clock": "5:58",
+        "description": "Cameron Johnson makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967253",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:54:27Z",
+      "location": null,
+      "event": {
+        "clock": "5:48",
+        "description": "Bruce Brown misses free throw 1 of 2",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967255",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:54:27Z",
+      "location": null,
+      "event": {
+        "clock": "5:48",
+        "description": "Bruce Brown makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967256",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:54:54Z",
+      "location": {
+        "x": 80,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "5:39",
+        "description": "Brice Sensabaugh makes 26-foot three point jumper (Cody Williams assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967258",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:55:17Z",
+      "location": {
+        "x": 330,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "5:15",
+        "description": "Christian Braun misses 25-foot three point step back jumpshot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967260",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:55:37Z",
+      "location": {
+        "x": 40,
+        "y": 250.67
+      },
+      "event": {
+        "clock": "4:55",
+        "description": "Brice Sensabaugh misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967262",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:55:55Z",
+      "location": {
+        "x": 380,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "4:38",
+        "description": "Aaron Gordon misses 13-foot two point shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967266",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:56:08Z",
+      "location": {
+        "x": 230,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "4:25",
+        "description": "Cameron Johnson makes 4-foot running dunk (Christian Braun assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967273",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:00:06Z",
+      "location": null,
+      "event": {
+        "clock": "4:10",
+        "description": "Kyle Filipowski makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967274",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:00:26Z",
+      "location": null,
+      "event": {
+        "clock": "4:10",
+        "description": "Kyle Filipowski makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967278",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:01:02Z",
+      "location": {
+        "x": 30,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "3:51",
+        "description": "Ace Bailey misses 24-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967280",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:01:10Z",
+      "location": {
+        "x": 260,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "3:43",
+        "description": "Bruce Brown makes running layup (Nikola Jokic assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967282",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:01:35Z",
+      "location": {
+        "x": 210,
+        "y": 94
+      },
+      "event": {
+        "clock": "3:20",
+        "description": "Kyle Filipowski makes 7-foot two point shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967287",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:02:13Z",
+      "location": null,
+      "event": {
+        "clock": "3:20",
+        "description": "Kyle Filipowski makes free throw 1 of 1",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967288",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:02:34Z",
+      "location": {
+        "x": 10,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "3:04",
+        "description": "Cameron Johnson makes 23-foot three point jumper (Nikola Jokic assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967290",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:02:45Z",
+      "location": {
+        "x": 280,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "2:53",
+        "description": "Kennedy Chandler misses two point shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967292",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:02:48Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "2:50",
+        "description": "Kyle Filipowski makes tip shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967293",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:03:01Z",
+      "location": {
+        "x": 220,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "2:37",
+        "description": "Jamal Murray misses two point shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967295",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:03:07Z",
+      "location": {
+        "x": 210,
+        "y": 47
+      },
+      "event": {
+        "clock": "2:31",
+        "description": "Jamal Murray makes layup (Cameron Johnson assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967297",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:03:17Z",
+      "location": {
+        "x": 210,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "2:20",
+        "description": "Brice Sensabaugh makes 24-foot three point step back jumpshot (Cody Williams assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967299",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:03:26Z",
+      "location": {
+        "x": 290,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "2:12",
+        "description": "Cameron Johnson makes 4-foot dunk (Christian Braun assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967301",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:03:41Z",
+      "location": {
+        "x": 280,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "1:57",
+        "description": "Brice Sensabaugh makes 6-foot driving floating jump shot (Kennedy Chandler assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967303",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:03:57Z",
+      "location": {
+        "x": 250,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "1:40",
+        "description": "Jamal Murray misses 19-foot pullup jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967305",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:04:05Z",
+      "location": {
+        "x": 220,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "1:33",
+        "description": "Cody Williams misses running layup",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967307",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:04:12Z",
+      "location": {
+        "x": 240,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "1:26",
+        "description": "Nikola Jokic misses two point shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967311",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:04:27Z",
+      "location": {
+        "x": 230,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "1:11",
+        "description": "Christian Braun makes 3-foot running dunk (Jamal Murray assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967313",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:04:45Z",
+      "location": {
+        "x": 480,
+        "y": 47
+      },
+      "event": {
+        "clock": "53.7",
+        "description": "Cody Williams misses 22-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967318",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:05:24Z",
+      "location": null,
+      "event": {
+        "clock": "45.3",
+        "description": "Aaron Gordon misses free throw 1 of 2",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967320",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:05:39Z",
+      "location": null,
+      "event": {
+        "clock": "45.3",
+        "description": "Aaron Gordon makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967322",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:06:29Z",
+      "location": {
+        "x": 20,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "15.3",
+        "description": "Christian Braun misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967324",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:06:34Z",
+      "location": {
+        "x": 320,
+        "y": 485.67
+      },
+      "event": {
+        "clock": "10.3",
+        "description": "Jamal Murray misses 31-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967328",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:07:12Z",
+      "location": null,
+      "event": {
+        "clock": "2.6",
+        "description": "Kennedy Chandler makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967329",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:07:12Z",
+      "location": null,
+      "event": {
+        "clock": "2.6",
+        "description": "Kennedy Chandler makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967330",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:07:32Z",
+      "location": {
+        "x": 310,
+        "y": 595.33
+      },
+      "event": {
+        "clock": "0.3",
+        "description": "Jamal Murray misses heave jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967336",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:23:16Z",
+      "location": {
+        "x": 250,
+        "y": 94
+      },
+      "event": {
+        "clock": "11:38",
+        "description": "Oscar Tshiebwe makes 5-foot two point shot (Kyle Filipowski assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967338",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:23:41Z",
+      "location": {
+        "x": 20,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "11:13",
+        "description": "Aaron Gordon misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967340",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:23:53Z",
+      "location": {
+        "x": 250,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "11:01",
+        "description": "Ace Bailey makes 4-foot driving dunk (Cody Williams assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967342",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:24:07Z",
+      "location": {
+        "x": 210,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "10:48",
+        "description": "Nikola Jokic misses layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967344",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:24:17Z",
+      "location": {
+        "x": 370,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "10:38",
+        "description": "Brice Sensabaugh misses 24-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967348",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:25:07Z",
+      "location": null,
+      "event": {
+        "clock": "10:20",
+        "description": "Jamal Murray makes free throw 1 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967349",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:25:24Z",
+      "location": null,
+      "event": {
+        "clock": "10:20",
+        "description": "Jamal Murray makes free throw 2 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967350",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:25:41Z",
+      "location": {
+        "x": 320,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "10:05",
+        "description": "Ace Bailey makes 8-foot driving dunk (Cody Williams assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967353",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:26:18Z",
+      "location": {
+        "x": 250,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "9:37",
+        "description": "Cody Williams misses two point shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967355",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:26:22Z",
+      "location": {
+        "x": 270,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "9:34",
+        "description": "Brice Sensabaugh makes 3-foot driving dunk",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967359",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:29:29Z",
+      "location": {
+        "x": 280,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "9:23",
+        "description": "Aaron Gordon misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967361",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:29:35Z",
+      "location": {
+        "x": 270,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "9:17",
+        "description": "Cameron Johnson makes 5-foot driving dunk",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967362",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:29:46Z",
+      "location": {
+        "x": 460,
+        "y": 219.33
+      },
+      "event": {
+        "clock": "9:06",
+        "description": "Ace Bailey misses 24-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967364",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:29:52Z",
+      "location": {
+        "x": 150,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "8:59",
+        "description": "Jamal Murray misses running pullup jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967366",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:30:10Z",
+      "location": {
+        "x": 260,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "8:42",
+        "description": "Oscar Tshiebwe makes driving layup (Brice Sensabaugh assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967368",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:30:19Z",
+      "location": {
+        "x": 40,
+        "y": 329
+      },
+      "event": {
+        "clock": "8:36",
+        "description": "Nikola Jokic misses 30-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967370",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:30:22Z",
+      "location": {
+        "x": 220,
+        "y": 0
+      },
+      "event": {
+        "clock": "8:30",
+        "description": "Christian Braun makes 2-foot layup (Nikola Jokic assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967372",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:30:28Z",
+      "location": {
+        "x": 230,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "8:24",
+        "description": "Oscar Tshiebwe makes 2-foot layup (Cody Williams assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967374",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:30:47Z",
+      "location": {
+        "x": 490,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "8:04",
+        "description": "Cameron Johnson misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967376",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:30:53Z",
+      "location": {
+        "x": 250,
+        "y": 188
+      },
+      "event": {
+        "clock": "8:00",
+        "description": "Nikola Jokic makes 12-foot floating jump shot (Cameron Johnson assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967380",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:31:28Z",
+      "location": null,
+      "event": {
+        "clock": "8:00",
+        "description": "Nikola Jokic makes free throw 1 of 1",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967381",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:31:42Z",
+      "location": {
+        "x": 300,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "7:50",
+        "description": "Brice Sensabaugh makes 25-foot three pointer (Cody Williams assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967384",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:32:39Z",
+      "location": null,
+      "event": {
+        "clock": "7:25",
+        "description": "Nikola Jokic makes free throw 1 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967385",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:33:00Z",
+      "location": null,
+      "event": {
+        "clock": "7:25",
+        "description": "Nikola Jokic makes free throw 2 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967386",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:33:17Z",
+      "location": {
+        "x": 330,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "7:11",
+        "description": "Ace Bailey makes 9-foot turnaround jump shot (Cody Williams assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967390",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:34:05Z",
+      "location": {
+        "x": 290,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "6:44",
+        "description": "Jamal Murray misses 11-foot turnaround jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967395",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:34:50Z",
+      "location": {
+        "x": 230,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "6:29",
+        "description": "Oscar Tshiebwe misses layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967397",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:34:55Z",
+      "location": {
+        "x": 280,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "6:23",
+        "description": "Bruce Brown blocks Brice Sensabaugh 's 3-foot layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967402",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:35:36Z",
+      "location": null,
+      "event": {
+        "clock": "6:23",
+        "description": "Nikola Jokic misses free throw 1 of 2",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967404",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:35:53Z",
+      "location": null,
+      "event": {
+        "clock": "6:23",
+        "description": "Nikola Jokic makes free throw 2 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967405",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:36:15Z",
+      "location": {
+        "x": 380,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "6:03",
+        "description": "Ace Bailey makes 25-foot three pointer",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967408",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:36:31Z",
+      "location": {
+        "x": 400,
+        "y": 219.33
+      },
+      "event": {
+        "clock": "5:45",
+        "description": "Jamal Murray misses 19-foot pullup jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967410",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:36:41Z",
+      "location": {
+        "x": 270,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "5:36",
+        "description": "Jamal Murray blocks Brice Sensabaugh 's 4-foot running layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967413",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:36:46Z",
+      "location": {
+        "x": 280,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:31",
+        "description": "Bruce Brown makes running layup (Christian Braun assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967415",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:37:01Z",
+      "location": {
+        "x": 110,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:16",
+        "description": "Cody Williams misses 14-foot step back jumpshot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967417",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:37:08Z",
+      "location": {
+        "x": 220,
+        "y": 47
+      },
+      "event": {
+        "clock": "5:09",
+        "description": "Christian Braun misses layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967419",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:37:13Z",
+      "location": {
+        "x": 280,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "5:05",
+        "description": "Aaron Gordon misses layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967421",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:37:28Z",
+      "location": {
+        "x": 210,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "4:50",
+        "description": "Oscar Tshiebwe misses driving layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967425",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:37:34Z",
+      "location": {
+        "x": 230,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "4:43",
+        "description": "Oscar Tshiebwe makes 5-foot running dunk (Brice Sensabaugh assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967439",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:40:51Z",
+      "location": {
+        "x": 280,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "4:33",
+        "description": "Nikola Jokic makes 8-foot two point shot (Jamal Murray assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967441",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:41:08Z",
+      "location": {
+        "x": 370,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "4:16",
+        "description": "Ace Bailey misses 12-foot pullup jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967443",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:41:14Z",
+      "location": {
+        "x": 160,
+        "y": 376
+      },
+      "event": {
+        "clock": "4:10",
+        "description": "Jamal Murray makes 25-foot running pullup jump shot (Cameron Johnson assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967445",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:41:51Z",
+      "location": null,
+      "event": {
+        "clock": "4:06",
+        "description": "Jamal Murray makes technical free throw",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967447",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:42:45Z",
+      "location": {
+        "x": 270,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "3:39",
+        "description": "Kennedy Chandler misses layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967451",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:43:22Z",
+      "location": null,
+      "event": {
+        "clock": "3:35",
+        "description": "Bruce Brown makes free throw 1 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967452",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:43:36Z",
+      "location": null,
+      "event": {
+        "clock": "3:35",
+        "description": "Bruce Brown makes free throw 2 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967453",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:43:51Z",
+      "location": {
+        "x": 480,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "3:23",
+        "description": "John Konchar misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967455",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:44:02Z",
+      "location": {
+        "x": 270,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "3:11",
+        "description": "Nikola Jokic misses dunk",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967458",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:44:07Z",
+      "location": {
+        "x": 220,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "3:06",
+        "description": "John Konchar makes 4-foot running dunk",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967459",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:44:18Z",
+      "location": {
+        "x": 250,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "2:55",
+        "description": "Nikola Jokic makes layup (Jamal Murray assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967461",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:44:28Z",
+      "location": {
+        "x": 240,
+        "y": 156.67
+      },
+      "event": {
+        "clock": "2:45",
+        "description": "Ace Bailey makes 10-foot turnaround jump shot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967462",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:44:48Z",
+      "location": {
+        "x": 20,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "2:24",
+        "description": "Bruce Brown misses 22-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967464",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:44:59Z",
+      "location": {
+        "x": 30,
+        "y": 297.67
+      },
+      "event": {
+        "clock": "2:13",
+        "description": "Ace Bailey misses 29-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967466",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:45:06Z",
+      "location": {
+        "x": 220,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "2:12",
+        "description": "John Konchar makes two point shot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967475",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:45:34Z",
+      "location": null,
+      "event": {
+        "clock": "2:12",
+        "description": "John Konchar makes free throw 1 of 1",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967476",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:45:52Z",
+      "location": {
+        "x": 490,
+        "y": 0
+      },
+      "event": {
+        "clock": "1:58",
+        "description": "Cameron Johnson makes 24-foot three point jumper (Nikola Jokic assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967480",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:46:34Z",
+      "location": {
+        "x": 480,
+        "y": 0
+      },
+      "event": {
+        "clock": "1:35",
+        "description": "Kennedy Chandler misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967484",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:46:44Z",
+      "location": {
+        "x": 220,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "1:24",
+        "description": "Kennedy Chandler makes running layup (John Konchar assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967488",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:46:51Z",
+      "location": {
+        "x": 260,
+        "y": 47
+      },
+      "event": {
+        "clock": "1:17",
+        "description": "Kennedy Chandler makes layup",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967494",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:47:57Z",
+      "location": null,
+      "event": {
+        "clock": "1:01",
+        "description": "Kyle Filipowski makes free throw 1 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967496",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:47:57Z",
+      "location": null,
+      "event": {
+        "clock": "1:01",
+        "description": "Kyle Filipowski misses free throw 2 of 2",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967498",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:49:16Z",
+      "location": {
+        "x": 270,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "46.9",
+        "description": "Nikola Jokic makes 7-foot turnaround jump shot (Cameron Johnson assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967500",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:49:35Z",
+      "location": {
+        "x": 290,
+        "y": 47
+      },
+      "event": {
+        "clock": "30.3",
+        "description": "Kennedy Chandler misses driving layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967505",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:50:16Z",
+      "location": {
+        "x": 370,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "7.9",
+        "description": "Kyle Filipowski blocks Jamal Murray 's 14-foot driving floating jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967508",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:50:23Z",
+      "location": {
+        "x": 230,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "1.8",
+        "description": "Bez Mbeng makes running layup (Ace Bailey assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967510",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:50:26Z",
+      "location": {
+        "x": 110,
+        "y": 1018.33
+      },
+      "event": {
+        "clock": "0.4",
+        "description": "Bruce Brown misses heave jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967513",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:37:20Z",
+      "location": {
+        "x": 260,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:05",
+        "description": "Aaron Gordon misses 2-foot tip shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967525",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:53:37Z",
+      "location": {
+        "x": 220,
+        "y": 47
+      },
+      "event": {
+        "clock": "11:41",
+        "description": "Jonas Valanciunas makes 4-foot two point shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967527",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:53:49Z",
+      "location": {
+        "x": 280,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "11:29",
+        "description": "Jonas Valanciunas blocks Bez Mbeng 's 3-foot layup",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967530",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:53:58Z",
+      "location": {
+        "x": 250,
+        "y": 141
+      },
+      "event": {
+        "clock": "11:21",
+        "description": "Brice Sensabaugh misses driving floating jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967532",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:54:01Z",
+      "location": {
+        "x": 210,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "11:18",
+        "description": "Brice Sensabaugh makes 25-foot three point jumper (Bez Mbeng assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967536",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:54:54Z",
+      "location": {
+        "x": 270,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "10:49",
+        "description": "Kennedy Chandler blocks Jonas Valanciunas 's 4-foot layup",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967539",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:54:59Z",
+      "location": {
+        "x": 160,
+        "y": 94
+      },
+      "event": {
+        "clock": "10:44",
+        "description": "Bruce Brown misses driving floating jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967543",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:55:38Z",
+      "location": null,
+      "event": {
+        "clock": "10:38",
+        "description": "Kennedy Chandler makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967544",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:55:38Z",
+      "location": null,
+      "event": {
+        "clock": "10:38",
+        "description": "Kennedy Chandler makes free throw 2 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967545",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:56:18Z",
+      "location": {
+        "x": 250,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "10:17",
+        "description": "Christian Braun makes driving layup (Cameron Johnson assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967546",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:56:28Z",
+      "location": {
+        "x": 220,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "10:08",
+        "description": "John Konchar misses layup",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967548",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:56:36Z",
+      "location": {
+        "x": 480,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "10:00",
+        "description": "Jamal Murray misses 22-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967550",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:56:48Z",
+      "location": {
+        "x": 230,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "9:47",
+        "description": "Kennedy Chandler misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967552",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:56:55Z",
+      "location": {
+        "x": 210,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "9:41",
+        "description": "Brice Sensabaugh makes 6-foot driving floating jump shot (John Konchar assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967554",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:57:15Z",
+      "location": {
+        "x": 330,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "9:19",
+        "description": "Jamal Murray misses driving floating jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967556",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:57:22Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "9:16",
+        "description": "Jamal Murray makes two point shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967563",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:59:06Z",
+      "location": {
+        "x": 280,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "8:35",
+        "description": "Christian Braun makes 3-foot dunk",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967565",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:59:27Z",
+      "location": {
+        "x": 480,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "8:14",
+        "description": "Cody Williams misses 24-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967567",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:59:51Z",
+      "location": {
+        "x": 490,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "7:50",
+        "description": "Cameron Johnson misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967571",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:00:34Z",
+      "location": null,
+      "event": {
+        "clock": "7:46",
+        "description": "Jonas Valanciunas makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967574",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:01:07Z",
+      "location": null,
+      "event": {
+        "clock": "7:46",
+        "description": "Jonas Valanciunas makes free throw 2 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967575",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:01:21Z",
+      "location": {
+        "x": 270,
+        "y": 0
+      },
+      "event": {
+        "clock": "7:36",
+        "description": "Bez Mbeng makes 2-foot reverse layup (Kennedy Chandler assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967577",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:01:33Z",
+      "location": {
+        "x": 380,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "7:24",
+        "description": "Jamal Murray makes 25-foot three pointer",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967579",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:01:48Z",
+      "location": {
+        "x": 190,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "7:09",
+        "description": "Kennedy Chandler misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967581",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:01:57Z",
+      "location": {
+        "x": 270,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "7:00",
+        "description": "Bruce Brown makes running layup (Jamal Murray assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967587",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:05:12Z",
+      "location": {
+        "x": 230,
+        "y": 47
+      },
+      "event": {
+        "clock": "6:49",
+        "description": "Bez Mbeng misses 3-foot reverse layup",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967592",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:06:15Z",
+      "location": null,
+      "event": {
+        "clock": "6:38",
+        "description": "Jonas Valanciunas makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967594",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:06:36Z",
+      "location": null,
+      "event": {
+        "clock": "6:38",
+        "description": "Jonas Valanciunas makes free throw 2 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967595",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:06:50Z",
+      "location": {
+        "x": 80,
+        "y": 297.67
+      },
+      "event": {
+        "clock": "6:27",
+        "description": "Kyle Filipowski misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967597",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:06:54Z",
+      "location": {
+        "x": 40,
+        "y": 219.33
+      },
+      "event": {
+        "clock": "6:23",
+        "description": "Kyle Filipowski misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967599",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:07:12Z",
+      "location": {
+        "x": 260,
+        "y": 94
+      },
+      "event": {
+        "clock": "6:04",
+        "description": "Jonas Valanciunas misses driving layup",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967601",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:07:14Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "6:02",
+        "description": "Jonas Valanciunas makes tip shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967602",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:07:31Z",
+      "location": {
+        "x": 180,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "5:45",
+        "description": "Cody Williams makes 12-foot pullup jump shot (John Konchar assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967606",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:07:54Z",
+      "location": {
+        "x": 220,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:23",
+        "description": "Bez Mbeng makes running layup",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967610",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:08:58Z",
+      "location": {
+        "x": 20,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "4:51",
+        "description": "Kyle Filipowski makes 23-foot three point jumper (Bez Mbeng assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967619",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:12:17Z",
+      "location": {
+        "x": 310,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "4:33",
+        "description": "Cameron Johnson misses driving layup",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967621",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:12:20Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "4:32",
+        "description": "Christian Braun misses tip shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967623",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:12:24Z",
+      "location": {
+        "x": 240,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "4:26",
+        "description": "Kyle Filipowski makes two point shot (Cody Williams assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967625",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:12:42Z",
+      "location": {
+        "x": 280,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "4:10",
+        "description": "Christian Braun makes 2-foot layup (Nikola Jokic assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967630",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:14:15Z",
+      "location": null,
+      "event": {
+        "clock": "4:10",
+        "description": "Christian Braun makes free throw 1 of 1",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967632",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:14:46Z",
+      "location": {
+        "x": 20,
+        "y": 188
+      },
+      "event": {
+        "clock": "3:58",
+        "description": "Bez Mbeng misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967636",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:15:28Z",
+      "location": null,
+      "event": {
+        "clock": "3:45",
+        "description": "Nikola Jokic makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967643",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:15:28Z",
+      "location": null,
+      "event": {
+        "clock": "3:45",
+        "description": "Nikola Jokic misses free throw 2 of 2",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967645",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:16:20Z",
+      "location": {
+        "x": 350,
+        "y": 376
+      },
+      "event": {
+        "clock": "3:21",
+        "description": "Ace Bailey misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967647",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:16:41Z",
+      "location": {
+        "x": 170,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "3:01",
+        "description": "Nikola Jokic misses 8-foot turnaround jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967649",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:16:47Z",
+      "location": {
+        "x": 230,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "2:55",
+        "description": "Jamal Murray blocks Kennedy Chandler 's 2-foot running layup",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967653",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:17:17Z",
+      "location": {
+        "x": 110,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "2:39",
+        "description": "Jamal Murray makes 26-foot three pointer",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967655",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:18:06Z",
+      "location": {
+        "x": 130,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "2:01",
+        "description": "Jamal Murray makes 25-foot three point jumper (Nikola Jokic assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967657",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:18:18Z",
+      "location": {
+        "x": 270,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "1:53",
+        "description": "Kennedy Chandler makes 2-foot two point shot (Brice Sensabaugh assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967661",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:19:14Z",
+      "location": null,
+      "event": {
+        "clock": "1:40",
+        "description": "Aaron Gordon makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967670",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:19:38Z",
+      "location": null,
+      "event": {
+        "clock": "1:40",
+        "description": "Aaron Gordon makes free throw 2 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967677",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:20:28Z",
+      "location": null,
+      "event": {
+        "clock": "1:33",
+        "description": "Kennedy Chandler misses free throw 1 of 2",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967679",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:20:42Z",
+      "location": null,
+      "event": {
+        "clock": "1:33",
+        "description": "Kennedy Chandler makes free throw 2 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967680",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:21:05Z",
+      "location": {
+        "x": 170,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "1:14",
+        "description": "John Konchar blocks KJ Simpson 's 25-foot three point step back jumpshot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967685",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:21:39Z",
+      "location": null,
+      "event": {
+        "clock": "1:14",
+        "description": "John Konchar makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967686",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:21:39Z",
+      "location": null,
+      "event": {
+        "clock": "1:14",
+        "description": "John Konchar misses free throw 2 of 2",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967690",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:22:14Z",
+      "location": null,
+      "event": {
+        "clock": "1:13",
+        "description": "Bez Mbeng makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967691",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:22:14Z",
+      "location": null,
+      "event": {
+        "clock": "1:13",
+        "description": "Bez Mbeng misses free throw 2 of 2",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967693",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:22:40Z",
+      "location": {
+        "x": 200,
+        "y": 47
+      },
+      "event": {
+        "clock": "1:01",
+        "description": "David Roddy makes 5-foot two point shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967694",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:22:56Z",
+      "location": {
+        "x": 280,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "46.8",
+        "description": "Kennedy Chandler makes 8-foot driving floating jump shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967695",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:23:07Z",
+      "location": {
+        "x": 380,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "37.9",
+        "description": "David Roddy misses 24-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810967",
+      "play_id": "401810967697",
+      "sport": "nba",
+      "timestamp": "2026-04-02T03:23:15Z",
+      "location": {
+        "x": 280,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "29.8",
+        "description": "Kennedy Chandler makes running layup",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    }
+  ],
+  "saved_at": "2026-04-02T21:05:46.006819698Z"
+}

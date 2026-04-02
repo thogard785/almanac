@@ -1,0 +1,4241 @@
+{
+  "game_id": "401810858",
+  "sport": "nba",
+  "state": {
+    "game_id": "401810858",
+    "sport": "nba",
+    "status": "final",
+    "state": "post",
+    "detail": "Final",
+    "start_time": "2026-04-02T00:00Z",
+    "home": "MEM",
+    "away": "NY",
+    "home_score": 119,
+    "away_score": 130,
+    "period": "Q0",
+    "clock": "",
+    "completed": true,
+    "tracked": true
+  },
+  "plays": [
+    {
+      "game_id": "401810858",
+      "play_id": "4018108587",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:10:49Z",
+      "location": {
+        "x": 240,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "11:46",
+        "description": "OG Anunoby makes 1-foot alley oop dunk (Jose Alvarado assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "4018108589",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:11:03Z",
+      "location": {
+        "x": 400,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "11:32",
+        "description": "Cedric Coward misses 15-foot pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085811",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:11:20Z",
+      "location": {
+        "x": 190,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "11:15",
+        "description": "Jose Alvarado makes 25-foot three point jumper (Josh Hart assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085813",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:11:41Z",
+      "location": {
+        "x": 260,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "10:54",
+        "description": "GG Jackson makes 24-foot three point step back jumpshot (Cam Spencer assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085817",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:12:38Z",
+      "location": null,
+      "event": {
+        "clock": "10:31",
+        "description": "OG Anunoby makes free throw 1 of 3",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085818",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:12:58Z",
+      "location": null,
+      "event": {
+        "clock": "10:31",
+        "description": "OG Anunoby makes free throw 2 of 3",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085819",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:13:14Z",
+      "location": null,
+      "event": {
+        "clock": "10:31",
+        "description": "OG Anunoby makes free throw 3 of 3",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085822",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:13:54Z",
+      "location": null,
+      "event": {
+        "clock": "10:21",
+        "description": "Olivier-Maxence Prosper makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085823",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:14:13Z",
+      "location": null,
+      "event": {
+        "clock": "10:21",
+        "description": "Olivier-Maxence Prosper makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085824",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:14:40Z",
+      "location": {
+        "x": 230,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "9:56",
+        "description": "Olivier-Maxence Prosper blocks Josh Hart 's 2-foot layup",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085827",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:14:45Z",
+      "location": {
+        "x": 260,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "9:51",
+        "description": "Olivier-Maxence Prosper makes running layup (GG Jackson assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085829",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:15:06Z",
+      "location": {
+        "x": 280,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "9:31",
+        "description": "Mikal Bridges makes 2-foot layup (Josh Hart assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085833",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:15:52Z",
+      "location": null,
+      "event": {
+        "clock": "9:15",
+        "description": "Javon Small makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085834",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:16:06Z",
+      "location": null,
+      "event": {
+        "clock": "9:15",
+        "description": "Javon Small makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085835",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:16:37Z",
+      "location": {
+        "x": 260,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "8:52",
+        "description": "OG Anunoby makes 1-foot driving dunk (Karl-Anthony Towns assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085837",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:17:01Z",
+      "location": {
+        "x": 480,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "8:27",
+        "description": "Olivier-Maxence Prosper misses 22-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085839",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:17:08Z",
+      "location": {
+        "x": 260,
+        "y": 47
+      },
+      "event": {
+        "clock": "8:21",
+        "description": "Mikal Bridges makes two point shot (OG Anunoby assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085843",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:17:45Z",
+      "location": null,
+      "event": {
+        "clock": "8:08",
+        "description": "Cedric Coward makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085848",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:18:07Z",
+      "location": null,
+      "event": {
+        "clock": "8:08",
+        "description": "Cedric Coward makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085849",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:18:24Z",
+      "location": {
+        "x": 20,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "7:53",
+        "description": "Josh Hart makes 22-foot three point jumper (Karl-Anthony Towns assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085851",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:18:37Z",
+      "location": {
+        "x": 280,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "7:39",
+        "description": "OG Anunoby blocks Javon Small 's 25-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085854",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:18:46Z",
+      "location": {
+        "x": 30,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "7:32",
+        "description": "Mikal Bridges makes 22-foot running jump shot (OG Anunoby assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085857",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:19:05Z",
+      "location": {
+        "x": 480,
+        "y": 94
+      },
+      "event": {
+        "clock": "7:12",
+        "description": "Tyler Burton makes 23-foot three point jumper (Walter Clayton Jr. assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085861",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:19:30Z",
+      "location": {
+        "x": 250,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "6:47",
+        "description": "Cedric Coward makes two point shot",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085862",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:19:55Z",
+      "location": {
+        "x": 170,
+        "y": 235
+      },
+      "event": {
+        "clock": "6:22",
+        "description": "Josh Hart makes 16-foot pullup jump shot",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085863",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:20:08Z",
+      "location": {
+        "x": 260,
+        "y": 376
+      },
+      "event": {
+        "clock": "6:09",
+        "description": "Cedric Coward misses 24-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085865",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:20:12Z",
+      "location": {
+        "x": 220,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "6:05",
+        "description": "Karl-Anthony Towns blocks Cedric Coward 's 3-foot two point shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085867",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:20:22Z",
+      "location": {
+        "x": 230,
+        "y": 47
+      },
+      "event": {
+        "clock": "5:56",
+        "description": "Karl-Anthony Towns misses layup",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085869",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:20:30Z",
+      "location": {
+        "x": 280,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:48",
+        "description": "Karl-Anthony Towns makes 3-foot jump bank shot (Josh Hart assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085886",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:24:20Z",
+      "location": null,
+      "event": {
+        "clock": "5:29",
+        "description": "Tyler Burton makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085887",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:24:34Z",
+      "location": null,
+      "event": {
+        "clock": "5:29",
+        "description": "Tyler Burton makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085893",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:25:23Z",
+      "location": {
+        "x": 390,
+        "y": 329
+      },
+      "event": {
+        "clock": "5:09",
+        "description": "Walter Clayton Jr. makes 25-foot three point step back jumpshot",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085895",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:25:50Z",
+      "location": {
+        "x": 110,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "4:42",
+        "description": "Tyler Kolek makes 25-foot three point jumper (Josh Hart assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "40181085897",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:26:01Z",
+      "location": {
+        "x": 30,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "4:30",
+        "description": "Adama Bal misses 22-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858101",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:27:12Z",
+      "location": null,
+      "event": {
+        "clock": "4:17",
+        "description": "Karl-Anthony Towns makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858104",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:27:39Z",
+      "location": null,
+      "event": {
+        "clock": "4:17",
+        "description": "Karl-Anthony Towns makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858105",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:28:04Z",
+      "location": {
+        "x": 100,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "3:56",
+        "description": "Tyler Burton makes 24-foot three point jumper (Walter Clayton Jr. assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858107",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:28:21Z",
+      "location": {
+        "x": 210,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "3:38",
+        "description": "Landry Shamet makes 4-foot layup (Karl-Anthony Towns assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858109",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:28:33Z",
+      "location": {
+        "x": 300,
+        "y": 156.67
+      },
+      "event": {
+        "clock": "3:27",
+        "description": "DeJon Jarreau misses 11-foot pullup jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858111",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:28:47Z",
+      "location": {
+        "x": 270,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "3:14",
+        "description": "Karl-Anthony Towns makes 2-foot two point shot",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858114",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:29:26Z",
+      "location": null,
+      "event": {
+        "clock": "3:14",
+        "description": "Karl-Anthony Towns makes free throw 1 of 1",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858115",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:29:39Z",
+      "location": {
+        "x": 480,
+        "y": -15.67
+      },
+      "event": {
+        "clock": "3:02",
+        "description": "Adama Bal misses 22-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858120",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:30:23Z",
+      "location": {
+        "x": 100,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "2:49",
+        "description": "Tyler Burton misses 24-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858125",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:33:37Z",
+      "location": {
+        "x": 280,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "2:33",
+        "description": "Jordan Clarkson makes 3-foot two point shot (Ariel Hukporti assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858130",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:34:25Z",
+      "location": {
+        "x": 240,
+        "y": 141
+      },
+      "event": {
+        "clock": "1:59",
+        "description": "Ariel Hukporti misses 8-foot floating jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858134",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:34:51Z",
+      "location": null,
+      "event": {
+        "clock": "1:57",
+        "description": "Ariel Hukporti makes free throw 1 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858140",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:35:13Z",
+      "location": null,
+      "event": {
+        "clock": "1:57",
+        "description": "Ariel Hukporti makes free throw 2 of 2",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858141",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:35:26Z",
+      "location": {
+        "x": 100,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "1:45",
+        "description": "Walter Clayton Jr. misses 24-foot three point jumper",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858143",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:35:39Z",
+      "location": {
+        "x": 280,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "1:32",
+        "description": "Ariel Hukporti misses alley oop layup",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858145",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:35:43Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "1:28",
+        "description": "Ariel Hukporti makes two point shot",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858146",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:35:52Z",
+      "location": {
+        "x": 400,
+        "y": 329
+      },
+      "event": {
+        "clock": "1:19",
+        "description": "Cam Spencer makes 25-foot three point jumper (GG Jackson assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858148",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:36:06Z",
+      "location": {
+        "x": 210,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "1:07",
+        "description": "Ariel Hukporti makes 5-foot layup (Tyler Kolek assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858152",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:36:33Z",
+      "location": null,
+      "event": {
+        "clock": "1:07",
+        "description": "Ariel Hukporti makes free throw 1 of 1",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858154",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:37:24Z",
+      "location": {
+        "x": 260,
+        "y": 94
+      },
+      "event": {
+        "clock": "32.7",
+        "description": "Jordan Clarkson makes 5-foot two point shot (Landry Shamet assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858156",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:37:49Z",
+      "location": {
+        "x": 270,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "11.4",
+        "description": "Walter Clayton Jr. makes 24-foot three point jumper (Cam Spencer assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858158",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:38:01Z",
+      "location": {
+        "x": 470,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "1.8",
+        "description": "Landry Shamet makes 22-foot three point jumper (Tyler Kolek assists)",
+        "made": true,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858161",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:38:06Z",
+      "location": {
+        "x": 370,
+        "y": 1128
+      },
+      "event": {
+        "clock": "0.0",
+        "description": "Walter Clayton Jr. misses heave jump shot",
+        "made": false,
+        "period": "Q1",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858175",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:41:19Z",
+      "location": {
+        "x": 480,
+        "y": 188
+      },
+      "event": {
+        "clock": "11:43",
+        "description": "GG Jackson makes 25-foot three point jumper (Cam Spencer assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858177",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:41:49Z",
+      "location": {
+        "x": 200,
+        "y": 47
+      },
+      "event": {
+        "clock": "11:13",
+        "description": "Ariel Hukporti misses 5-foot two point shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858181",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:42:29Z",
+      "location": null,
+      "event": {
+        "clock": "11:05",
+        "description": "Javon Small misses free throw 1 of 2",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858183",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:42:41Z",
+      "location": null,
+      "event": {
+        "clock": "11:05",
+        "description": "Javon Small makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858184",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:42:57Z",
+      "location": {
+        "x": 440,
+        "y": 297.67
+      },
+      "event": {
+        "clock": "10:50",
+        "description": "Tyler Kolek misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858187",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:43:24Z",
+      "location": {
+        "x": 280,
+        "y": 94
+      },
+      "event": {
+        "clock": "10:34",
+        "description": "Ariel Hukporti blocks GG Jackson 's 6-foot driving floating jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858194",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:44:26Z",
+      "location": {
+        "x": 350,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "10:19",
+        "description": "Mikal Bridges makes 11-foot driving floating jump shot (Tyler Kolek assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858198",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:44:53Z",
+      "location": null,
+      "event": {
+        "clock": "10:19",
+        "description": "Mikal Bridges makes free throw 1 of 1",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858201",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:45:39Z",
+      "location": null,
+      "event": {
+        "clock": "10:09",
+        "description": "Olivier-Maxence Prosper makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858202",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:45:56Z",
+      "location": null,
+      "event": {
+        "clock": "10:09",
+        "description": "Olivier-Maxence Prosper makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858203",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:46:13Z",
+      "location": {
+        "x": 200,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "9:55",
+        "description": "Tyler Kolek makes 8-foot fade away jump shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858204",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:46:26Z",
+      "location": {
+        "x": 240,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "9:40",
+        "description": "Javon Small makes 10-foot driving floating jump shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858205",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:46:40Z",
+      "location": {
+        "x": 180,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "9:27",
+        "description": "Mohamed Diawara makes driving layup (Tyler Kolek assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858209",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:46:59Z",
+      "location": {
+        "x": 210,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "9:08",
+        "description": "Mohamed Diawara makes two point shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858217",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:50:04Z",
+      "location": {
+        "x": 30,
+        "y": 0
+      },
+      "event": {
+        "clock": "8:56",
+        "description": "Lucas Williamson misses 22-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858219",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:50:12Z",
+      "location": {
+        "x": 480,
+        "y": 47
+      },
+      "event": {
+        "clock": "8:47",
+        "description": "Mikal Bridges makes 23-foot three point step back jumpshot (Tyler Kolek assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858221",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:50:26Z",
+      "location": {
+        "x": 290,
+        "y": 47
+      },
+      "event": {
+        "clock": "8:34",
+        "description": "GG Jackson makes driving layup (Lucas Williamson assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858223",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:50:42Z",
+      "location": {
+        "x": 260,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "8:18",
+        "description": "Karl-Anthony Towns misses layup",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858225",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:50:45Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "8:16",
+        "description": "Karl-Anthony Towns misses tip shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858227",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:50:47Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "8:13",
+        "description": "Karl-Anthony Towns makes two point shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858228",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:51:03Z",
+      "location": {
+        "x": 290,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "7:57",
+        "description": "GG Jackson makes driving layup (Javon Small assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858236",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:51:46Z",
+      "location": {
+        "x": 220,
+        "y": 0
+      },
+      "event": {
+        "clock": "7:39",
+        "description": "Lucas Williamson makes two point shot (Javon Small assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858238",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:52:07Z",
+      "location": {
+        "x": 320,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "7:18",
+        "description": "Mikal Bridges misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858255",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:55:37Z",
+      "location": {
+        "x": 110,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "7:04",
+        "description": "Cedric Coward misses 24-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858257",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:55:50Z",
+      "location": {
+        "x": 240,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "6:50",
+        "description": "Landry Shamet makes 1-foot reverse layup (Karl-Anthony Towns assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858259",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:56:05Z",
+      "location": {
+        "x": 240,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "6:36",
+        "description": "Cedric Coward makes driving layup (DeJon Jarreau assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858266",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:56:53Z",
+      "location": {
+        "x": 370,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:57",
+        "description": "Cedric Coward makes 12-foot pullup jump shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858267",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:57:11Z",
+      "location": {
+        "x": 250,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "5:40",
+        "description": "Mikal Bridges makes 4-foot driving dunk (Karl-Anthony Towns assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858269",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:57:23Z",
+      "location": {
+        "x": 430,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "5:26",
+        "description": "Adama Bal makes 26-foot three point jumper (DeJon Jarreau assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858271",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:57:33Z",
+      "location": {
+        "x": 20,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:17",
+        "description": "Landry Shamet makes 23-foot three point jumper (Josh Hart assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858277",
+      "sport": "nba",
+      "timestamp": "2026-04-02T00:58:09Z",
+      "location": {
+        "x": 410,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "4:42",
+        "description": "Jahmai Mashack makes 26-foot three point jumper (Adama Bal assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858289",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:00:28Z",
+      "location": null,
+      "event": {
+        "clock": "4:28",
+        "description": "Jose Alvarado makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858290",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:00:40Z",
+      "location": null,
+      "event": {
+        "clock": "4:28",
+        "description": "Jose Alvarado makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858291",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:00:52Z",
+      "location": {
+        "x": 270,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "4:16",
+        "description": "Walter Clayton Jr. makes two point shot",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858292",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:01:02Z",
+      "location": {
+        "x": 230,
+        "y": 94
+      },
+      "event": {
+        "clock": "4:06",
+        "description": "Landry Shamet misses 5-foot two point shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858294",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:01:23Z",
+      "location": {
+        "x": 460,
+        "y": 282
+      },
+      "event": {
+        "clock": "3:46",
+        "description": "Tyler Burton misses 27-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858296",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:01:44Z",
+      "location": {
+        "x": 270,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "3:24",
+        "description": "Jose Alvarado makes two point shot (Josh Hart assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858299",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:02:14Z",
+      "location": {
+        "x": 270,
+        "y": 47
+      },
+      "event": {
+        "clock": "3:01",
+        "description": "Karl-Anthony Towns makes 3-foot dunk (Jose Alvarado assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858301",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:02:26Z",
+      "location": {
+        "x": 460,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "2:49",
+        "description": "Adama Bal misses 21-foot jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858305",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:02:50Z",
+      "location": {
+        "x": 270,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "2:24",
+        "description": "Karl-Anthony Towns makes 1-foot driving dunk",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858309",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:04:49Z",
+      "location": {
+        "x": 20,
+        "y": 47
+      },
+      "event": {
+        "clock": "2:01",
+        "description": "Jahmai Mashack misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858311",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:05:10Z",
+      "location": {
+        "x": 290,
+        "y": 47
+      },
+      "event": {
+        "clock": "1:39",
+        "description": "DeJon Jarreau blocks OG Anunoby 's 4-foot driving layup",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858314",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:05:18Z",
+      "location": {
+        "x": 300,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "1:32",
+        "description": "Tyler Burton makes 6-foot two point shot (Adama Bal assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858322",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:06:02Z",
+      "location": {
+        "x": 280,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "49.6",
+        "description": "DeJon Jarreau makes 7-foot driving floating jump shot (Walter Clayton Jr. assists)",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858328",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:06:48Z",
+      "location": null,
+      "event": {
+        "clock": "49.6",
+        "description": "DeJon Jarreau misses free throw 1 of 1",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858330",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:07:05Z",
+      "location": {
+        "x": 480,
+        "y": 47
+      },
+      "event": {
+        "clock": "31.8",
+        "description": "Mikal Bridges misses 22-foot three point jumper",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858334",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:07:45Z",
+      "location": null,
+      "event": {
+        "clock": "23.7",
+        "description": "Mikal Bridges makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858337",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:08:11Z",
+      "location": null,
+      "event": {
+        "clock": "23.7",
+        "description": "Mikal Bridges makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858340",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:09:05Z",
+      "location": null,
+      "event": {
+        "clock": "4.2",
+        "description": "Walter Clayton Jr. makes free throw 1 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858343",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:09:35Z",
+      "location": null,
+      "event": {
+        "clock": "4.2",
+        "description": "Walter Clayton Jr. makes free throw 2 of 2",
+        "made": true,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858344",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:09:42Z",
+      "location": {
+        "x": 430,
+        "y": 611
+      },
+      "event": {
+        "clock": "0.3",
+        "description": "Mikal Bridges misses heave jump shot",
+        "made": false,
+        "period": "Q2",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858360",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:26:17Z",
+      "location": {
+        "x": 270,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "11:47",
+        "description": "Olivier-Maxence Prosper makes alley oop layup (Javon Small assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858362",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:26:40Z",
+      "location": {
+        "x": 220,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "11:24",
+        "description": "OG Anunoby misses driving layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858364",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:26:43Z",
+      "location": {
+        "x": 250,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "11:21",
+        "description": "Karl-Anthony Towns makes two point shot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858365",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:26:51Z",
+      "location": {
+        "x": 80,
+        "y": 297.67
+      },
+      "event": {
+        "clock": "11:12",
+        "description": "GG Jackson makes 25-foot three point step back jumpshot (Javon Small assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858369",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:27:44Z",
+      "location": {
+        "x": 130,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "10:38",
+        "description": "Jose Alvarado misses 25-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858372",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:28:19Z",
+      "location": {
+        "x": 240,
+        "y": 423
+      },
+      "event": {
+        "clock": "10:16",
+        "description": "Olivier-Maxence Prosper misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858374",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:28:33Z",
+      "location": {
+        "x": 280,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "10:02",
+        "description": "Jose Alvarado makes 3-foot reverse layup (Karl-Anthony Towns assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858379",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:29:27Z",
+      "location": null,
+      "event": {
+        "clock": "9:47",
+        "description": "Cedric Coward makes free throw 1 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858380",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:29:56Z",
+      "location": null,
+      "event": {
+        "clock": "9:47",
+        "description": "Cedric Coward makes free throw 2 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858381",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:30:06Z",
+      "location": {
+        "x": 290,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "9:39",
+        "description": "Jose Alvarado makes 3-foot two point shot (Karl-Anthony Towns assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858385",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:30:49Z",
+      "location": null,
+      "event": {
+        "clock": "9:27",
+        "description": "GG Jackson misses free throw 1 of 2",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858387",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:31:10Z",
+      "location": null,
+      "event": {
+        "clock": "9:27",
+        "description": "GG Jackson makes free throw 2 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858389",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:32:02Z",
+      "location": {
+        "x": 360,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "9:08",
+        "description": "Olivier-Maxence Prosper makes 25-foot three point jumper (GG Jackson assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858391",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:32:24Z",
+      "location": {
+        "x": 220,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "8:44",
+        "description": "Karl-Anthony Towns misses driving layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858393",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:32:29Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "8:41",
+        "description": "Karl-Anthony Towns makes tip shot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858394",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:32:35Z",
+      "location": {
+        "x": 260,
+        "y": 47
+      },
+      "event": {
+        "clock": "8:34",
+        "description": "GG Jackson makes 2-foot two point shot (Cam Spencer assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858396",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:33:01Z",
+      "location": {
+        "x": 480,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "8:07",
+        "description": "Josh Hart misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858400",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:33:17Z",
+      "location": {
+        "x": 50,
+        "y": 250.67
+      },
+      "event": {
+        "clock": "7:52",
+        "description": "Javon Small makes 25-foot three point step back jumpshot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858408",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:36:36Z",
+      "location": {
+        "x": 460,
+        "y": 250.67
+      },
+      "event": {
+        "clock": "7:30",
+        "description": "Mikal Bridges misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858410",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:36:49Z",
+      "location": {
+        "x": 290,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "7:17",
+        "description": "Tyler Burton misses two point shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858414",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:37:22Z",
+      "location": null,
+      "event": {
+        "clock": "7:13",
+        "description": "OG Anunoby makes free throw 1 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858421",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:37:22Z",
+      "location": null,
+      "event": {
+        "clock": "7:13",
+        "description": "OG Anunoby misses free throw 2 of 2",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858423",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:38:12Z",
+      "location": {
+        "x": 190,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "6:50",
+        "description": "Tyler Burton misses 7-foot pullup jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858426",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:39:08Z",
+      "location": {
+        "x": 400,
+        "y": 329
+      },
+      "event": {
+        "clock": "6:17",
+        "description": "DeJon Jarreau misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858428",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:39:13Z",
+      "location": {
+        "x": 240,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "6:12",
+        "description": "Adama Bal makes driving layup",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858429",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:39:32Z",
+      "location": {
+        "x": 30,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:53",
+        "description": "OG Anunoby misses 22-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858431",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:39:58Z",
+      "location": {
+        "x": 300,
+        "y": 188
+      },
+      "event": {
+        "clock": "5:28",
+        "description": "Jose Alvarado blocks Jahmai Mashack 's 13-foot two point shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858439",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:40:43Z",
+      "location": {
+        "x": 220,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:09",
+        "description": "Tyler Kolek makes 3-foot two point shot",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858440",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:41:01Z",
+      "location": {
+        "x": 280,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "4:51",
+        "description": "Jahmai Mashack makes driving layup (Walter Clayton Jr. assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858443",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:40:01Z",
+      "location": {
+        "x": 240,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "5:28",
+        "description": "Walter Clayton Jr. misses 26-foot three point shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858447",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:44:21Z",
+      "location": {
+        "x": 410,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "4:32",
+        "description": "Mohamed Diawara misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858449",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:44:33Z",
+      "location": {
+        "x": 20,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "4:21",
+        "description": "Jahmai Mashack misses 22-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858452",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:45:07Z",
+      "location": {
+        "x": 290,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "4:00",
+        "description": "Tyler Kolek misses driving floating jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858457",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:45:47Z",
+      "location": {
+        "x": 280,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "3:38",
+        "description": "Walter Clayton Jr. misses driving floating jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858459",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:45:57Z",
+      "location": {
+        "x": 320,
+        "y": 109.67
+      },
+      "event": {
+        "clock": "3:28",
+        "description": "OG Anunoby misses two point shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858463",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:46:42Z",
+      "location": null,
+      "event": {
+        "clock": "3:18",
+        "description": "DeJon Jarreau makes free throw 1 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858464",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:47:00Z",
+      "location": null,
+      "event": {
+        "clock": "3:18",
+        "description": "DeJon Jarreau makes free throw 2 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858470",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:47:51Z",
+      "location": {
+        "x": 20,
+        "y": 94
+      },
+      "event": {
+        "clock": "2:48",
+        "description": "Adama Bal makes 23-foot three point jumper (Cam Spencer assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858472",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:48:00Z",
+      "location": {
+        "x": 30,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "2:40",
+        "description": "Landry Shamet makes 22-foot three point jumper (Tyler Kolek assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858478",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:48:42Z",
+      "location": null,
+      "event": {
+        "clock": "2:40",
+        "description": "Landry Shamet misses free throw 1 of 1",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858480",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:48:45Z",
+      "location": {
+        "x": 480,
+        "y": 0
+      },
+      "event": {
+        "clock": "2:34",
+        "description": "Landry Shamet misses 22-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858484",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:49:28Z",
+      "location": {
+        "x": 390,
+        "y": 297.67
+      },
+      "event": {
+        "clock": "2:21",
+        "description": "Cam Spencer misses 23-foot step back jumpshot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858487",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:50:04Z",
+      "location": {
+        "x": 410,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "1:59",
+        "description": "Jordan Clarkson misses driving floating jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858489",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:50:09Z",
+      "location": {
+        "x": 120,
+        "y": 329
+      },
+      "event": {
+        "clock": "1:53",
+        "description": "OG Anunoby misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858491",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:50:19Z",
+      "location": {
+        "x": 270,
+        "y": 141
+      },
+      "event": {
+        "clock": "1:43",
+        "description": "Jordan Clarkson makes 9-foot driving floating jump shot (Tyler Kolek assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858495",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:50:41Z",
+      "location": {
+        "x": 30,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "1:20",
+        "description": "Landry Shamet misses running pullup jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858499",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:51:22Z",
+      "location": null,
+      "event": {
+        "clock": "1:17",
+        "description": "Jordan Clarkson makes free throw 1 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858506",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:51:49Z",
+      "location": null,
+      "event": {
+        "clock": "1:17",
+        "description": "Jordan Clarkson makes free throw 2 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858507",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:52:05Z",
+      "location": {
+        "x": 260,
+        "y": 47
+      },
+      "event": {
+        "clock": "1:03",
+        "description": "GG Jackson misses driving layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858509",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:52:14Z",
+      "location": {
+        "x": 430,
+        "y": 282
+      },
+      "event": {
+        "clock": "55.1",
+        "description": "OG Anunoby misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858511",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:52:21Z",
+      "location": {
+        "x": 390,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "48.5",
+        "description": "Cedric Coward makes 25-foot running jump shot (Olivier-Maxence Prosper assists)",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858515",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:53:03Z",
+      "location": null,
+      "event": {
+        "clock": "38.2",
+        "description": "Tyler Kolek makes free throw 1 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858518",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:53:35Z",
+      "location": null,
+      "event": {
+        "clock": "38.2",
+        "description": "Tyler Kolek makes free throw 2 of 2",
+        "made": true,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858519",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:53:51Z",
+      "location": {
+        "x": 290,
+        "y": 141
+      },
+      "event": {
+        "clock": "24.1",
+        "description": "Olivier-Maxence Prosper misses two point shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858521",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:54:14Z",
+      "location": {
+        "x": 190,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "1.0",
+        "description": "GG Jackson blocks Tyler Kolek 's 7-foot driving floating jump shot",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858528",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:55:02Z",
+      "location": {
+        "x": 230,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "0.0",
+        "description": "Landry Shamet misses 2-foot reverse layup",
+        "made": false,
+        "period": "Q3",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858536",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:58:09Z",
+      "location": {
+        "x": 390,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "11:46",
+        "description": "Jose Alvarado misses 25-foot three point pullup jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858538",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:58:14Z",
+      "location": {
+        "x": 80,
+        "y": 297.67
+      },
+      "event": {
+        "clock": "11:41",
+        "description": "OG Anunoby misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858540",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:58:19Z",
+      "location": {
+        "x": 460,
+        "y": 219.33
+      },
+      "event": {
+        "clock": "11:36",
+        "description": "Mikal Bridges makes 25-foot three point jumper (OG Anunoby assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858543",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:58:57Z",
+      "location": {
+        "x": 480,
+        "y": 188
+      },
+      "event": {
+        "clock": "11:10",
+        "description": "Mikal Bridges misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858545",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:59:02Z",
+      "location": {
+        "x": 250,
+        "y": 0
+      },
+      "event": {
+        "clock": "11:04",
+        "description": "OG Anunoby makes tip in dunk",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858546",
+      "sport": "nba",
+      "timestamp": "2026-04-02T01:59:16Z",
+      "location": {
+        "x": 310,
+        "y": 407.33
+      },
+      "event": {
+        "clock": "10:50",
+        "description": "Cam Spencer misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858553",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:02:40Z",
+      "location": {
+        "x": 220,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "10:34",
+        "description": "OG Anunoby blocks GG Jackson 's 8-foot driving floating jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858558",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:02:53Z",
+      "location": {
+        "x": 290,
+        "y": 391.67
+      },
+      "event": {
+        "clock": "10:22",
+        "description": "Javon Small makes 25-foot running pullup jump shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858562",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:03:30Z",
+      "location": {
+        "x": 180,
+        "y": 188
+      },
+      "event": {
+        "clock": "9:58",
+        "description": "Cam Spencer makes 13-foot pullup jump shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858565",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:04:17Z",
+      "location": {
+        "x": 410,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "9:31",
+        "description": "OG Anunoby makes 25-foot three point jumper (Ariel Hukporti assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858569",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:04:57Z",
+      "location": null,
+      "event": {
+        "clock": "9:21",
+        "description": "Cam Spencer makes free throw 1 of 3",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858570",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:05:17Z",
+      "location": null,
+      "event": {
+        "clock": "9:21",
+        "description": "Cam Spencer makes free throw 2 of 3",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858573",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:05:46Z",
+      "location": null,
+      "event": {
+        "clock": "9:21",
+        "description": "Cam Spencer makes free throw 3 of 3",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858574",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:06:00Z",
+      "location": {
+        "x": 280,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "9:09",
+        "description": "Jose Alvarado makes 5-foot driving floating jump shot (Ariel Hukporti assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858576",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:06:22Z",
+      "location": {
+        "x": 210,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "8:48",
+        "description": "GG Jackson makes 4-foot two point shot (Cam Spencer assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858582",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:07:08Z",
+      "location": {
+        "x": 280,
+        "y": 141
+      },
+      "event": {
+        "clock": "8:29",
+        "description": "Jose Alvarado misses driving floating jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858586",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:07:42Z",
+      "location": {
+        "x": 150,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "8:12",
+        "description": "Cedric Coward misses driving floating jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858591",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:08:32Z",
+      "location": null,
+      "event": {
+        "clock": "8:01",
+        "description": "OG Anunoby makes technical free throw",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858594",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:09:02Z",
+      "location": {
+        "x": 290,
+        "y": 47
+      },
+      "event": {
+        "clock": "7:59",
+        "description": "Mikal Bridges makes alley oop layup (Jose Alvarado assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858596",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:09:15Z",
+      "location": {
+        "x": 200,
+        "y": 47
+      },
+      "event": {
+        "clock": "7:46",
+        "description": "Javon Small makes 5-foot two point shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858597",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:09:28Z",
+      "location": {
+        "x": 110,
+        "y": 313.33
+      },
+      "event": {
+        "clock": "7:33",
+        "description": "OG Anunoby makes 24-foot three point jumper (Mikal Bridges assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858600",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:10:02Z",
+      "location": {
+        "x": 280,
+        "y": 94
+      },
+      "event": {
+        "clock": "7:15",
+        "description": "Olivier-Maxence Prosper misses driving floating jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858602",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:10:14Z",
+      "location": {
+        "x": 230,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "7:05",
+        "description": "OG Anunoby misses driving layup",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858604",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:10:22Z",
+      "location": {
+        "x": 260,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "6:56",
+        "description": "GG Jackson makes 12-foot driving floating jump shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858615",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:11:19Z",
+      "location": {
+        "x": 230,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "6:32",
+        "description": "Cedric Coward makes two point shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858618",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:11:55Z",
+      "location": null,
+      "event": {
+        "clock": "6:32",
+        "description": "Cedric Coward misses free throw 1 of 1",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858620",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:12:11Z",
+      "location": {
+        "x": 260,
+        "y": 0
+      },
+      "event": {
+        "clock": "6:15",
+        "description": "Mikal Bridges makes driving dunk (Karl-Anthony Towns assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858624",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:13:05Z",
+      "location": null,
+      "event": {
+        "clock": "5:55",
+        "description": "Jahmai Mashack makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858625",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:13:24Z",
+      "location": null,
+      "event": {
+        "clock": "5:55",
+        "description": "Jahmai Mashack makes free throw 2 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858626",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:13:52Z",
+      "location": {
+        "x": 30,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "5:30",
+        "description": "Jose Alvarado misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858628",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:14:00Z",
+      "location": {
+        "x": 480,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "5:22",
+        "description": "Mikal Bridges misses 22-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858630",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:14:10Z",
+      "location": {
+        "x": 290,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "5:13",
+        "description": "Mikal Bridges blocks Cedric Coward 's 5-foot driving layup",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858633",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:14:18Z",
+      "location": {
+        "x": 440,
+        "y": 282
+      },
+      "event": {
+        "clock": "5:05",
+        "description": "Jose Alvarado misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858637",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:14:58Z",
+      "location": null,
+      "event": {
+        "clock": "5:04",
+        "description": "Karl-Anthony Towns misses free throw 1 of 2",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858643",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:15:31Z",
+      "location": null,
+      "event": {
+        "clock": "5:04",
+        "description": "Karl-Anthony Towns makes free throw 2 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858644",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:15:46Z",
+      "location": {
+        "x": 150,
+        "y": 125.33
+      },
+      "event": {
+        "clock": "4:50",
+        "description": "Walter Clayton Jr. misses driving floating jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858646",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:16:11Z",
+      "location": {
+        "x": 260,
+        "y": 47
+      },
+      "event": {
+        "clock": "4:25",
+        "description": "OG Anunoby makes 3-foot dunk (Karl-Anthony Towns assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858649",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:19:35Z",
+      "location": {
+        "x": 20,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "4:05",
+        "description": "DeJon Jarreau misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858651",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:19:58Z",
+      "location": {
+        "x": 310,
+        "y": 172.33
+      },
+      "event": {
+        "clock": "3:41",
+        "description": "Jose Alvarado makes 11-foot pullup jump shot",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858652",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:20:12Z",
+      "location": {
+        "x": 470,
+        "y": 235
+      },
+      "event": {
+        "clock": "3:28",
+        "description": "DeJon Jarreau misses 25-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858654",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:20:37Z",
+      "location": {
+        "x": 300,
+        "y": 203.67
+      },
+      "event": {
+        "clock": "3:04",
+        "description": "Jose Alvarado misses 13-foot pullup jump shot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858656",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:20:40Z",
+      "location": {
+        "x": 60,
+        "y": 235
+      },
+      "event": {
+        "clock": "3:00",
+        "description": "OG Anunoby makes 23-foot three point jumper (Karl-Anthony Towns assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858660",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:20:55Z",
+      "location": {
+        "x": 290,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "2:45",
+        "description": "DeJon Jarreau blocks OG Anunoby 's 3-foot running dunk",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858663",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:21:01Z",
+      "location": {
+        "x": 20,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "2:39",
+        "description": "Adama Bal makes 22-foot running jump shot (Walter Clayton Jr. assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858665",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:21:29Z",
+      "location": {
+        "x": 30,
+        "y": 47
+      },
+      "event": {
+        "clock": "2:11",
+        "description": "OG Anunoby makes 22-foot three point jumper (Karl-Anthony Towns assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858676",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:23:28Z",
+      "location": {
+        "x": 390,
+        "y": 360.33
+      },
+      "event": {
+        "clock": "1:49",
+        "description": "GG Jackson misses 26-foot three point step back jumpshot",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858680",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:24:00Z",
+      "location": null,
+      "event": {
+        "clock": "1:47",
+        "description": "Cam Spencer makes free throw 1 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858683",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:24:23Z",
+      "location": null,
+      "event": {
+        "clock": "1:47",
+        "description": "Cam Spencer makes free throw 2 of 2",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858684",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:24:45Z",
+      "location": {
+        "x": 480,
+        "y": 78.33
+      },
+      "event": {
+        "clock": "1:27",
+        "description": "Mikal Bridges misses 23-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858686",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:24:54Z",
+      "location": {
+        "x": 250,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "1:19",
+        "description": "Olivier-Maxence Prosper makes 1-foot dunk (GG Jackson assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858689",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:25:33Z",
+      "location": {
+        "x": 270,
+        "y": 15.67
+      },
+      "event": {
+        "clock": "59.4",
+        "description": "Karl-Anthony Towns makes 1-foot driving dunk (Jose Alvarado assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858691",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:25:45Z",
+      "location": {
+        "x": 100,
+        "y": 344.67
+      },
+      "event": {
+        "clock": "49.9",
+        "description": "Olivier-Maxence Prosper misses 26-foot three point jumper",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "3pt jump shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858693",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:25:52Z",
+      "location": {
+        "x": 250,
+        "y": 31.33
+      },
+      "event": {
+        "clock": "43.3",
+        "description": "Olivier-Maxence Prosper makes 1-foot dunk (Cam Spencer assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858698",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:26:33Z",
+      "location": {
+        "x": 230,
+        "y": 62.67
+      },
+      "event": {
+        "clock": "23.0",
+        "description": "Olivier-Maxence Prosper makes 4-foot two point shot (Cam Spencer assists)",
+        "made": true,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "2pt shot",
+        "team": ""
+      }
+    },
+    {
+      "game_id": "401810858",
+      "play_id": "401810858702",
+      "sport": "nba",
+      "timestamp": "2026-04-02T02:27:06Z",
+      "location": null,
+      "event": {
+        "clock": "23.0",
+        "description": "Olivier-Maxence Prosper misses free throw 1 of 1",
+        "made": false,
+        "period": "Q4",
+        "player_id": "",
+        "player_name": "",
+        "shot_type": "free_throw",
+        "team": ""
+      }
+    }
+  ],
+  "saved_at": "2026-04-02T21:05:41.806909578Z"
+}

@@ -33,9 +33,10 @@ type WalletResult struct {
 }
 
 type BalanceUpdate struct {
-	Type    string  `json:"type"`
-	Wallet  string  `json:"wallet"`
-	Balance float64 `json:"balance"`
+	Type       string  `json:"type"`
+	Wallet     string  `json:"wallet"`
+	Balance    float64 `json:"balance"`
+	Simulation bool    `json:"simulation"`
 }
 
 func NewEngine(store *Store) *Engine {
@@ -131,9 +132,9 @@ func (e *Engine) PlaceBet(b *Bet) (*BetAck, error) {
 	e.pending[b.RoundID] = append(e.pending[b.RoundID], b)
 	e.store.SaveBet(b)
 	balance := e.balances.AddBalance(b.Wallet, -b.Amount)
-	ack := &BetAck{Type: "bet_ack", Status: "accepted", GameID: b.GameID, Nonce: b.Nonce, Timestamp: time.Now().Unix(), Balance: balance, ActualMultiplier: ActualMultiplier}
+	ack := &BetAck{Type: "bet_ack", Status: "accepted", GameID: b.GameID, Nonce: b.Nonce, Timestamp: time.Now().Unix(), Balance: balance, ActualMultiplier: ActualMultiplier, Simulation: b.Simulation}
 	select {
-	case e.balanceChan <- BalanceUpdate{Type: "balance_update", Wallet: WalletHex(b.Wallet), Balance: balance}:
+	case e.balanceChan <- BalanceUpdate{Type: "balance_update", Wallet: WalletHex(b.Wallet), Balance: balance, Simulation: b.Simulation}:
 	default:
 	}
 	if event, ok := e.processed[b.RoundID]; ok {
@@ -167,6 +168,7 @@ func (e *Engine) rejectBetLocked(b *Bet, reason string) *BetAck {
 		Balance:          e.balances.GetBalance(b.Wallet),
 		ActualMultiplier: ActualMultiplier,
 		RejectionReason:  reason,
+		Simulation:       b.Simulation,
 	}
 }
 
@@ -203,7 +205,7 @@ func (e *Engine) resolveForEvent(event game.PlayEvent) {
 			log.Printf("[bet-engine] result channel full for bet %s", b.BetID)
 		}
 		select {
-		case e.balanceChan <- BalanceUpdate{Type: "balance_update", Wallet: WalletHex(b.Wallet), Balance: result.Balance}:
+		case e.balanceChan <- BalanceUpdate{Type: "balance_update", Wallet: WalletHex(b.Wallet), Balance: result.Balance, Simulation: b.Simulation}:
 		default:
 			log.Printf("[bet-engine] balance channel full for bet %s", b.BetID)
 		}
