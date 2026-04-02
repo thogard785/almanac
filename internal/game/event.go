@@ -48,6 +48,7 @@ type GameState struct {
 	Possession string `json:"possession,omitempty"`
 	Completed  bool   `json:"completed"`
 	Tracked    bool   `json:"tracked"`
+	Simulation bool   `json:"simulation,omitempty"`
 }
 
 func ParseESPNTime(value string) time.Time {

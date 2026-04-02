@@ -14,7 +14,8 @@ import (
 )
 
 type Engine struct {
-	store *Store
+	store    *Store
+	balances BalanceProvider
 
 	mu                 sync.Mutex
 	pending            map[string][]*Bet
@@ -38,8 +39,13 @@ type BalanceUpdate struct {
 }
 
 func NewEngine(store *Store) *Engine {
+	return NewEngineWithBalance(store, DefaultBalanceProvider)
+}
+
+func NewEngineWithBalance(store *Store, bp BalanceProvider) *Engine {
 	e := &Engine{
 		store:              store,
+		balances:           bp,
 		pending:            make(map[string][]*Bet),
 		processed:          make(map[string]game.PlayEvent),
 		seenNonce:          make(map[[20]byte]map[uint64]struct{}),
@@ -93,9 +99,6 @@ func (e *Engine) PlaceBet(b *Bet) (*BetAck, error) {
 	if math.Abs(float64(time.Now().Unix()-b.Timestamp)) > float64(BetExpiryWindow) {
 		return e.rejectBet(b, "stale bet timestamp"), nil
 	}
-	if b.Simulation {
-		return e.rejectBet(b, "simulation mode unsupported"), nil
-	}
 	if b.MinimumMultiplier > ActualMultiplier {
 		return e.rejectBet(b, "minimum multiplier too high"), nil
 	}
@@ -115,7 +118,7 @@ func (e *Engine) PlaceBet(b *Bet) (*BetAck, error) {
 	if _, ok := e.knownRounds[b.RoundID]; !ok {
 		return e.rejectBetLocked(b, "unknown or resolved roundId"), nil
 	}
-	if getUserBalance(b.Wallet) < b.Amount {
+	if e.balances.GetBalance(b.Wallet) < b.Amount {
 		return e.rejectBetLocked(b, "insufficient balance"), nil
 	}
 
@@ -127,7 +130,7 @@ func (e *Engine) PlaceBet(b *Bet) (*BetAck, error) {
 	b.Payout = 0
 	e.pending[b.RoundID] = append(e.pending[b.RoundID], b)
 	e.store.SaveBet(b)
-	balance := addUserBalance(b.Wallet, -b.Amount)
+	balance := e.balances.AddBalance(b.Wallet, -b.Amount)
 	ack := &BetAck{Type: "bet_ack", Status: "accepted", GameID: b.GameID, Nonce: b.Nonce, Timestamp: time.Now().Unix(), Balance: balance, ActualMultiplier: ActualMultiplier}
 	select {
 	case e.balanceChan <- BalanceUpdate{Type: "balance_update", Wallet: WalletHex(b.Wallet), Balance: balance}:
@@ -161,7 +164,7 @@ func (e *Engine) rejectBetLocked(b *Bet, reason string) *BetAck {
 		GameID:           b.GameID,
 		Nonce:            b.Nonce,
 		Timestamp:        time.Now().Unix(),
-		Balance:          getUserBalance(b.Wallet),
+		Balance:          e.balances.GetBalance(b.Wallet),
 		ActualMultiplier: ActualMultiplier,
 		RejectionReason:  reason,
 	}
@@ -222,7 +225,7 @@ func (e *Engine) resolveBet(b *Bet, event game.PlayEvent) *BetResult {
 		AmountBet:        b.Amount,
 		AmountWon:        0,
 		Simulation:       b.Simulation,
-		Balance:          getUserBalance(b.Wallet),
+		Balance:          e.balances.GetBalance(b.Wallet),
 		IsHistorical:     false,
 	}
 
@@ -231,7 +234,7 @@ func (e *Engine) resolveBet(b *Bet, event game.PlayEvent) *BetResult {
 		b.NullificationReason = "play timestamp unavailable"
 		result.Outcome = "nullified"
 		result.NullificationReason = b.NullificationReason
-		result.Balance = addUserBalance(b.Wallet, b.Amount)
+		result.Balance = e.balances.AddBalance(b.Wallet, b.Amount)
 		return result
 	}
 
@@ -240,7 +243,7 @@ func (e *Engine) resolveBet(b *Bet, event game.PlayEvent) *BetResult {
 		b.NullificationReason = "received too late"
 		result.Outcome = "nullified"
 		result.NullificationReason = b.NullificationReason
-		result.Balance = addUserBalance(b.Wallet, b.Amount)
+		result.Balance = e.balances.AddBalance(b.Wallet, b.Amount)
 		return result
 	}
 
@@ -249,7 +252,7 @@ func (e *Engine) resolveBet(b *Bet, event game.PlayEvent) *BetResult {
 		b.NullificationReason = "play has no location data"
 		result.Outcome = "nullified"
 		result.NullificationReason = b.NullificationReason
-		result.Balance = addUserBalance(b.Wallet, b.Amount)
+		result.Balance = e.balances.AddBalance(b.Wallet, b.Amount)
 		return result
 	}
 
@@ -261,13 +264,13 @@ func (e *Engine) resolveBet(b *Bet, event game.PlayEvent) *BetResult {
 		b.Payout = math.Round((b.Amount*2)*100) / 100
 		result.Outcome = "win"
 		result.AmountWon = b.Payout
-		result.Balance = addUserBalance(b.Wallet, b.Payout)
+		result.Balance = e.balances.AddBalance(b.Wallet, b.Payout)
 		return result
 	}
 
 	b.Status = "loss"
 	result.Outcome = "loss"
-	result.Balance = getUserBalance(b.Wallet)
+	result.Balance = e.balances.GetBalance(b.Wallet)
 	return result
 }
 

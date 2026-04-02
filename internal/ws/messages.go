@@ -43,18 +43,20 @@ type PongMessage struct {
 }
 
 type GameStateMessage struct {
-	Type  string           `json:"type"`
-	Games []game.GameState `json:"games"`
+	Type       string           `json:"type"`
+	Games      []game.GameState `json:"games"`
+	Simulation bool             `json:"simulation,omitempty"`
 }
 
 type PlayEventMessage struct {
-	Type      string      `json:"type"`
-	GameID    string      `json:"game_id"`
-	PlayID    string      `json:"play_id"`
-	Sport     string      `json:"sport"`
-	Timestamp string      `json:"timestamp"`
-	Location  *game.Coord `json:"location"`
-	Event     any         `json:"event"`
+	Type       string      `json:"type"`
+	GameID     string      `json:"game_id"`
+	PlayID     string      `json:"play_id"`
+	Sport      string      `json:"sport"`
+	Timestamp  string      `json:"timestamp"`
+	Location   *game.Coord `json:"location"`
+	Event      any         `json:"event"`
+	Simulation bool        `json:"simulation,omitempty"`
 }
 
 type ErrorMessage struct {

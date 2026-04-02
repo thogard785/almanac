@@ -74,6 +74,33 @@ func (h *Hub) Broadcast(msg any) {
 	}
 }
 
+// BroadcastFiltered sends msg only to connections for which keep returns true.
+func (h *Hub) BroadcastFiltered(msg any, keep func(*websocket.Conn) bool) {
+	data, err := json.Marshal(msg)
+	if err != nil {
+		log.Printf("[ws] marshal error: %v", err)
+		return
+	}
+	h.mu.RLock()
+	snapshot := make(map[*websocket.Conn]*sync.Mutex, len(h.clients))
+	for conn, mu := range h.clients {
+		snapshot[conn] = mu
+	}
+	h.mu.RUnlock()
+	for conn, mu := range snapshot {
+		if keep != nil && !keep(conn) {
+			continue
+		}
+		mu.Lock()
+		conn.SetWriteDeadline(time.Now().Add(writeWait))
+		err := conn.WriteMessage(websocket.TextMessage, data)
+		mu.Unlock()
+		if err != nil {
+			h.Unregister(conn)
+		}
+	}
+}
+
 func (h *Hub) SendTo(conn *websocket.Conn, msg any) error {
 	data, err := json.Marshal(msg)
 	if err != nil {
