@@ -71,9 +71,10 @@ type nbaSummaryResponse struct {
 				Period int `json:"period"`
 			} `json:"status"`
 			Competitors []struct {
-				HomeAway string `json:"homeAway"`
-				Score    string `json:"score"`
-				Team     struct {
+				HomeAway   string `json:"homeAway"`
+				Score      string `json:"score"`
+				Possession bool   `json:"possession"`
+				Team       struct {
 					ID           string `json:"id"`
 					Abbreviation string `json:"abbreviation"`
 				} `json:"team"`
@@ -199,9 +200,12 @@ func normalizeNBAGameState(gameID string, summary nbaSummaryResponse) game.GameS
 	state.Period = formatNBAPeriod(comp.Status.Period)
 	state.Clock = extractClock(comp.Status.Type.Detail)
 	if comp.Situation != nil {
-		state.Possession = comp.Situation.Possession
+		state.Possession = strings.TrimSpace(comp.Situation.Possession)
 	}
 	for _, competitor := range comp.Competitors {
+		if state.Possession == "" && competitor.Possession {
+			state.Possession = competitor.Team.Abbreviation
+		}
 		if competitor.HomeAway == "home" {
 			state.Home = competitor.Team.Abbreviation
 			state.HomeScore = game.ParseScoreInt(competitor.Score)
