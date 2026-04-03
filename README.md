@@ -1,15 +1,38 @@
-# Almanac ESPN Shot Backend
+# Almanac Backend
 
-Phase 1 Go backend for polling ESPN's live NBA play-by-play feeds and persisting shot locations to JSON.
+Go backend for the Almanac spatial micro-betting product. Polls ESPN's live NBA (and MLB) play-by-play feeds, manages game state, processes EIP-712 signed bets over WebSocket, and runs an isolated simulation mode with replay capability.
 
-## Usage
+## What it does
+
+- **ESPN polling:** Discovers live/recent games from ESPN scoreboard APIs (NBA, MLB), polls play-by-play for shot/pitch coordinates
+- **WebSocket server:** Serves real-time game state, play events, bet acknowledgments, and bet results to connected frontends
+- **Bet engine:** Accepts EIP-712 signed bets, validates signatures, manages per-wallet balances and nonces, resolves bets against incoming play coordinates using radius-based hit detection
+- **Simulation mode:** Isolated sim lane with $100 virtual balance per wallet, NBA replay engine using saved completed games, separate WebSocket fanout (no state contagion with real-money lane)
+- **Protocol:** v3 — `signin`/`signin_ack`/`place_bet`/`bet_ack`/`bet_result` with Monad mainnet chain ID 143
+
+## Build & run
 
 ```bash
-GAME_ID=401810954 /usr/local/go/bin/go run .
-# or
-/usr/local/go/bin/go run . --game-id 401810954 --poll-interval 3s
+cd /data/github/almanac
+/usr/local/go/bin/go build -o almanac .
 ```
 
-Output is written to `shots_{gameId}.json` by default.
+The service runs as a systemd user service on port 8090:
 
-See `docs/espn-api-notes.md` for endpoint and coordinate-format notes.
+```bash
+systemctl --user start almanac
+systemctl --user status almanac --no-pager
+curl -s http://localhost:8090/health   # returns "ok"
+```
+
+## Key docs
+
+- `DATA_FLOW.md` — canonical WebSocket protocol spec (keep in sync with frontend copy)
+- `docs/simulation-mode.md` — simulation lane architecture
+- `docs/espn-api-notes.md` — ESPN endpoint details and coordinate system
+
+## Coordinate system
+
+ESPN half-court grid: X 0–50 (left→right), Y 0–30 (baseline→halfcourt). Basket at ~(25, 1). Free throws use sentinel values normalized to x=0, y=0, zone=`free_throw`.
+
+See `docs/espn-api-notes.md` for full details.

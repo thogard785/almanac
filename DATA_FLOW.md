@@ -36,12 +36,12 @@ SignIn(address wallet,uint256 timestamp,bool simulation)
 Field semantics:
 - `wallet`: wallet that owns the websocket session
 - `timestamp`: unix timestamp in seconds
-- `simulation`: must currently be `false`
+- `simulation`: `false` for regular (real-money) mode, `true` for simulation mode
 
 Validation rules:
 - signature must recover to `wallet`
 - `abs(now - timestamp) <= 60`
-- `simulation == false`
+- `simulation` determines connection lane (regular or sim); both values are accepted
 
 ### Bet
 
@@ -59,7 +59,7 @@ Field semantics:
 - `x`: coordinate scaled by `1000`
 - `y`: coordinate scaled by `1000`
 - `betRadius`: win radius scaled by `1000`
-- `simulation`: must currently be `false`
+- `simulation`: `false` for regular mode, `true` for simulation mode
 - `minimumMultiplier`: minimum acceptable payout multiplier, where `1` means at least `1x` profit / `2x` total return on win
 
 Validation rules:
@@ -68,7 +68,7 @@ Validation rules:
 3. nonce must not already be used by that wallet
 4. `minimumMultiplier <= actualMultiplier`
 5. `roundId` must reference a known unresolved play in current game state
-6. `simulation == false`
+6. `simulation` must match the connection's established lane (set during `signin`)
 7. wallet balance must be `>= amount`
 8. amount must be `>= minimumBetAmount`
 
@@ -91,8 +91,7 @@ Current backend constants:
 10. Server replies with `pong` echoing the client timestamp.
 
 Backward compatibility:
-- `subscribe_wallet` may continue to exist as an unauthenticated fallback transport helper.
-- Authenticated session identity is established by `signin`, not `subscribe_wallet`.
+- `subscribe_wallet` is **disabled** — the backend returns an explicit error if received (as of commit `2983d0d`). All session identity is established exclusively through signed `signin` messages.
 
 ## Message Envelope
 
@@ -218,11 +217,10 @@ Schema:
 }
 ```
 
-### Legacy compatibility messages
+### Legacy messages (disabled)
 
-These are not canonical for v3 auth, but may remain temporarily:
-- `subscribe_wallet`
-- `subscribe_game`
+- `subscribe_wallet` — **disabled**, returns error. All identification uses signed `signin`.
+- `subscribe_game` — no longer part of the canonical protocol.
 
 ## Server → Client Messages
 
