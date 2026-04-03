@@ -11,8 +11,6 @@ import (
 	"github.com/almanac/espn-shots/internal/game"
 )
 
-// ---------- 1. Sim user creation with $100 balance ----------
-
 func TestInitWallet_GrantsInitialBalance(t *testing.T) {
 	mgr := newTestManager(t)
 
@@ -32,113 +30,142 @@ func TestInitWallet_IdempotentOnSecondCall(t *testing.T) {
 	copy(wallet[:], []byte("12345678901234567890"))
 
 	mgr.InitWallet(wallet)
-	// Spend some sim money.
 	mgr.Balances.AddBalance(wallet, -25.0)
 
-	// Second init should NOT reset to $100.
 	balance := mgr.InitWallet(wallet)
 	if balance != 75.0 {
 		t.Fatalf("expected balance 75.00 after spend, got %.2f", balance)
 	}
 }
 
-// ---------- 2. Sim game bootstrap ----------
-
-func TestEnsureGame_StartsReplayWhenSavedGameExists(t *testing.T) {
+func TestSyncLiveGames_DoesNotLeakLiveScoreboardBeforeDelayedRelease(t *testing.T) {
 	mgr := newTestManager(t)
-	writeTestGame(t, mgr.GameDir())
+	source := liveState()
+	source.HomeScore = 88
+	source.AwayScore = 90
+	source.Period = "Q4"
+	source.Clock = "02:11"
+	source.Possession = "LAL"
 
-	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
-	defer cancel()
+	mgr.SyncLiveGames([]game.GameState{source})
 
-	mgr.EnsureGame(ctx)
-
-	state, ok := mgr.ActiveGame()
+	state, ok := mgr.Game(SimGameID(source.GameID))
 	if !ok {
-		t.Fatal("expected active sim game after EnsureGame")
+		t.Fatal("expected mirrored sim game")
+	}
+	if state.HomeScore != 0 || state.AwayScore != 0 {
+		t.Fatalf("live scores leaked into sim shell: %+v", state)
+	}
+	if state.Period != "" || state.Clock != "" || state.Possession != "" {
+		t.Fatalf("live round state leaked into sim shell: %+v", state)
 	}
 	if !state.Simulation {
-		t.Fatal("expected Simulation=true on game state")
-	}
-	if state.Status != "in_progress" {
-		t.Fatalf("expected status in_progress, got %s", state.Status)
-	}
-	if state.Home != "BOS" || state.Away != "LAL" {
-		t.Fatalf("expected BOS vs LAL, got %s vs %s", state.Home, state.Away)
+		t.Fatal("expected simulation lane marker")
 	}
 }
 
-func TestEnsureGame_NoOpWhenAlreadyRunning(t *testing.T) {
+func TestObserveLiveEvent_ReleasesDelayedIsolatedMirror(t *testing.T) {
 	mgr := newTestManager(t)
-	writeTestGame(t, mgr.GameDir())
+	received := make(chan game.PlayEvent, 1)
+	mgr.EventHandler = func(ev game.PlayEvent) {
+		received <- ev
+	}
 
-	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
+	mgr.Start(ctx)
 
-	mgr.EnsureGame(ctx)
-	id1 := mgr.ActiveGameID()
+	source := liveState()
+	source.HomeScore = 2
+	source.AwayScore = 0
+	source.Period = "Q1"
+	source.Clock = "11:30"
+	source.Possession = "LAL"
+	event := liveEvent(source.GameID, "p1")
 
-	mgr.EnsureGame(ctx)
-	id2 := mgr.ActiveGameID()
+	mgr.SyncLiveGames([]game.GameState{source})
+	mgr.ObserveLiveEvent(source, event)
 
-	if id1 != id2 {
-		t.Fatalf("second EnsureGame started a new game: %s vs %s", id1, id2)
+	var simEvent game.PlayEvent
+	select {
+	case simEvent = <-received:
+	case <-ctx.Done():
+		t.Fatal("timed out waiting for delayed sim event")
+	}
+
+	if simEvent.GameID != SimGameID(source.GameID) {
+		t.Fatalf("expected sim game ID %s, got %s", SimGameID(source.GameID), simEvent.GameID)
+	}
+	if simEvent.PlayID != SimPlayID(source.GameID, event.PlayID) {
+		t.Fatalf("expected namespaced sim play ID, got %s", simEvent.PlayID)
+	}
+
+	state, ok := mgr.Game(SimGameID(source.GameID))
+	if !ok {
+		t.Fatal("expected mirrored game state")
+	}
+	if state.HomeScore != source.HomeScore || state.AwayScore != source.AwayScore {
+		t.Fatalf("expected delayed scoreboard to match released source state, got %+v", state)
+	}
+	if state.AssumedPossession == nil {
+		t.Fatal("expected assumed-possession contract on sim lane")
+	}
+	if state.AssumedPossession.Lane.Kind != game.LaneKindSimulation || !state.AssumedPossession.Lane.Isolated {
+		t.Fatalf("unexpected lane metadata: %+v", state.AssumedPossession.Lane)
+	}
+	if state.AssumedPossession.BoundGameID != SimGameID(source.GameID) {
+		t.Fatalf("expected bound sim game ID, got %s", state.AssumedPossession.BoundGameID)
+	}
+	if state.AssumedPossession.ReplayLatency == nil {
+		t.Fatal("expected replay latency metadata")
+	}
+	if state.AssumedPossession.ReplayLatency.ReplaySourceGameID != source.GameID {
+		t.Fatalf("expected replay source %s, got %s", source.GameID, state.AssumedPossession.ReplayLatency.ReplaySourceGameID)
+	}
+	if state.AssumedPossession.ReplayLatency.ReplayOffsetMs <= 0 {
+		t.Fatalf("expected positive replay offset, got %d", state.AssumedPossession.ReplayLatency.ReplayOffsetMs)
 	}
 }
 
-// ---------- 3. Replay stream behaviour ----------
-
-func TestReplayer_EmitsEventsInOrder(t *testing.T) {
-	saved := testSavedGame()
-	var received []game.PlayEvent
-	r := NewReplayer(saved, func(ev game.PlayEvent) {
-		received = append(received, ev)
-	})
-
-	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+func TestSimAdmit_UsesIsolatedTrackerAndBinding(t *testing.T) {
+	mgr := newTestManager(t)
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
-	r.Run(ctx)
+	mgr.Start(ctx)
 
-	if len(received) != len(saved.Plays) {
-		t.Fatalf("expected %d events, got %d", len(saved.Plays), len(received))
+	source := liveState()
+	source.HomeScore = 2
+	source.Possession = "LAL"
+	event := liveEvent(source.GameID, "p1")
+
+	mgr.SyncLiveGames([]game.GameState{source})
+	mgr.ObserveLiveEvent(source, event)
+	waitForRound(t, mgr, SimGameID(source.GameID), SimPlayID(source.GameID, event.PlayID))
+
+	decision, ok := mgr.Admit(SimGameID(source.GameID), SimPlayID(source.GameID, event.PlayID), time.Now().Unix(), 30*time.Second)
+	if !ok {
+		t.Fatal("expected simulation game for admit")
 	}
-	for i, ev := range received {
-		if ev.GameID != SimGameID(saved.GameID) {
-			t.Fatalf("event %d: expected sim game ID %s, got %s", i, SimGameID(saved.GameID), ev.GameID)
-		}
-		if i > 0 && ev.Timestamp.Before(received[i-1].Timestamp) {
-			t.Fatalf("event %d out of order", i)
-		}
+	if !decision.Accepted {
+		t.Fatalf("expected accepted admit, got %+v", decision)
 	}
-	if !r.Done() {
-		t.Fatal("replayer should be done")
+	if decision.Binding == nil {
+		t.Fatal("expected binding")
+	}
+	if decision.Binding.GameID != SimGameID(source.GameID) {
+		t.Fatalf("expected bound sim game ID, got %s", decision.Binding.GameID)
+	}
+	if decision.Binding.Lane.Kind != game.LaneKindSimulation || !decision.Binding.Lane.Isolated {
+		t.Fatalf("unexpected binding lane: %+v", decision.Binding.Lane)
 	}
 }
-
-func TestReplayer_GameStateTransitions(t *testing.T) {
-	saved := testSavedGame()
-	r := NewReplayer(saved, func(ev game.PlayEvent) {})
-
-	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
-	defer cancel()
-	r.Run(ctx)
-
-	state := r.GameState()
-	if state.Status != "final" || !state.Completed {
-		t.Fatalf("expected final/completed state, got status=%s completed=%v", state.Status, state.Completed)
-	}
-}
-
-// ---------- 4. Sim-only betting isolation ----------
 
 func TestSimBalance_IsolatedFromRegular(t *testing.T) {
 	var wallet [20]byte
 	copy(wallet[:], []byte("12345678901234567890"))
 
-	// Set regular balance.
 	bet.DefaultBalanceProvider.SetBalance(wallet, 500.0)
 
-	// Sim balance is separate.
 	simBP := NewSimBalanceProvider()
 	simBP.SetBalance(wallet, 100.0)
 
@@ -149,7 +176,6 @@ func TestSimBalance_IsolatedFromRegular(t *testing.T) {
 		t.Fatal("regular balance should be 500")
 	}
 
-	// Spending sim money doesn't affect regular.
 	simBP.AddBalance(wallet, -50.0)
 	if bet.DefaultBalanceProvider.GetBalance(wallet) != 500.0 {
 		t.Fatal("regular balance must not change after sim spend")
@@ -158,54 +184,6 @@ func TestSimBalance_IsolatedFromRegular(t *testing.T) {
 		t.Fatal("sim balance should be 50 after spend")
 	}
 }
-
-func TestSimEngine_UsesSimBalances(t *testing.T) {
-	dir := t.TempDir()
-	store, err := bet.NewStore(dir)
-	if err != nil {
-		t.Fatal(err)
-	}
-	bp := NewSimBalanceProvider()
-	engine := bet.NewEngineWithBalance(store, bp)
-
-	var wallet [20]byte
-	copy(wallet[:], []byte("12345678901234567890"))
-	bp.SetBalance(wallet, 100.0)
-
-	// Regular balance should be unaffected.
-	regBalance := bet.DefaultBalanceProvider.GetBalance(wallet)
-
-	_ = engine // engine is wired to sim balances
-	if bp.GetBalance(wallet) != 100.0 {
-		t.Fatal("sim engine balance wrong")
-	}
-	if bet.DefaultBalanceProvider.GetBalance(wallet) != regBalance {
-		t.Fatal("regular balance changed unexpectedly")
-	}
-}
-
-// ---------- 5. Regular vs sim separation ----------
-
-func TestGameRadii_OnlySimGames(t *testing.T) {
-	mgr := newTestManager(t)
-	writeTestGame(t, mgr.GameDir())
-
-	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
-	defer cancel()
-	mgr.EnsureGame(ctx)
-
-	radii := mgr.GameRadii()
-	if len(radii) != 1 {
-		t.Fatalf("expected 1 sim game radius, got %d", len(radii))
-	}
-	for id := range radii {
-		if id[:4] != "sim:" {
-			t.Fatalf("expected sim: prefix, got %s", id)
-		}
-	}
-}
-
-// ---------- 6. Save/Load completed game data ----------
 
 func TestSaveAndLoadCompletedGame(t *testing.T) {
 	dir := t.TempDir()
@@ -231,38 +209,56 @@ func TestSaveAndLoadCompletedGame(t *testing.T) {
 	}
 }
 
-// ---------- helpers ----------
-
 func newTestManager(t *testing.T) *Manager {
 	t.Helper()
 	dir := t.TempDir()
-	store, err := bet.NewStore(filepath.Join(dir, "bets"))
+	mgr, err := NewManagerWithConfig(Config{
+		StoreDir:    filepath.Join(dir, "bets"),
+		GameDir:     filepath.Join(dir, "games"),
+		EventDelay:  10 * time.Millisecond,
+		ReleaseTick: 1 * time.Millisecond,
+	})
 	if err != nil {
 		t.Fatal(err)
 	}
-	bp := NewSimBalanceProvider()
-	engine := bet.NewEngineWithBalance(store, bp)
-	return &Manager{
-		Balances: bp,
-		Engine:   engine,
-		Store:    store,
-		gameDir:  filepath.Join(dir, "games"),
+	return mgr
+}
+
+func liveState() game.GameState {
+	return game.GameState{
+		GameID:    "401234567",
+		Sport:     "nba",
+		Status:    "in_progress",
+		State:     "in",
+		StartTime: time.Now().UTC().Format(time.RFC3339),
+		Home:      "BOS",
+		Away:      "LAL",
+		Tracked:   true,
 	}
 }
 
-// GameDir exposes the game directory for tests.
-func (m *Manager) GameDir() string { return m.gameDir }
+func liveEvent(gameID, playID string) game.PlayEvent {
+	return game.PlayEvent{
+		GameID:    gameID,
+		PlayID:    playID,
+		Sport:     "nba",
+		Timestamp: time.Now().UTC().Add(-2 * time.Second),
+		Location:  &game.Coord{X: 100, Y: 200},
+		EventData: map[string]any{"period": "Q1", "clock": "11:30", "made": true, "shot_type": "2pt shot", "team": "BOS"},
+	}
+}
 
-func writeTestGame(t *testing.T, dir string) {
+func waitForRound(t *testing.T, mgr *Manager, gameID, roundID string) {
 	t.Helper()
-	plays := testPlays()
-	state := game.GameState{
-		GameID: "401234567", Sport: "nba", Home: "BOS", Away: "LAL",
-		Completed: true, Status: "final", HomeScore: 110, AwayScore: 105,
+	deadline := time.Now().Add(time.Second)
+	for time.Now().Before(deadline) {
+		state, ok := mgr.Game(gameID)
+		if ok && state.AssumedPossession != nil && state.AssumedPossession.BoundRoundID == roundID {
+			return
+		}
+		time.Sleep(5 * time.Millisecond)
 	}
-	if err := SaveCompletedGame(dir, "401234567", game.SportNBA, state, plays); err != nil {
-		t.Fatal(err)
-	}
+	t.Fatalf("timed out waiting for round %s on %s", roundID, gameID)
 }
 
 func testPlays() []game.PlayEvent {
@@ -286,20 +282,6 @@ func testPlays() []game.PlayEvent {
 			Location:  &game.Coord{X: 200, Y: 300},
 			EventData: map[string]any{"period": "Q2", "clock": "5:00", "made": true, "shot_type": "3pt jump shot", "team": "LAL"},
 		},
-	}
-}
-
-func testSavedGame() *SavedGame {
-	plays := testPlays()
-	return &SavedGame{
-		GameID: "401234567",
-		Sport:  "nba",
-		State: game.GameState{
-			GameID: "401234567", Sport: "nba", Home: "BOS", Away: "LAL",
-			Completed: true, Status: "final", HomeScore: 110, AwayScore: 105,
-		},
-		Plays:   plays,
-		SavedAt: time.Now(),
 	}
 }
 

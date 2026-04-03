@@ -6,7 +6,7 @@ This document defines the authoritative backend truth model for the ESPN-only as
 
 - Item 4 defined the contract surfaces.
 - Item 5 now emits those fields on the live-money backend path for live `game_state`, accepted/rejected `bet_ack`, persisted bet history, and settlement-time `bet_result`.
-- Simulation replay-latency metadata remains reserved for later simulation work.
+- Item 8 now emits the same contract family on the isolated simulation lane, backed by delayed live-game mirrors and populated replay-latency metadata.
 
 That distinction is intentional. The repo now has explicit backend-owned shapes plus the first live runtime implementation, without inventing frontend-only inference.
 

@@ -16,6 +16,11 @@ const simGamePrefix = "sim:"
 // SimGameID returns the simulation-namespaced game ID.
 func SimGameID(originalID string) string { return simGamePrefix + originalID }
 
+// SimPlayID returns the simulation-namespaced play ID for a live-source play.
+func SimPlayID(sourceGameID, sourcePlayID string) string {
+	return simGamePrefix + sourceGameID + ":" + sourcePlayID
+}
+
 // Replayer replays a saved completed game with time-shifted timestamps,
 // making it appear live to simulation-mode clients.
 type Replayer struct {
