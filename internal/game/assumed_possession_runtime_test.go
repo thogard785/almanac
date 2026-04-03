@@ -53,6 +53,28 @@ func TestInferLiveAssumedPossessionContradictoryPossessionClosesMarket(t *testin
 	}
 }
 
+func TestInferSimulationAssumedPossessionCarriesReplayLaneMetadata(t *testing.T) {
+	state := GameState{GameID: "sim:401", Sport: "nba", Home: "BOS", Away: "LAL", Possession: "LAL", Simulation: true}
+	event := PlayEvent{
+		GameID:    "sim:401",
+		PlayID:    "sim:401:p1",
+		Timestamp: time.Now().UTC(),
+		EventData: map[string]any{"team": "BOS", "made": true},
+	}
+	replay := &ReplayLatencyMeta{ReplaySourceGameID: "401", ReplayOffsetMs: 15000, Synthetic: true}
+
+	snapshot := InferSimulationAssumedPossession(state, event, replay)
+	if snapshot == nil {
+		t.Fatal("expected snapshot")
+	}
+	if snapshot.Lane.Kind != LaneKindSimulation || !snapshot.Lane.Isolated || !snapshot.Lane.Simulation {
+		t.Fatalf("unexpected lane: %+v", snapshot.Lane)
+	}
+	if snapshot.ReplayLatency == nil || snapshot.ReplayLatency.ReplaySourceGameID != "401" {
+		t.Fatalf("unexpected replay metadata: %+v", snapshot.ReplayLatency)
+	}
+}
+
 func TestTrackerAdmitTooLateAndBinding(t *testing.T) {
 	tracker := NewAssumedPossessionTracker()
 	state := GameState{GameID: "401", Sport: "nba", Home: "BOS", Away: "LAL", Possession: "LAL"}

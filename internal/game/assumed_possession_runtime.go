@@ -88,6 +88,9 @@ func (t *AssumedPossessionTracker) Snapshot(state GameState) *AssumedPossessionS
 	if !ok {
 		return nil
 	}
+	if state.Simulation {
+		return InferSimulationAssumedPossession(state, event, replayLatencyFromState(state))
+	}
 	return InferLiveAssumedPossession(state, event)
 }
 
@@ -177,6 +180,22 @@ func InferLiveAssumedPossession(state GameState, event PlayEvent) *AssumedPosses
 		return nil
 	}
 	lane := LaneDescriptor{Kind: LaneKindLive, LaneID: fmt.Sprintf("live:%s", state.GameID), Simulation: false, Isolated: false}
+	return inferAssumedPossession(state, event, lane, nil)
+}
+
+func InferSimulationAssumedPossession(state GameState, event PlayEvent, replayLatency *ReplayLatencyMeta) *AssumedPossessionState {
+	if state.GameID == "" || event.GameID == "" || state.GameID != event.GameID {
+		return nil
+	}
+	sourceID := state.GameID
+	if replayLatency != nil && strings.TrimSpace(replayLatency.ReplaySourceGameID) != "" {
+		sourceID = replayLatency.ReplaySourceGameID
+	}
+	lane := LaneDescriptor{Kind: LaneKindSimulation, LaneID: fmt.Sprintf("simulation:%s", sourceID), Simulation: true, Isolated: true}
+	return inferAssumedPossession(state, event, lane, replayLatency)
+}
+
+func inferAssumedPossession(state GameState, event PlayEvent, lane LaneDescriptor, replayLatency *ReplayLatencyMeta) *AssumedPossessionState {
 	base := &AssumedPossessionState{
 		ContractVersion: ContractVersionAssumedPossessionV1,
 		Source:          AssumptionSourceESPN,
@@ -185,6 +204,7 @@ func InferLiveAssumedPossession(state GameState, event PlayEvent) *AssumedPosses
 		BoundGameID:     state.GameID,
 		BoundRoundID:    event.PlayID,
 		Lane:            lane,
+		ReplayLatency:   replayLatency,
 	}
 	if state.Completed {
 		base.Reasoning = "game completed; no next-shot market remains"
@@ -246,6 +266,13 @@ func InferLiveAssumedPossession(state GameState, event PlayEvent) *AssumedPosses
 		base.Reasoning = fmt.Sprintf("latest shot by %s did not score; ESPN possession now points to %s", shotTeam, possession)
 	}
 	return base
+}
+
+func replayLatencyFromState(state GameState) *ReplayLatencyMeta {
+	if state.AssumedPossession == nil {
+		return nil
+	}
+	return state.AssumedPossession.ReplayLatency
 }
 
 func ActualShotTeam(event PlayEvent) string {

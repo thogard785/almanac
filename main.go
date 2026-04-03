@@ -124,6 +124,7 @@ func (a *App) Start(ctx context.Context) {
 	go a.sim.Store.RunPersistLoop(a.simPersistDone)
 	go a.bets.Run(ctx)
 	go a.sim.Engine.Run(ctx)
+	a.sim.Start(ctx)
 	a.manager.Run(ctx)
 	go a.forwardBetResults(ctx)
 	go a.forwardBalanceUpdates(ctx)
@@ -251,9 +252,7 @@ func (a *App) handleSignIn(conn *websocket.Conn, msg ws.SignInMessage) {
 func (a *App) handleSimSignIn(conn *websocket.Conn, wallet [20]byte) {
 	// Initialize sim wallet with $100 if new.
 	balance := a.sim.InitWallet(wallet)
-
-	// Ensure a sim game is running.
-	a.sim.EnsureGame(a.appCtx)
+	a.sim.SyncLiveGames(a.filteredGames())
 
 	ack := bet.SignInAck{
 		Type:             "signin_ack",
@@ -267,12 +266,13 @@ func (a *App) handleSimSignIn(conn *websocket.Conn, wallet [20]byte) {
 	}
 	_ = a.hub.SendTo(conn, ack)
 
-	// Send current sim game state to this connection.
-	if state, ok := a.sim.ActiveGame(); ok {
+	// Send the current isolated simulation game views to this connection.
+	if games := a.sim.Games(); len(games) > 0 {
 		_ = a.hub.SendTo(conn, ws.GameStateMessage{
-			Type:       "game_state",
-			Games:      []game.GameState{state},
-			Simulation: true,
+			Type:            "game_state",
+			Games:           games,
+			Simulation:      true,
+			ContractVersion: game.ContractVersionAssumedPossessionV1,
 		})
 	}
 }
@@ -373,12 +373,49 @@ func (a *App) placeSimBet(conn *websocket.Conn, wallet [20]byte, msg ws.PlaceBet
 		MinimumMultiplier: msg.MinimumMultiplier,
 		Signature:         signature,
 	}
+	state, ok := a.sim.Game(msg.GameID)
+	if !ok {
+		ack := a.sim.Engine.RejectBet(b, "unknown gameId", &game.BetContractResolution{
+			ContractVersion: game.ContractVersionAssumedPossessionV1,
+			Kind:            game.ResolutionRejectedMarketClosed,
+			Reasoning:       "backend has no isolated simulation game state for the requested game",
+		})
+		a.identifyConnection(conn, wallet, true)
+		_ = a.hub.SendTo(conn, ack)
+		return
+	}
+	decision, ok := a.sim.Admit(msg.GameID, msg.RoundID, msg.Timestamp, time.Duration(bet.BetExpiryWindow)*time.Second)
+	if !ok {
+		ack := a.sim.Engine.RejectBet(b, "unknown gameId", &game.BetContractResolution{
+			ContractVersion: game.ContractVersionAssumedPossessionV1,
+			Kind:            game.ResolutionRejectedMarketClosed,
+			Reasoning:       "backend has no isolated simulation game state for the requested game",
+		})
+		a.identifyConnection(conn, wallet, true)
+		_ = a.hub.SendTo(conn, ack)
+		return
+	}
+	if !decision.Accepted {
+		ack := a.sim.Engine.RejectBet(b, decision.Reason, decision.Resolution)
+		laneID := ""
+		if state.AssumedPossession != nil {
+			laneID = state.AssumedPossession.Lane.LaneID
+		}
+		log.Printf("[assumed-possession] sim_bet_rejected game=%s round=%s wallet=%s kind=%s reason=%q lane=%s", msg.GameID, msg.RoundID, msg.Wallet, decision.Resolution.Kind, decision.Resolution.Reasoning, laneID)
+		a.identifyConnection(conn, wallet, true)
+		_ = a.hub.SendTo(conn, ack)
+		return
+	}
+	b.ContractBinding = decision.Binding
 	ack, err := a.sim.Engine.PlaceBet(b)
 	if err != nil {
 		a.sendError(conn, err.Error())
 		return
 	}
 	a.identifyConnection(conn, wallet, true)
+	if ack != nil && ack.Status == "accepted" && decision.Binding != nil {
+		log.Printf("[assumed-possession] sim_bet_accepted game=%s round=%s wallet=%s assumed_team=%s confidence=%s", msg.GameID, msg.RoundID, msg.Wallet, decision.Binding.AssumedTeam, decision.Binding.Confidence)
+	}
 	_ = a.hub.SendTo(conn, ack)
 }
 
@@ -407,6 +444,7 @@ func (a *App) identifyConnection(conn *websocket.Conn, wallet [20]byte, simulati
 func (a *App) handlePlayEvent(event game.PlayEvent) {
 	a.tracker.OnPlay(event)
 	if state, ok := a.manager.Game(event.GameID); ok {
+		a.sim.ObserveLiveEvent(state, event)
 		if snapshot := a.tracker.Snapshot(state); snapshot != nil {
 			log.Printf("[assumed-possession] market_update game=%s round=%s state=%s assumed_team=%s confidence=%s reason=%q lane=%s", state.GameID, snapshot.BoundRoundID, snapshot.MarketState, snapshot.AssumedTeam, snapshot.Confidence, snapshot.Reasoning, snapshot.Lane.LaneID)
 		}
@@ -502,12 +540,14 @@ func (a *App) forwardSimBalanceUpdates(ctx context.Context) {
 func (a *App) broadcastGameStates(ctx context.Context) {
 	ticker := time.NewTicker(5 * time.Second)
 	defer ticker.Stop()
+	a.sim.SyncLiveGames(a.filteredGames())
 	a.hub.BroadcastFiltered(a.currentGameStateMessage(), a.isRegularConn)
 	for {
 		select {
 		case <-ctx.Done():
 			return
 		case <-ticker.C:
+			a.sim.SyncLiveGames(a.filteredGames())
 			a.hub.BroadcastFiltered(a.currentGameStateMessage(), a.isRegularConn)
 		}
 	}
@@ -521,13 +561,16 @@ func (a *App) broadcastSimGameStates(ctx context.Context) {
 		case <-ctx.Done():
 			return
 		case <-ticker.C:
-			if state, ok := a.sim.ActiveGame(); ok {
-				a.hub.BroadcastFiltered(ws.GameStateMessage{
-					Type:       "game_state",
-					Games:      []game.GameState{state},
-					Simulation: true,
-				}, a.isSimConn)
+			games := a.sim.Games()
+			if len(games) == 0 {
+				continue
 			}
+			a.hub.BroadcastFiltered(ws.GameStateMessage{
+				Type:            "game_state",
+				Games:           games,
+				Simulation:      true,
+				ContractVersion: game.ContractVersionAssumedPossessionV1,
+			}, a.isSimConn)
 		}
 	}
 }
