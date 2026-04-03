@@ -268,11 +268,12 @@ Schema:
 ```json
 {
   "type": "object",
-  "required": ["type", "wallet", "balance", "nextNonce", "minimumBetAmount", "gameRadii", "betHistory"],
+  "required": ["type", "wallet", "balance", "simulation", "nextNonce", "minimumBetAmount", "gameRadii", "betHistory"],
   "properties": {
     "type": { "const": "signin_ack" },
     "wallet": { "type": "string", "pattern": "^0x[a-fA-F0-9]{40}$" },
     "balance": { "type": "number" },
+    "simulation": { "type": "boolean" },
     "nextNonce": { "type": "integer", "minimum": 1 },
     "minimumBetAmount": { "type": "number", "minimum": 0 },
     "gameRadii": {
@@ -345,6 +346,7 @@ Sent only to the connection that submitted the bet.
   "timestamp": 1711900005,
   "balance": 95.0,
   "actualMultiplier": 1,
+  "simulation": false,
   "rejectionReason": ""
 }
 ```
@@ -354,7 +356,7 @@ Schema:
 ```json
 {
   "type": "object",
-  "required": ["type", "status", "gameId", "nonce", "timestamp", "balance", "actualMultiplier", "rejectionReason"],
+  "required": ["type", "status", "gameId", "nonce", "timestamp", "balance", "actualMultiplier", "rejectionReason", "simulation"],
   "properties": {
     "type": { "const": "bet_ack" },
     "status": { "type": "string", "enum": ["accepted", "rejected"] },
@@ -363,9 +365,30 @@ Schema:
     "timestamp": { "type": "integer", "minimum": 1 },
     "balance": { "type": "number" },
     "actualMultiplier": { "type": "integer", "minimum": 0 },
+    "simulation": { "type": "boolean" },
     "rejectionReason": { "type": "string" }
   },
   "additionalProperties": false
+}
+```
+
+### `play_event`
+
+Emitted when the backend observes or replays a play.
+
+```json
+{
+  "type": "play_event",
+  "game_id": "401234567",
+  "play_id": "401234567_play_89",
+  "sport": "nba",
+  "timestamp": "2026-04-01T02:00:08Z",
+  "location": { "x": 250.0, "y": 200.0 },
+  "event": {
+    "description": "Jalen Suggs makes 21-foot jumper",
+    "team": "ORL"
+  },
+  "simulation": false
 }
 ```
 
@@ -456,16 +479,18 @@ No in-memory deletion is implied by that filter.
 ```json
 {
   "type": "game_state",
+  "simulation": false,
   "games": [
     {
-      "gameId": "401234567",
+      "game_id": "401234567",
       "sport": "nba",
       "status": "in_progress",
-      "startTime": "2026-04-01T02:00:00Z",
+      "state": "in",
+      "start_time": "2026-04-01T02:00:00Z",
       "home": "LAL",
       "away": "BOS",
-      "homeScore": 88,
-      "awayScore": 91,
+      "home_score": 88,
+      "away_score": 91,
       "period": "Q4",
       "clock": "02:13",
       "possession": "LAL"
@@ -475,16 +500,19 @@ No in-memory deletion is implied by that filter.
 ```
 
 Expected game object fields:
-- `gameId`: string
+- `game_id`: string
 - `sport`: `nba | mlb | golf`
 - `status`: ESPN-derived status string, e.g. `in_progress`, `final`, `pre`, `scheduled`, `post`, etc.
-- `startTime`: ISO-8601 timestamp
+- `state`: raw ESPN state when available (`in`, `pre`, `post`, etc.)
+- `start_time`: ISO-8601 timestamp
 - team and score fields as available
+- `simulation`: present on simulation-lane game objects
 - sport-specific metadata may be included
 
-### `game_list`
-
-Alternative list-style payload. If emitted, it should contain the same game objects and filtering semantics as `game_state`.
+Top-level message fields:
+- `type = "game_state"`
+- `games`: array of normalized game objects
+- `simulation`: lane marker for the broadcast (`false` regular, `true` simulation)
 
 ### `pong`
 

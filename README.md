@@ -1,6 +1,6 @@
 # Almanac Backend
 
-Go backend for the Almanac spatial micro-betting product. Polls ESPN's live NBA (and MLB) play-by-play feeds, manages game state, processes EIP-712 signed bets over WebSocket, and runs an isolated simulation mode with replay capability.
+Go backend for the Almanac spatial micro-betting product. Polls ESPN live feeds for NBA, MLB, and golf, manages game state, processes EIP-712 signed bets over WebSocket, and runs an isolated simulation mode with replay capability.
 
 ## What it does
 

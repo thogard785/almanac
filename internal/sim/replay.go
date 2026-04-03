@@ -4,7 +4,6 @@ import (
 	"context"
 	"log"
 	"sort"
-	"strconv"
 	"strings"
 	"sync"
 	"time"
@@ -192,13 +191,4 @@ func pointsFromShotType(data map[string]any) int {
 	default:
 		return 2
 	}
-}
-
-// parseIntDefault parses a string as int, returning def on failure.
-func parseIntDefault(s string, def int) int {
-	n, err := strconv.Atoi(s)
-	if err != nil {
-		return def
-	}
-	return n
 }

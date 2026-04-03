@@ -2,12 +2,6 @@ package ws
 
 import "github.com/almanac/espn-shots/internal/game"
 
-type SubscribeWalletMessage struct {
-	Type       string `json:"type"`
-	WalletAddr string `json:"wallet_addr"`
-	Wallet     string `json:"wallet"`
-}
-
 type SignInMessage struct {
 	Type       string `json:"type"`
 	Wallet     string `json:"wallet"`
