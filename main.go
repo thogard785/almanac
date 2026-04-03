@@ -74,6 +74,7 @@ type App struct {
 	betStore *bet.Store
 	bets     *bet.Engine
 	sim      *sim.Manager
+	tracker  *game.AssumedPossessionTracker
 
 	persistDone    chan struct{}
 	simPersistDone chan struct{}
@@ -99,8 +100,9 @@ func NewApp(cfg Config) (*App, error) {
 	app := &App{
 		hub:            NewHub(),
 		betStore:       store,
-		bets:           bet.NewEngine(store),
+		bets:           bet.NewEngine(store).EnableNextRoundResolution(),
 		sim:            simMgr,
+		tracker:        game.NewAssumedPossessionTracker(),
 		persistDone:    make(chan struct{}),
 		simPersistDone: make(chan struct{}),
 		connWallets:    make(map[*websocket.Conn][20]byte),
@@ -325,12 +327,35 @@ func (a *App) placeBet(conn *websocket.Conn, msg ws.PlaceBetMessage) {
 		MinimumMultiplier: msg.MinimumMultiplier,
 		Signature:         signature,
 	}
+	state, ok := a.manager.Game(msg.GameID)
+	if !ok {
+		ack := a.bets.RejectBet(b, "unknown gameId", &game.BetContractResolution{
+			ContractVersion: game.ContractVersionAssumedPossessionV1,
+			Kind:            game.ResolutionRejectedMarketClosed,
+			Reasoning:       "backend has no live game state for the requested game",
+		})
+		a.identifyConnection(conn, wallet, false)
+		_ = a.hub.SendTo(conn, ack)
+		return
+	}
+	decision := a.tracker.Admit(state, msg.RoundID, msg.Timestamp, time.Duration(bet.BetExpiryWindow)*time.Second)
+	if !decision.Accepted {
+		ack := a.bets.RejectBet(b, decision.Reason, decision.Resolution)
+		log.Printf("[assumed-possession] live_bet_rejected game=%s round=%s wallet=%s kind=%s reason=%q", msg.GameID, msg.RoundID, msg.Wallet, decision.Resolution.Kind, decision.Resolution.Reasoning)
+		a.identifyConnection(conn, wallet, false)
+		_ = a.hub.SendTo(conn, ack)
+		return
+	}
+	b.ContractBinding = decision.Binding
 	ack, err := a.bets.PlaceBet(b)
 	if err != nil {
 		a.sendError(conn, err.Error())
 		return
 	}
 	a.identifyConnection(conn, wallet, false)
+	if ack != nil && ack.Status == "accepted" && decision.Binding != nil {
+		log.Printf("[assumed-possession] live_bet_accepted game=%s round=%s wallet=%s assumed_team=%s confidence=%s", msg.GameID, msg.RoundID, msg.Wallet, decision.Binding.AssumedTeam, decision.Binding.Confidence)
+	}
 	_ = a.hub.SendTo(conn, ack)
 }
 
@@ -380,6 +405,12 @@ func (a *App) identifyConnection(conn *websocket.Conn, wallet [20]byte, simulati
 // --- regular-mode event handling ---
 
 func (a *App) handlePlayEvent(event game.PlayEvent) {
+	a.tracker.OnPlay(event)
+	if state, ok := a.manager.Game(event.GameID); ok {
+		if snapshot := a.tracker.Snapshot(state); snapshot != nil {
+			log.Printf("[assumed-possession] market_update game=%s round=%s state=%s assumed_team=%s confidence=%s reason=%q lane=%s", state.GameID, snapshot.BoundRoundID, snapshot.MarketState, snapshot.AssumedTeam, snapshot.Confidence, snapshot.Reasoning, snapshot.Lane.LaneID)
+		}
+	}
 	a.bets.OnPlayEvent(event)
 	// Broadcast only to regular-mode connections.
 	a.hub.BroadcastFiltered(ws.PlayEventMessage{
@@ -503,13 +534,19 @@ func (a *App) broadcastSimGameStates(ctx context.Context) {
 
 func (a *App) currentGameStateMessage() ws.GameStateMessage {
 	games := a.filteredGames()
+	for i := range games {
+		if snapshot := a.tracker.Snapshot(games[i]); snapshot != nil {
+			games[i].ContractVersion = game.ContractVersionAssumedPossessionV1
+			games[i].AssumedPossession = snapshot
+		}
+	}
 	sort.SliceStable(games, func(i, j int) bool {
 		if games[i].Sport == games[j].Sport {
 			return games[i].GameID < games[j].GameID
 		}
 		return games[i].Sport < games[j].Sport
 	})
-	return ws.GameStateMessage{Type: "game_state", Games: games, Simulation: false}
+	return ws.GameStateMessage{Type: "game_state", Games: games, Simulation: false, ContractVersion: game.ContractVersionAssumedPossessionV1}
 }
 
 func (a *App) filteredGames() []game.GameState {

@@ -76,6 +76,17 @@ func (m *Manager) Games() []game.GameState {
 	return out
 }
 
+func (m *Manager) Game(gameID string) (game.GameState, bool) {
+	m.mu.RLock()
+	defer m.mu.RUnlock()
+	for _, tg := range m.tracked {
+		if tg.state.GameID == gameID {
+			return tg.state, true
+		}
+	}
+	return game.GameState{}, false
+}
+
 func (m *Manager) discoveryLoop(ctx context.Context) {
 	ticker := time.NewTicker(60 * time.Second)
 	defer ticker.Stop()

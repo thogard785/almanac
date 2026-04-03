@@ -4,11 +4,11 @@ This document defines the authoritative backend truth model for the ESPN-only as
 
 ## Status
 
-- **This item defines the contract.**
-- **This item does not claim full runtime emission yet.**
-- Item 5 should implement these fields in live websocket payloads and bet persistence using the exact shapes already defined in `internal/game/assumed_possession.go`.
+- Item 4 defined the contract surfaces.
+- Item 5 now emits those fields on the live-money backend path for live `game_state`, accepted/rejected `bet_ack`, persisted bet history, and settlement-time `bet_result`.
+- Simulation replay-latency metadata remains reserved for later simulation work.
 
-That distinction is intentional. The repo now has explicit backend-owned shapes so later work can implement them directly instead of inventing frontend-only inference.
+That distinction is intentional. The repo now has explicit backend-owned shapes plus the first live runtime implementation, without inventing frontend-only inference.
 
 ## Non-negotiable product rule
 
@@ -178,16 +178,19 @@ Specifically, frontend must not:
 
 Instead, frontend should render the backend contract exactly as provided.
 
-## What Item 5 still needs to do
+## Item 5 runtime implementation status
 
-Item 5 should implement actual production of these structures by:
+The live-money backend now:
 
-1. deriving assumed-possession state from ESPN play outcomes
-2. attaching `AssumedPossessionState` to outbound `game_state`
-3. recording `BetContractBinding` when a bet is accepted
-4. emitting `BetContractResolution` on rejection and settlement
+1. derives assumed-possession state from ESPN play outcomes for the live lane
+2. attaches `AssumedPossessionState` to outbound live `game_state`
+3. records `BetContractBinding` when a live bet is accepted
+4. emits `BetContractResolution` on rejection and settlement
+
+Still deferred:
+
 5. populating replay latency metadata in simulation/replay paths
-6. updating any downstream docs/examples once runtime emission is real
+6. any frontend-specific rendering work that consumes these live fields
 
 ## Why this item matters
 

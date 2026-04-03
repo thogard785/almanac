@@ -6,6 +6,7 @@ import (
 	"log"
 	"math"
 	"sort"
+	"strings"
 	"sync"
 	"time"
 
@@ -16,6 +17,8 @@ import (
 type Engine struct {
 	store    *Store
 	balances BalanceProvider
+
+	nextRoundResolution bool
 
 	mu                 sync.Mutex
 	pending            map[string][]*Bet
@@ -69,6 +72,11 @@ func NewEngineWithBalance(store *Store, bp BalanceProvider) *Engine {
 
 func (e *Engine) Run(ctx context.Context) {
 	<-ctx.Done()
+}
+
+func (e *Engine) EnableNextRoundResolution() *Engine {
+	e.nextRoundResolution = true
+	return e
 }
 
 func (e *Engine) HasSeenNonce(wallet [20]byte, nonce uint64) bool {
@@ -132,15 +140,24 @@ func (e *Engine) PlaceBet(b *Bet) (*BetAck, error) {
 	e.pending[b.RoundID] = append(e.pending[b.RoundID], b)
 	e.store.SaveBet(b)
 	balance := e.balances.AddBalance(b.Wallet, -b.Amount)
-	ack := &BetAck{Type: "bet_ack", Status: "accepted", GameID: b.GameID, Nonce: b.Nonce, Timestamp: time.Now().Unix(), Balance: balance, ActualMultiplier: ActualMultiplier, Simulation: b.Simulation}
+	ack := &BetAck{Type: "bet_ack", Status: "accepted", GameID: b.GameID, Nonce: b.Nonce, Timestamp: time.Now().Unix(), Balance: balance, ActualMultiplier: ActualMultiplier, Simulation: b.Simulation, ContractBinding: b.ContractBinding, ContractResolution: b.ContractResolution}
 	select {
 	case e.balanceChan <- BalanceUpdate{Type: "balance_update", Wallet: WalletHex(b.Wallet), Balance: balance, Simulation: b.Simulation}:
 	default:
 	}
-	if event, ok := e.processed[b.RoundID]; ok {
-		go e.resolveForEvent(event)
+	if !e.nextRoundResolution {
+		if event, ok := e.processed[b.RoundID]; ok {
+			go e.resolveForEvent(event)
+		}
 	}
 	return ack, nil
+}
+
+func (e *Engine) RejectBet(b *Bet, reason string, resolution *game.BetContractResolution) *BetAck {
+	if b != nil && resolution != nil {
+		b.ContractResolution = resolution
+	}
+	return e.rejectBet(b, reason)
 }
 
 func (e *Engine) rejectBet(b *Bet, reason string) *BetAck {
@@ -158,23 +175,45 @@ func (e *Engine) rejectBetLocked(b *Bet, reason string) *BetAck {
 	b.Status = "invalid"
 	b.ActualMultiplier = ActualMultiplier
 	b.RejectionReason = reason
+	if b.ContractBinding != nil && b.ContractResolution == nil {
+		b.ContractResolution = &game.BetContractResolution{
+			ContractVersion: game.ContractVersionAssumedPossessionV1,
+			Kind:            game.ResolutionRejectedInvalid,
+			Reasoning:       reason,
+		}
+	}
 	e.store.SaveBet(b)
 	return &BetAck{
-		Type:             "bet_ack",
-		Status:           "rejected",
-		GameID:           b.GameID,
-		Nonce:            b.Nonce,
-		Timestamp:        time.Now().Unix(),
-		Balance:          e.balances.GetBalance(b.Wallet),
-		ActualMultiplier: ActualMultiplier,
-		RejectionReason:  reason,
-		Simulation:       b.Simulation,
+		Type:               "bet_ack",
+		Status:             "rejected",
+		GameID:             b.GameID,
+		Nonce:              b.Nonce,
+		Timestamp:          time.Now().Unix(),
+		Balance:            e.balances.GetBalance(b.Wallet),
+		ActualMultiplier:   ActualMultiplier,
+		RejectionReason:    reason,
+		Simulation:         b.Simulation,
+		ContractBinding:    b.ContractBinding,
+		ContractResolution: b.ContractResolution,
 	}
 }
 
 func (e *Engine) OnPlayEvent(event game.PlayEvent) {
 	e.mu.Lock()
 	e.processed[event.PlayID] = event
+	if e.nextRoundResolution {
+		prevRound := e.currentRoundByGame[event.GameID]
+		e.knownRounds[event.PlayID] = event
+		e.currentRoundByGame[event.GameID] = event.PlayID
+		if prevRound != "" {
+			delete(e.knownRounds, prevRound)
+		}
+		e.mu.Unlock()
+		if prevRound != "" {
+			go e.resolveRound(prevRound, event)
+		}
+		return
+	}
 	e.knownRounds[event.PlayID] = event
 	e.currentRoundByGame[event.GameID] = event.PlayID
 	e.mu.Unlock()
@@ -185,20 +224,33 @@ func (e *Engine) ResultChan() <-chan WalletResult   { return e.resultChan }
 func (e *Engine) BalanceChan() <-chan BalanceUpdate { return e.balanceChan }
 
 func (e *Engine) resolveForEvent(event game.PlayEvent) {
+	e.resolveRound(event.PlayID, event)
+}
+
+func (e *Engine) resolveRound(roundID string, event game.PlayEvent) {
 	e.mu.Lock()
-	bets := append([]*Bet(nil), e.pending[event.PlayID]...)
+	bets := append([]*Bet(nil), e.pending[roundID]...)
 	if len(bets) == 0 {
 		e.mu.Unlock()
 		return
 	}
-	delete(e.pending, event.PlayID)
-	delete(e.knownRounds, event.PlayID)
+	delete(e.pending, roundID)
+	if !e.nextRoundResolution {
+		delete(e.knownRounds, roundID)
+	}
 	e.mu.Unlock()
 
 	for _, b := range bets {
 		result := e.resolveBet(b, event)
 		e.store.SaveBet(b)
 		e.store.SaveResult(result)
+		if result != nil {
+			resolutionKind := ""
+			if result.ContractResolution != nil {
+				resolutionKind = string(result.ContractResolution.Kind)
+			}
+			log.Printf("[bet-engine] resolved game=%s bound_round=%s event=%s wallet=%s outcome=%s resolution=%s assumed_team=%s actual_team=%s simulation=%t", b.GameID, b.RoundID, event.PlayID, WalletHex(b.Wallet), result.Outcome, resolutionKind, contractAssumedTeam(b), game.ActualShotTeam(event), b.Simulation)
+		}
 		select {
 		case e.resultChan <- WalletResult{Wallet: b.Wallet, Result: result}:
 		default:
@@ -229,6 +281,16 @@ func (e *Engine) resolveBet(b *Bet, event game.PlayEvent) *BetResult {
 		Simulation:       b.Simulation,
 		Balance:          e.balances.GetBalance(b.Wallet),
 		IsHistorical:     false,
+		ContractBinding:  b.ContractBinding,
+	}
+
+	actualShotTeam := game.ActualShotTeam(event)
+	if b.ContractBinding != nil {
+		if resolution, applied := e.resolveContractBet(b, event, actualShotTeam, result); applied {
+			b.ContractResolution = resolution
+			result.ContractResolution = resolution
+			return result
+		}
 	}
 
 	if event.Timestamp.IsZero() {
@@ -274,6 +336,104 @@ func (e *Engine) resolveBet(b *Bet, event game.PlayEvent) *BetResult {
 	result.Outcome = "loss"
 	result.Balance = e.balances.GetBalance(b.Wallet)
 	return result
+}
+
+func contractAssumedTeam(b *Bet) string {
+	if b == nil || b.ContractBinding == nil {
+		return ""
+	}
+	return b.ContractBinding.AssumedTeam
+}
+
+func (e *Engine) resolveContractBet(b *Bet, event game.PlayEvent, actualShotTeam string, result *BetResult) (*game.BetContractResolution, bool) {
+	if b == nil || b.ContractBinding == nil || result == nil {
+		return nil, false
+	}
+
+	if event.Timestamp.IsZero() {
+		b.Status = "nullified"
+		b.NullificationReason = "play timestamp unavailable"
+		result.Outcome = "nullified"
+		result.NullificationReason = b.NullificationReason
+		result.Balance = e.balances.AddBalance(b.Wallet, b.Amount)
+		return &game.BetContractResolution{
+			ContractVersion:     game.ContractVersionAssumedPossessionV1,
+			Kind:                game.ResolutionNullifiedWrongTeam,
+			NullificationReason: game.NullificationReasonMissingEventTimestamp,
+			Reasoning:           "accepted bet refunded because the resolving event timestamp was unavailable",
+		}, true
+	}
+
+	if actualShotTeam == "" {
+		b.Status = "nullified"
+		b.NullificationReason = "play missing team data"
+		result.Outcome = "nullified"
+		result.NullificationReason = b.NullificationReason
+		result.Balance = e.balances.AddBalance(b.Wallet, b.Amount)
+		return &game.BetContractResolution{
+			ContractVersion:     game.ContractVersionAssumedPossessionV1,
+			Kind:                game.ResolutionNullifiedWrongTeam,
+			NullificationReason: game.NullificationReasonNoLocation,
+			Reasoning:           "accepted bet refunded because the resolving event did not expose an actual shot team",
+		}, true
+	}
+
+	if strings.TrimSpace(b.ContractBinding.AssumedTeam) != "" && actualShotTeam != b.ContractBinding.AssumedTeam {
+		b.Status = "nullified"
+		b.NullificationReason = "wrong team shot"
+		result.Outcome = "nullified"
+		result.NullificationReason = b.NullificationReason
+		result.Balance = e.balances.AddBalance(b.Wallet, b.Amount)
+		return &game.BetContractResolution{
+			ContractVersion:     game.ContractVersionAssumedPossessionV1,
+			Kind:                game.ResolutionNullifiedWrongTeam,
+			ActualShotTeam:      actualShotTeam,
+			NullificationReason: game.NullificationReasonWrongTeam,
+			Reasoning:           fmt.Sprintf("accepted under assumed team %s, but next shot came from %s", b.ContractBinding.AssumedTeam, actualShotTeam),
+		}, true
+	}
+
+	if event.Location == nil {
+		b.Status = "nullified"
+		b.NullificationReason = "play has no location data"
+		result.Outcome = "nullified"
+		result.NullificationReason = b.NullificationReason
+		result.Balance = e.balances.AddBalance(b.Wallet, b.Amount)
+		return &game.BetContractResolution{
+			ContractVersion:     game.ContractVersionAssumedPossessionV1,
+			Kind:                game.ResolutionNullifiedWrongTeam,
+			ActualShotTeam:      actualShotTeam,
+			NullificationReason: game.NullificationReasonNoLocation,
+			Reasoning:           "accepted bet refunded because the resolving shot had no location data",
+		}, true
+	}
+
+	dx := b.Coordinate.X - event.Location.X
+	dy := b.Coordinate.Y - event.Location.Y
+	distance := math.Sqrt(dx*dx + dy*dy)
+	if distance <= b.BetRadius {
+		b.Status = "win"
+		b.Payout = math.Round((b.Amount*2)*100) / 100
+		result.Outcome = "win"
+		result.AmountWon = b.Payout
+		result.Balance = e.balances.AddBalance(b.Wallet, b.Payout)
+		return &game.BetContractResolution{
+			ContractVersion: game.ContractVersionAssumedPossessionV1,
+			Kind:            game.ResolutionWin,
+			ActualShotTeam:  actualShotTeam,
+			Reasoning:       fmt.Sprintf("settled win under assumed team %s", b.ContractBinding.AssumedTeam),
+		}, true
+	}
+
+	b.Status = "loss"
+	result.Outcome = "loss"
+	result.Balance = e.balances.GetBalance(b.Wallet)
+	return &game.BetContractResolution{
+		ContractVersion: game.ContractVersionAssumedPossessionV1,
+		Kind:            game.ResolutionLoss,
+		ActualShotTeam:  actualShotTeam,
+		Reasoning:       fmt.Sprintf("settled loss under assumed team %s", b.ContractBinding.AssumedTeam),
+	}, true
 }
 
 func (e *Engine) NextNonce(wallet [20]byte) uint64 {
