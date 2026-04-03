@@ -9,6 +9,7 @@ Go backend for the Almanac spatial micro-betting product. Polls ESPN live feeds 
 - **Bet engine:** Accepts EIP-712 signed bets, validates signatures, manages per-wallet balances and nonces, resolves bets against incoming play coordinates using radius-based hit detection
 - **Simulation mode:** Isolated sim lane with $100 virtual balance per wallet, NBA replay engine using saved completed games, separate WebSocket fanout (no state contagion with real-money lane)
 - **Protocol:** v3 — `signin`/`signin_ack`/`place_bet`/`bet_ack`/`bet_result` with Monad mainnet chain ID 143
+- **Assumed-possession contract foundation:** `internal/game/assumed_possession.go` and `docs/backend-contract-foundation.md` define the backend-authored ESPN-only truth model that later frontend/live/simulation work must consume directly
 
 ## Build & run
 
@@ -28,6 +29,7 @@ curl -s http://localhost:8090/health   # returns "ok"
 ## Key docs
 
 - `DATA_FLOW.md` — canonical WebSocket protocol spec (keep in sync with frontend copy)
+- `docs/backend-contract-foundation.md` — explicit assumed-possession backend contract, outcome semantics, and Item 5 implementation boundary
 - `docs/simulation-mode.md` — simulation lane architecture
 - `docs/espn-api-notes.md` — ESPN endpoint details and coordinate system
 

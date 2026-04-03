@@ -49,6 +49,12 @@ type GameState struct {
 	Completed  bool   `json:"completed"`
 	Tracked    bool   `json:"tracked"`
 	Simulation bool   `json:"simulation,omitempty"`
+
+	// Reserved contract foundation for Item 5. These fields define the backend's
+	// authoritative assumed-possession model; they are intentionally optional so
+	// Item 4 can land the contract without pretending the runtime emits it yet.
+	ContractVersion   string                  `json:"contractVersion,omitempty"`
+	AssumedPossession *AssumedPossessionState `json:"assumedPossession,omitempty"`
 }
 
 func ParseESPNTime(value string) time.Time {

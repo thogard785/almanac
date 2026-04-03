@@ -2,6 +2,20 @@
 
 Canonical websocket and signing protocol for the Almanac backend/frontend pair.
 
+## Assumed-possession contract foundation
+
+For the ESPN-only assumed-possession product model, the backend contract foundation is defined in:
+
+- `internal/game/assumed_possession.go`
+- `docs/backend-contract-foundation.md`
+
+Important boundary:
+
+- Item 4 defines the authoritative shapes and semantics.
+- Item 5 should populate those fields in runtime websocket emission and bet persistence.
+
+Frontend must treat backend-authored assumed-possession truth as authoritative once emitted. It must not recreate market meaning through ad hoc UI inference.
+
 ## Network
 
 - Network: Monad mainnet
@@ -594,5 +608,6 @@ Invalid signin handling:
 ## Notes for future contributors
 
 - Keep frontend websocket field names and backend JSON tags exactly aligned.
+- For assumed-possession UX, backend truth wins over frontend inference. If a backend field exists for market state / assumed team / resolution kind, render that value instead of deriving one locally.
 - If the protocol changes, update this file in both repos in the same change set.
 - Prefer extending these message types over introducing parallel shapes for the same concept.
