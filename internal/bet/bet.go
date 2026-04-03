@@ -52,24 +52,26 @@ var DefaultBalanceProvider BalanceProvider = defaultBalanceProvider{}
 
 // Bet is the validated backend record for a user's wager.
 type Bet struct {
-	BetID               string     `json:"bet_id"`
-	Wallet              [20]byte   `json:"wallet"`
-	GameID              string     `json:"game_id"`
-	RoundID             string     `json:"round_id"`
-	Coordinate          game.Coord `json:"coordinate"`
-	Amount              float64    `json:"amount"`
-	Nonce               uint64     `json:"nonce"`
-	Timestamp           int64      `json:"timestamp"`
-	BetRadius           float64    `json:"bet_radius"`
-	Simulation          bool       `json:"simulation"`
-	MinimumMultiplier   uint64     `json:"minimum_multiplier"`
-	ActualMultiplier    uint64     `json:"actual_multiplier"`
-	ReceivedAt          time.Time  `json:"received_at"`
-	Signature           []byte     `json:"signature"`
-	Status              string     `json:"status"`
-	Payout              float64    `json:"payout"`
-	RejectionReason     string     `json:"rejection_reason,omitempty"`
-	NullificationReason string     `json:"nullification_reason,omitempty"`
+	BetID               string                      `json:"bet_id"`
+	Wallet              [20]byte                    `json:"wallet"`
+	GameID              string                      `json:"game_id"`
+	RoundID             string                      `json:"round_id"`
+	Coordinate          game.Coord                  `json:"coordinate"`
+	Amount              float64                     `json:"amount"`
+	Nonce               uint64                      `json:"nonce"`
+	Timestamp           int64                       `json:"timestamp"`
+	BetRadius           float64                     `json:"bet_radius"`
+	Simulation          bool                        `json:"simulation"`
+	MinimumMultiplier   uint64                      `json:"minimum_multiplier"`
+	ActualMultiplier    uint64                      `json:"actual_multiplier"`
+	ReceivedAt          time.Time                   `json:"received_at"`
+	Signature           []byte                      `json:"signature"`
+	Status              string                      `json:"status"`
+	Payout              float64                     `json:"payout"`
+	RejectionReason     string                      `json:"rejection_reason,omitempty"`
+	NullificationReason string                      `json:"nullification_reason,omitempty"`
+	ContractBinding     *game.BetContractBinding    `json:"contract_binding,omitempty"`
+	ContractResolution  *game.BetContractResolution `json:"contract_resolution,omitempty"`
 }
 
 type SignInAck struct {
@@ -84,55 +86,61 @@ type SignInAck struct {
 }
 
 type SignInAckBetHistory struct {
-	BetID               string  `json:"betId"`
-	GameID              string  `json:"gameId"`
-	RoundID             string  `json:"roundId"`
-	Nonce               uint64  `json:"nonce"`
-	Amount              float64 `json:"amount"`
-	X                   float64 `json:"x"`
-	Y                   float64 `json:"y"`
-	BetRadius           float64 `json:"betRadius"`
-	MinimumMultiplier   uint64  `json:"minimumMultiplier"`
-	ActualMultiplier    uint64  `json:"actualMultiplier"`
-	Status              string  `json:"status"`
-	PlacedAt            string  `json:"placedAt"`
-	Simulation          bool    `json:"simulation"`
-	Payout              float64 `json:"payout"`
-	NullificationReason string  `json:"nullificationReason"`
-	RejectionReason     string  `json:"rejectionReason"`
-	IsHistorical        bool    `json:"isHistorical"`
+	BetID               string                      `json:"betId"`
+	GameID              string                      `json:"gameId"`
+	RoundID             string                      `json:"roundId"`
+	Nonce               uint64                      `json:"nonce"`
+	Amount              float64                     `json:"amount"`
+	X                   float64                     `json:"x"`
+	Y                   float64                     `json:"y"`
+	BetRadius           float64                     `json:"betRadius"`
+	MinimumMultiplier   uint64                      `json:"minimumMultiplier"`
+	ActualMultiplier    uint64                      `json:"actualMultiplier"`
+	Status              string                      `json:"status"`
+	PlacedAt            string                      `json:"placedAt"`
+	Simulation          bool                        `json:"simulation"`
+	Payout              float64                     `json:"payout"`
+	NullificationReason string                      `json:"nullificationReason"`
+	RejectionReason     string                      `json:"rejectionReason"`
+	IsHistorical        bool                        `json:"isHistorical"`
+	ContractBinding     *game.BetContractBinding    `json:"contractBinding,omitempty"`
+	ContractResolution  *game.BetContractResolution `json:"contractResolution,omitempty"`
 }
 
 type BetAck struct {
-	Type             string  `json:"type"`
-	Status           string  `json:"status"`
-	GameID           string  `json:"gameId"`
-	Nonce            uint64  `json:"nonce"`
-	Timestamp        int64   `json:"timestamp"`
-	Balance          float64 `json:"balance"`
-	ActualMultiplier uint64  `json:"actualMultiplier"`
-	RejectionReason  string  `json:"rejectionReason"`
-	Simulation       bool    `json:"simulation"`
+	Type               string                      `json:"type"`
+	Status             string                      `json:"status"`
+	GameID             string                      `json:"gameId"`
+	Nonce              uint64                      `json:"nonce"`
+	Timestamp          int64                       `json:"timestamp"`
+	Balance            float64                     `json:"balance"`
+	ActualMultiplier   uint64                      `json:"actualMultiplier"`
+	RejectionReason    string                      `json:"rejectionReason"`
+	Simulation         bool                        `json:"simulation"`
+	ContractBinding    *game.BetContractBinding    `json:"contractBinding,omitempty"`
+	ContractResolution *game.BetContractResolution `json:"contractResolution,omitempty"`
 }
 
 // BetResult is routed only to the wallet's identified connections.
 type BetResult struct {
-	Type                string     `json:"type"`
-	Outcome             string     `json:"outcome"`
-	Wallet              string     `json:"wallet"`
-	Nonce               uint64     `json:"nonce"`
-	GameID              string     `json:"gameId"`
-	RoundID             string     `json:"roundId"`
-	BetCoordinates      game.Coord `json:"betCoordinates"`
-	BetRadius           float64    `json:"betRadius"`
-	BackendTimestamp    int64      `json:"backendTimestamp"`
-	EventTimestamp      int64      `json:"eventTimestamp"`
-	AmountBet           float64    `json:"amountBet"`
-	AmountWon           float64    `json:"amountWon"`
-	Simulation          bool       `json:"simulation"`
-	Balance             float64    `json:"balance"`
-	IsHistorical        bool       `json:"isHistorical"`
-	NullificationReason string     `json:"nullificationReason"`
+	Type                string                      `json:"type"`
+	Outcome             string                      `json:"outcome"`
+	Wallet              string                      `json:"wallet"`
+	Nonce               uint64                      `json:"nonce"`
+	GameID              string                      `json:"gameId"`
+	RoundID             string                      `json:"roundId"`
+	BetCoordinates      game.Coord                  `json:"betCoordinates"`
+	BetRadius           float64                     `json:"betRadius"`
+	BackendTimestamp    int64                       `json:"backendTimestamp"`
+	EventTimestamp      int64                       `json:"eventTimestamp"`
+	AmountBet           float64                     `json:"amountBet"`
+	AmountWon           float64                     `json:"amountWon"`
+	Simulation          bool                        `json:"simulation"`
+	Balance             float64                     `json:"balance"`
+	IsHistorical        bool                        `json:"isHistorical"`
+	NullificationReason string                      `json:"nullificationReason"`
+	ContractBinding     *game.BetContractBinding    `json:"contractBinding,omitempty"`
+	ContractResolution  *game.BetContractResolution `json:"contractResolution,omitempty"`
 }
 
 func setUserBalance(wallet [20]byte, balance float64) {

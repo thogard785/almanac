@@ -318,6 +318,8 @@ func (e *Engine) BetHistory(wallet [20]byte, since time.Time) []SignInAckBetHist
 			NullificationReason: b.NullificationReason,
 			RejectionReason:     b.RejectionReason,
 			IsHistorical:        true,
+			ContractBinding:     b.ContractBinding,
+			ContractResolution:  b.ContractResolution,
 		})
 	}
 	return out

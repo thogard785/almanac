@@ -40,6 +40,9 @@ type GameStateMessage struct {
 	Type       string           `json:"type"`
 	Games      []game.GameState `json:"games"`
 	Simulation bool             `json:"simulation"`
+	// ContractVersion is reserved for future top-level protocol versioning when
+	// assumed-possession semantics are emitted across the game_state envelope.
+	ContractVersion string `json:"contractVersion,omitempty"`
 }
 
 type PlayEventMessage struct {
