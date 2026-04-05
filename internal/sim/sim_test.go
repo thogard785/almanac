@@ -213,10 +213,12 @@ func newTestManager(t *testing.T) *Manager {
 	t.Helper()
 	dir := t.TempDir()
 	mgr, err := NewManagerWithConfig(Config{
-		StoreDir:    filepath.Join(dir, "bets"),
-		GameDir:     filepath.Join(dir, "games"),
-		EventDelay:  10 * time.Millisecond,
-		ReleaseTick: 1 * time.Millisecond,
+		StoreDir:           filepath.Join(dir, "bets"),
+		GameDir:            filepath.Join(dir, "games"),
+		EventDelay:         10 * time.Millisecond,
+		ReleaseTick:        1 * time.Millisecond,
+		ReplayEventSpacing: 5 * time.Millisecond,
+		ReplayResetDelay:   5 * time.Millisecond,
 	})
 	if err != nil {
 		t.Fatal(err)
@@ -261,6 +263,32 @@ func waitForRound(t *testing.T, mgr *Manager, gameID, roundID string) {
 	t.Fatalf("timed out waiting for round %s on %s", roundID, gameID)
 }
 
+func waitForGame(t *testing.T, mgr *Manager, gameID string) (game.GameState, bool) {
+	t.Helper()
+	deadline := time.Now().Add(time.Second)
+	for time.Now().Before(deadline) {
+		state, ok := mgr.Game(gameID)
+		if ok {
+			return state, true
+		}
+		time.Sleep(5 * time.Millisecond)
+	}
+	return game.GameState{}, false
+}
+
+func waitForCompletion(t *testing.T, mgr *Manager, gameID string) {
+	t.Helper()
+	deadline := time.Now().Add(1500 * time.Millisecond)
+	for time.Now().Before(deadline) {
+		state, ok := mgr.Game(gameID)
+		if ok && state.Completed {
+			return
+		}
+		time.Sleep(5 * time.Millisecond)
+	}
+	t.Fatalf("timed out waiting for completion on %s", gameID)
+}
+
 func testPlays() []game.PlayEvent {
 	base := time.Now().Add(-10 * time.Second)
 	return []game.PlayEvent{
@@ -285,6 +313,44 @@ func testPlays() []game.PlayEvent {
 	}
 }
 
+func savedReplayGame(gameID string) SavedGame {
+	plays := make([]game.PlayEvent, 0, 10)
+	base := time.Now().Add(-30 * time.Second)
+	for i := 0; i < 10; i++ {
+		team := "BOS"
+		shotType := "2pt shot"
+		made := i%2 == 0
+		if i%3 == 0 {
+			team = "LAL"
+			shotType = "3pt jump shot"
+		}
+		plays = append(plays, game.PlayEvent{
+			GameID:    gameID,
+			PlayID:    "p" + string(rune('1'+i)),
+			Sport:     "nba",
+			Timestamp: base.Add(time.Duration(i) * time.Second),
+			Location:  &game.Coord{X: 100 + float64(i), Y: 200 + float64(i)},
+			EventData: map[string]any{"period": "Q1", "clock": "11:30", "made": made, "shot_type": shotType, "team": team, "possession": team},
+		})
+	}
+	return SavedGame{
+		GameID: gameID,
+		Sport:  "nba",
+		State: game.GameState{
+			GameID:    gameID,
+			Sport:     "nba",
+			Status:    "final",
+			State:     "post",
+			Detail:    "Replay archive",
+			Home:      "BOS",
+			Away:      "LAL",
+			Completed: true,
+			Tracked:   true,
+		},
+		Plays: plays,
+	}
+}
+
 func TestSaveCompletedGame_RejectsTooFewPlays(t *testing.T) {
 	dir := t.TempDir()
 	err := SaveCompletedGame(dir, "x", game.SportNBA, game.GameState{}, nil)
@@ -298,6 +364,110 @@ func TestLoadLatestGame_ErrorOnEmptyDir(t *testing.T) {
 	_, err := LoadLatestGame(dir)
 	if err == nil {
 		t.Fatal("expected error on empty dir")
+	}
+}
+
+func TestNoLiveGames_StartsArchivedReplayAndAdvancesWithoutLiveEvents(t *testing.T) {
+	mgr := newTestManager(t)
+	saved := savedReplayGame("401999001")
+	if err := SaveCompletedGame(mgr.GameDir(), saved.GameID, game.SportNBA, saved.State, saved.Plays); err != nil {
+		t.Fatal(err)
+	}
+
+	received := make(chan game.PlayEvent, 8)
+	mgr.EventHandler = func(ev game.PlayEvent) {
+		received <- ev
+	}
+
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
+	defer cancel()
+	mgr.Start(ctx)
+
+	mgr.SyncLiveGames(nil)
+
+	state, ok := waitForGame(t, mgr, SimGameID(saved.GameID))
+	if !ok {
+		t.Fatal("expected archived replay game to start")
+	}
+	if state.Completed {
+		t.Fatal("replay should begin as an active progressing game, not a final card")
+	}
+
+	var first game.PlayEvent
+	select {
+	case first = <-received:
+	case <-ctx.Done():
+		t.Fatal("timed out waiting for archived replay event")
+	}
+	if first.GameID != SimGameID(saved.GameID) {
+		t.Fatalf("expected replay sim game ID %s, got %s", SimGameID(saved.GameID), first.GameID)
+	}
+
+	state, ok = mgr.Game(SimGameID(saved.GameID))
+	if !ok {
+		t.Fatal("expected replay game state")
+	}
+	if state.HomeScore == 0 && state.AwayScore == 0 {
+		t.Fatalf("expected replay scoreboard to advance after emitted play, got %+v", state)
+	}
+	if state.AssumedPossession == nil || state.AssumedPossession.ReplayLatency == nil {
+		t.Fatalf("expected replay metadata on archived replay state, got %+v", state.AssumedPossession)
+	}
+	if state.AssumedPossession.ReplayLatency.ReplaySourceGameID != saved.GameID {
+		t.Fatalf("expected replay source %s, got %s", saved.GameID, state.AssumedPossession.ReplayLatency.ReplaySourceGameID)
+	}
+}
+
+func TestNoLiveGames_ReplayRotatesAfterCompletion(t *testing.T) {
+	mgr := newTestManager(t)
+	first := savedReplayGame("401999001")
+	second := savedReplayGame("401999002")
+	if err := SaveCompletedGame(mgr.GameDir(), first.GameID, game.SportNBA, first.State, first.Plays); err != nil {
+		t.Fatal(err)
+	}
+	time.Sleep(10 * time.Millisecond)
+	if err := SaveCompletedGame(mgr.GameDir(), second.GameID, game.SportNBA, second.State, second.Plays); err != nil {
+		t.Fatal(err)
+	}
+
+	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
+	defer cancel()
+	mgr.Start(ctx)
+	mgr.SyncLiveGames(nil)
+
+	waitForCompletion(t, mgr, SimGameID(second.GameID))
+	waitForGame(t, mgr, SimGameID(first.GameID))
+
+	games := mgr.Games()
+	if len(games) == 0 {
+		t.Fatal("expected replay game after rotation")
+	}
+	if games[0].GameID != SimGameID(first.GameID) {
+		t.Fatalf("expected replay to rotate to %s, got %s", SimGameID(first.GameID), games[0].GameID)
+	}
+}
+
+func TestArchivedReplayStopsWhenLiveGamesReturn(t *testing.T) {
+	mgr := newTestManager(t)
+	saved := savedReplayGame("401999001")
+	if err := SaveCompletedGame(mgr.GameDir(), saved.GameID, game.SportNBA, saved.State, saved.Plays); err != nil {
+		t.Fatal(err)
+	}
+
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
+	defer cancel()
+	mgr.Start(ctx)
+	mgr.SyncLiveGames(nil)
+	waitForGame(t, mgr, SimGameID(saved.GameID))
+
+	live := liveState()
+	mgr.SyncLiveGames([]game.GameState{live})
+
+	if _, ok := mgr.Game(SimGameID(saved.GameID)); ok {
+		t.Fatal("expected archived replay lane to be removed once live games return")
+	}
+	if _, ok := mgr.Game(SimGameID(live.GameID)); !ok {
+		t.Fatal("expected live mirror lane after live games return")
 	}
 }
 

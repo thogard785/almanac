@@ -12,36 +12,47 @@ import (
 )
 
 const (
-	InitialSimBalance  = 100.0
-	SimBetDir          = "data/sim_bets"
-	SimGameDir         = "data/sim_games"
-	DefaultEventDelay  = 15 * time.Second
-	DefaultReleaseTick = 250 * time.Millisecond
+	InitialSimBalance         = 100.0
+	SimBetDir                 = "data/sim_bets"
+	SimGameDir                = "data/sim_games"
+	DefaultEventDelay         = 15 * time.Second
+	DefaultReleaseTick        = 250 * time.Millisecond
+	DefaultReplayEventSpacing = 3 * time.Second
+	DefaultReplayResetDelay   = 5 * time.Second
 )
 
 // Config controls the simulation lane's isolated runtime behavior.
 type Config struct {
-	StoreDir    string
-	GameDir     string
-	EventDelay  time.Duration
-	ReleaseTick time.Duration
+	StoreDir           string
+	GameDir            string
+	EventDelay         time.Duration
+	ReleaseTick        time.Duration
+	ReplayEventSpacing time.Duration
+	ReplayResetDelay   time.Duration
 }
 
 // Manager coordinates all simulation-mode state: isolated balances, a separate
-// bet engine, a separate assumed-possession tracker, and a delayed mirror of
-// live ESPN games. There is exactly one Manager per server.
+// bet engine, a separate assumed-possession tracker, and either (a) a delayed
+// mirror of live ESPN games or (b) an archived replay when no live games exist.
+// There is exactly one Manager per server.
 type Manager struct {
 	Balances *SimBalanceProvider
 	Engine   *bet.Engine
 	Store    *bet.Store
 
-	tracker     *game.AssumedPossessionTracker
-	delay       time.Duration
-	releaseTick time.Duration
+	tracker            *game.AssumedPossessionTracker
+	delay              time.Duration
+	releaseTick        time.Duration
+	replayEventSpacing time.Duration
+	replayResetDelay   time.Duration
 
-	mu      sync.RWMutex
-	games   map[string]*mirroredGame
-	gameDir string
+	mu            sync.RWMutex
+	games         map[string]*mirroredGame
+	gameDir       string
+	hasLiveGames  bool
+	activeReplay  *archivedReplay
+	replayCursor  int
+	lastReplayErr string
 
 	// EventHandler is called for each delayed simulation play event (wired by
 	// main.go to broadcast to sim connections and feed later UI work).
@@ -55,6 +66,13 @@ type mirroredGame struct {
 	seenEvents   map[string]struct{}
 	pending      []queuedEvent
 	sequence     int
+	archived     bool
+}
+
+type archivedReplay struct {
+	saved       *SavedGame
+	replayer    *Replayer
+	completedAt time.Time
 }
 
 type queuedEvent struct {
@@ -65,13 +83,19 @@ type queuedEvent struct {
 	sequence    int
 }
 
+type simEmission struct {
+	event game.PlayEvent
+}
+
 // NewManager creates the simulation manager with fully isolated state.
 func NewManager() (*Manager, error) {
 	return NewManagerWithConfig(Config{
-		StoreDir:    SimBetDir,
-		GameDir:     SimGameDir,
-		EventDelay:  DefaultEventDelay,
-		ReleaseTick: DefaultReleaseTick,
+		StoreDir:           SimBetDir,
+		GameDir:            SimGameDir,
+		EventDelay:         DefaultEventDelay,
+		ReleaseTick:        DefaultReleaseTick,
+		ReplayEventSpacing: DefaultReplayEventSpacing,
+		ReplayResetDelay:   DefaultReplayResetDelay,
 	})
 }
 
@@ -89,6 +113,12 @@ func NewManagerWithConfig(cfg Config) (*Manager, error) {
 	if cfg.ReleaseTick <= 0 {
 		cfg.ReleaseTick = DefaultReleaseTick
 	}
+	if cfg.ReplayEventSpacing <= 0 {
+		cfg.ReplayEventSpacing = DefaultReplayEventSpacing
+	}
+	if cfg.ReplayResetDelay < 0 {
+		cfg.ReplayResetDelay = DefaultReplayResetDelay
+	}
 
 	store, err := bet.NewStore(cfg.StoreDir)
 	if err != nil {
@@ -97,18 +127,21 @@ func NewManagerWithConfig(cfg Config) (*Manager, error) {
 	bp := NewSimBalanceProvider()
 	engine := bet.NewEngineWithBalance(store, bp).EnableNextRoundResolution()
 	return &Manager{
-		Balances:    bp,
-		Engine:      engine,
-		Store:       store,
-		tracker:     game.NewAssumedPossessionTracker(),
-		delay:       cfg.EventDelay,
-		releaseTick: cfg.ReleaseTick,
-		games:       make(map[string]*mirroredGame),
-		gameDir:     cfg.GameDir,
+		Balances:           bp,
+		Engine:             engine,
+		Store:              store,
+		tracker:            game.NewAssumedPossessionTracker(),
+		delay:              cfg.EventDelay,
+		releaseTick:        cfg.ReleaseTick,
+		replayEventSpacing: cfg.ReplayEventSpacing,
+		replayResetDelay:   cfg.ReplayResetDelay,
+		games:              make(map[string]*mirroredGame),
+		gameDir:            cfg.GameDir,
 	}, nil
 }
 
-// Start runs the delayed release loop for mirrored live events.
+// Start runs the delayed release loop for mirrored live events and archived
+// replay progression when no live games are present.
 func (m *Manager) Start(ctx context.Context) {
 	go m.releaseLoop(ctx)
 }
@@ -137,16 +170,31 @@ func (m *Manager) InitWallet(wallet [20]byte) float64 {
 }
 
 // SyncLiveGames refreshes the source-game roster without leaking live state
-// directly into the simulation lane. Scores, rounds, and assumed-possession
-// state only advance when delayed events are released through ObserveLiveEvent.
+// directly into the simulation lane. When live games exist, scores, rounds,
+// and assumed-possession state only advance when delayed events are released
+// through ObserveLiveEvent. When no live games exist, the manager promotes a
+// saved completed game into a backend-driven archived replay lane instead of
+// leaving stale sim finals in memory.
 func (m *Manager) SyncLiveGames(states []game.GameState) {
 	m.mu.Lock()
 	defer m.mu.Unlock()
+
+	if len(states) == 0 {
+		m.hasLiveGames = false
+		m.clearLiveMirrorsLocked()
+		m.ensureArchivedReplayLocked(time.Now().UTC())
+		return
+	}
+
+	m.hasLiveGames = true
+	m.stopArchivedReplayLocked()
+	keep := make(map[string]struct{}, len(states))
 	for _, state := range states {
 		if state.GameID == "" || state.Simulation {
 			continue
 		}
 		mirror := m.ensureGameLocked(state)
+		mirror.archived = false
 		mirror.sourceState = state
 		updateShellState(&mirror.simState, state)
 		if state.Completed && len(mirror.pending) == 0 && mirror.sequence == 0 {
@@ -154,7 +202,9 @@ func (m *Manager) SyncLiveGames(states []game.GameState) {
 			mirror.simState.State = state.State
 			mirror.simState.Completed = true
 		}
+		keep[mirror.simState.GameID] = struct{}{}
 	}
+	m.pruneStaleLiveMirrorsLocked(keep)
 }
 
 // ObserveLiveEvent records a real-game play plus the live snapshot seen at the
@@ -169,6 +219,7 @@ func (m *Manager) ObserveLiveEvent(state game.GameState, event game.PlayEvent) {
 	defer m.mu.Unlock()
 
 	mirror := m.ensureGameLocked(state)
+	mirror.archived = false
 	mirror.sourceState = state
 	updateShellState(&mirror.simState, state)
 	if _, exists := mirror.seenEvents[event.PlayID]; exists {
@@ -185,7 +236,7 @@ func (m *Manager) ObserveLiveEvent(state game.GameState, event game.PlayEvent) {
 	})
 }
 
-// Games returns the currently mirrored simulation game views.
+// Games returns the currently active simulation game views.
 func (m *Manager) Games() []game.GameState {
 	m.mu.RLock()
 	defer m.mu.RUnlock()
@@ -252,9 +303,7 @@ func (m *Manager) BetHistory(wallet [20]byte, since time.Time) []bet.SignInAckBe
 	return m.Engine.BetHistory(wallet, since)
 }
 
-// SaveCompletedGame remains available for archival replay tooling even though
-// item 8's runtime simulation path now mirrors live games instead of booting
-// exclusively from a completed-game replayer.
+// SaveCompletedGame persists completed NBA games for later no-live replay.
 func (m *Manager) SaveCompletedGame(gameID string, sport game.Sport, state game.GameState, plays []game.PlayEvent) {
 	if sport != game.SportNBA {
 		return // only NBA games are archived for replay right now
@@ -271,7 +320,7 @@ func (m *Manager) SaveCompletedGame(gameID string, sport game.Sport, state game.
 }
 
 // Stop currently exists for interface symmetry with the old replayer-backed
-// manager. The live-mirror release loop is context-driven, so Stop is a no-op.
+// manager. The release loop is context-driven, so Stop is a no-op.
 func (m *Manager) Stop() {}
 
 // GameDir exposes the archival game directory for tests.
@@ -294,6 +343,7 @@ func (m *Manager) ensureGameLocked(state game.GameState) *mirroredGame {
 	}
 	updateShellState(&mirror.simState, state)
 	mirror.sourceState = state
+	mirror.archived = false
 	return mirror
 }
 
@@ -315,13 +365,13 @@ func updateShellState(simState *game.GameState, sourceState game.GameState) {
 
 func (m *Manager) releaseDueEvents() {
 	now := time.Now().UTC()
-	type emission struct {
-		event game.PlayEvent
-	}
-	var emissions []emission
+	var emissions []simEmission
 
 	m.mu.Lock()
 	for _, mirror := range m.games {
+		if mirror.archived {
+			continue
+		}
 		for len(mirror.pending) > 0 {
 			next := mirror.pending[0]
 			if next.releaseAt.After(now) {
@@ -342,9 +392,10 @@ func (m *Manager) releaseDueEvents() {
 			if next.sourceState.Completed && len(mirror.pending) == 0 {
 				mirror.simState.Completed = true
 			}
-			emissions = append(emissions, emission{event: simEvent})
+			emissions = append(emissions, simEmission{event: simEvent})
 		}
 	}
+	m.releaseArchivedReplayLocked(now, &emissions)
 	m.mu.Unlock()
 
 	for _, item := range emissions {
@@ -390,4 +441,139 @@ func buildReplayLatency(next queuedEvent, emitAt time.Time) *game.ReplayLatencyM
 		meta.FeedLagMs = next.observedAt.Sub(next.sourceEvent.Timestamp).Milliseconds()
 	}
 	return meta
+}
+
+func (m *Manager) ensureArchivedReplayLocked(now time.Time) {
+	if m.activeReplay != nil {
+		return
+	}
+	savedGames, err := LoadSavedGames(m.gameDir)
+	if err != nil {
+		msg := err.Error()
+		if msg != m.lastReplayErr {
+			log.Printf("[sim-replay] archived replay unavailable: %v", err)
+			m.lastReplayErr = msg
+		}
+		return
+	}
+	m.lastReplayErr = ""
+	idx := 0
+	if len(savedGames) > 0 {
+		idx = m.replayCursor % len(savedGames)
+	}
+	saved := savedGames[idx]
+	m.replayCursor = (idx + 1) % len(savedGames)
+
+	replayer := NewReplayer(saved, m.replayEventSpacing)
+	replayer.Start(now)
+	m.games[replayer.GameID()] = &mirroredGame{
+		sourceGameID: saved.GameID,
+		archived:     true,
+		simState:     replayer.GameState(),
+	}
+	m.activeReplay = &archivedReplay{saved: saved, replayer: replayer}
+	m.tracker.ResetGame(replayer.GameID())
+	log.Printf("[sim-replay] starting archived replay game=%s sim=%s plays=%d", saved.GameID, replayer.GameID(), len(saved.Plays))
+}
+
+func (m *Manager) stopArchivedReplayLocked() {
+	if m.activeReplay == nil {
+		m.clearArchivedMirrorsLocked()
+		return
+	}
+	simID := m.activeReplay.replayer.GameID()
+	delete(m.games, simID)
+	m.tracker.ResetGame(simID)
+	m.activeReplay = nil
+}
+
+func (m *Manager) releaseArchivedReplayLocked(now time.Time, emissions *[]simEmission) {
+	if m.hasLiveGames {
+		return
+	}
+	m.ensureArchivedReplayLocked(now)
+	if m.activeReplay == nil {
+		return
+	}
+
+	steps := m.activeReplay.replayer.EmitDue(now)
+	if len(steps) == 0 {
+		if m.activeReplay.replayer.Done() && !m.activeReplay.completedAt.IsZero() && now.Sub(m.activeReplay.completedAt) >= m.replayResetDelay {
+			delete(m.games, m.activeReplay.replayer.GameID())
+			m.tracker.ResetGame(m.activeReplay.replayer.GameID())
+			m.activeReplay = nil
+			m.ensureArchivedReplayLocked(now)
+		}
+		return
+	}
+
+	mirror := m.games[m.activeReplay.replayer.GameID()]
+	if mirror == nil {
+		mirror = &mirroredGame{sourceGameID: m.activeReplay.saved.GameID, archived: true}
+		m.games[m.activeReplay.replayer.GameID()] = mirror
+	}
+	for _, step := range steps {
+		mirror.simState = step.State
+		replayLatency := buildArchivedReplayLatency(m.activeReplay.replayer.StartAt(), step)
+		snapshot := game.InferSimulationAssumedPossession(mirror.simState, step.Event, replayLatency)
+		if snapshot != nil {
+			mirror.simState.ContractVersion = game.ContractVersionAssumedPossessionV1
+			mirror.simState.AssumedPossession = snapshot
+		}
+		m.tracker.OnPlay(step.Event)
+		*emissions = append(*emissions, simEmission{event: step.Event})
+	}
+	if m.activeReplay.replayer.Done() {
+		m.activeReplay.completedAt = now
+		mirror.simState = m.activeReplay.replayer.GameState()
+	}
+}
+
+func buildArchivedReplayLatency(startedAt time.Time, step ReplayEmission) *game.ReplayLatencyMeta {
+	meta := &game.ReplayLatencyMeta{
+		ReplaySourceGameID: step.SourceEvent.GameID,
+		ReplaySequence:     step.Sequence,
+		ObservedAt:         startedAt.UTC().Format(time.RFC3339Nano),
+		EmittedAt:          step.EmitAt.UTC().Format(time.RFC3339Nano),
+		ReplayOffsetMs:     step.EmitAt.Sub(step.SourceEvent.Timestamp).Milliseconds(),
+		Synthetic:          true,
+	}
+	if !step.SourceEvent.Timestamp.IsZero() {
+		meta.SourceEventTimestamp = step.SourceEvent.Timestamp.UTC().Format(time.RFC3339Nano)
+		meta.FeedLagMs = startedAt.Sub(step.SourceEvent.Timestamp).Milliseconds()
+	}
+	return meta
+}
+
+func (m *Manager) clearLiveMirrorsLocked() {
+	for gameID, mirror := range m.games {
+		if mirror.archived {
+			continue
+		}
+		delete(m.games, gameID)
+		m.tracker.ResetGame(gameID)
+	}
+}
+
+func (m *Manager) clearArchivedMirrorsLocked() {
+	for gameID, mirror := range m.games {
+		if !mirror.archived {
+			continue
+		}
+		delete(m.games, gameID)
+		m.tracker.ResetGame(gameID)
+	}
+}
+
+func (m *Manager) pruneStaleLiveMirrorsLocked(keep map[string]struct{}) {
+	for gameID, mirror := range m.games {
+		if mirror.archived {
+			continue
+		}
+		if _, ok := keep[gameID]; ok {
+			continue
+		}
+		delete(m.games, gameID)
+		m.tracker.ResetGame(gameID)
+	}
 }

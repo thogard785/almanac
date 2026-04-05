@@ -74,6 +74,17 @@ func (t *AssumedPossessionTracker) CurrentRound(gameID string) string {
 	return t.currentRound[gameID]
 }
 
+func (t *AssumedPossessionTracker) ResetGame(gameID string) {
+	if strings.TrimSpace(gameID) == "" {
+		return
+	}
+	t.mu.Lock()
+	defer t.mu.Unlock()
+	delete(t.lastEvent, gameID)
+	delete(t.currentRound, gameID)
+	delete(t.resolvedRound, gameID)
+}
+
 func (t *AssumedPossessionTracker) ResolveInfo(gameID, roundID string) (ResolvedRoundMeta, bool) {
 	t.mu.RLock()
 	defer t.mu.RUnlock()

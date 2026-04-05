@@ -40,8 +40,8 @@ func SaveCompletedGame(dir string, gameID string, sport game.Sport, state game.G
 	return persist.SaveFile(filepath.Join(dir, filename), sg)
 }
 
-// LoadLatestGame loads the most recently saved completed game from disk.
-func LoadLatestGame(dir string) (*SavedGame, error) {
+// LoadSavedGames loads every valid saved game from disk, newest first.
+func LoadSavedGames(dir string) ([]*SavedGame, error) {
 	pattern := filepath.Join(dir, "game_*.json")
 	files, err := filepath.Glob(pattern)
 	if err != nil {
@@ -51,7 +51,6 @@ func LoadLatestGame(dir string) (*SavedGame, error) {
 		return nil, fmt.Errorf("no saved games found in %s", dir)
 	}
 
-	// Sort by modification time, newest first.
 	sort.Slice(files, func(i, j int) bool {
 		fi, _ := os.Stat(files[i])
 		fj, _ := os.Stat(files[j])
@@ -61,6 +60,7 @@ func LoadLatestGame(dir string) (*SavedGame, error) {
 		return fi.ModTime().After(fj.ModTime())
 	})
 
+	games := make([]*SavedGame, 0, len(files))
 	for _, file := range files {
 		var sg SavedGame
 		if err := persist.LoadFile(file, &sg); err != nil {
@@ -70,7 +70,19 @@ func LoadLatestGame(dir string) (*SavedGame, error) {
 		if len(sg.Plays) == 0 {
 			continue
 		}
-		return &sg, nil
+		games = append(games, &sg)
 	}
-	return nil, fmt.Errorf("no valid saved games found in %s", dir)
+	if len(games) == 0 {
+		return nil, fmt.Errorf("no valid saved games found in %s", dir)
+	}
+	return games, nil
+}
+
+// LoadLatestGame loads the most recently saved completed game from disk.
+func LoadLatestGame(dir string) (*SavedGame, error) {
+	games, err := LoadSavedGames(dir)
+	if err != nil {
+		return nil, err
+	}
+	return games[0], nil
 }

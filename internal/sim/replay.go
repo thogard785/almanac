@@ -1,11 +1,8 @@
 package sim
 
 import (
-	"context"
-	"log"
 	"sort"
 	"strings"
-	"sync"
 	"time"
 
 	"github.com/almanac/espn-shots/internal/game"
@@ -21,28 +18,40 @@ func SimPlayID(sourceGameID, sourcePlayID string) string {
 	return simGamePrefix + sourceGameID + ":" + sourcePlayID
 }
 
-// Replayer replays a saved completed game with time-shifted timestamps,
-// making it appear live to simulation-mode clients.
-type Replayer struct {
-	mu        sync.RWMutex
-	saved     *SavedGame
-	simID     string
-	offset    time.Duration // add to original timestamp to get sim time
-	startAt   time.Time
-	nextIdx   int
-	state     game.GameState
-	done      bool
-	onEvent   func(game.PlayEvent)
-	home      string
-	away      string
-	homeScore int
-	awayScore int
+type ReplayEmission struct {
+	Event       game.PlayEvent
+	State       game.GameState
+	SourceEvent game.PlayEvent
+	Sequence    int
+	EmitAt      time.Time
 }
 
-// NewReplayer creates a replayer for the given saved game. Events are emitted
-// through onEvent. The replay starts when Run is called.
-func NewReplayer(saved *SavedGame, onEvent func(game.PlayEvent)) *Replayer {
-	// Sort plays by timestamp.
+// Replayer replays a saved completed game with synthetic timing suitable for
+// backend-driven simulation when no live games are available.
+type Replayer struct {
+	saved         *SavedGame
+	simID         string
+	eventSpacing  time.Duration
+	started       bool
+	startAt       time.Time
+	nextReleaseAt time.Time
+	nextIdx       int
+	state         game.GameState
+	done          bool
+	home          string
+	away          string
+	homeScore     int
+	awayScore     int
+}
+
+// NewReplayer creates a replayer for the given saved game. Plays are replayed
+// in source order with a fixed synthetic cadence so off-hours testing advances
+// on a useful timescale instead of taking real-game wall-clock duration.
+func NewReplayer(saved *SavedGame, eventSpacing time.Duration) *Replayer {
+	if eventSpacing <= 0 {
+		eventSpacing = time.Second
+	}
+
 	plays := make([]game.PlayEvent, len(saved.Plays))
 	copy(plays, saved.Plays)
 	sort.SliceStable(plays, func(i, j int) bool {
@@ -51,107 +60,102 @@ func NewReplayer(saved *SavedGame, onEvent func(game.PlayEvent)) *Replayer {
 	savedCopy := *saved
 	savedCopy.Plays = plays
 
-	r := &Replayer{
-		saved:   &savedCopy,
-		simID:   SimGameID(saved.GameID),
-		onEvent: onEvent,
-		home:    saved.State.Home,
-		away:    saved.State.Away,
+	status := strings.TrimSpace(saved.State.Status)
+	if status == "" {
+		status = "in_progress"
+	}
+	stateValue := strings.TrimSpace(saved.State.State)
+	if stateValue == "" || strings.EqualFold(stateValue, "post") {
+		stateValue = "in"
+	}
+	detail := strings.TrimSpace(saved.State.Detail)
+	if detail == "" {
+		detail = "Archived replay"
+	}
+
+	return &Replayer{
+		saved:        &savedCopy,
+		simID:        SimGameID(saved.GameID),
+		eventSpacing: eventSpacing,
+		home:         saved.State.Home,
+		away:         saved.State.Away,
 		state: game.GameState{
 			GameID:     SimGameID(saved.GameID),
 			Sport:      saved.Sport,
-			Status:     "in_progress",
-			State:      "in",
+			Status:     status,
+			State:      stateValue,
+			Detail:     detail,
 			Home:       saved.State.Home,
 			Away:       saved.State.Away,
 			Tracked:    true,
 			Simulation: true,
 		},
 	}
-	return r
+}
+
+// Start anchors the replay to the current wall clock.
+func (r *Replayer) Start(now time.Time) {
+	if r.started || len(r.saved.Plays) == 0 {
+		if len(r.saved.Plays) == 0 {
+			r.done = true
+		}
+		return
+	}
+	r.started = true
+	r.startAt = now.UTC()
+	r.nextReleaseAt = r.startAt.Add(r.eventSpacing)
+	r.state.StartTime = r.startAt.Format(time.RFC3339)
 }
 
 // GameID returns the simulation game ID.
 func (r *Replayer) GameID() string { return r.simID }
 
+// StartAt returns when the synthetic replay began.
+func (r *Replayer) StartAt() time.Time { return r.startAt }
+
 // Done returns true when all plays have been emitted.
-func (r *Replayer) Done() bool {
-	r.mu.RLock()
-	defer r.mu.RUnlock()
-	return r.done
-}
+func (r *Replayer) Done() bool { return r.done }
 
-// GameState returns the current simulation game state snapshot.
-func (r *Replayer) GameState() game.GameState {
-	r.mu.RLock()
-	defer r.mu.RUnlock()
-	return r.state
-}
+// GameState returns the current simulation game snapshot.
+func (r *Replayer) GameState() game.GameState { return r.state }
 
-// Run starts the replay loop. Blocks until ctx is cancelled or all plays are emitted.
-func (r *Replayer) Run(ctx context.Context) {
-	now := time.Now()
-	r.mu.Lock()
-	if len(r.saved.Plays) == 0 {
-		r.done = true
-		r.mu.Unlock()
-		return
+// EmitDue emits any replay steps whose synthetic release time has arrived.
+func (r *Replayer) EmitDue(now time.Time) []ReplayEmission {
+	if !r.started || r.done {
+		return nil
 	}
-	r.startAt = now
-	r.offset = now.Sub(r.saved.Plays[0].Timestamp)
-	r.state.StartTime = now.UTC().Format(time.RFC3339)
-	r.mu.Unlock()
 
-	log.Printf("[sim-replay] starting replay of %s (%d plays)", r.saved.GameID, len(r.saved.Plays))
-
-	ticker := time.NewTicker(500 * time.Millisecond)
-	defer ticker.Stop()
-	for {
-		select {
-		case <-ctx.Done():
-			return
-		case <-ticker.C:
-			if r.emitDue() {
-				return
-			}
+	var emissions []ReplayEmission
+	for r.nextIdx < len(r.saved.Plays) && !r.nextReleaseAt.After(now) {
+		source := r.saved.Plays[r.nextIdx]
+		emitAt := r.nextReleaseAt.UTC()
+		simEvent := game.PlayEvent{
+			GameID:    r.simID,
+			PlayID:    SimPlayID(r.saved.GameID, source.PlayID),
+			Sport:     source.Sport,
+			Timestamp: emitAt,
+			Location:  source.Location,
+			EventData: source.EventData,
 		}
-	}
-}
-
-// emitDue emits all plays that should have fired by now. Returns true when replay is complete.
-func (r *Replayer) emitDue() bool {
-	now := time.Now()
-	r.mu.Lock()
-	var toEmit []game.PlayEvent
-	for r.nextIdx < len(r.saved.Plays) {
-		play := r.saved.Plays[r.nextIdx]
-		shiftedTime := play.Timestamp.Add(r.offset)
-		if shiftedTime.After(now) {
-			break
-		}
-		// Rewrite play for sim context.
-		play.GameID = r.simID
-		play.PlayID = "sim_" + play.PlayID
-		play.Timestamp = shiftedTime
-		toEmit = append(toEmit, play)
-		r.updateStateLocked(play)
+		r.updateStateLocked(source)
 		r.nextIdx++
-	}
-	allDone := r.nextIdx >= len(r.saved.Plays)
-	if allDone {
-		r.state.Status = "final"
-		r.state.State = "post"
-		r.state.Completed = true
-		r.done = true
-	}
-	r.mu.Unlock()
-
-	for _, ev := range toEmit {
-		if r.onEvent != nil {
-			r.onEvent(ev)
+		if r.nextIdx >= len(r.saved.Plays) {
+			r.state.Status = finalStatus(r.saved.State.Status)
+			r.state.State = finalState(r.saved.State.State)
+			r.state.Detail = strings.TrimSpace(r.saved.State.Detail)
+			r.state.Completed = true
+			r.done = true
 		}
+		emissions = append(emissions, ReplayEmission{
+			Event:       simEvent,
+			State:       r.state,
+			SourceEvent: source,
+			Sequence:    r.nextIdx,
+			EmitAt:      emitAt,
+		})
+		r.nextReleaseAt = r.nextReleaseAt.Add(r.eventSpacing)
 	}
-	return allDone
+	return emissions
 }
 
 func (r *Replayer) updateStateLocked(play game.PlayEvent) {
@@ -169,7 +173,9 @@ func (r *Replayer) updateStateLocked(play game.PlayEvent) {
 			r.state.Clock = s
 		}
 	}
-	// Track score from scoring plays.
+	if team, ok := data["possession"].(string); ok {
+		r.state.Possession = team
+	}
 	made, _ := data["made"].(bool)
 	if !made {
 		return
@@ -183,6 +189,22 @@ func (r *Replayer) updateStateLocked(play game.PlayEvent) {
 		r.awayScore += points
 		r.state.AwayScore = r.awayScore
 	}
+}
+
+func finalStatus(value string) string {
+	value = strings.TrimSpace(value)
+	if value == "" {
+		return "final"
+	}
+	return value
+}
+
+func finalState(value string) string {
+	value = strings.TrimSpace(value)
+	if value == "" || strings.EqualFold(value, "in") {
+		return "post"
+	}
+	return value
 }
 
 func pointsFromShotType(data map[string]any) int {
